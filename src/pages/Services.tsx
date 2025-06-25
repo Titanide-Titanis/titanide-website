@@ -2,7 +2,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Shield, Users, FileText, Search, Award, ArrowRight, Phone, Mail } from "lucide-react";
+import { CheckCircle, Shield, Users, FileText, Search, Award, ArrowRight, Phone, Mail, Database } from "lucide-react";
 
 const Services = () => {
   const coreServices = [
@@ -53,6 +53,24 @@ const Services = () => {
   ];
 
   const specializedServices = [
+    {
+      title: "EHR Remediation & UDS Recovery Suite",
+      description: "Turnkey solution for rural FQHCs facing EHR mis-configuration and UDS reporting gaps",
+      icon: Database,
+      highlights: [
+        "Proven track record: Preserved $8M+ in Section 330 grant funding",
+        "90-day turnaround for complete EHR reconstruction",
+        "End-to-end UDS file restoration and error-free reporting",
+        "Specialized focus on rural FQHC operations"
+      ],
+      details: [
+        "EHR data table rebuilding and re-engineering",
+        "UDS file recovery and validation",
+        "Grant funding preservation strategies",
+        "340B eligibility maintenance",
+        "Ongoing data integrity monitoring"
+      ]
+    },
     {
       title: "Audit & Review Services",
       description: "Independent assessment of your compliance framework",
@@ -200,6 +218,76 @@ const Services = () => {
         </div>
       </div>
 
+      {/* Featured Service Section - EHR Remediation */}
+      <div 
+        className="py-16 px-8"
+        style={{ 
+          backgroundColor: '#002B45',
+          color: '#ffffff'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 rounded-lg" style={{ backgroundColor: '#00A3AD' }}>
+                  <Database className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-3xl font-bold text-white mb-2">EHR Remediation & UDS Recovery Suite</h2>
+                  <p className="text-lg" style={{ color: '#B0E0E6' }}>Specialized for Rural FQHCs</p>
+                </div>
+              </div>
+              
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-3 text-white">Why It Matters</h3>
+                <p className="text-base leading-relaxed" style={{ color: '#E6F3FF' }}>
+                  Rural FQHCs live or die by Uniform Data System (UDS) metrics—yet most operate without dedicated IT or data-management staff. 
+                  When EHR mis-configuration, data loss, or reporting gaps threaten HRSA grant funding, leadership needs a turnkey fix that 
+                  restores data integrity fast and keeps it that way.
+                </p>
+              </div>
+
+              <div className="mb-6">
+                <h3 className="text-xl font-semibold mb-3 text-white">Our Proven Track Record</h3>
+                <p className="text-base leading-relaxed mb-4" style={{ color: '#E6F3FF' }}>
+                  At TAN Healthcare we salvaged three years of incomplete UDS files caused by a failed EHR migration. 
+                  Within 90 days Titanide rebuilt the data tables, re-engineered the EHR, and submitted error-free reports—preserving 
+                  over $8 million in Section 330 grant funding and 340B eligibility.
+                </p>
+                <p className="text-base font-medium" style={{ color: '#00A3AD' }}>
+                  We now offer that end-to-end playbook as a dedicated service line.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <div className="bg-white p-8 rounded-lg shadow-lg">
+                <h3 className="text-2xl font-bold mb-6" style={{ color: '#002B45' }}>Service Highlights</h3>
+                <ul className="space-y-4 mb-6">
+                  {specializedServices[0].highlights?.map((highlight, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" style={{ color: '#00A3AD' }} />
+                      <span style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button 
+                  className="w-full text-white hover:opacity-90"
+                  style={{ 
+                    backgroundColor: '#00A3AD',
+                    padding: '0.75rem 1.5rem',
+                    fontWeight: '600'
+                  }}
+                >
+                  Learn More About EHR Recovery
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Specialized Services Section */}
       <div 
         className="py-16 px-8"
@@ -219,7 +307,7 @@ const Services = () => {
                 paddingLeft: '1rem'
               }}
             >
-              Specialized Services
+              Additional Specialized Services
             </h2>
             <p className="text-lg max-w-3xl" style={{ fontSize: '1.05rem' }}>
               Advanced compliance solutions tailored to meet specific industry requirements and regulatory challenges.
@@ -227,7 +315,7 @@ const Services = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {specializedServices.map((service, index) => (
+            {specializedServices.slice(1).map((service, index) => (
               <Card key={index} className="border-2 hover:shadow-lg transition-all bg-white" style={{ borderColor: '#00A3AD' }}>
                 <CardHeader>
                   <CardTitle className="text-xl mb-2" style={{ color: '#002B45', fontSize: '1.5rem' }}>{service.title}</CardTitle>
@@ -333,7 +421,8 @@ const Services = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>
+        {`
         @keyframes fadeIn {
           0% { opacity: 0; }
           100% { opacity: 1; }
@@ -346,7 +435,8 @@ const Services = () => {
           0% { transform: translateY(20px); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };

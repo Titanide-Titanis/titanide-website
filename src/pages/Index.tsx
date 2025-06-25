@@ -48,7 +48,7 @@ const Index = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white text-white hover:bg-white"
+              className="border-white text-white hover:bg-white hover:text-gray-900"
               style={{ 
                 borderColor: 'white',
                 color: 'white'
@@ -135,8 +135,8 @@ const Index = () => {
             <Link to="/services">
               <Button 
                 size="lg" 
+                className="text-white hover:opacity-90"
                 style={{ backgroundColor: '#002B45' }}
-                className="hover:opacity-90"
               >
                 View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -169,7 +169,8 @@ const Index = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>
+        {`
         @keyframes fadeIn {
           0% { opacity: 0; }
           100% { opacity: 1; }
@@ -182,7 +183,8 @@ const Index = () => {
           0% { transform: translateY(20px); opacity: 0; }
           100% { transform: translateY(0); opacity: 1; }
         }
-      `}</style>
+        `}
+      </style>
     </div>
   );
 };
