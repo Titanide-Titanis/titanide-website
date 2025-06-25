@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, Shield, Users, FileText, Search, Award, ArrowRight, Phone, Mail, Database } from "lucide-react";
+import { CheckCircle, Shield, Users, FileText, Search, Award, ArrowRight, Phone, Mail, Database, Download } from "lucide-react";
 
 const Services = () => {
   const coreServices = [
@@ -407,22 +407,42 @@ const Services = () => {
                   <Mail className="h-5 w-5" style={{ color: '#005870' }} />
                   <span style={{ color: '#1a1a1a' }}>info@titanideconsulting.com</span>
                 </div>
-                <a 
-                  href="https://titanide.zohobookings.com/#/3973691000005149002"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button 
-                    className="w-full text-white mt-4 hover:opacity-90"
-                    style={{ 
-                      backgroundColor: '#002B45',
-                      padding: '0.75rem 1.5rem',
-                      fontWeight: '600'
-                    }}
+                <div className="space-y-3 mt-6">
+                  <a 
+                    href="https://www.titanideconsulting.com/Titanide%20Consulting%20Capabitlity%20Statement-Final.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
                   >
-                    Schedule a Discovery Call
-                  </Button>
-                </a>
+                    <Button 
+                      className="w-full text-white hover:opacity-90 flex items-center gap-2"
+                      style={{ 
+                        backgroundColor: '#00A3AD',
+                        padding: '0.75rem 1.5rem',
+                        fontWeight: '600'
+                      }}
+                    >
+                      <Download className="h-4 w-4" />
+                      Download Capability Statement
+                    </Button>
+                  </a>
+                  <a 
+                    href="https://titanide.zohobookings.com/#/3973691000005149002"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button 
+                      className="w-full text-white hover:opacity-90"
+                      style={{ 
+                        backgroundColor: '#002B45',
+                        padding: '0.75rem 1.5rem',
+                        fontWeight: '600'
+                      }}
+                    >
+                      Schedule a Discovery Call
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
