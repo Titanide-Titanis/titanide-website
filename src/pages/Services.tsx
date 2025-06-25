@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -250,13 +249,10 @@ const Services = () => {
 
               <div className="mb-6">
                 <h3 className="text-xl font-semibold mb-3 text-white">Our Proven Track Record</h3>
-                <p className="text-base leading-relaxed mb-4" style={{ color: '#E6F3FF' }}>
+                <p className="text-base leading-relaxed" style={{ color: '#E6F3FF' }}>
                   We salvaged three years of incomplete UDS files caused by a failed EHR migration. 
                   Within 90 days we rebuilt the data tables, re-engineered the EHR, and submitted error-free reports—preserving 
                   over $8 million in Section 330 grant funding and 340B eligibility.
-                </p>
-                <p className="text-base font-medium" style={{ color: '#00A3AD' }}>
-                  We now offer that end-to-end playbook as a dedicated service line.
                 </p>
               </div>
             </div>
