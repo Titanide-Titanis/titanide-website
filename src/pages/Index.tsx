@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail } from "lucide-react";
@@ -71,7 +70,12 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
-                <Link to="/services">
+                <a 
+                  href="https://www.titanideconsulting.com/Titanide%20Consulting%20Capabitlity%20Statement-Final.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  download
+                >
                   <Button 
                     size="lg" 
                     variant="outline"
@@ -81,9 +85,10 @@ const Index = () => {
                       color: '#002B45'
                     }}
                   >
-                    Explore Our Services
+                    <Download className="mr-2 h-5 w-5" />
+                    Download Capability Statement
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
             
