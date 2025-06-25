@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail } from "lucide-react";
@@ -15,9 +14,6 @@ const Index = () => {
         }}
       >
         <div className="container mx-auto max-w-6xl flex justify-between items-center">
-          <div className="text-white font-bold text-xl">
-            Titanide Consulting Group
-          </div>
         </div>
       </header>
 
