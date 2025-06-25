@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Users, Award, ArrowRight } from "lucide-react";
@@ -39,7 +40,7 @@ const Index = () => {
               Our Expertise
             </h2>
             <p className="text-lg max-w-3xl mx-auto mt-4" style={{ fontSize: '1.05rem' }}>
-              We specialize in regulatory compliance management, risk assessment, and strategic advisory services
+              We deliver fractional compliance leadership, executive-level advisory, and tailored risk-management solutions that keep your organization audit-ready and future-proof.
             </p>
           </div>
 
@@ -49,11 +50,11 @@ const Index = () => {
                 <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
                   <Shield className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Compliance Management</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Fractional Compliance Oversight</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
-                  Comprehensive regulatory compliance frameworks tailored to your industry and organizational needs
+                  Comprehensive, fractional compliance oversight that designs and steers regulatory frameworks precisely aligned to your industry and organizational needs.
                 </CardDescription>
               </CardContent>
             </Card>
