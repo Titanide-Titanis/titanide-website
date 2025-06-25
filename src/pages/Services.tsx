@@ -109,7 +109,7 @@ const Services = () => {
         className="text-white py-16 px-8"
         style={{ 
           background: 'linear-gradient(135deg, #002B45, #005870)',
-          animation: 'fadeIn 1.5s ease-out'
+          animation: 'fadeInHeader 2s ease-out'
         }}
       >
         <div className="container mx-auto max-w-4xl text-center">
@@ -117,7 +117,7 @@ const Services = () => {
             className="font-bold mb-6 text-white"
             style={{ 
               fontSize: '2.8rem',
-              animation: 'slideInDown 1s ease-out'
+              animation: 'slideInDown 1.5s ease-out'
             }}
           >
             Compliance & Risk Leadership Solutions
@@ -126,12 +126,15 @@ const Services = () => {
             className="mb-8"
             style={{ 
               fontSize: '1.2rem',
-              animation: 'slideInUp 1.2s ease-out'
+              animation: 'slideInUp 1.8s ease-out'
             }}
           >
             Delivering regulatory compliance solutions for your competitive advantage
           </p>
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div 
+            className="flex flex-wrap justify-center gap-4 text-sm"
+            style={{ animation: 'fadeInBadges 2.2s ease-out' }}
+          >
             <Badge 
               variant="secondary" 
               className="text-white hover:opacity-90"
@@ -454,6 +457,14 @@ const Services = () => {
         @keyframes fadeIn {
           0% { opacity: 0; }
           100% { opacity: 1; }
+        }
+        @keyframes fadeInHeader {
+          0% { opacity: 0; transform: translateY(-30px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInBadges {
+          0% { opacity: 0; transform: translateY(20px); }
+          100% { opacity: 1; transform: translateY(0); }
         }
         @keyframes slideInDown {
           0% { transform: translateY(-20px); opacity: 0; }
