@@ -1,7 +1,7 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
@@ -18,11 +18,6 @@ const Index = () => {
           <div className="text-white font-bold text-xl">
             Titanide Consulting Group
           </div>
-          <nav className="hidden md:flex space-x-6">
-            <a href="#services" className="text-white hover:text-opacity-80 font-medium">Services</a>
-            <a href="#testimonials" className="text-white hover:text-opacity-80 font-medium">Testimonials</a>
-            <a href="#contact" className="text-white hover:text-opacity-80 font-medium">Contact</a>
-          </nav>
         </div>
       </header>
 
@@ -240,7 +235,11 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/services">
+            <a 
+              href="https://www.titanideconsulting.com/services"
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               <Button 
                 size="lg" 
                 className="text-white hover:opacity-90"
@@ -249,7 +248,7 @@ const Index = () => {
                 View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>
@@ -405,8 +404,8 @@ const Index = () => {
             >
               <Button 
                 size="lg" 
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-gray-900 w-full sm:w-auto"
+                className="text-white hover:opacity-90 w-full sm:w-auto"
+                style={{ backgroundColor: '#00A3AD' }}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Capability Statement
