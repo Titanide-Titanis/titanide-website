@@ -12,11 +12,10 @@ const Services = () => {
       icon: Shield,
       features: [
         "Regulatory compliance framework development",
-        "Policy and procedure development",
+        "Policy and procedure development", 
         "Compliance monitoring and reporting",
         "Regulatory change management"
-      ],
-      color: "bg-blue-50 border-blue-200"
+      ]
     },
     {
       title: "Risk Assessment & Management", 
@@ -27,8 +26,7 @@ const Services = () => {
         "Risk register development and maintenance",
         "Risk mitigation strategy development",
         "Ongoing risk monitoring programs"
-      ],
-      color: "bg-green-50 border-green-200"
+      ]
     },
     {
       title: "Training & Development",
@@ -39,8 +37,7 @@ const Services = () => {
         "Leadership development in compliance",
         "Regulatory awareness sessions",
         "Competency assessment and development"
-      ],
-      color: "bg-purple-50 border-purple-200"
+      ]
     },
     {
       title: "Advisory Services",
@@ -51,8 +48,7 @@ const Services = () => {
         "Strategic compliance planning",
         "Industry best practice implementation",
         "Regulatory submission support"
-      ],
-      color: "bg-orange-50 border-orange-200"
+      ]
     }
   ];
 
@@ -90,58 +86,101 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: '1.6' }}>
       {/* Header Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-16">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Professional Compliance Services
-            </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8">
-              Delivering regulatory compliance solutions for your competitive advantage
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Badge variant="secondary" className="bg-blue-700 text-white hover:bg-blue-600">
-                Regulatory Expertise
-              </Badge>
-              <Badge variant="secondary" className="bg-blue-700 text-white hover:bg-blue-600">
-                Risk Management
-              </Badge>
-              <Badge variant="secondary" className="bg-blue-700 text-white hover:bg-blue-600">
-                Strategic Advisory
-              </Badge>
-            </div>
+      <div 
+        className="text-white py-16 px-8"
+        style={{ 
+          background: 'linear-gradient(135deg, #002B45, #005870)',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto max-w-4xl text-center">
+          <h1 
+            className="font-bold mb-6 text-white"
+            style={{ 
+              fontSize: '2.8rem',
+              animation: 'slideInDown 1s ease-out'
+            }}
+          >
+            Professional Compliance Services
+          </h1>
+          <p 
+            className="mb-8"
+            style={{ 
+              fontSize: '1.2rem',
+              animation: 'slideInUp 1.2s ease-out'
+            }}
+          >
+            Delivering regulatory compliance solutions for your competitive advantage
+          </p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Badge 
+              variant="secondary" 
+              className="text-white hover:opacity-90"
+              style={{ backgroundColor: '#00A3AD' }}
+            >
+              Regulatory Expertise
+            </Badge>
+            <Badge 
+              variant="secondary" 
+              className="text-white hover:opacity-90"
+              style={{ backgroundColor: '#00A3AD' }}
+            >
+              Risk Management
+            </Badge>
+            <Badge 
+              variant="secondary" 
+              className="text-white hover:opacity-90"
+              style={{ backgroundColor: '#00A3AD' }}
+            >
+              Strategic Advisory
+            </Badge>
           </div>
         </div>
       </div>
 
       {/* Core Services Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div 
+        className="py-16 px-8"
+        style={{ 
+          backgroundColor: '#f4f4f4',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="mb-12">
+            <h2 
+              className="font-bold mb-4"
+              style={{ 
+                fontSize: '2rem',
+                color: '#003f5c',
+                borderLeft: '5px solid #00A3AD',
+                paddingLeft: '1rem',
+                marginBottom: '1.25rem'
+              }}
+            >
               Our Core Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg max-w-3xl" style={{ fontSize: '1.05rem' }}>
               We provide comprehensive compliance solutions designed to protect your organization 
               and enhance your competitive position in the marketplace.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
             {coreServices.map((service, index) => (
-              <Card key={index} className={`${service.color} hover:shadow-lg transition-shadow`}>
+              <Card key={index} className="hover:shadow-lg transition-shadow bg-white">
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-white rounded-lg shadow-sm">
-                      <service.icon className="h-6 w-6 text-blue-600" />
+                    <div className="p-3 rounded-lg shadow-sm" style={{ backgroundColor: '#eaf6f8' }}>
+                      <service.icon className="h-6 w-6" style={{ color: '#005870' }} />
                     </div>
                     <div>
-                      <CardTitle className="text-xl text-gray-900">{service.title}</CardTitle>
+                      <CardTitle className="text-xl" style={{ color: '#002B45' }}>{service.title}</CardTitle>
                     </div>
                   </div>
-                  <CardDescription className="text-gray-700 text-base">
+                  <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -149,8 +188,8 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-700">{feature}</span>
+                        <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" style={{ color: '#00A3AD' }} />
+                        <span style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -162,23 +201,37 @@ const Services = () => {
       </div>
 
       {/* Specialized Services Section */}
-      <div className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+      <div 
+        className="py-16 px-8"
+        style={{ 
+          backgroundColor: '#eaf6f8',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="mb-12">
+            <h2 
+              className="font-bold mb-4"
+              style={{ 
+                fontSize: '2rem',
+                color: '#003f5c',
+                borderLeft: '5px solid #00A3AD',
+                paddingLeft: '1rem'
+              }}
+            >
               Specialized Services
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg max-w-3xl" style={{ fontSize: '1.05rem' }}>
               Advanced compliance solutions tailored to meet specific industry requirements and regulatory challenges.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8">
             {specializedServices.map((service, index) => (
-              <Card key={index} className="border-2 hover:border-blue-300 hover:shadow-lg transition-all">
+              <Card key={index} className="border-2 hover:shadow-lg transition-all bg-white" style={{ borderColor: '#00A3AD' }}>
                 <CardHeader>
-                  <CardTitle className="text-xl text-gray-900 mb-2">{service.title}</CardTitle>
-                  <CardDescription className="text-gray-600">
+                  <CardTitle className="text-xl mb-2" style={{ color: '#002B45', fontSize: '1.5rem' }}>{service.title}</CardTitle>
+                  <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
                     {service.description}
                   </CardDescription>
                 </CardHeader>
@@ -186,8 +239,8 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.details.map((detail, idx) => (
                       <li key={idx} className="flex items-start gap-2">
-                        <ArrowRight className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
-                        <span className="text-gray-700 text-sm">{detail}</span>
+                        <ArrowRight className="h-4 w-4 mt-1 flex-shrink-0" style={{ color: '#005870' }} />
+                        <span style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>{detail}</span>
                       </li>
                     ))}
                   </ul>
@@ -199,65 +252,101 @@ const Services = () => {
       </div>
 
       {/* Value Proposition Section */}
-      <div className="py-16 bg-blue-50">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Why Choose Titanice Consulting Group?
-              </h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <Award className="h-6 w-6 text-blue-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Proven Expertise</h3>
-                    <p className="text-gray-600">Deep industry knowledge and regulatory expertise across multiple sectors</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <Shield className="h-6 w-6 text-blue-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Risk-Based Approach</h3>
-                    <p className="text-gray-600">Tailored solutions that prioritize your highest compliance risks</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <Users className="h-6 w-6 text-blue-600 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Collaborative Partnership</h3>
-                    <p className="text-gray-600">We work alongside your team to build sustainable compliance capabilities</p>
-                  </div>
+      <div className="py-16 px-8" style={{ backgroundColor: '#fdfdfd' }}>
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 
+              className="font-bold mb-4"
+              style={{ 
+                fontSize: '2rem',
+                color: '#003f5c',
+                borderLeft: '5px solid #00A3AD',
+                paddingLeft: '1rem',
+                display: 'inline-block'
+              }}
+            >
+              Why Choose Titanide Consulting Group?
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <Award className="h-6 w-6 mt-1" style={{ color: '#005870' }} />
+                <div>
+                  <h3 className="font-semibold mb-2" style={{ color: '#002B45', fontWeight: '600' }}>Proven Expertise</h3>
+                  <p style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>Deep industry knowledge and regulatory expertise across multiple sectors</p>
                 </div>
               </div>
               
-              <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Ready to Get Started?</h3>
-                <p className="text-gray-600 mb-6">
-                  Contact us today to discuss how we can help strengthen your organization's compliance framework.
-                </p>
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-blue-600" />
-                    <span className="text-gray-700">+1 (555) 123-4567</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-blue-600" />
-                    <span className="text-gray-700">info@titaniceconsulting.com</span>
-                  </div>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white mt-4">
-                    Schedule a Consultation
-                  </Button>
+              <div className="flex items-start gap-4">
+                <Shield className="h-6 w-6 mt-1" style={{ color: '#005870' }} />
+                <div>
+                  <h3 className="font-semibold mb-2" style={{ color: '#002B45', fontWeight: '600' }}>Risk-Based Approach</h3>
+                  <p style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>Tailored solutions that prioritize your highest compliance risks</p>
                 </div>
+              </div>
+              
+              <div className="flex items-start gap-4">
+                <Users className="h-6 w-6 mt-1" style={{ color: '#005870' }} />
+                <div>
+                  <h3 className="font-semibold mb-2" style={{ color: '#002B45', fontWeight: '600' }}>Collaborative Partnership</h3>
+                  <p style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>We work alongside your team to build sustainable compliance capabilities</p>
+                </div>
+              </div>
+            </div>
+            
+            <div 
+              className="p-8 rounded-lg shadow-sm"
+              style={{ 
+                backgroundColor: 'white',
+                border: '2px dashed #00A3AD',
+                borderRadius: '10px'
+              }}
+            >
+              <h3 className="text-xl font-bold mb-4" style={{ color: '#002B45' }}>Ready to Get Started?</h3>
+              <p className="mb-6" style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
+                Contact us today to discuss how we can help strengthen your organization's compliance framework.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <Phone className="h-5 w-5" style={{ color: '#005870' }} />
+                  <span style={{ color: '#1a1a1a' }}>+1 (555) 123-4567</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Mail className="h-5 w-5" style={{ color: '#005870' }} />
+                  <span style={{ color: '#1a1a1a' }}>info@titanideconsulting.com</span>
+                </div>
+                <Button 
+                  className="w-full text-white mt-4 hover:opacity-90"
+                  style={{ 
+                    backgroundColor: '#002B45',
+                    padding: '0.75rem 1.5rem',
+                    fontWeight: '600'
+                  }}
+                >
+                  Schedule a Consultation
+                </Button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes slideInDown {
+          0% { transform: translateY(-20px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInUp {
+          0% { transform: translateY(20px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+      `}</style>
     </div>
   );
 };

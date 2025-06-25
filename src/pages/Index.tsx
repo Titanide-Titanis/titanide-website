@@ -6,24 +6,54 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: '1.6' }}>
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 text-white py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            TITANICE CONSULTING GROUP
+      <div 
+        className="text-white py-16 px-8 text-center"
+        style={{ 
+          background: 'linear-gradient(135deg, #002B45, #005870)',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto">
+          <h1 
+            className="font-bold mb-4 text-white"
+            style={{ 
+              fontSize: '2.8rem',
+              animation: 'slideInDown 1s ease-out'
+            }}
+          >
+            TITANIDE CONSULTING GROUP
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto">
+          <p 
+            className="max-w-3xl mx-auto"
+            style={{ 
+              fontSize: '1.2rem',
+              animation: 'slideInUp 1.2s ease-out'
+            }}
+          >
             Delivering regulatory compliance solutions for your competitive advantage
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link to="/services">
-              <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
+              <Button 
+                size="lg" 
+                className="text-white hover:opacity-90"
+                style={{ backgroundColor: '#00A3AD' }}
+              >
                 Our Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white"
+              style={{ 
+                borderColor: 'white',
+                color: 'white'
+              }}
+            >
               Contact Us
             </Button>
           </div>
@@ -31,55 +61,70 @@ const Index = () => {
       </div>
 
       {/* Services Preview Section */}
-      <div className="py-16 bg-gray-50">
-        <div className="container mx-auto px-6">
+      <div 
+        className="py-16 px-8"
+        style={{ 
+          backgroundColor: '#f4f4f4',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            <h2 
+              className="font-bold mb-4"
+              style={{ 
+                fontSize: '2rem',
+                color: '#003f5c',
+                borderLeft: '5px solid #00A3AD',
+                paddingLeft: '1rem',
+                display: 'inline-block'
+              }}
+            >
               Our Expertise
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg max-w-3xl mx-auto mt-4" style={{ fontSize: '1.05rem' }}>
               We specialize in regulatory compliance management, risk assessment, and strategic advisory services
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="text-center hover:shadow-lg transition-shadow">
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                  <Shield className="h-8 w-8 text-blue-600" />
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                  <Shield className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl">Compliance Management</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Compliance Management</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600">
+                <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
                   Comprehensive regulatory compliance frameworks tailored to your industry and organizational needs
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                  <Users className="h-8 w-8 text-green-600" />
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                  <Users className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl">Training & Development</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Training & Development</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600">
+                <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
                   Build compliance capability within your organization through customized training programs
                 </CardDescription>
               </CardContent>
             </Card>
 
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
-                <div className="mx-auto w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-4">
-                  <Award className="h-8 w-8 text-purple-600" />
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                  <Award className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl">Strategic Advisory</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Strategic Advisory</CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-gray-600">
+                <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
                   Expert guidance on complex regulatory matters and strategic compliance planning
                 </CardDescription>
               </CardContent>
@@ -88,7 +133,11 @@ const Index = () => {
 
           <div className="text-center mt-12">
             <Link to="/services">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+              <Button 
+                size="lg" 
+                style={{ backgroundColor: '#002B45' }}
+                className="hover:opacity-90"
+              >
                 View All Services
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -98,17 +147,42 @@ const Index = () => {
       </div>
 
       {/* Contact Section */}
-      <div className="py-16 bg-blue-900 text-white">
-        <div className="container mx-auto px-6 text-center">
+      <div 
+        className="py-12 px-8 text-white text-center"
+        style={{ 
+          backgroundColor: '#002837',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-4">Ready to Strengthen Your Compliance?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ fontSize: '1.1rem' }}>
             Contact us today to discuss how we can help your organization achieve regulatory excellence
           </p>
-          <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100">
+          <Button 
+            size="lg" 
+            className="text-white hover:opacity-90"
+            style={{ backgroundColor: '#00A3AD' }}
+          >
             Get Started
           </Button>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        @keyframes slideInDown {
+          0% { transform: translateY(-20px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInUp {
+          0% { transform: translateY(20px); opacity: 0; }
+          100% { transform: translateY(0); opacity: 1; }
+        }
+      `}</style>
     </div>
   );
 };
