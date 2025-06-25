@@ -1,7 +1,8 @@
 
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Users, Award, ArrowRight } from "lucide-react";
+import { Shield, Database, Lock, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -50,11 +51,11 @@ const Index = () => {
                 <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
                   <Shield className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Fractional Compliance Oversight</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Fractional Compliance Leadership</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
-                  Comprehensive, fractional compliance oversight that designs and steers regulatory frameworks precisely aligned to your industry and organizational needs.
+                  Board-caliber CCO oversight—on demand. We embed seasoned compliance executives who govern policy, run audits, and brief leadership, giving you full-scale assurance without full-time payroll.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -62,13 +63,13 @@ const Index = () => {
             <Card className="text-center hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
-                  <Users className="h-8 w-8" style={{ color: '#005870' }} />
+                  <Database className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Training & Development</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>EHR Remediation & UDS Recovery</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
-                  Build compliance capability within your organization through customized training programs
+                  From data forensics to system re-engineering, we rescue corrupted EHRs, rebuild UDS datasets, and file error-free reports—protecting HRSA funding and 340B status in record time.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -76,13 +77,13 @@ const Index = () => {
             <Card className="text-center hover:shadow-lg transition-shadow bg-white">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
-                  <Award className="h-8 w-8" style={{ color: '#005870' }} />
+                  <Lock className="h-8 w-8" style={{ color: '#005870' }} />
                 </div>
-                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Strategic Advisory</CardTitle>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Integrated Risk & Security Assurance</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription style={{ color: '#1a1a1a', fontSize: '1.05rem' }}>
-                  Expert guidance on complex regulatory matters and strategic compliance planning
+                  ISO 27001, NIST, and HIPAA-aligned risk assessments translated into clear executive actions. We pinpoint vulnerabilities, prioritize fixes, and automate monitoring so you stay audit-ready and breach-proof year-round.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -147,3 +148,4 @@ const Index = () => {
 };
 
 export default Index;
+
