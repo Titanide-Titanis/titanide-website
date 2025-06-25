@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, FileText, Tool, ArrowRight } from 'lucide-react';
+import { BookOpen, FileText, Wrench, ArrowRight } from 'lucide-react';
 
 const Resources = () => {
   return (
@@ -64,7 +63,7 @@ const Resources = () => {
             <Link to="/resources/free-tools" className="group">
               <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: '#002B45' }}>
-                  <Tool className="h-8 w-8 text-white" />
+                  <Wrench className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-center" style={{ color: '#002B45' }}>
                   Free Tools
