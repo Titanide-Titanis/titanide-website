@@ -1,8 +1,6 @@
-
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Database, Lock, ArrowRight } from "lucide-react";
+import { Shield, Database, Lock, ArrowRight, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Index = () => {
@@ -117,13 +115,36 @@ const Index = () => {
           <p className="text-xl mb-8 max-w-2xl mx-auto" style={{ fontSize: '1.1rem' }}>
             Contact us today to discuss how we can help your organization achieve regulatory excellence
           </p>
-          <Button 
-            size="lg" 
-            className="text-white hover:opacity-90"
-            style={{ backgroundColor: '#00A3AD' }}
-          >
-            Get Started
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a 
+              href="https://titanide.zohobookings.com/#/3973691000005149002" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Button 
+                size="lg" 
+                className="text-white hover:opacity-90"
+                style={{ backgroundColor: '#00A3AD' }}
+              >
+                Get Started
+              </Button>
+            </a>
+            <a 
+              href="https://www.titanideconsulting.com/Titanide%20Consulting%20Capabitlity%20Statement-Final.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              download
+            >
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="text-white border-white hover:bg-white hover:text-gray-900"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Download Capability Statement
+              </Button>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -148,4 +169,3 @@ const Index = () => {
 };
 
 export default Index;
-
