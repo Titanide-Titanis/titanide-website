@@ -55,13 +55,13 @@ const Services = () => {
   const specializedServices = [
     {
       title: "EHR Remediation & UDS Recovery Suite",
-      description: "Turnkey solution for rural FQHCs facing EHR mis-configuration and UDS reporting gaps",
+      description: "Turnkey solution for FQHCs facing EHR mis-configuration and UDS reporting gaps",
       icon: Database,
       highlights: [
         "Proven track record: Preserved $8M+ in Section 330 grant funding",
         "90-day turnaround for complete EHR reconstruction",
         "End-to-end UDS file restoration and error-free reporting",
-        "Specialized focus on rural FQHC operations"
+        "Specialized focus on FQHC operations"
       ],
       details: [
         "EHR data table rebuilding and re-engineering",
@@ -121,7 +121,7 @@ const Services = () => {
               animation: 'slideInDown 1s ease-out'
             }}
           >
-            Professional Compliance Services
+            Compliance & Risk Leadership Solutions
           </h1>
           <p 
             className="mb-8"
@@ -235,14 +235,14 @@ const Services = () => {
                 </div>
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-2">EHR Remediation & UDS Recovery Suite</h2>
-                  <p className="text-lg" style={{ color: '#B0E0E6' }}>Specialized for Rural FQHCs</p>
+                  <p className="text-lg" style={{ color: '#B0E0E6' }}>Specialized for FQHCs</p>
                 </div>
               </div>
               
               <div className="mb-6">
                 <h3 className="text-xl font-semibold mb-3 text-white">Why It Matters</h3>
                 <p className="text-base leading-relaxed" style={{ color: '#E6F3FF' }}>
-                  Rural FQHCs live or die by Uniform Data System (UDS) metrics—yet most operate without dedicated IT or data-management staff. 
+                  FQHCs live or die by Uniform Data System (UDS) metrics—yet most operate without dedicated IT or data-management staff. 
                   When EHR mis-configuration, data loss, or reporting gaps threaten HRSA grant funding, leadership needs a turnkey fix that 
                   restores data integrity fast and keeps it that way.
                 </p>
@@ -251,8 +251,8 @@ const Services = () => {
               <div className="mb-6">
                 <h3 className="text-xl font-semibold mb-3 text-white">Our Proven Track Record</h3>
                 <p className="text-base leading-relaxed mb-4" style={{ color: '#E6F3FF' }}>
-                  At TAN Healthcare we salvaged three years of incomplete UDS files caused by a failed EHR migration. 
-                  Within 90 days Titanide rebuilt the data tables, re-engineered the EHR, and submitted error-free reports—preserving 
+                  We salvaged three years of incomplete UDS files caused by a failed EHR migration. 
+                  Within 90 days we rebuilt the data tables, re-engineered the EHR, and submitted error-free reports—preserving 
                   over $8 million in Section 330 grant funding and 340B eligibility.
                 </p>
                 <p className="text-base font-medium" style={{ color: '#00A3AD' }}>
@@ -272,16 +272,22 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button 
-                  className="w-full text-white hover:opacity-90"
-                  style={{ 
-                    backgroundColor: '#00A3AD',
-                    padding: '0.75rem 1.5rem',
-                    fontWeight: '600'
-                  }}
+                <a 
+                  href="https://titanide.zohobookings.com/#/3973691000005149002"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Learn More About EHR Recovery
-                </Button>
+                  <Button 
+                    className="w-full text-white hover:opacity-90"
+                    style={{ 
+                      backgroundColor: '#00A3AD',
+                      padding: '0.75rem 1.5rem',
+                      fontWeight: '600'
+                    }}
+                  >
+                    Learn More About EHR Recovery
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -399,22 +405,28 @@ const Services = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5" style={{ color: '#005870' }} />
-                  <span style={{ color: '#1a1a1a' }}>+1 (555) 123-4567</span>
+                  <span style={{ color: '#1a1a1a' }}>832-735-8880</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5" style={{ color: '#005870' }} />
                   <span style={{ color: '#1a1a1a' }}>info@titanideconsulting.com</span>
                 </div>
-                <Button 
-                  className="w-full text-white mt-4 hover:opacity-90"
-                  style={{ 
-                    backgroundColor: '#002B45',
-                    padding: '0.75rem 1.5rem',
-                    fontWeight: '600'
-                  }}
+                <a 
+                  href="https://titanide.zohobookings.com/#/3973691000005149002"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Schedule a Consultation
-                </Button>
+                  <Button 
+                    className="w-full text-white mt-4 hover:opacity-90"
+                    style={{ 
+                      backgroundColor: '#002B45',
+                      padding: '0.75rem 1.5rem',
+                      fontWeight: '600'
+                    }}
+                  >
+                    Schedule a Discovery Call
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
