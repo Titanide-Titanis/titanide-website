@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, FileText, Wrench, ArrowRight } from 'lucide-react';
@@ -21,17 +22,17 @@ const Resources = () => {
       <section className="py-16 px-4 sm:px-8">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Blog Section */}
+            {/* TITANIDE Compliance Corner Section */}
             <Link to="/resources/blog" className="group">
               <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: '#002B45' }}>
                   <BookOpen className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-center" style={{ color: '#002B45' }}>
-                  Expert Blog
+                  TITANIDE Compliance Corner™
                 </h3>
                 <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                  Stay informed with the latest compliance insights, regulatory updates, and strategic guidance from our leadership team.
+                  Executive-level briefings, bite-sized regulatory trend analyses, and field-tested tactics—curated weekly by Titanide's leadership so you're always one step ahead of auditors.
                 </p>
                 <div className="flex items-center justify-center text-sm font-medium group-hover:translate-x-1 transition-transform" style={{ color: '#00A3AD' }}>
                   <span>Explore Articles</span>
@@ -40,17 +41,17 @@ const Resources = () => {
               </div>
             </Link>
 
-            {/* Use Cases Section */}
+            {/* Client Impact Stories Section */}
             <Link to="/resources/use-cases" className="group">
               <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: '#002B45' }}>
                   <FileText className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-center" style={{ color: '#002B45' }}>
-                  Success Stories
+                  Client Impact Stories
                 </h3>
                 <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                  Discover how organizations have transformed their compliance operations with our strategic frameworks and guidance.
+                  Real-world turnarounds of rural FQHCs and healthcare systems that cut risk, passed HRSA audits, and protected millions in funding through our proven frameworks.
                 </p>
                 <div className="flex items-center justify-center text-sm font-medium group-hover:translate-x-1 transition-transform" style={{ color: '#00A3AD' }}>
                   <span>View Case Studies</span>
@@ -59,17 +60,17 @@ const Resources = () => {
               </div>
             </Link>
 
-            {/* Free Tools Section */}
+            {/* Regulatory Toolkit Section */}
             <Link to="/resources/free-tools" className="group">
               <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: '#002B45' }}>
                   <Wrench className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-center" style={{ color: '#002B45' }}>
-                  Free Tools
+                  Regulatory Toolkit
                 </h3>
                 <p className="text-gray-600 text-center mb-6 leading-relaxed">
-                  Access our collection of practical compliance tools, templates, and resources to enhance your governance capabilities.
+                  Download ready-to-use checklists, templates, and interactive dashboards that fast-track your governance maturity—free for the Titanide community.
                 </p>
                 <div className="flex items-center justify-center text-sm font-medium group-hover:translate-x-1 transition-transform" style={{ color: '#00A3AD' }}>
                   <span>Access Tools</span>
