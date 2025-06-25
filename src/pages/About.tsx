@@ -76,18 +76,13 @@ const About = () => {
               <p className="text-base sm:text-lg font-medium mb-4" style={{ color: '#005870' }}>
                 Fractional Chief Compliance Officer
               </p>
-              <div className="space-y-2 text-sm sm:text-base" style={{ color: '#1a1a1a' }}>
-                <p><strong>MS, Healthcare Administration</strong> - University of Houston-Clear Lake</p>
-                <p><strong>MBA, Healthcare Management</strong> - University of Houston-Clear Lake</p>
-                <p><strong>BS, Health Information Management</strong> - Texas State University</p>
-              </div>
             </div>
 
             <div className="space-y-6">
               <div>
                 <h4 className="text-lg sm:text-xl font-semibold mb-3" style={{ color: '#002B45' }}>Professional Overview</h4>
                 <p className="text-sm sm:text-base leading-relaxed mb-4">
-                  Kelly Menefee Okpala brings over 15 years of enterprise-level experience in regulatory compliance, risk management, and healthcare operations. As a seasoned executive and fractional Chief Compliance Officer, she has successfully guided organizations through complex regulatory landscapes while building robust compliance infrastructures that drive operational excellence.
+                  Kelly Menefee Okpala brings over 10 years of enterprise-level experience in regulatory compliance, risk management, and healthcare operations. As a seasoned executive and fractional Chief Compliance Officer, she has successfully guided organizations through complex regulatory landscapes while building robust compliance infrastructures that drive operational excellence.
                 </p>
                 <p className="text-sm sm:text-base leading-relaxed">
                   Known for her precision and transformational leadership across healthcare, IT, and telecommunications, Kelly delivers comprehensive frameworks that ensure organizations not only meet but exceed governance expectations.
@@ -149,7 +144,7 @@ const About = () => {
                 </svg>
               </div>
               <h3 className="text-lg font-semibold mb-3 text-center" style={{ color: '#002B45' }}>Proven Track Record</h3>
-              <p className="text-sm sm:text-base text-center">15+ years of executive-level compliance leadership across multiple industries and regulatory environments.</p>
+              <p className="text-sm sm:text-base text-center">10+ years of executive-level compliance leadership across multiple industries and regulatory environments.</p>
             </div>
 
             <div className="bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
