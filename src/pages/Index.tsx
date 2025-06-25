@@ -137,8 +137,8 @@ const Index = () => {
             >
               <Button 
                 size="lg" 
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-gray-900"
+                className="text-white hover:opacity-90"
+                style={{ backgroundColor: '#00A3AD' }}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Capability Statement
