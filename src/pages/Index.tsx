@@ -72,6 +72,7 @@ const Index = () => {
                 className="mx-auto lg:mx-0 rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80"
                 style={{ 
                   objectFit: 'cover',
+                  objectPosition: 'center top',
                   border: '4px solid #00A3AD'
                 }}
               />
