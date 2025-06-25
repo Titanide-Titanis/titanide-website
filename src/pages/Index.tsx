@@ -8,44 +8,12 @@ const Index = () => {
     <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: '1.6' }}>
       {/* Hero Section */}
       <div 
-        className="text-white py-16 px-8 text-center"
+        className="py-16 px-8"
         style={{ 
           background: 'linear-gradient(135deg, #002B45, #005870)',
           animation: 'fadeIn 1.5s ease-out'
         }}
       >
-        <div className="container mx-auto">
-          <h1 
-            className="font-bold mb-4 text-white"
-            style={{ 
-              fontSize: '2.8rem',
-              animation: 'slideInDown 1s ease-out'
-            }}
-          >
-            TITANIDE CONSULTING GROUP
-          </h1>
-          <p 
-            className="max-w-3xl mx-auto"
-            style={{ 
-              fontSize: '1.2rem',
-              animation: 'slideInUp 1.2s ease-out'
-            }}
-          >
-            Delivering regulatory compliance solutions for your competitive advantage
-          </p>
-          <div className="flex justify-center mt-8">
-            <Link to="/services">
-              <Button 
-                size="lg" 
-                className="text-white hover:opacity-90"
-                style={{ backgroundColor: '#00A3AD' }}
-              >
-                Our Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-          </div>
-        </div>
       </div>
 
       {/* Services Preview Section */}
