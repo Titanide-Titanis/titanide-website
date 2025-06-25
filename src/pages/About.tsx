@@ -61,7 +61,7 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             <div className="text-center lg:text-left">
               <img 
-                src="https://previewengine-accl.zoho.com/image/WD/9rk2kec3040c46c2e476f8905ede61724aef5?version=1.0&width=2046&height=1536" 
+                src="https://previewengine-accl.zoho.com/image/WD/vd6x51381374637074522b3c7b6804563c500?version=1.0&width=2046&height=1536" 
                 alt="Kelly Menefee Okpala – Titanide Founder" 
                 className="mx-auto lg:mx-0 rounded-full shadow-xl w-48 h-48 sm:w-64 sm:h-64 mb-6"
                 style={{ 
