@@ -13,7 +13,8 @@ const Blog = () => {
       date: "December 15, 2024",
       readTime: "8 min read",
       category: "Healthcare Compliance",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop",
+      slug: "future-compliance-leadership"
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ const Blog = () => {
       date: "December 10, 2024",
       readTime: "6 min read",
       category: "Leadership Strategy",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=300&fit=crop",
+      slug: "fractional-leadership-advantage"
     },
     {
       id: 3,
@@ -33,7 +35,8 @@ const Blog = () => {
       date: "December 5, 2024",
       readTime: "10 min read",
       category: "Risk Management",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop",
+      slug: "risk-management-frameworks"
     },
     {
       id: 4,
@@ -43,7 +46,8 @@ const Blog = () => {
       date: "November 28, 2024",
       readTime: "7 min read",
       category: "Data Protection",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop",
+      slug: "hipaa-digital-age"
     }
   ];
 
@@ -88,7 +92,7 @@ const Blog = () => {
                     </div>
                     
                     <h2 className="text-2xl font-bold mb-4 hover:opacity-80 transition-opacity" style={{ color: '#002B45' }}>
-                      <a href="#" className="no-underline">{post.title}</a>
+                      <Link to={`/resources/blog/${post.slug}`} className="no-underline">{post.title}</Link>
                     </h2>
                     
                     <p className="text-gray-600 mb-6 leading-relaxed">
@@ -111,13 +115,13 @@ const Blog = () => {
                         </div>
                       </div>
                       
-                      <a 
-                        href="#" 
+                      <Link 
+                        to={`/resources/blog/${post.slug}`}
                         className="text-sm font-medium hover:opacity-70 transition-opacity"
                         style={{ color: '#00A3AD' }}
                       >
                         Read More →
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

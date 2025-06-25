@@ -12,6 +12,10 @@ import Blog from "./pages/Blog";
 import UseCases from "./pages/UseCases";
 import FreeTools from "./pages/FreeTools";
 import NotFound from "./pages/NotFound";
+import FutureOfComplianceLeadership from "./pages/articles/FutureOfComplianceLeadership";
+import FractionalLeadershipAdvantage from "./pages/articles/FractionalLeadershipAdvantage";
+import RiskManagementFrameworks from "./pages/articles/RiskManagementFrameworks";
+import HIPAADigitalAge from "./pages/articles/HIPAADigitalAge";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +31,10 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/blog" element={<Blog />} />
+          <Route path="/resources/blog/future-compliance-leadership" element={<FutureOfComplianceLeadership />} />
+          <Route path="/resources/blog/fractional-leadership-advantage" element={<FractionalLeadershipAdvantage />} />
+          <Route path="/resources/blog/risk-management-frameworks" element={<RiskManagementFrameworks />} />
+          <Route path="/resources/blog/hipaa-digital-age" element={<HIPAADigitalAge />} />
           <Route path="/resources/use-cases" element={<UseCases />} />
           <Route path="/resources/free-tools" element={<FreeTools />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

@@ -91,7 +91,7 @@ const Resources = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Featured Blog Post */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+            <Link to="/resources/blog/future-compliance-leadership" className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
               <div className="h-48 bg-gradient-to-r from-blue-500 to-teal-500"></div>
               <div className="p-6">
                 <div className="text-xs font-semibold mb-2" style={{ color: '#00A3AD' }}>BLOG POST</div>
@@ -102,7 +102,7 @@ const Resources = () => {
                   Exploring emerging trends in regulatory governance and fractional executive leadership models.
                 </p>
               </div>
-            </div>
+            </Link>
 
             {/* Featured Use Case */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
