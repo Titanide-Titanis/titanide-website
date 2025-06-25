@@ -7,10 +7,10 @@ const About = () => {
       {/* Hero Section */}
       <header className="py-12 sm:py-20 px-4 sm:px-8 text-center text-white" style={{ background: 'linear-gradient(135deg, #002B45, #005870)', animation: 'fadeIn 1.5s ease-out' }}>
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ animation: 'slideInDown 1s ease-out' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white" style={{ animation: 'slideInDown 1s ease-out' }}>
             Discover Titanide Consulting
           </h1>
-          <p className="text-lg sm:text-xl max-w-4xl mx-auto" style={{ animation: 'slideInUp 1.2s ease-out' }}>
+          <p className="text-lg sm:text-xl max-w-4xl mx-auto text-white" style={{ animation: 'slideInUp 1.2s ease-out' }}>
             Empowering enterprises through strategic compliance, dynamic leadership, and future-focused risk governance.
           </p>
         </div>
@@ -193,8 +193,8 @@ const About = () => {
       {/* Contact Section */}
       <section className="py-12 sm:py-16 px-4 sm:px-8 text-center text-white" style={{ backgroundColor: '#002837' }}>
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Ready to Transform Your Compliance Strategy?</h2>
-          <p className="text-base sm:text-lg mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Ready to Transform Your Compliance Strategy?</h2>
+          <p className="text-base sm:text-lg mb-8 max-w-2xl mx-auto text-white">
             Want to learn more about our leadership or engage Titanide for your next project? Let's start the conversation.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
