@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Users, Award, ArrowRight } from "lucide-react";
@@ -34,7 +33,7 @@ const Index = () => {
           >
             Delivering regulatory compliance solutions for your competitive advantage
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+          <div className="flex justify-center mt-8">
             <Link to="/services">
               <Button 
                 size="lg" 
@@ -45,17 +44,6 @@ const Index = () => {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white hover:text-gray-900"
-              style={{ 
-                borderColor: 'white',
-                color: 'white'
-              }}
-            >
-              Contact Us
-            </Button>
           </div>
         </div>
       </div>
