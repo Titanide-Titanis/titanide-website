@@ -4,50 +4,100 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 
 const Blog = () => {
-  const blogPosts = [
+  const serviceCategories = [
     {
-      id: 1,
-      title: "The Future of Compliance Leadership in Healthcare",
-      excerpt: "As healthcare regulations continue to evolve, organizations need adaptive compliance frameworks that can scale with changing requirements.",
-      author: "Kelly Menefee Okpala",
-      date: "December 15, 2024",
-      readTime: "8 min read",
-      category: "Healthcare Compliance",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop",
-      slug: "future-compliance-leadership"
+      name: "Compliance Management",
+      description: "Framework development, policy creation, and regulatory adherence strategies",
+      articles: [
+        {
+          id: 1,
+          title: "The Future of Compliance Leadership in Healthcare",
+          excerpt: "As healthcare regulations continue to evolve, organizations need adaptive compliance frameworks that can scale with changing requirements.",
+          author: "Kelly Menefee Okpala",
+          date: "December 15, 2024",
+          readTime: "8 min read",
+          image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop",
+          slug: "future-compliance-leadership"
+        },
+        {
+          id: 2,
+          title: "Strategic Policy Development for Healthcare Organizations",
+          excerpt: "Build comprehensive policy frameworks that ensure regulatory compliance while supporting operational efficiency and quality patient care.",
+          author: "Kelly Menefee Okpala",
+          date: "December 22, 2024",
+          readTime: "7 min read",
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=300&fit=crop",
+          slug: "policy-development-framework"
+        },
+        {
+          id: 3,
+          title: "HIPAA Compliance in the Digital Age",
+          excerpt: "Navigate the complexities of healthcare data protection in an increasingly connected world with practical compliance strategies.",
+          author: "Kelly Menefee Okpala",
+          date: "November 28, 2024",
+          readTime: "7 min read",
+          image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop",
+          slug: "hipaa-digital-age"
+        }
+      ]
     },
     {
-      id: 2,
-      title: "Fractional Leadership: The Strategic Advantage",
-      excerpt: "Discover how fractional executive leadership delivers enterprise-level expertise without the full-time commitment and cost.",
-      author: "Kelly Menefee Okpala",
-      date: "December 10, 2024",
-      readTime: "6 min read",
-      category: "Leadership Strategy",
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=300&fit=crop",
-      slug: "fractional-leadership-advantage"
+      name: "Risk Assessment & Management",
+      description: "Risk identification, assessment methodologies, and mitigation strategies",
+      articles: [
+        {
+          id: 4,
+          title: "Building Resilient Risk Management Frameworks",
+          excerpt: "Learn how to create risk management systems that adapt to emerging threats while maintaining operational efficiency.",
+          author: "Kelly Menefee Okpala",
+          date: "December 5, 2024",
+          readTime: "10 min read",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop",
+          slug: "risk-management-frameworks"
+        }
+      ]
     },
     {
-      id: 3,
-      title: "Building Resilient Risk Management Frameworks",
-      excerpt: "Learn how to create risk management systems that adapt to emerging threats while maintaining operational efficiency.",
-      author: "Kelly Menefee Okpala",
-      date: "December 5, 2024",
-      readTime: "10 min read",
-      category: "Risk Management",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop",
-      slug: "risk-management-frameworks"
+      name: "Training & Development",
+      description: "Compliance education, skill building, and organizational capability enhancement",
+      articles: [
+        {
+          id: 5,
+          title: "Building Effective Compliance Training Programs",
+          excerpt: "Transform your organization's compliance culture through strategic training programs that engage, educate, and empower your workforce.",
+          author: "Kelly Menefee Okpala",
+          date: "December 20, 2024",
+          readTime: "9 min read",
+          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+          slug: "compliance-training-best-practices"
+        }
+      ]
     },
     {
-      id: 4,
-      title: "HIPAA Compliance in the Digital Age",
-      excerpt: "Navigate the complexities of healthcare data protection in an increasingly connected world with practical compliance strategies.",
-      author: "Kelly Menefee Okpala",
-      date: "November 28, 2024",
-      readTime: "7 min read",
-      category: "Data Protection",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop",
-      slug: "hipaa-digital-age"
+      name: "Advisory Services",
+      description: "Strategic guidance, leadership solutions, and best practice implementation",
+      articles: [
+        {
+          id: 6,
+          title: "Fractional Leadership: The Strategic Advantage",
+          excerpt: "Discover how fractional executive leadership delivers enterprise-level expertise without the full-time commitment and cost.",
+          author: "Kelly Menefee Okpala",
+          date: "December 10, 2024",
+          readTime: "6 min read",
+          image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=300&fit=crop",
+          slug: "fractional-leadership-advantage"
+        },
+        {
+          id: 7,
+          title: "Strategic Compliance Planning: A Roadmap for Success",
+          excerpt: "Develop comprehensive compliance strategies that align with organizational goals while ensuring regulatory adherence and operational excellence.",
+          author: "Kelly Menefee Okpala",
+          date: "December 18, 2024",
+          readTime: "8 min read",
+          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop",
+          slug: "strategic-compliance-planning"
+        }
+      ]
     }
   ];
 
@@ -62,72 +112,85 @@ const Blog = () => {
           </Link>
           
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#002B45' }}>
-            Expert Insights Blog
+            TITANIDE Compliance Corner™
           </h1>
           <p className="text-lg sm:text-xl max-w-3xl" style={{ color: '#005870' }}>
-            Stay ahead of compliance trends with strategic insights, regulatory updates, and practical guidance from our leadership team.
+            Executive-level briefings, bite-sized regulatory trend analyses, and field-tested tactics—curated weekly by Titanide's leadership so you're always one step ahead of auditors.
           </p>
         </div>
       </header>
 
-      {/* Blog Posts */}
+      {/* Service-Organized Articles */}
       <section className="py-16 px-4 sm:px-8">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid gap-8">
-            {blogPosts.map((post) => (
-              <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                <div className="md:flex">
-                  <div className="md:w-1/3">
-                    <img 
-                      src={post.image} 
-                      alt={post.title}
-                      className="w-full h-48 md:h-full object-cover"
-                    />
-                  </div>
-                  <div className="md:w-2/3 p-8">
-                    <div className="flex items-center mb-4">
-                      <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full" style={{ backgroundColor: '#eaf6f8', color: '#00A3AD' }}>
-                        {post.category}
-                      </span>
-                    </div>
-                    
-                    <h2 className="text-2xl font-bold mb-4 hover:opacity-80 transition-opacity" style={{ color: '#002B45' }}>
-                      <Link to={`/resources/blog/${post.slug}`} className="no-underline">{post.title}</Link>
-                    </h2>
-                    
-                    <p className="text-gray-600 mb-6 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-4 text-sm text-gray-500">
-                        <div className="flex items-center">
-                          <User className="h-4 w-4 mr-1" />
-                          <span>{post.author}</span>
+          {serviceCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="mb-16">
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-2" style={{ color: '#002B45' }}>
+                  {category.name}
+                </h2>
+                <p className="text-gray-600">
+                  {category.description}
+                </p>
+              </div>
+              
+              <div className="grid gap-8">
+                {category.articles.map((post) => (
+                  <article key={post.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div className="md:flex">
+                      <div className="md:w-1/3">
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="w-full h-48 md:h-full object-cover"
+                        />
+                      </div>
+                      <div className="md:w-2/3 p-8">
+                        <div className="flex items-center mb-4">
+                          <span className="inline-block px-3 py-1 text-xs font-semibold rounded-full" style={{ backgroundColor: '#eaf6f8', color: '#00A3AD' }}>
+                            {category.name}
+                          </span>
                         </div>
-                        <div className="flex items-center">
-                          <Calendar className="h-4 w-4 mr-1" />
-                          <span>{post.date}</span>
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="h-4 w-4 mr-1" />
-                          <span>{post.readTime}</span>
+                        
+                        <h3 className="text-2xl font-bold mb-4 hover:opacity-80 transition-opacity" style={{ color: '#002B45' }}>
+                          <Link to={`/resources/blog/${post.slug}`} className="no-underline">{post.title}</Link>
+                        </h3>
+                        
+                        <p className="text-gray-600 mb-6 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-4 text-sm text-gray-500">
+                            <div className="flex items-center">
+                              <User className="h-4 w-4 mr-1" />
+                              <span>{post.author}</span>
+                            </div>
+                            <div className="flex items-center">
+                              <Calendar className="h-4 w-4 mr-1" />
+                              <span>{post.date}</span>
+                            </div>
+                            <div className="flex items-center">
+                              <Clock className="h-4 w-4 mr-1" />
+                              <span>{post.readTime}</span>
+                            </div>
+                          </div>
+                          
+                          <Link 
+                            to={`/resources/blog/${post.slug}`}
+                            className="text-sm font-medium hover:opacity-70 transition-opacity"
+                            style={{ color: '#00A3AD' }}
+                          >
+                            Read More →
+                          </Link>
                         </div>
                       </div>
-                      
-                      <Link 
-                        to={`/resources/blog/${post.slug}`}
-                        className="text-sm font-medium hover:opacity-70 transition-opacity"
-                        style={{ color: '#00A3AD' }}
-                      >
-                        Read More →
-                      </Link>
                     </div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

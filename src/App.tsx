@@ -16,6 +16,9 @@ import FutureOfComplianceLeadership from "./pages/articles/FutureOfComplianceLea
 import FractionalLeadershipAdvantage from "./pages/articles/FractionalLeadershipAdvantage";
 import RiskManagementFrameworks from "./pages/articles/RiskManagementFrameworks";
 import HIPAADigitalAge from "./pages/articles/HIPAADigitalAge";
+import ComplianceTrainingBestPractices from "./pages/articles/ComplianceTrainingBestPractices";
+import PolicyDevelopmentFramework from "./pages/articles/PolicyDevelopmentFramework";
+import StrategicCompliancePlanning from "./pages/articles/StrategicCompliancePlanning";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +38,9 @@ const App = () => (
           <Route path="/resources/blog/fractional-leadership-advantage" element={<FractionalLeadershipAdvantage />} />
           <Route path="/resources/blog/risk-management-frameworks" element={<RiskManagementFrameworks />} />
           <Route path="/resources/blog/hipaa-digital-age" element={<HIPAADigitalAge />} />
+          <Route path="/resources/blog/compliance-training-best-practices" element={<ComplianceTrainingBestPractices />} />
+          <Route path="/resources/blog/policy-development-framework" element={<PolicyDevelopmentFramework />} />
+          <Route path="/resources/blog/strategic-compliance-planning" element={<StrategicCompliancePlanning />} />
           <Route path="/resources/use-cases" element={<UseCases />} />
           <Route path="/resources/free-tools" element={<FreeTools />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
