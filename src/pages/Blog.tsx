@@ -1,9 +1,16 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Clock, Download } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Blog = () => {
+  const downloadBlogArticles = () => {
+    const link = document.createElement('a');
+    link.href = '/blog-articles.json';
+    link.download = 'blog-articles.json';
+    link.click();
+  };
+
   const serviceCategories = [
     {
       name: "Compliance Management",
@@ -111,12 +118,25 @@ const Blog = () => {
             Back to Resources
           </Link>
           
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#002B45' }}>
-            TITANIDE Compliance Corner™
-          </h1>
-          <p className="text-lg sm:text-xl max-w-3xl" style={{ color: '#005870' }}>
-            Executive-level briefings, bite-sized regulatory trend analyses, and field-tested tactics—curated weekly by Titanide's leadership so you're always one step ahead of auditors.
-          </p>
+          <div className="flex justify-between items-start mb-4">
+            <div>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: '#002B45' }}>
+                TITANIDE Compliance Corner™
+              </h1>
+              <p className="text-lg sm:text-xl max-w-3xl" style={{ color: '#005870' }}>
+                Executive-level briefings, bite-sized regulatory trend analyses, and field-tested tactics—curated weekly by Titanide's leadership so you're always one step ahead of auditors.
+              </p>
+            </div>
+            
+            <Button 
+              onClick={downloadBlogArticles}
+              variant="outline"
+              className="ml-4 shrink-0"
+            >
+              <Download className="h-4 w-4 mr-2" />
+              Download All Articles
+            </Button>
+          </div>
         </div>
       </header>
 
