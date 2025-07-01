@@ -16,7 +16,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "December 15, 2024",
           readTime: "8 min read",
-          image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300",
           slug: "future-compliance-leadership"
         },
         {
@@ -26,7 +26,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "December 22, 2024",
           readTime: "7 min read",
-          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
           slug: "policy-development-framework"
         },
         {
@@ -36,7 +36,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "November 28, 2024",
           readTime: "7 min read",
-          image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
           slug: "hipaa-digital-age"
         }
       ]
@@ -52,7 +52,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "December 5, 2024",
           readTime: "10 min read",
-          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
           slug: "risk-management-frameworks"
         }
       ]
@@ -68,7 +68,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "December 20, 2024",
           readTime: "9 min read",
-          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
           slug: "compliance-training-best-practices"
         }
       ]
@@ -84,7 +84,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "December 10, 2024",
           readTime: "6 min read",
-          image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
           slug: "fractional-leadership-advantage"
         },
         {
@@ -94,7 +94,7 @@ const Blog = () => {
           author: "Kelly Menefee Okpala",
           date: "December 18, 2024",
           readTime: "8 min read",
-          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=300&fit=crop",
+          image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
           slug: "strategic-compliance-planning"
         }
       ]
