@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import About from "./pages/About";
 import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
+import BlogAdmin from "./pages/BlogAdmin";
 import UseCases from "./pages/UseCases";
 import FreeTools from "./pages/FreeTools";
 import NotFound from "./pages/NotFound";
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/blog" element={<Blog />} />
+          <Route path="/resources/blog/admin" element={<BlogAdmin />} />
           <Route path="/resources/blog/future-compliance-leadership" element={<FutureOfComplianceLeadership />} />
           <Route path="/resources/blog/fractional-leadership-advantage" element={<FractionalLeadershipAdvantage />} />
           <Route path="/resources/blog/risk-management-frameworks" element={<RiskManagementFrameworks />} />
