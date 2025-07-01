@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Clock, Download } from 'lucide-react';
@@ -8,6 +9,13 @@ const Blog = () => {
     const link = document.createElement('a');
     link.href = '/blog-articles.json';
     link.download = 'blog-articles.json';
+    link.click();
+  };
+
+  const downloadBlogArticlesXML = () => {
+    const link = document.createElement('a');
+    link.href = '/blog-articles.xml';
+    link.download = 'blog-articles.xml';
     link.click();
   };
 
@@ -128,14 +136,22 @@ const Blog = () => {
               </p>
             </div>
             
-            <Button 
-              onClick={downloadBlogArticles}
-              variant="outline"
-              className="ml-4 shrink-0"
-            >
-              <Download className="h-4 w-4 mr-2" />
-              Download All Articles
-            </Button>
+            <div className="ml-4 shrink-0 flex gap-2">
+              <Button 
+                onClick={downloadBlogArticles}
+                variant="outline"
+              >
+                <Download className="h-4 w-4 mr-2" />
+                JSON
+              </Button>
+              <Button 
+                onClick={downloadBlogArticlesXML}
+                variant="outline"
+              >
+                <Download className="h-4 w-4 mr-2" />
+                XML
+              </Button>
+            </div>
           </div>
         </div>
       </header>
