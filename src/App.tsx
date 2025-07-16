@@ -12,6 +12,9 @@ import Blog from "./pages/Blog";
 import BlogAdmin from "./pages/BlogAdmin";
 import UseCases from "./pages/UseCases";
 import FreeTools from "./pages/FreeTools";
+import Assessment from "./pages/Assessment";
+import AssessmentStart from "./pages/AssessmentStart";
+import AssessmentResults from "./pages/AssessmentResults";
 import NotFound from "./pages/NotFound";
 import FutureOfComplianceLeadership from "./pages/articles/FutureOfComplianceLeadership";
 import FractionalLeadershipAdvantage from "./pages/articles/FractionalLeadershipAdvantage";
@@ -47,6 +50,9 @@ const App = () => (
           <Route path="/resources/blog/strategic-compliance-planning" element={<StrategicCompliancePlanning />} />
           <Route path="/resources/use-cases" element={<UseCases />} />
           <Route path="/resources/free-tools" element={<FreeTools />} />
+          <Route path="/assessment" element={<Assessment />} />
+          <Route path="/assessment-start" element={<AssessmentStart />} />
+          <Route path="/assessment-results" element={<AssessmentResults />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
