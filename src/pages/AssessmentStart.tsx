@@ -17,7 +17,7 @@ const AssessmentStart = () => {
   const steps = [
     {
       id: "user-info",
-      title: "Executive Information",
+      title: "User Information",
       icon: Users,
       questions: [
         {
