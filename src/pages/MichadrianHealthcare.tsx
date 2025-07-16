@@ -1,4 +1,4 @@
-import { ArrowRight, Users, Heart, Shield, CheckCircle, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Users, Heart, Shield, CheckCircle, Mail, Bot, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -14,10 +14,10 @@ const MichadrianHealthcare = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
         <div className="relative max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Titanide UK | Michadrian Healthcare Services
+            Michadrian Healthcare Services
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
-            Healthcare Personnel & Compliance Solutions for the UK Market
+            A division of Titanide Consulting Group
           </p>
           <Button 
             onClick={scrollToContact}
@@ -35,7 +35,7 @@ const MichadrianHealthcare = () => {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
-            Titanide Consulting Group proudly introduces our UK division — <strong>Michadrian Healthcare Services Ltd</strong> — 
+            Titanide Consulting Group proudly introduces our UK division — <strong>Michadrian Healthcare Services</strong> — 
             delivering healthcare personnel matchmaking, home care services, and regulatory compliance solutions 
             tailored for the UK healthcare sector.
           </p>
@@ -89,7 +89,7 @@ const MichadrianHealthcare = () => {
       {/* Why Titanide Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Titanide</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Why Choose Michadrian?</h2>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
@@ -101,7 +101,7 @@ const MichadrianHealthcare = () => {
             </div>
             <div className="flex items-start gap-4">
               <CheckCircle className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
-              <p className="text-lg">Fully staffed UK presence and registered office in Manchester</p>
+              <p className="text-lg">Fully staffed UK presence</p>
             </div>
           </div>
         </div>
@@ -114,21 +114,10 @@ const MichadrianHealthcare = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <MapPin className="h-6 w-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-2">Address</h3>
-                  <p className="text-muted-foreground">
-                    Swan Street, City Centre<br />
-                    Manchester, M4<br />
-                    (Suite number forthcoming)
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
                 <Mail className="h-6 w-6 text-primary mt-1" />
                 <div>
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-muted-foreground">info@titanideholdings.com</p>
+                  <p className="text-muted-foreground">michadrian.uk@titanideconsulting.com</p>
                 </div>
               </div>
             </div>
@@ -173,16 +162,38 @@ const MichadrianHealthcare = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="mb-4">&copy; 2024 Titanide Consulting Group. All rights reserved.</p>
-          <div className="flex justify-center gap-6 text-sm">
-            <a href="/" className="hover:opacity-80 transition-opacity">Home</a>
-            <a href="/privacy" className="hover:opacity-80 transition-opacity">Privacy Policy</a>
-          </div>
+      {/* KJ Advisor Section */}
+      <section className="py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Digital Solutions</h2>
+          <Card className="text-center max-w-lg mx-auto">
+            <CardContent className="p-8">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Bot className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">KJ Advisor</h3>
+              <p className="text-muted-foreground mb-6">
+                AI-powered compliance advisor providing instant guidance on UK healthcare regulations and best practices.
+              </p>
+              <Button className="w-full">
+                Learn More About KJ Advisor
+              </Button>
+            </CardContent>
+          </Card>
         </div>
-      </footer>
+      </section>
+
+      {/* Floating KJ Advisor Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <Button
+          size="lg"
+          className="rounded-full shadow-lg hover:shadow-xl transition-shadow"
+          onClick={() => window.open('/kj-advisor', '_blank')}
+        >
+          <MessageCircle className="h-5 w-5 mr-2" />
+          KJ Advisor
+        </Button>
+      </div>
     </div>
   );
 };
