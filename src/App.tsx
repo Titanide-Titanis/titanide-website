@@ -20,6 +20,7 @@ import HIPAADigitalAge from "./pages/articles/HIPAADigitalAge";
 import ComplianceTrainingBestPractices from "./pages/articles/ComplianceTrainingBestPractices";
 import PolicyDevelopmentFramework from "./pages/articles/PolicyDevelopmentFramework";
 import StrategicCompliancePlanning from "./pages/articles/StrategicCompliancePlanning";
+import MichadrianHealthcare from "./pages/MichadrianHealthcare";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/michadrian-healthcare" element={<MichadrianHealthcare />} />
           <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/blog" element={<Blog />} />
