@@ -28,7 +28,7 @@ const MichadrianHealthcare = () => {
       {/* Hero Section */}
       <header className="py-12 sm:py-20 px-4 sm:px-8 text-center text-white" style={{ background: 'linear-gradient(135deg, #002B45, #005870)', animation: 'fadeIn 1.5s ease-out' }}>
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-white" style={{ animation: 'slideInDown 1s ease-out' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'white', animation: 'slideInDown 1s ease-out' }}>
             Michadrian Healthcare Services
           </h1>
           <p className="text-lg sm:text-xl max-w-4xl mx-auto text-white" style={{ animation: 'slideInUp 1.2s ease-out' }}>
