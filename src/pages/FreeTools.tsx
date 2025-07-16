@@ -232,15 +232,15 @@ const FreeTools = () => {
                 <li>• Policy template generation</li>
               </ul>
               <div className="text-center">
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: '#00A3AD' }}>
-                  Access GPT →
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300 animate-pulse" style={{ backgroundColor: '#00A3AD' }}>
+                  🚀 Start US Compliance Chat
                 </button>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg p-8 shadow-xl border-2" style={{ borderColor: '#002B45' }}>
+            <div className="bg-white rounded-lg p-8 shadow-xl border-2 hover:shadow-2xl transition-shadow duration-300" style={{ borderColor: '#002B45' }}>
               <div className="text-center mb-6">
-                <span className="text-4xl">🇪🇺</span>
+                <span className="text-4xl animate-bounce">🇪🇺</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
                   KJ Advisor UK/EU
                 </h3>
@@ -255,8 +255,8 @@ const FreeTools = () => {
                 <li>• Regulatory impact analysis</li>
               </ul>
               <div className="text-center">
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: '#002B45' }}>
-                  Access GPT →
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300 animate-pulse" style={{ backgroundColor: '#002B45' }}>
+                  🌍 Launch EU Compliance AI
                 </button>
               </div>
             </div>
