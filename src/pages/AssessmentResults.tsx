@@ -68,96 +68,173 @@ const AssessmentResults = () => {
 
   const scoreLevel = getScoreLevel(score);
 
-  // Enhanced risk analysis based on responses
-  const analyzeRiskAreas = () => {
+  // Enhanced compliance domains analysis based on the 10 critical areas
+  const analyzeComplianceDomains = () => {
     const responses = assessmentData.responses;
-    const riskAreas = [];
+    const domains = [];
 
-    // Regulatory Landscape Analysis
-    const applicableRegs = responses.applicable_regulations || [];
-    const regComplexity = responses.regulatory_complexity || '';
-    const complianceMaturity = responses.compliance_maturity || '';
+    // Helper function to calculate risk level
+    const getRiskLevel = (score: number) => {
+      if (score <= 40) return "Critical";
+      if (score <= 60) return "High"; 
+      if (score <= 75) return "Medium";
+      return "Low";
+    };
+
+    // 1. Governance & Leadership
+    const governanceScore = Math.max(0, 100 - (
+      (responses.compliance_maturity?.includes('Ad-hoc') ? 30 : 0) +
+      (responses.governance_structure?.includes('No formal') ? 25 : 0) +
+      (responses.board_oversight?.includes('No') ? 20 : 0)
+    ));
     
-    let regScore = 100;
-    if (applicableRegs.length > 5) regScore -= 20;
-    if (regComplexity.includes('complex')) regScore -= 15;
-    if (complianceMaturity.includes('Ad-hoc') || complianceMaturity.includes('Initial')) regScore -= 30;
-
-    riskAreas.push({
-      domain: "Regulatory Compliance",
-      score: Math.max(regScore, 0),
-      priority: regScore < 60 ? "Critical" : regScore < 80 ? "High" : "Medium",
-      frameworks: applicableRegs.slice(0, 3).join(", "),
-      findings: [
-        `${applicableRegs.length} applicable regulations identified`,
-        `Compliance maturity: ${complianceMaturity}`,
-        `Regulatory complexity: ${regComplexity}`
-      ],
-      recommendations: [
-        "Establish comprehensive compliance monitoring program",
-        "Implement regulatory change management process",
-        "Develop compliance risk assessment methodology"
-      ]
+    domains.push({
+      domain: "Governance & Leadership",
+      score: governanceScore,
+      riskLevel: getRiskLevel(governanceScore),
+      findings: "Lack of documented roles & responsibilities for compliance oversight.",
+      recommendations: "Establish a formal compliance committee with clear accountability."
     });
 
-    // Data Governance Analysis
-    const dataClassification = responses.data_classification || '';
-    const dataInventory = responses.data_inventory || '';
-    const privacyProgram = responses.privacy_program || '';
+    // 2. Policies & Procedures
+    const policiesScore = Math.max(0, 100 - (
+      (responses.policy_framework?.includes('outdated') ? 30 : 0) +
+      (responses.policy_review?.includes('No regular') ? 25 : 0) +
+      (responses.policy_enforcement?.includes('inconsistent') ? 20 : 0)
+    ));
     
-    let dataScore = 100;
-    if (dataClassification.includes('No formal')) dataScore -= 25;
-    if (dataInventory.includes('No data inventory')) dataScore -= 25;
-    if (privacyProgram.includes('No formal')) dataScore -= 20;
-
-    riskAreas.push({
-      domain: "Data Governance & Privacy",
-      score: Math.max(dataScore, 0),
-      priority: dataScore < 60 ? "Critical" : dataScore < 80 ? "High" : "Medium",
-      frameworks: "GDPR, CCPA, PIPEDA",
-      findings: [
-        `Data classification: ${dataClassification}`,
-        `Data inventory: ${dataInventory}`,
-        `Privacy program: ${privacyProgram}`
-      ],
-      recommendations: [
-        "Implement comprehensive data classification system",
-        "Establish data inventory and mapping procedures",
-        "Develop privacy impact assessment process"
-      ]
+    domains.push({
+      domain: "Policies & Procedures", 
+      score: policiesScore,
+      riskLevel: getRiskLevel(policiesScore),
+      findings: "Policies outdated and not reviewed annually; some key policies missing.",
+      recommendations: "Update and formalize policies; implement annual review cycle."
     });
 
-    // Cybersecurity Analysis
-    const securityFrameworks = responses.security_framework || [];
-    const securityMaturity = responses.security_maturity || '';
-    const incidentResponse = responses.incident_response || '';
+    // 3. Training & Awareness
+    const trainingScore = Math.max(0, 100 - (
+      (responses.training_program?.includes('Ad-hoc') ? 35 : 0) +
+      (responses.training_tracking?.includes('No tracking') ? 30 : 0) +
+      (responses.awareness_program?.includes('No formal') ? 20 : 0)
+    ));
     
-    let secScore = 100;
-    if (securityFrameworks.includes('No formal framework')) secScore -= 30;
-    if (securityMaturity.includes('Initial') || securityMaturity.includes('Ad-hoc')) secScore -= 25;
-    if (incidentResponse.includes('No incident response')) secScore -= 20;
-
-    riskAreas.push({
-      domain: "Cybersecurity Controls",
-      score: Math.max(secScore, 0),
-      priority: secScore < 60 ? "Critical" : secScore < 80 ? "High" : "Medium",
-      frameworks: Array.isArray(securityFrameworks) ? securityFrameworks.slice(0, 2).join(", ") : "NIST CSF, ISO 27001",
-      findings: [
-        `Security frameworks: ${Array.isArray(securityFrameworks) ? securityFrameworks.join(", ") : securityFrameworks}`,
-        `Security maturity: ${securityMaturity}`,
-        `Incident response: ${incidentResponse}`
-      ],
-      recommendations: [
-        "Adopt comprehensive cybersecurity framework",
-        "Enhance incident response capabilities",
-        "Implement continuous security monitoring"
-      ]
+    domains.push({
+      domain: "Training & Awareness",
+      score: trainingScore,
+      riskLevel: getRiskLevel(trainingScore),
+      findings: "Staff training is ad hoc and not documented; no tracking mechanism.",
+      recommendations: "Develop a training program with tracking & annual refreshers."
     });
 
-    return riskAreas;
+    // 4. Monitoring & Auditing  
+    const monitoringScore = Math.max(0, 100 - (
+      (responses.audit_program?.includes('No routine') ? 40 : 0) +
+      (responses.monitoring_controls?.includes('reactive') ? 30 : 0) +
+      (responses.audit_findings?.includes('not tracked') ? 15 : 0)
+    ));
+    
+    domains.push({
+      domain: "Monitoring & Auditing",
+      score: monitoringScore,
+      riskLevel: getRiskLevel(monitoringScore),
+      findings: "No routine compliance audits; reactive approach to issues.",
+      recommendations: "Implement a formal audit schedule & reporting framework."
+    });
+
+    // 5. Reporting & Response
+    const reportingScore = Math.max(0, 100 - (
+      (responses.incident_reporting?.includes('No formal') ? 35 : 0) +
+      (responses.breach_response?.includes('undefined') ? 30 : 0) +
+      (responses.regulatory_reporting?.includes('manual') ? 20 : 0)
+    ));
+    
+    domains.push({
+      domain: "Reporting & Response",
+      score: reportingScore,
+      riskLevel: getRiskLevel(reportingScore),
+      findings: "Incident reporting processes are undefined; manual regulatory reporting.",
+      recommendations: "Establish automated incident reporting and response procedures."
+    });
+
+    // 6. Third-Party Risk
+    const vendorScore = Math.max(0, 100 - (
+      (responses.vendor_assessment?.includes('No documented') ? 40 : 0) +
+      (responses.vendor_monitoring?.includes('No ongoing') ? 30 : 0) +
+      (responses.contract_management?.includes('basic') ? 15 : 0)
+    ));
+    
+    domains.push({
+      domain: "Third-Party Risk",
+      score: vendorScore,
+      riskLevel: getRiskLevel(vendorScore),
+      findings: "No documented vendor vetting or monitoring process in place.",
+      recommendations: "Create a vendor risk assessment matrix & onboarding checklist."
+    });
+
+    // 7. Privacy & Data Protection
+    const privacyScore = Math.max(0, 100 - (
+      (responses.data_classification?.includes('No formal') ? 30 : 0) +
+      (responses.privacy_program?.includes('basic') ? 25 : 0) +
+      (responses.data_inventory?.includes('incomplete') ? 20 : 0)
+    ));
+    
+    domains.push({
+      domain: "Privacy & Data Protection",
+      score: privacyScore,
+      riskLevel: getRiskLevel(privacyScore),
+      findings: "Data classification incomplete; basic privacy program implementation.",
+      recommendations: "Implement comprehensive data governance and privacy controls."
+    });
+
+    // 8. Incident Management
+    const incidentScore = Math.max(0, 100 - (
+      (responses.incident_response?.includes('No incident') ? 40 : 0) +
+      (responses.business_continuity?.includes('basic') ? 25 : 0) +
+      (responses.communication_plan?.includes('undefined') ? 20 : 0)
+    ));
+    
+    domains.push({
+      domain: "Incident Management",
+      score: incidentScore,
+      riskLevel: getRiskLevel(incidentScore),
+      findings: "Incident response plan needs enhancement; communication protocols unclear.",
+      recommendations: "Develop comprehensive incident response and business continuity plans."
+    });
+
+    // 9. Regulatory Alignment
+    const regulatoryScore = Math.max(0, 100 - (
+      ((responses.applicable_regulations || []).length > 5 ? 20 : 0) +
+      (responses.regulatory_complexity?.includes('complex') ? 25 : 0) +
+      (responses.regulatory_monitoring?.includes('manual') ? 30 : 0)
+    ));
+    
+    domains.push({
+      domain: "Regulatory Alignment",
+      score: regulatoryScore,
+      riskLevel: getRiskLevel(regulatoryScore),
+      findings: "Complex regulatory landscape with manual monitoring processes.",
+      recommendations: "Implement automated regulatory change management system."
+    });
+
+    // 10. Continuous Improvement
+    const improvementScore = Math.max(0, 100 - (
+      (responses.maturity_assessment?.includes('not conducted') ? 35 : 0) +
+      (responses.improvement_program?.includes('reactive') ? 30 : 0) +
+      (responses.metrics_tracking?.includes('limited') ? 20 : 0)
+    ));
+    
+    domains.push({
+      domain: "Continuous Improvement",
+      score: improvementScore,
+      riskLevel: getRiskLevel(improvementScore),
+      findings: "Limited metrics tracking; reactive improvement approach.",
+      recommendations: "Establish KPIs and proactive continuous improvement processes."
+    });
+
+    return domains;
   };
 
-  const riskAreas = analyzeRiskAreas();
+  const complianceDomains = analyzeComplianceDomains();
 
   const generateEnhancedPDF = async () => {
     try {
@@ -263,7 +340,7 @@ const AssessmentResults = () => {
       pdf.setFont('helvetica', 'normal');
       pdf.setTextColor(51, 51, 51);
       
-      const execSummaryText = `This comprehensive assessment evaluated ${assessmentData.responses.company_name || 'your organization'}'s compliance posture across multiple regulatory frameworks and industry standards. The assessment covered ${riskAreas.length} key compliance domains with emphasis on regulatory landscape, governance structure, data protection, cybersecurity, and risk management.`;
+      const execSummaryText = `Titanide Consulting Group conducted a Compliance Effectiveness Assessment for ${assessmentData.responses.company_name || 'your organization'} to evaluate their current compliance posture against industry best practices and regulatory frameworks, including HIPAA, GDPR, HITECH, NIST, and ISO standards. This assessment reviewed the organization's governance, policies, workforce training, monitoring, reporting mechanisms, third-party risk management, data protection, and incident response capabilities across ${complianceDomains.length} critical domains.`;
       
       const execLines = pdf.splitTextToSize(execSummaryText, contentWidth);
       execLines.forEach((line: string) => {
@@ -285,8 +362,8 @@ const AssessmentResults = () => {
       
       const findings = [
         `Overall Compliance Score: ${score}/100 (${scoreLevel.level})`,
-        `${riskAreas.filter(r => r.priority === 'Critical').length} Critical Risk Areas Identified`,
-        `${riskAreas.filter(r => r.priority === 'High').length} High Priority Improvement Opportunities`,
+        `${complianceDomains.filter(d => d.riskLevel === 'Critical').length} Critical Risk Areas Identified`,
+        `${complianceDomains.filter(d => d.riskLevel === 'High').length} High Priority Improvement Opportunities`,
         `Applicable Regulations: ${(assessmentData.responses.applicable_regulations || []).length} frameworks`
       ];
       
@@ -322,7 +399,7 @@ const AssessmentResults = () => {
       pdf.text('RISK DOMAIN FINDINGS', margin, yPos);
       yPos += 24; // 24pt space after section headers
       
-      riskAreas.forEach((area, index) => {
+      complianceDomains.forEach((domain, index) => {
         if (yPos > pageHeight - margin - 150) { // Check if we need new page
           addPageWithBorder();
           yPos = margin + 24;
@@ -332,7 +409,7 @@ const AssessmentResults = () => {
         pdf.setFontSize(12);
         pdf.setFont('helvetica', 'bold');
         pdf.setTextColor(51, 51, 51);
-        pdf.text(`${index + 1}. ${area.domain}`, margin, yPos);
+        pdf.text(`${index + 1}. ${domain.domain}`, margin, yPos);
         yPos += 12; // 12pt space after subheaders
         
         // Score line with accent color
@@ -345,13 +422,13 @@ const AssessmentResults = () => {
         // Bold score with accent color
         pdf.setFont('helvetica', 'bold');
         pdf.setTextColor(202, 167, 96); // Titanide Gold
-        const scoreValue = `${area.score}/100`;
+        const scoreValue = `${domain.score}/100`;
         pdf.text(scoreValue, margin + pdf.getTextWidth(scoreText), yPos);
         
         // Priority and frameworks
         pdf.setFont('helvetica', 'normal');
         pdf.setTextColor(51, 51, 51);
-        const priorityText = ` | Priority: ${area.priority} | Frameworks: ${area.frameworks}`;
+        const priorityText = ` | Risk Level: ${domain.riskLevel}`;
         pdf.text(priorityText, margin + pdf.getTextWidth(scoreText + scoreValue), yPos);
         yPos += 12; // 12pt space after paragraph
         
@@ -366,12 +443,10 @@ const AssessmentResults = () => {
         pdf.setFont('helvetica', 'normal');
         const findingsBulletIndent = margin + 18; // 0.25" indent
         
-        area.findings.forEach(finding => {
-          const findingLines = pdf.splitTextToSize(`• ${finding}`, contentWidth - 18);
-          findingLines.forEach((line: string) => {
-            pdf.text(line, findingsBulletIndent, yPos);
-            yPos += 11; // Single line spacing
-          });
+        const findingLines = pdf.splitTextToSize(`• ${domain.findings}`, contentWidth - 18);
+        findingLines.forEach((line: string) => {
+          pdf.text(line, findingsBulletIndent, yPos);
+          yPos += 11; // Single line spacing
         });
         yPos += 12; // 12pt space after paragraph
         
@@ -384,12 +459,10 @@ const AssessmentResults = () => {
         // Recommendation bullet points
         pdf.setFontSize(11);
         pdf.setFont('helvetica', 'normal');
-        area.recommendations.forEach(rec => {
-          const recLines = pdf.splitTextToSize(`• ${rec}`, contentWidth - 18);
-          recLines.forEach((line: string) => {
-            pdf.text(line, findingsBulletIndent, yPos);
-            yPos += 11; // Single line spacing
-          });
+        const recLines = pdf.splitTextToSize(`• ${domain.recommendations}`, contentWidth - 18);
+        recLines.forEach((line: string) => {
+          pdf.text(line, findingsBulletIndent, yPos);
+          yPos += 11; // Single line spacing
         });
         yPos += 12; // 12pt space after paragraph
       });
@@ -488,7 +561,7 @@ Report Details:
 • Executive: ${assessmentData.responses.full_name}
 • Organization: ${assessmentData.responses.company_name}
 • Score: ${score}/100 (${scoreLevel.level})
-• Risk Areas: ${riskAreas.length} domains analyzed
+• Risk Areas: ${complianceDomains.length} domains analyzed
 
 To enable email delivery, configure EmailJS service with your email provider.`);
   };
@@ -563,7 +636,7 @@ To enable email delivery, configure EmailJS service with your email provider.`);
                   </div>
                   <div><strong>Date:</strong> {new Date(assessmentData.timestamp).toLocaleDateString()}</div>
                   <div><strong>Type:</strong> Enterprise Framework</div>
-                  <div><strong>Domains:</strong> {riskAreas.length} analyzed</div>
+                  <div><strong>Domains:</strong> {complianceDomains.length} analyzed</div>
                 </div>
               </div>
             </CardContent>
@@ -572,55 +645,48 @@ To enable email delivery, configure EmailJS service with your email provider.`);
           {/* Risk Analysis */}
           <div className="space-y-6 mb-8">
             <h2 className="text-2xl font-bold">Compliance Risk Analysis</h2>
-            {riskAreas.map((area, index) => (
+            {complianceDomains.map((domain, index) => (
               <Card key={index} className="border-l-4 border-l-primary">
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-4">
                     <div className="flex-1">
                       <div className="flex items-center space-x-3 mb-2">
-                        <h3 className="font-bold text-lg">{area.domain}</h3>
+                        <h3 className="font-bold text-lg">{domain.domain}</h3>
                         <Badge variant={
-                          area.priority === "Critical" ? "destructive" : 
-                          area.priority === "High" ? "default" : 
+                          domain.riskLevel === "Critical" ? "destructive" : 
+                          domain.riskLevel === "High" ? "default" : 
                           "secondary"
                         }>
-                          {area.priority} Priority
+                          {domain.riskLevel} Risk
                         </Badge>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-2">
-                        <strong>Applicable Frameworks:</strong> {area.frameworks}
-                      </p>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold">{area.score}</div>
+                      <div className="text-2xl font-bold">{domain.score}</div>
                       <div className="text-sm text-muted-foreground">Risk Score</div>
                     </div>
                   </div>
                   
-                  <Progress value={area.score} className="mb-4" />
+                  <Progress value={domain.score} className="mb-4" />
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="font-semibold mb-2 text-sm">Key Findings:</h4>
-                      <ul className="space-y-1 text-sm">
-                        {area.findings.map((finding, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 mt-2 flex-shrink-0"></div>
-                            {finding}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="text-sm">
+                        <div className="flex items-start">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 mt-2 flex-shrink-0"></div>
+                          {domain.findings}
+                        </div>
+                      </div>
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2 text-sm">Recommended Actions:</h4>
-                      <ul className="space-y-1 text-sm">
-                        {area.recommendations.map((rec, idx) => (
-                          <li key={idx} className="flex items-start">
-                            <CheckCircle className="h-3 w-3 text-green-600 mr-2 mt-1 flex-shrink-0" />
-                            {rec}
-                          </li>
-                        ))}
-                      </ul>
+                      <div className="text-sm">
+                        <div className="flex items-start">
+                          <CheckCircle className="h-3 w-3 text-green-600 mr-2 mt-1 flex-shrink-0" />
+                          {domain.recommendations}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </CardContent>

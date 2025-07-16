@@ -52,11 +52,11 @@ const Assessment = () => {
             <Shield className="h-8 w-8 text-primary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            Compliance Assessment Framework
+            Compliance Effectiveness Assessment
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Get a comprehensive evaluation of your organization's compliance posture. Our interactive assessment identifies gaps, 
-            prioritizes risks, and provides actionable recommendations to strengthen your compliance program.
+            Evaluate your organization's compliance effectiveness across 10 critical domains. Our comprehensive assessment 
+            identifies gaps, prioritizes risks, and provides actionable recommendations aligned with HIPAA, GDPR, HITECH, NIST, and ISO standards.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/assessment-start">
@@ -68,6 +68,36 @@ const Assessment = () => {
             <Button variant="outline" size="lg" className="px-8 py-6 text-lg">
               View Sample Report
             </Button>
+          </div>
+        </div>
+
+        {/* Assessment Domains */}
+        <div className="mb-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">10 Critical Compliance Domains</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our assessment evaluates your organization across these essential compliance areas to provide comprehensive insights.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {[
+              "Governance & Leadership",
+              "Policies & Procedures", 
+              "Training & Awareness",
+              "Monitoring & Auditing",
+              "Reporting & Response",
+              "Third-Party Risk",
+              "Privacy & Data Protection",
+              "Incident Management",
+              "Regulatory Alignment",
+              "Continuous Improvement"
+            ].map((domain, index) => (
+              <Card key={index} className="text-center p-4 hover:shadow-md transition-shadow">
+                <CardContent className="p-2">
+                  <div className="text-sm font-medium text-muted-foreground">{domain}</div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
 
