@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Compliance Tools - Titanide Consulting</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fdfdfd;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        /* Header */
+        .header {
+            padding: 3rem 0 4rem;
+            background-color: #f8f9fa;
+        }
+        
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #00A3AD;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        .back-link::before {
+            content: "←";
+            margin-right: 0.5rem;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #002B45;
+        }
+        
+        .header p {
+            font-size: 1.25rem;
+            max-width: 48rem;
+            color: #005870;
+        }
+        
+        /* Tools Grid */
+        .tools-section {
+            padding: 4rem 0;
+        }
+        
+        .tools-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-2px);
+        }
+        
+        .tool-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        
+        .tool-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: #002B45;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .tool-type {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 9999px;
+            background-color: #eaf6f8;
+            color: #00A3AD;
+        }
+        
+        .tool-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.75rem;
+            color: #002B45;
+        }
+        
+        .tool-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+        
+        .features-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #005870;
+        }
+        
+        .features-list {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .features-list li {
+            font-size: 0.75rem;
+            color: #666;
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.25rem;
+        }
+        
+        .features-list li::before {
+            content: "";
+            width: 0.25rem;
+            height: 0.25rem;
+            background-color: #00A3AD;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        
+        .tool-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .tool-format {
+            font-size: 0.75rem;
+            color: #9ca3af;
+        }
+        
+        .tool-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            background-color: #00A3AD;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+        
+        .tool-button:hover {
+            opacity: 0.9;
+        }
+        
+        .tool-button::before {
+            content: "📊";
+            margin-right: 0.5rem;
+        }
+        
+        .download-button::before {
+            content: "⬇️";
+        }
+        
+        /* Guidelines Section */
+        .guidelines-section {
+            padding: 4rem 0;
+            background-color: #f8f9fa;
+        }
+        
+        .guidelines-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #002B45;
+        }
+        
+        .guidelines-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .guideline-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        
+        .guideline-title {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #005870;
+        }
+        
+        .guideline-list {
+            list-style: none;
+        }
+        
+        .guideline-list li {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* AI Solutions Section */
+        .ai-section {
+            padding: 4rem 0;
+            background-color: #002B45;
+        }
+        
+        .ai-title {
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: white;
+        }
+        
+        .ai-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+        
+        .ai-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.5s ease;
+        }
+        
+        .ai-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .ai-card-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ai-card-flag {
+            font-size: 2.5rem;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .ai-card:hover .ai-card-flag {
+            transform: scale(1.1);
+        }
+        
+        .ai-card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            color: #002B45;
+        }
+        
+        .ai-card-subtitle {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        .ai-features {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .ai-features li {
+            font-size: 0.875rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .ai-button {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1.5rem;
+            background-color: #00A3AD;
+            color: white;
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-button:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+        
+        .ai-button-alt {
+            background-color: #002B45;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 0;
+            background-color: #eaf6f8;
+            text-align: center;
+        }
+        
+        .contact-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #002B45;
+        }
+        
+        .contact-description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            color: #005870;
+        }
+        
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .contact-button {
+            padding: 0.75rem 2rem;
+            border-radius: 0.375rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .contact-button:hover {
+            opacity: 0.9;
+        }
+        
+        .contact-button-primary {
+            background-color: #002B45;
+            color: white;
+        }
+        
+        .contact-button-secondary {
+            background-color: #00A3AD;
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="/resources" class="back-link">
+                Back to Resources
+            </a>
+            
+            <h1>Free Compliance Tools</h1>
+            <p>Access our collection of practical compliance tools, templates, and resources designed to enhance your organization's governance capabilities.</p>
+        </div>
+    </header>
+
+    <!-- Tools Grid -->
+    <section class="tools-section">
+        <div class="container">
+            <div class="tools-grid">
+                <!-- Assessment Tool -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📊</div>
+                        <span class="tool-type">Interactive</span>
+                    </div>
+                    
+                    <h3 class="tool-title">Compliance Assessment Framework</h3>
+                    <p class="tool-description">A comprehensive template for evaluating your organization's current compliance posture across multiple regulatory domains.</p>
+                    
+                    <div>
+                        <h4 class="features-title">Key Features:</h4>
+                        <ul class="features-list">
+                            <li>Multi-domain compliance checklist</li>
+                            <li>Risk scoring methodology</li>
+                            <li>Gap analysis framework</li>
+                            <li>Action plan template</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-footer">
+                        <span class="tool-format">Format: Web App</span>
+                        <a href="/assessment" class="tool-button">
+                            Start Assessment
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Risk Management Playbook -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">🛡️</div>
+                        <span class="tool-type">Guide</span>
+                    </div>
+                    
+                    <h3 class="tool-title">Risk Management Playbook</h3>
+                    <p class="tool-description">Strategic guide for building resilient risk management frameworks that adapt to emerging threats and regulatory changes.</p>
+                    
+                    <div>
+                        <h4 class="features-title">Key Features:</h4>
+                        <ul class="features-list">
+                            <li>Risk identification strategies</li>
+                            <li>Mitigation planning templates</li>
+                            <li>Monitoring and reporting frameworks</li>
+                            <li>Stakeholder communication guides</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-footer">
+                        <span class="tool-format">Format: PDF</span>
+                        <a href="/tools/risk-management-playbook.pdf" class="tool-button download-button">
+                            Download
+                        </a>
+                    </div>
+                </div>
+
+                <!-- HIPAA Compliance Toolkit -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📄</div>
+                        <span class="tool-type">Toolkit</span>
+                    </div>
+                    
+                    <h3 class="tool-title">HIPAA Compliance Toolkit</h3>
+                    <p class="tool-description">Essential resources for healthcare organizations to maintain HIPAA compliance including policies, training materials, and audit checklists.</p>
+                    
+                    <div>
+                        <h4 class="features-title">Key Features:</h4>
+                        <ul class="features-list">
+                            <li>Policy templates</li>
+                            <li>Training materials</li>
+                            <li>Audit checklists</li>
+                            <li>Incident response procedures</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-footer">
+                        <span class="tool-format">Format: Multi-format</span>
+                        <a href="https://drive.google.com/file/d/1HIPAA_TOOLKIT_SAMPLE/view?usp=sharing" class="tool-button download-button">
+                            Download
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Vendor Risk Assessment Matrix -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📈</div>
+                        <span class="tool-type">Assessment</span>
+                    </div>
+                    
+                    <h3 class="tool-title">Vendor Risk Assessment Matrix</h3>
+                    <p class="tool-description">Streamlined framework for evaluating and managing third-party vendor risks across your organization's supply chain.</p>
+                    
+                    <div>
+                        <h4 class="features-title">Key Features:</h4>
+                        <ul class="features-list">
+                            <li>Vendor evaluation criteria</li>
+                            <li>Risk scoring algorithms</li>
+                            <li>Contract requirement templates</li>
+                            <li>Monitoring dashboards</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-footer">
+                        <span class="tool-format">Format: Excel</span>
+                        <a href="https://drive.google.com/file/d/1VENDOR_RISK_MATRIX_SAMPLE/view?usp=sharing" class="tool-button download-button">
+                            Download
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Executive Compliance Dashboard -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">📈</div>
+                        <span class="tool-type">Dashboard</span>
+                    </div>
+                    
+                    <h3 class="tool-title">Executive Compliance Dashboard</h3>
+                    <p class="tool-description">Leadership-focused reporting template for tracking compliance metrics, KPIs, and organizational risk posture.</p>
+                    
+                    <div>
+                        <h4 class="features-title">Key Features:</h4>
+                        <ul class="features-list">
+                            <li>Executive KPI tracking</li>
+                            <li>Visual compliance metrics</li>
+                            <li>Trend analysis tools</li>
+                            <li>Board reporting templates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-footer">
+                        <span class="tool-format">Format: Excel/PowerBI</span>
+                        <a href="https://drive.google.com/file/d/1EXEC_DASHBOARD_SAMPLE/view?usp=sharing" class="tool-button download-button">
+                            Download
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Staff Training Program Guide -->
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <div class="tool-icon">👥</div>
+                        <span class="tool-type">Program</span>
+                    </div>
+                    
+                    <h3 class="tool-title">Staff Training Program Guide</h3>
+                    <p class="tool-description">Complete framework for developing and implementing effective compliance training programs for your team.</p>
+                    
+                    <div>
+                        <h4 class="features-title">Key Features:</h4>
+                        <ul class="features-list">
+                            <li>Training curriculum design</li>
+                            <li>Assessment methodologies</li>
+                            <li>Tracking and reporting tools</li>
+                            <li>Certification frameworks</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tool-footer">
+                        <span class="tool-format">Format: PDF/PPT</span>
+                        <a href="https://drive.google.com/file/d/1TRAINING_PROGRAM_SAMPLE/view?usp=sharing" class="tool-button download-button">
+                            Download
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Usage Guidelines -->
+    <section class="guidelines-section">
+        <div class="container">
+            <h2 class="guidelines-title">Usage Guidelines</h2>
+            
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <h3 class="guideline-title">Terms of Use</h3>
+                    <ul class="guideline-list">
+                        <li>• Free for internal organizational use</li>
+                        <li>• Attribution to Titanide Consulting required</li>
+                        <li>• No redistribution without permission</li>
+                        <li>• Commercial licensing available upon request</li>
+                    </ul>
+                </div>
+                
+                <div class="guideline-card">
+                    <h3 class="guideline-title">Support & Customization</h3>
+                    <ul class="guideline-list">
+                        <li>• Basic support via email</li>
+                        <li>• Customization services available</li>
+                        <li>• Training and implementation support</li>
+                        <li>• Enterprise solutions for larger needs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Powered GPT Solutions -->
+    <section class="ai-section">
+        <div class="container">
+            <h2 class="ai-title">AI-Powered GPT Solutions</h2>
+            
+            <div class="ai-grid">
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-flag">🇺🇸</span>
+                        <h3 class="ai-card-title">KJ Advisor US</h3>
+                        <p class="ai-card-subtitle">US compliance and regulatory guidance</p>
+                    </div>
+                    <ul class="ai-features">
+                        <li>• US federal regulatory compliance</li>
+                        <li>• HIPAA and healthcare guidance</li>
+                        <li>• Financial services regulations</li>
+                        <li>• State-specific compliance requirements</li>
+                        <li>• Risk assessment automation</li>
+                        <li>• Policy template generation</li>
+                    </ul>
+                    <a href="https://chatgpt.com/g/g-6745f6a978388191bbb35aad4ad4cba8-kj-advisor-us" target="_blank" class="ai-button">
+                        🚀 Start US Compliance Chat
+                    </a>
+                </div>
+                
+                <div class="ai-card">
+                    <div class="ai-card-header">
+                        <span class="ai-card-flag">🇪🇺</span>
+                        <h3 class="ai-card-title">KJ Advisor UK/EU</h3>
+                        <p class="ai-card-subtitle">UK and European compliance guidance</p>
+                    </div>
+                    <ul class="ai-features">
+                        <li>• GDPR and data protection compliance</li>
+                        <li>• UK post-Brexit regulatory changes</li>
+                        <li>• EU financial services directives</li>
+                        <li>• Cross-border compliance requirements</li>
+                        <li>• Multi-jurisdictional risk assessment</li>
+                        <li>• Regulatory impact analysis</li>
+                    </ul>
+                    <a href="https://chatgpt.com/g/g-6745f6e778388191bbb35aad4ad4cc39-kj-advisor-uk-eu" target="_blank" class="ai-button ai-button-alt">
+                        🌍 Launch EU Compliance AI
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact for Custom Tools -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="contact-title">Need Custom Solutions?</h2>
+            <p class="contact-description">
+                Our free tools are just the beginning. Let's discuss how we can create customized compliance solutions for your specific needs.
+            </p>
+            
+            <div class="contact-buttons">
+                <a href="mailto:info@titanideconsulting.com" class="contact-button contact-button-primary">
+                    Request Custom Tools
+                </a>
+                <a href="https://titanide.zohobookings.com/#/3973691000005149002" target="_blank" class="contact-button contact-button-secondary">
+                    Schedule Consultation →
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
