@@ -16,6 +16,43 @@ const AssessmentStart = () => {
 
   const steps = [
     {
+      id: "user-info",
+      title: "Your Information",
+      icon: Users,
+      questions: [
+        {
+          id: "full_name",
+          type: "text",
+          question: "Full Name",
+          required: true
+        },
+        {
+          id: "email",
+          type: "email",
+          question: "Email Address",
+          required: true
+        },
+        {
+          id: "job_title",
+          type: "text",
+          question: "Job Title",
+          required: true
+        },
+        {
+          id: "department",
+          type: "text",
+          question: "Department",
+          required: false
+        },
+        {
+          id: "phone",
+          type: "text",
+          question: "Phone Number (optional)",
+          required: false
+        }
+      ]
+    },
+    {
       id: "company",
       title: "Company Information",
       icon: Building,
@@ -259,6 +296,7 @@ const AssessmentStart = () => {
     
     switch (question.type) {
       case 'text':
+      case 'email':
         return (
           <div className="space-y-3">
             <Label htmlFor={question.id} className="text-base font-medium">
@@ -267,6 +305,7 @@ const AssessmentStart = () => {
             </Label>
             <Input
               id={question.id}
+              type={question.type === 'email' ? 'email' : 'text'}
               value={responses[question.id] || ''}
               onChange={(e) => handleInputChange(question.id, e.target.value)}
               placeholder="Enter your answer..."

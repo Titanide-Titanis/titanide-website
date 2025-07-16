@@ -6,6 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
+import emailjs from 'emailjs-com';
 
 const AssessmentResults = () => {
   const navigate = useNavigate();
@@ -118,14 +121,91 @@ const AssessmentResults = () => {
     }
   ];
 
-  const handleDownloadReport = () => {
-    // In a real implementation, this would generate and download a PDF
-    alert("PDF report generation would be implemented here. This would include detailed findings, recommendations, and action plans.");
+  const handleDownloadReport = async () => {
+    try {
+      const reportElement = document.getElementById('assessment-report');
+      if (!reportElement) return;
+
+      const canvas = await html2canvas(reportElement, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      
+      const imgWidth = 210;
+      const pageHeight = 295;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      // Add first page
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      // Add additional pages if needed
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      const fileName = `Compliance_Assessment_Report_${assessmentData.responses.company_name || 'Report'}_${new Date().toISOString().split('T')[0]}.pdf`;
+      pdf.save(fileName);
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Error generating PDF report. Please try again.');
+    }
   };
 
-  const handleEmailReport = () => {
-    // In a real implementation, this would send the report via email
-    alert("Email functionality would be implemented here to send the report to stakeholders.");
+  const handleEmailReport = async () => {
+    try {
+      // Generate PDF as base64
+      const reportElement = document.getElementById('assessment-report');
+      if (!reportElement) return;
+
+      const canvas = await html2canvas(reportElement, {
+        scale: 2,
+        useCORS: true,
+        allowTaint: true
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgWidth = 210;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
+      
+      const pdfBase64 = pdf.output('datauristring').split(',')[1];
+
+      // Email template data
+      const templateParams = {
+        to_email: assessmentData.responses.email,
+        user_name: assessmentData.responses.full_name,
+        company_name: assessmentData.responses.company_name,
+        assessment_score: score,
+        report_date: new Date().toLocaleDateString(),
+        pdf_attachment: pdfBase64
+      };
+
+      // Note: EmailJS service needs to be configured
+      // For now, we'll show instructions
+      alert(`Email functionality requires EmailJS configuration. 
+      
+Report ready for: ${assessmentData.responses.email}
+User: ${assessmentData.responses.full_name}
+Company: ${assessmentData.responses.company_name}
+Score: ${score}
+
+To enable email, please configure EmailJS service.`);
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Error sending email. Please download the report and send manually.');
+    }
   };
 
   return (
@@ -149,15 +229,33 @@ const AssessmentResults = () => {
           </div>
         </div>
 
+      <div id="assessment-report">
         {/* Results Header */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
             <Shield className="h-10 w-10 text-primary" />
           </div>
-          <h1 className="text-4xl font-bold mb-4">Your Compliance Assessment Results</h1>
-          <p className="text-xl text-muted-foreground">
-            Completed on {new Date(assessmentData.timestamp).toLocaleDateString()}
-          </p>
+          <h1 className="text-4xl font-bold mb-4">Compliance Assessment Report</h1>
+          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-left bg-muted/30 p-6 rounded-lg mb-4">
+            <div>
+              <strong>Name:</strong> {assessmentData.responses.full_name || 'N/A'}
+            </div>
+            <div>
+              <strong>Title:</strong> {assessmentData.responses.job_title || 'N/A'}
+            </div>
+            <div>
+              <strong>Company:</strong> {assessmentData.responses.company_name || 'N/A'}
+            </div>
+            <div>
+              <strong>Department:</strong> {assessmentData.responses.department || 'N/A'}
+            </div>
+            <div>
+              <strong>Email:</strong> {assessmentData.responses.email || 'N/A'}
+            </div>
+            <div>
+              <strong>Date:</strong> {new Date(assessmentData.timestamp).toLocaleDateString()}
+            </div>
+          </div>
         </div>
 
         {/* Overall Score */}
@@ -336,6 +434,7 @@ const AssessmentResults = () => {
             </div>
           </CardContent>
         </Card>
+      </div>
       </div>
     </div>
   );
