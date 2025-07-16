@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ArrowLeft, Download, Share2, Shield, AlertTriangle, CheckCircle, TrendingUp, FileText, Mail } from "lucide-react";
+import { ArrowLeft, Download, Share2, Shield, AlertTriangle, CheckCircle, TrendingUp, FileText, Mail, Building } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -20,7 +20,6 @@ const AssessmentResults = () => {
     if (data) {
       setAssessmentData(JSON.parse(data));
     } else {
-      // If no data found, redirect to start
       navigate('/assessment');
     }
     setLoading(false);
@@ -39,122 +38,281 @@ const AssessmentResults = () => {
   }
 
   const score = assessmentData.score || 0;
+  
   const getScoreLevel = (score: number) => {
-    if (score >= 80) return { level: "Excellent", color: "bg-green-500", textColor: "text-green-700" };
-    if (score >= 60) return { level: "Good", color: "bg-blue-500", textColor: "text-blue-700" };
-    if (score >= 40) return { level: "Fair", color: "bg-yellow-500", textColor: "text-yellow-700" };
-    return { level: "Needs Improvement", color: "bg-red-500", textColor: "text-red-700" };
+    if (score >= 85) return { 
+      level: "Excellent", 
+      color: "bg-green-500", 
+      textColor: "text-green-700",
+      description: "Mature compliance program with strong controls across all domains"
+    };
+    if (score >= 70) return { 
+      level: "Good", 
+      color: "bg-blue-500", 
+      textColor: "text-blue-700",
+      description: "Solid compliance foundation with opportunities for enhancement"
+    };
+    if (score >= 55) return { 
+      level: "Developing", 
+      color: "bg-yellow-500", 
+      textColor: "text-yellow-700",
+      description: "Basic compliance structure with significant gaps requiring attention"
+    };
+    return { 
+      level: "Critical", 
+      color: "bg-red-500", 
+      textColor: "text-red-700",
+      description: "Immediate action required to address critical compliance deficiencies"
+    };
   };
 
   const scoreLevel = getScoreLevel(score);
 
-  const riskAreas = [
-    {
-      area: "Data Privacy & Protection",
-      score: Math.max(score - 10, 0),
-      priority: score < 60 ? "High" : score < 80 ? "Medium" : "Low",
-      recommendations: [
-        "Implement comprehensive data mapping",
-        "Establish data retention policies",
-        "Conduct privacy impact assessments"
-      ]
-    },
-    {
-      area: "Cybersecurity Controls",
-      score: Math.min(score + 5, 100),
-      priority: score < 50 ? "High" : score < 75 ? "Medium" : "Low",
-      recommendations: [
-        "Deploy endpoint detection and response",
-        "Implement security awareness training",
-        "Conduct regular vulnerability assessments"
-      ]
-    },
-    {
-      area: "Regulatory Compliance",
-      score: score,
-      priority: score < 70 ? "High" : score < 85 ? "Medium" : "Low",
-      recommendations: [
-        "Establish compliance monitoring procedures",
-        "Document compliance policies",
-        "Schedule regular compliance audits"
-      ]
-    },
-    {
-      area: "Risk Management",
-      score: Math.max(score - 15, 0),
-      priority: score < 55 ? "High" : score < 80 ? "Medium" : "Low",
-      recommendations: [
-        "Develop risk assessment framework",
-        "Implement business continuity planning",
-        "Establish incident response procedures"
-      ]
-    }
-  ];
+  // Enhanced risk analysis based on responses
+  const analyzeRiskAreas = () => {
+    const responses = assessmentData.responses;
+    const riskAreas = [];
 
-  const actionItems = [
-    {
-      priority: "Immediate (0-30 days)",
-      items: [
-        "Conduct comprehensive risk assessment",
-        "Implement multi-factor authentication",
-        "Establish data backup procedures",
-        "Create incident response plan"
-      ]
-    },
-    {
-      priority: "Short-term (1-3 months)",
-      items: [
-        "Deploy security monitoring tools",
-        "Conduct staff security training",
-        "Document compliance policies",
-        "Perform vulnerability scanning"
-      ]
-    },
-    {
-      priority: "Long-term (3-12 months)",
-      items: [
-        "Achieve compliance certification",
-        "Implement automated compliance monitoring",
-        "Establish third-party risk management",
-        "Develop mature security operations"
-      ]
-    }
-  ];
+    // Regulatory Landscape Analysis
+    const applicableRegs = responses.applicable_regulations || [];
+    const regComplexity = responses.regulatory_complexity || '';
+    const complianceMaturity = responses.compliance_maturity || '';
+    
+    let regScore = 100;
+    if (applicableRegs.length > 5) regScore -= 20;
+    if (regComplexity.includes('complex')) regScore -= 15;
+    if (complianceMaturity.includes('Ad-hoc') || complianceMaturity.includes('Initial')) regScore -= 30;
 
-  const handleDownloadReport = async () => {
+    riskAreas.push({
+      domain: "Regulatory Compliance",
+      score: Math.max(regScore, 0),
+      priority: regScore < 60 ? "Critical" : regScore < 80 ? "High" : "Medium",
+      frameworks: applicableRegs.slice(0, 3).join(", "),
+      findings: [
+        `${applicableRegs.length} applicable regulations identified`,
+        `Compliance maturity: ${complianceMaturity}`,
+        `Regulatory complexity: ${regComplexity}`
+      ],
+      recommendations: [
+        "Establish comprehensive compliance monitoring program",
+        "Implement regulatory change management process",
+        "Develop compliance risk assessment methodology"
+      ]
+    });
+
+    // Data Governance Analysis
+    const dataClassification = responses.data_classification || '';
+    const dataInventory = responses.data_inventory || '';
+    const privacyProgram = responses.privacy_program || '';
+    
+    let dataScore = 100;
+    if (dataClassification.includes('No formal')) dataScore -= 25;
+    if (dataInventory.includes('No data inventory')) dataScore -= 25;
+    if (privacyProgram.includes('No formal')) dataScore -= 20;
+
+    riskAreas.push({
+      domain: "Data Governance & Privacy",
+      score: Math.max(dataScore, 0),
+      priority: dataScore < 60 ? "Critical" : dataScore < 80 ? "High" : "Medium",
+      frameworks: "GDPR, CCPA, PIPEDA",
+      findings: [
+        `Data classification: ${dataClassification}`,
+        `Data inventory: ${dataInventory}`,
+        `Privacy program: ${privacyProgram}`
+      ],
+      recommendations: [
+        "Implement comprehensive data classification system",
+        "Establish data inventory and mapping procedures",
+        "Develop privacy impact assessment process"
+      ]
+    });
+
+    // Cybersecurity Analysis
+    const securityFrameworks = responses.security_framework || [];
+    const securityMaturity = responses.security_maturity || '';
+    const incidentResponse = responses.incident_response || '';
+    
+    let secScore = 100;
+    if (securityFrameworks.includes('No formal framework')) secScore -= 30;
+    if (securityMaturity.includes('Initial') || securityMaturity.includes('Ad-hoc')) secScore -= 25;
+    if (incidentResponse.includes('No incident response')) secScore -= 20;
+
+    riskAreas.push({
+      domain: "Cybersecurity Controls",
+      score: Math.max(secScore, 0),
+      priority: secScore < 60 ? "Critical" : secScore < 80 ? "High" : "Medium",
+      frameworks: Array.isArray(securityFrameworks) ? securityFrameworks.slice(0, 2).join(", ") : "NIST CSF, ISO 27001",
+      findings: [
+        `Security frameworks: ${Array.isArray(securityFrameworks) ? securityFrameworks.join(", ") : securityFrameworks}`,
+        `Security maturity: ${securityMaturity}`,
+        `Incident response: ${incidentResponse}`
+      ],
+      recommendations: [
+        "Adopt comprehensive cybersecurity framework",
+        "Enhance incident response capabilities",
+        "Implement continuous security monitoring"
+      ]
+    });
+
+    return riskAreas;
+  };
+
+  const riskAreas = analyzeRiskAreas();
+
+  const generateEnhancedPDF = async () => {
     try {
-      const reportElement = document.getElementById('assessment-report');
-      if (!reportElement) return;
-
-      const canvas = await html2canvas(reportElement, {
-        scale: 2,
-        useCORS: true,
-        allowTaint: true
-      });
-
-      const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF('p', 'mm', 'a4');
+      const pageWidth = 210;
+      const pageHeight = 297;
+      const margin = 20;
       
-      const imgWidth = 210;
-      const pageHeight = 295;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      // Add first page
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      // Add additional pages if needed
-      while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-
-      const fileName = `Compliance_Assessment_Report_${assessmentData.responses.company_name || 'Report'}_${new Date().toISOString().split('T')[0]}.pdf`;
+      // Cover Page
+      pdf.setFillColor(0, 163, 173); // Primary color
+      pdf.rect(0, 0, pageWidth, 80, 'F');
+      
+      pdf.setTextColor(255, 255, 255);
+      pdf.setFontSize(28);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('ENTERPRISE COMPLIANCE', pageWidth/2, 30, { align: 'center' });
+      pdf.text('ASSESSMENT REPORT', pageWidth/2, 45, { align: 'center' });
+      
+      pdf.setFontSize(14);
+      pdf.setFont('helvetica', 'normal');
+      pdf.text('Confidential Executive Summary', pageWidth/2, 60, { align: 'center' });
+      
+      // Cover page info
+      pdf.setTextColor(0, 0, 0);
+      pdf.setFontSize(16);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('PREPARED FOR:', margin, 110);
+      
+      pdf.setFontSize(12);
+      pdf.setFont('helvetica', 'normal');
+      let yPos = 125;
+      pdf.text(`Name: ${assessmentData.responses.full_name || 'N/A'}`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Title: ${assessmentData.responses.job_title || 'N/A'}`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Organization: ${assessmentData.responses.company_name || 'N/A'}`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Department: ${assessmentData.responses.department || 'N/A'}`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Email: ${assessmentData.responses.email || 'N/A'}`, margin, yPos);
+      yPos += 20;
+      
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('ASSESSMENT DETAILS:', margin, yPos);
+      yPos += 15;
+      
+      pdf.setFont('helvetica', 'normal');
+      pdf.text(`Report Date: ${new Date(assessmentData.timestamp).toLocaleDateString()}`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Assessment Type: Enterprise Compliance Framework`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Overall Score: ${score}/100 (${scoreLevel.level})`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Industry: ${assessmentData.responses.industry_sector || 'N/A'}`, margin, yPos);
+      yPos += 8;
+      pdf.text(`Organization Size: ${assessmentData.responses.organization_size || 'N/A'}`, margin, yPos);
+      
+      // Footer
+      pdf.setFontSize(10);
+      pdf.setTextColor(128, 128, 128);
+      pdf.text('This report contains confidential and proprietary information.', pageWidth/2, 280, { align: 'center' });
+      pdf.text('© 2024 Titanide Consulting. All rights reserved.', pageWidth/2, 290, { align: 'center' });
+      
+      // Page 2 - Executive Summary
+      pdf.addPage();
+      yPos = margin;
+      
+      pdf.setTextColor(0, 0, 0);
+      pdf.setFontSize(20);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('EXECUTIVE SUMMARY', margin, yPos);
+      yPos += 20;
+      
+      pdf.setFontSize(14);
+      pdf.text('Overall Compliance Assessment', margin, yPos);
+      yPos += 15;
+      
+      pdf.setFontSize(11);
+      pdf.setFont('helvetica', 'normal');
+      const execSummary = [
+        `This comprehensive assessment evaluated ${assessmentData.responses.company_name || 'your organization'}'s compliance`,
+        `posture across multiple regulatory frameworks and industry standards. The assessment`,
+        `covered ${riskAreas.length} key compliance domains with emphasis on regulatory landscape,`,
+        `governance structure, data protection, cybersecurity, and risk management.`,
+        '',
+        `Key Findings:`,
+        `• Overall Compliance Score: ${score}/100 (${scoreLevel.level})`,
+        `• ${riskAreas.filter(r => r.priority === 'Critical').length} Critical Risk Areas Identified`,
+        `• ${riskAreas.filter(r => r.priority === 'High').length} High Priority Improvement Opportunities`,
+        `• Applicable Regulations: ${(assessmentData.responses.applicable_regulations || []).length} frameworks`,
+        '',
+        scoreLevel.description
+      ];
+      
+      execSummary.forEach(line => {
+        if (yPos > 250) {
+          pdf.addPage();
+          yPos = margin;
+        }
+        pdf.text(line, margin, yPos);
+        yPos += 6;
+      });
+      
+      // Page 3+ - Detailed Risk Analysis
+      pdf.addPage();
+      yPos = margin;
+      
+      pdf.setFontSize(20);
+      pdf.setFont('helvetica', 'bold');
+      pdf.text('DETAILED RISK ANALYSIS', margin, yPos);
+      yPos += 20;
+      
+      riskAreas.forEach((area, index) => {
+        if (yPos > 220) {
+          pdf.addPage();
+          yPos = margin;
+        }
+        
+        pdf.setFontSize(14);
+        pdf.setFont('helvetica', 'bold');
+        pdf.text(`${index + 1}. ${area.domain}`, margin, yPos);
+        yPos += 10;
+        
+        pdf.setFontSize(11);
+        pdf.setFont('helvetica', 'normal');
+        pdf.text(`Score: ${area.score}/100 | Priority: ${area.priority} | Frameworks: ${area.frameworks}`, margin, yPos);
+        yPos += 12;
+        
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('Key Findings:', margin, yPos);
+        yPos += 6;
+        
+        pdf.setFont('helvetica', 'normal');
+        area.findings.forEach(finding => {
+          pdf.text(`• ${finding}`, margin + 5, yPos);
+          yPos += 6;
+        });
+        yPos += 3;
+        
+        pdf.setFont('helvetica', 'bold');
+        pdf.text('Recommendations:', margin, yPos);
+        yPos += 6;
+        
+        pdf.setFont('helvetica', 'normal');
+        area.recommendations.forEach(rec => {
+          pdf.text(`• ${rec}`, margin + 5, yPos);
+          yPos += 6;
+        });
+        yPos += 10;
+      });
+      
+      // Save PDF
+      const fileName = `Enterprise_Compliance_Assessment_${assessmentData.responses.company_name?.replace(/[^a-zA-Z0-9]/g, '_') || 'Report'}_${new Date().toISOString().split('T')[0]}.pdf`;
       pdf.save(fileName);
+      
     } catch (error) {
       console.error('Error generating PDF:', error);
       alert('Error generating PDF report. Please try again.');
@@ -162,50 +320,16 @@ const AssessmentResults = () => {
   };
 
   const handleEmailReport = async () => {
-    try {
-      // Generate PDF as base64
-      const reportElement = document.getElementById('assessment-report');
-      if (!reportElement) return;
+    alert(`Email functionality ready for implementation.
+    
+Report Details:
+• Recipient: ${assessmentData.responses.email}
+• Executive: ${assessmentData.responses.full_name}
+• Organization: ${assessmentData.responses.company_name}
+• Score: ${score}/100 (${scoreLevel.level})
+• Risk Areas: ${riskAreas.length} domains analyzed
 
-      const canvas = await html2canvas(reportElement, {
-        scale: 2,
-        useCORS: true,
-        allowTaint: true
-      });
-
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF('p', 'mm', 'a4');
-      const imgWidth = 210;
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-      
-      const pdfBase64 = pdf.output('datauristring').split(',')[1];
-
-      // Email template data
-      const templateParams = {
-        to_email: assessmentData.responses.email,
-        user_name: assessmentData.responses.full_name,
-        company_name: assessmentData.responses.company_name,
-        assessment_score: score,
-        report_date: new Date().toLocaleDateString(),
-        pdf_attachment: pdfBase64
-      };
-
-      // Note: EmailJS service needs to be configured
-      // For now, we'll show instructions
-      alert(`Email functionality requires EmailJS configuration. 
-      
-Report ready for: ${assessmentData.responses.email}
-User: ${assessmentData.responses.full_name}
-Company: ${assessmentData.responses.company_name}
-Score: ${score}
-
-To enable email, please configure EmailJS service.`);
-      
-    } catch (error) {
-      console.error('Error sending email:', error);
-      alert('Error sending email. Please download the report and send manually.');
-    }
+To enable email delivery, configure EmailJS service with your email provider.`);
   };
 
   return (
@@ -222,219 +346,170 @@ To enable email, please configure EmailJS service.`);
               <Mail className="h-4 w-4 mr-2" />
               Email Report
             </Button>
-            <Button onClick={handleDownloadReport}>
+            <Button onClick={generateEnhancedPDF}>
               <Download className="h-4 w-4 mr-2" />
-              Download PDF
+              Download Executive Report
             </Button>
           </div>
         </div>
 
-      <div id="assessment-report">
-        {/* Results Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary/10 mb-6">
-            <Shield className="h-10 w-10 text-primary" />
-          </div>
-          <h1 className="text-4xl font-bold mb-4">Compliance Assessment Report</h1>
-          <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto text-left bg-muted/30 p-6 rounded-lg mb-4">
-            <div>
-              <strong>Name:</strong> {assessmentData.responses.full_name || 'N/A'}
-            </div>
-            <div>
-              <strong>Title:</strong> {assessmentData.responses.job_title || 'N/A'}
-            </div>
-            <div>
-              <strong>Company:</strong> {assessmentData.responses.company_name || 'N/A'}
-            </div>
-            <div>
-              <strong>Department:</strong> {assessmentData.responses.department || 'N/A'}
-            </div>
-            <div>
-              <strong>Email:</strong> {assessmentData.responses.email || 'N/A'}
-            </div>
-            <div>
-              <strong>Date:</strong> {new Date(assessmentData.timestamp).toLocaleDateString()}
-            </div>
-          </div>
-        </div>
-
-        {/* Overall Score */}
-        <Card className="mb-8 border-2">
-          <CardHeader className="text-center">
-            <CardTitle className="text-2xl">Overall Compliance Score</CardTitle>
-            <CardDescription>Based on your responses across all compliance areas</CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <div className="flex items-center justify-center space-x-6 mb-6">
-              <div className="relative">
-                <div className="w-32 h-32 rounded-full border-8 border-muted flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold">{score}</div>
-                    <div className="text-sm text-muted-foreground">out of 100</div>
+        <div id="assessment-report">
+          {/* Executive Header */}
+          <Card className="mb-8 border-2 border-primary/20">
+            <CardContent className="p-8">
+              <div className="flex items-center justify-between mb-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Shield className="h-8 w-8 text-primary" />
+                  </div>
+                  <div>
+                    <h1 className="text-3xl font-bold">Enterprise Compliance Assessment</h1>
+                    <p className="text-lg text-muted-foreground">Executive Summary Report</p>
                   </div>
                 </div>
-              </div>
-              <div className="text-left">
-                <Badge className={`${scoreLevel.color} text-white text-lg px-4 py-2 mb-2`}>
-                  {scoreLevel.level}
-                </Badge>
-                <div className="space-y-2">
-                  <Progress value={score} className="w-48 h-3" />
-                  <p className={`text-sm font-medium ${scoreLevel.textColor}`}>
-                    {score >= 80 && "Excellent compliance posture with minor areas for improvement."}
-                    {score >= 60 && score < 80 && "Good foundation with some areas requiring attention."}
-                    {score >= 40 && score < 60 && "Fair compliance with significant gaps to address."}
-                    {score < 40 && "Critical compliance gaps requiring immediate attention."}
-                  </p>
+                <div className="text-right">
+                  <div className="text-3xl font-bold">{score}</div>
+                  <div className="text-sm text-muted-foreground">Overall Score</div>
+                  <Badge className={`${scoreLevel.color} text-white mt-2`}>
+                    {scoreLevel.level}
+                  </Badge>
                 </div>
               </div>
-            </div>
-          </CardContent>
-        </Card>
+              
+              <div className="grid md:grid-cols-3 gap-6 bg-muted/30 p-6 rounded-lg">
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Building className="h-4 w-4 mr-2" />
+                    Executive Information
+                  </div>
+                  <div><strong>{assessmentData.responses.full_name}</strong></div>
+                  <div>{assessmentData.responses.job_title}</div>
+                  <div>{assessmentData.responses.department}</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <Building className="h-4 w-4 mr-2" />
+                    Organization
+                  </div>
+                  <div><strong>{assessmentData.responses.company_name}</strong></div>
+                  <div>{assessmentData.responses.industry_sector}</div>
+                  <div>{assessmentData.responses.organization_size}</div>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex items-center text-sm text-muted-foreground">
+                    <FileText className="h-4 w-4 mr-2" />
+                    Assessment Details
+                  </div>
+                  <div><strong>Date:</strong> {new Date(assessmentData.timestamp).toLocaleDateString()}</div>
+                  <div><strong>Type:</strong> Enterprise Framework</div>
+                  <div><strong>Domains:</strong> {riskAreas.length} analyzed</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
-        {/* Detailed Results Tabs */}
-        <Tabs defaultValue="overview" className="mb-8">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="overview">Overview</TabsTrigger>
-            <TabsTrigger value="risks">Risk Areas</TabsTrigger>
-            <TabsTrigger value="actions">Action Plan</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="overview" className="mt-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-600 mr-2" />
-                    Strengths Identified
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                      Strong awareness of compliance requirements
-                    </li>
-                    <li className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                      Basic security controls in place
-                    </li>
-                    <li className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mr-3"></div>
-                      Management commitment to compliance
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <AlertTriangle className="h-5 w-5 text-amber-600 mr-2" />
-                    Priority Areas
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2">
-                    <li className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
-                      Data privacy program gaps
-                    </li>
-                    <li className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-amber-500 rounded-full mr-3"></div>
-                      Incomplete security controls
-                    </li>
-                    <li className="flex items-center text-sm">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mr-3"></div>
-                      Missing compliance documentation
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </TabsContent>
-
-          <TabsContent value="risks" className="mt-6">
-            <div className="space-y-4">
-              {riskAreas.map((area, index) => (
-                <Card key={index}>
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="font-semibold text-lg">{area.area}</h3>
-                        <Badge variant={area.priority === "High" ? "destructive" : area.priority === "Medium" ? "default" : "secondary"}>
+          {/* Risk Analysis */}
+          <div className="space-y-6 mb-8">
+            <h2 className="text-2xl font-bold">Compliance Risk Analysis</h2>
+            {riskAreas.map((area, index) => (
+              <Card key={index} className="border-l-4 border-l-primary">
+                <CardContent className="p-6">
+                  <div className="flex justify-between items-start mb-4">
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-3 mb-2">
+                        <h3 className="font-bold text-lg">{area.domain}</h3>
+                        <Badge variant={
+                          area.priority === "Critical" ? "destructive" : 
+                          area.priority === "High" ? "default" : 
+                          "secondary"
+                        }>
                           {area.priority} Priority
                         </Badge>
                       </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold">{area.score}</div>
-                        <div className="text-sm text-muted-foreground">Score</div>
-                      </div>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        <strong>Applicable Frameworks:</strong> {area.frameworks}
+                      </p>
                     </div>
-                    <Progress value={area.score} className="mb-4" />
+                    <div className="text-right">
+                      <div className="text-2xl font-bold">{area.score}</div>
+                      <div className="text-sm text-muted-foreground">Risk Score</div>
+                    </div>
+                  </div>
+                  
+                  <Progress value={area.score} className="mb-4" />
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-medium mb-2">Key Recommendations:</h4>
-                      <ul className="space-y-1">
+                      <h4 className="font-semibold mb-2 text-sm">Key Findings:</h4>
+                      <ul className="space-y-1 text-sm">
+                        {area.findings.map((finding, idx) => (
+                          <li key={idx} className="flex items-start">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2 mt-2 flex-shrink-0"></div>
+                            {finding}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2 text-sm">Recommended Actions:</h4>
+                      <ul className="space-y-1 text-sm">
                         {area.recommendations.map((rec, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-center">
-                            <div className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></div>
+                          <li key={idx} className="flex items-start">
+                            <CheckCircle className="h-3 w-3 text-green-600 mr-2 mt-1 flex-shrink-0" />
                             {rec}
                           </li>
                         ))}
                       </ul>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
 
-          <TabsContent value="actions" className="mt-6">
-            <div className="space-y-6">
-              {actionItems.map((timeframe, index) => (
-                <Card key={index}>
-                  <CardHeader>
-                    <CardTitle className="flex items-center">
-                      <TrendingUp className="h-5 w-5 text-primary mr-2" />
-                      {timeframe.priority}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {timeframe.items.map((item, idx) => (
-                        <div key={idx} className="flex items-center space-x-3 p-3 bg-muted/50 rounded-lg">
-                          <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                          <span className="text-sm">{item}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-
-        {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
-          <CardContent className="p-8 text-center">
-            <FileText className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-4">Ready to Take Action?</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Our compliance experts can help you implement these recommendations and strengthen your compliance program. 
-              Schedule a consultation to discuss your specific needs and create a customized action plan.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">
-                Schedule Consultation
-              </Button>
-              <Button variant="outline" size="lg">
-                Take Assessment Again
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+          {/* Executive Action Plan */}
+          <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
+            <CardContent className="p-8">
+              <div className="text-center mb-6">
+                <TrendingUp className="h-12 w-12 text-primary mx-auto mb-4" />
+                <h3 className="text-2xl font-bold mb-2">Executive Action Plan</h3>
+                <p className="text-muted-foreground">
+                  Strategic recommendations based on your compliance assessment results
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-background/50 p-6 rounded-lg">
+                  <h4 className="font-bold mb-3 text-red-700">Immediate (0-30 days)</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Address critical compliance gaps</li>
+                    <li>• Establish incident response procedures</li>
+                    <li>• Document current compliance status</li>
+                    <li>• Schedule board compliance briefing</li>
+                  </ul>
+                </div>
+                <div className="bg-background/50 p-6 rounded-lg">
+                  <h4 className="font-bold mb-3 text-amber-700">Short-term (1-6 months)</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Implement compliance monitoring tools</li>
+                    <li>• Conduct staff training programs</li>
+                    <li>• Establish vendor risk assessments</li>
+                    <li>• Deploy automated compliance controls</li>
+                  </ul>
+                </div>
+                <div className="bg-background/50 p-6 rounded-lg">
+                  <h4 className="font-bold mb-3 text-green-700">Long-term (6-18 months)</h4>
+                  <ul className="space-y-2 text-sm">
+                    <li>• Achieve target compliance certifications</li>
+                    <li>• Implement enterprise risk management</li>
+                    <li>• Establish compliance center of excellence</li>
+                    <li>• Develop predictive compliance analytics</li>
+                  </ul>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </div>
   );
