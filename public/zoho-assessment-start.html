@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Assessment Wizard - Titanide Consulting</title>
+    <style>
+        :root {
+            --primary: 210 90% 45%;
+            --primary-foreground: 210 30% 96%;
+            --secondary: 210 30% 95%;
+            --secondary-foreground: 210 30% 10%;
+            --muted: 210 30% 96%;
+            --muted-foreground: 210 30% 45%;
+            --accent: 210 40% 90%;
+            --accent-foreground: 210 30% 10%;
+            --destructive: 0 85% 60%;
+            --destructive-foreground: 210 30% 96%;
+            --border: 210 30% 85%;
+            --input: 210 30% 85%;
+            --ring: 210 90% 45%;
+            --background: 0 0% 100%;
+            --foreground: 210 30% 10%;
+            --card: 0 0% 100%;
+            --card-foreground: 210 30% 10%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 210 30% 10%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: hsl(var(--foreground));
+            background: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: hsl(var(--foreground));
+        }
+
+        .step-indicator {
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        .progress-section {
+            margin-bottom: 2rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: hsl(var(--muted));
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: hsl(var(--primary));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            width: 12.5%; /* Step 1 of 8 */
+        }
+
+        .card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            padding: 2rem 2rem 1rem;
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .card-title-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .icon-container {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: hsl(var(--primary) / 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            color: hsl(var(--primary));
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: hsl(var(--foreground));
+            margin: 0;
+        }
+
+        .card-description {
+            color: hsl(var(--muted-foreground));
+            margin-top: 0.5rem;
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .question-container {
+            margin-bottom: 2rem;
+        }
+
+        .question-container:not(:last-child) {
+            border-bottom: 1px solid hsl(var(--border));
+            padding-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .label {
+            display: block;
+            font-size: 1rem;
+            font-weight: 500;
+            color: hsl(var(--foreground));
+            margin-bottom: 0.75rem;
+        }
+
+        .required {
+            color: hsl(var(--destructive));
+            margin-left: 0.25rem;
+        }
+
+        .input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid hsl(var(--input));
+            border-radius: 8px;
+            font-size: 1rem;
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            transition: border-color 0.2s ease;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: hsl(var(--ring));
+            box-shadow: 0 0 0 2px hsl(var(--ring) / 0.2);
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .radio-input {
+            width: 16px;
+            height: 16px;
+            border: 2px solid hsl(var(--border));
+            border-radius: 50%;
+            background: hsl(var(--background));
+            cursor: pointer;
+            appearance: none;
+            transition: all 0.2s ease;
+        }
+
+        .radio-input:checked {
+            border-color: hsl(var(--primary));
+            background: hsl(var(--primary));
+            box-shadow: inset 0 0 0 3px hsl(var(--background));
+        }
+
+        .radio-label {
+            font-size: 1rem;
+            color: hsl(var(--foreground));
+            cursor: pointer;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            min-width: 120px;
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            background: hsl(var(--primary) / 0.9);
+        }
+
+        .btn-outline {
+            background: hsl(var(--background));
+            color: hsl(var(--foreground));
+            border: 1px solid hsl(var(--border));
+        }
+
+        .btn-outline:hover:not(:disabled) {
+            background: hsl(var(--accent));
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .warning {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            border-radius: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .warning-icon {
+            width: 20px;
+            height: 20px;
+            color: #d97706;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .warning-text {
+            font-size: 0.875rem;
+            color: #92400e;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .card-header,
+            .card-content {
+                padding: 1.5rem;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <a href="http://www.titanideconsulting.com/assessment" class="back-link">
+                <svg class="icon" style="margin-right: 8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m12 19-7-7 7-7"/>
+                    <path d="M19 12H5"/>
+                </svg>
+                Back to Assessment
+            </a>
+            <div class="step-indicator">
+                Step <span id="current-step">1</span> of <span id="total-steps">8</span>
+            </div>
+        </div>
+
+        <!-- Progress -->
+        <div class="progress-section">
+            <div class="progress-header">
+                <span>Assessment Progress</span>
+                <span id="progress-percent">13% Complete</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Current Step Card -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title-container">
+                    <div class="icon-container">
+                        <svg class="icon" id="step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="m22 21-3-3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="card-title" id="step-title">Executive Information</h2>
+                        <p class="card-description">
+                            Please answer all questions to continue to the next section.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div id="questions-container">
+                    <!-- Questions will be populated here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <button class="btn btn-outline" id="prev-btn" onclick="previousStep()" disabled>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m12 19-7-7 7-7"/>
+                    <path d="M19 12H5"/>
+                </svg>
+                Previous
+            </button>
+            
+            <button class="btn btn-primary" id="next-btn" onclick="nextStep()" disabled>
+                <span id="next-text">Next</span>
+                <svg class="icon" id="next-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m9 18 6-6-6-6"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Warning for incomplete step -->
+        <div class="warning hidden" id="warning">
+            <svg class="warning-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                <path d="M12 9v4"/>
+                <path d="m12 17 .01 0"/>
+            </svg>
+            <div class="warning-text">
+                Please answer all required questions (marked with *) to continue.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 0;
+        let responses = {};
+
+        const steps = [
+            {
+                id: "user-info",
+                title: "Executive Information",
+                icon: `<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 21-3-3"/>`,
+                questions: [
+                    { id: "full_name", type: "text", question: "Full Name", required: true },
+                    { id: "email", type: "email", question: "Email Address", required: true },
+                    { id: "job_title", type: "text", question: "Job Title", required: true },
+                    { id: "department", type: "text", question: "Department/Division", required: true },
+                    { id: "phone", type: "text", question: "Phone Number", required: false },
+                    {
+                        id: "reporting_structure",
+                        type: "radio",
+                        question: "Who do you report to regarding compliance matters?",
+                        required: true,
+                        options: [
+                            "Chief Executive Officer (CEO)",
+                            "Chief Risk Officer (CRO)",
+                            "General Counsel",
+                            "Chief Financial Officer (CFO)",
+                            "Board of Directors",
+                            "Audit Committee",
+                            "Other C-Level Executive"
+                        ]
+                    }
+                ]
+            },
+            {
+                id: "organization",
+                title: "Organizational Profile",
+                icon: `<path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>`,
+                questions: [
+                    { id: "company_name", type: "text", question: "Organization Name", required: true },
+                    {
+                        id: "industry_sector",
+                        type: "radio",
+                        question: "Primary Industry Sector",
+                        required: true,
+                        options: [
+                            "Healthcare & Life Sciences",
+                            "Financial Services & Banking",
+                            "Technology & Software",
+                            "Manufacturing & Industrial",
+                            "Energy & Utilities",
+                            "Education & Research",
+                            "Government & Public Sector",
+                            "Retail & Consumer Goods",
+                            "Professional Services",
+                            "Real Estate & Construction",
+                            "Transportation & Logistics",
+                            "Media & Entertainment"
+                        ]
+                    },
+                    {
+                        id: "organization_size",
+                        type: "radio",
+                        question: "Organization Size (Full-time Employees)",
+                        required: true,
+                        options: [
+                            "Startup (1-50 employees)",
+                            "Small Enterprise (51-250 employees)",
+                            "Mid-Market (251-1,000 employees)",
+                            "Large Enterprise (1,001-10,000 employees)",
+                            "Fortune 1000 (10,001+ employees)"
+                        ]
+                    },
+                    {
+                        id: "revenue_range",
+                        type: "radio",
+                        question: "Annual Revenue Range",
+                        required: true,
+                        options: [
+                            "Under $10M",
+                            "$10M - $50M",
+                            "$50M - $250M",
+                            "$250M - $1B",
+                            "$1B - $10B",
+                            "Over $10B"
+                        ]
+                    },
+                    {
+                        id: "public_company",
+                        type: "radio",
+                        question: "Is your organization publicly traded?",
+                        required: true,
+                        options: [
+                            "Yes, US public company (SEC reporting)",
+                            "Yes, international public company",
+                            "No, privately held",
+                            "Non-profit organization",
+                            "Government entity"
+                        ]
+                    }
+                ]
+            }
+            // Additional steps would be added here...
+        ];
+
+        function initializeAssessment() {
+            renderCurrentStep();
+            updateProgress();
+            updateNavigation();
+        }
+
+        function renderCurrentStep() {
+            const step = steps[currentStep];
+            
+            // Update step title and icon
+            document.getElementById('step-title').textContent = step.title;
+            document.getElementById('step-icon').innerHTML = step.icon;
+            
+            // Render questions
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+            
+            step.questions.forEach((question, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'question-container';
+                
+                questionDiv.innerHTML = renderQuestion(question);
+                container.appendChild(questionDiv);
+            });
+        }
+
+        function renderQuestion(question) {
+            switch (question.type) {
+                case 'text':
+                case 'email':
+                    return `
+                        <div class="form-group">
+                            <label class="label" for="${question.id}">
+                                ${question.question}
+                                ${question.required ? '<span class="required">*</span>' : ''}
+                            </label>
+                            <input 
+                                type="${question.type === 'email' ? 'email' : 'text'}"
+                                id="${question.id}"
+                                class="input"
+                                placeholder="Enter your answer..."
+                                value="${responses[question.id] || ''}"
+                                oninput="handleInputChange('${question.id}', this.value)"
+                            />
+                        </div>
+                    `;
+                    
+                case 'radio':
+                    const options = question.options.map((option, index) => `
+                        <div class="radio-item">
+                            <input 
+                                type="radio"
+                                id="${question.id}_${index}"
+                                name="${question.id}"
+                                value="${option}"
+                                class="radio-input"
+                                ${responses[question.id] === option ? 'checked' : ''}
+                                onchange="handleInputChange('${question.id}', this.value)"
+                            />
+                            <label class="radio-label" for="${question.id}_${index}">
+                                ${option}
+                            </label>
+                        </div>
+                    `).join('');
+                    
+                    return `
+                        <div class="form-group">
+                            <label class="label">
+                                ${question.question}
+                                ${question.required ? '<span class="required">*</span>' : ''}
+                            </label>
+                            <div class="radio-group">
+                                ${options}
+                            </div>
+                        </div>
+                    `;
+                    
+                default:
+                    return '';
+            }
+        }
+
+        function handleInputChange(questionId, value) {
+            responses[questionId] = value;
+            updateNavigation();
+            updateWarning();
+        }
+
+        function isStepComplete() {
+            const step = steps[currentStep];
+            const requiredQuestions = step.questions.filter(q => q.required);
+            return requiredQuestions.every(q => responses[q.id] && responses[q.id] !== '');
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.disabled = !isStepComplete();
+            
+            if (currentStep === steps.length - 1) {
+                document.getElementById('next-text').textContent = 'Get Results';
+                document.getElementById('next-icon').innerHTML = `
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <path d="m9 11 3 3L22 4"/>
+                `;
+            } else {
+                document.getElementById('next-text').textContent = 'Next';
+                document.getElementById('next-icon').innerHTML = `<path d="m9 18 6-6-6-6"/>`;
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentStep + 1) / steps.length) * 100;
+            document.getElementById('current-step').textContent = currentStep + 1;
+            document.getElementById('total-steps').textContent = steps.length;
+            document.getElementById('progress-percent').textContent = Math.round(progress) + '% Complete';
+            document.getElementById('progress-fill').style.width = progress + '%';
+        }
+
+        function updateWarning() {
+            const warning = document.getElementById('warning');
+            if (!isStepComplete()) {
+                warning.classList.remove('hidden');
+            } else {
+                warning.classList.add('hidden');
+            }
+        }
+
+        function nextStep() {
+            if (!isStepComplete()) return;
+            
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                renderCurrentStep();
+                updateProgress();
+                updateNavigation();
+                updateWarning();
+            } else {
+                // Calculate results and redirect
+                const assessmentData = {
+                    responses,
+                    timestamp: new Date().toISOString(),
+                    score: calculateScore()
+                };
+                localStorage.setItem('assessmentData', JSON.stringify(assessmentData));
+                window.location.href = 'http://www.titanideconsulting.com/assessment-results';
+            }
+        }
+
+        function previousStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderCurrentStep();
+                updateProgress();
+                updateNavigation();
+                updateWarning();
+            }
+        }
+
+        function calculateScore() {
+            // Basic scoring for demonstration
+            let totalQuestions = 0;
+            let answeredQuestions = 0;
+            
+            steps.forEach(step => {
+                step.questions.forEach(question => {
+                    totalQuestions++;
+                    if (responses[question.id] && responses[question.id] !== '') {
+                        answeredQuestions++;
+                    }
+                });
+            });
+            
+            return Math.round((answeredQuestions / totalQuestions) * 100);
+        }
+
+        // Initialize the assessment when the page loads
+        document.addEventListener('DOMContentLoaded', initializeAssessment);
+    </script>
+</body>
+</html>
