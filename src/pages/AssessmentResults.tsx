@@ -165,85 +165,125 @@ const AssessmentResults = () => {
       const pageWidth = 210;
       const pageHeight = 297;
       const margin = 20;
+      const contentWidth = pageWidth - (2 * margin);
+      let pageCount = 0;
+      
+      // Set default font
+      pdf.setFont('arial', 'normal');
+      
+      // Helper function to add page with border and footer
+      const addPageWithBorder = () => {
+        if (pageCount > 0) {
+          pdf.addPage();
+        }
+        pageCount++;
+        
+        // Add 2pt teal border around page
+        pdf.setDrawColor(0, 128, 128); // Teal color
+        pdf.setLineWidth(2);
+        pdf.rect(2, 2, pageWidth - 4, pageHeight - 4);
+        
+        // Add footer - version info left
+        const currentDate = new Date();
+        const versionDate = `1.0/${currentDate.getFullYear().toString().slice(-2)}/${String(currentDate.getDate()).padStart(2, '0')}/${String(currentDate.getMonth() + 1).padStart(2, '0')}`;
+        pdf.setFontSize(8);
+        pdf.setTextColor(0, 0, 0);
+        pdf.text(versionDate, margin, pageHeight - 10);
+        
+        // Add footer - confidential text center
+        pdf.text('This report contains confidential and proprietary information. © 2024 Titanide Consulting Group. All rights reserved.', 
+                pageWidth/2, pageHeight - 10, { align: 'center' });
+      };
+      
+      // Helper function to add page numbers
+      const addPageNumber = (current: number, total: number) => {
+        pdf.setFontSize(8);
+        pdf.setTextColor(0, 0, 0);
+        pdf.text(`${current} of ${total}`, pageWidth - margin, pageHeight - 10, { align: 'right' });
+      };
       
       // Cover Page
-      pdf.setFillColor(0, 163, 173); // Primary color
-      pdf.rect(0, 0, pageWidth, 80, 'F');
+      addPageWithBorder();
       
-      pdf.setTextColor(255, 255, 255);
-      pdf.setFontSize(28);
-      pdf.setFont('helvetica', 'bold');
-      pdf.text('ENTERPRISE COMPLIANCE', pageWidth/2, 30, { align: 'center' });
-      pdf.text('ASSESSMENT REPORT', pageWidth/2, 45, { align: 'center' });
+      // Header container - dark blue background
+      pdf.setFillColor(25, 43, 81); // Dark blue
+      pdf.rect(margin, margin, contentWidth, 60, 'F');
       
-      pdf.setFontSize(14);
-      pdf.setFont('helvetica', 'normal');
-      pdf.text('Confidential Executive Summary', pageWidth/2, 60, { align: 'center' });
+      // Title
+      pdf.setTextColor(255, 255, 255); // White text
+      pdf.setFontSize(16);
+      pdf.setFont('arial', 'normal');
+      pdf.text('TITANIDE Enterprise Compliance Assessment', pageWidth/2, margin + 25, { align: 'center' });
+      
+      // Subtitle
+      pdf.setFontSize(12);
+      pdf.text('Confidential Risk Assessment', pageWidth/2, margin + 40, { align: 'center' });
       
       // Cover page info
-      pdf.setTextColor(0, 0, 0);
-      pdf.setFontSize(16);
-      pdf.setFont('helvetica', 'bold');
-      pdf.text('PREPARED FOR:', margin, 110);
+      pdf.setTextColor(25, 43, 81); // Dark blue text
+      pdf.setFontSize(13);
+      pdf.setFont('arial', 'normal');
+      pdf.text('PREPARED FOR:', margin, margin + 90);
       
-      pdf.setFontSize(12);
-      pdf.setFont('helvetica', 'normal');
-      let yPos = 125;
+      let yPos = margin + 105;
+      pdf.setFontSize(11);
+      pdf.setFont('arial', 'normal');
+      const lineSpacing = 11 * 1.5; // 1.5 line spacing
+      
       pdf.text(`Name: ${assessmentData.responses.full_name || 'N/A'}`, margin, yPos);
-      yPos += 8;
+      yPos += lineSpacing;
       pdf.text(`Title: ${assessmentData.responses.job_title || 'N/A'}`, margin, yPos);
-      yPos += 8;
+      yPos += lineSpacing;
       pdf.text(`Organization: ${assessmentData.responses.company_name || 'N/A'}`, margin, yPos);
-      yPos += 8;
+      yPos += lineSpacing;
       pdf.text(`Department: ${assessmentData.responses.department || 'N/A'}`, margin, yPos);
-      yPos += 8;
+      yPos += lineSpacing;
       pdf.text(`Email: ${assessmentData.responses.email || 'N/A'}`, margin, yPos);
-      yPos += 20;
+      yPos += lineSpacing + 11; // Extra space after paragraph
       
-      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(13);
+      pdf.setTextColor(25, 43, 81); // Dark blue for heading
       pdf.text('ASSESSMENT DETAILS:', margin, yPos);
-      yPos += 15;
-      
-      pdf.setFont('helvetica', 'normal');
-      pdf.text(`Report Date: ${new Date(assessmentData.timestamp).toLocaleDateString()}`, margin, yPos);
-      yPos += 8;
-      pdf.text(`Assessment Type: Enterprise Compliance Framework`, margin, yPos);
-      yPos += 8;
-      pdf.text(`Overall Score: ${score}/100 (${scoreLevel.level})`, margin, yPos);
-      yPos += 8;
-      pdf.text(`Industry: ${assessmentData.responses.industry_sector || 'N/A'}`, margin, yPos);
-      yPos += 8;
-      pdf.text(`Organization Size: ${assessmentData.responses.organization_size || 'N/A'}`, margin, yPos);
-      
-      // Footer
-      pdf.setFontSize(10);
-      pdf.setTextColor(128, 128, 128);
-      pdf.text('This report contains confidential and proprietary information.', pageWidth/2, 280, { align: 'center' });
-      pdf.text('© 2024 Titanide Consulting. All rights reserved.', pageWidth/2, 290, { align: 'center' });
-      
-      // Page 2 - Executive Summary
-      pdf.addPage();
-      yPos = margin;
-      
-      pdf.setTextColor(0, 0, 0);
-      pdf.setFontSize(20);
-      pdf.setFont('helvetica', 'bold');
-      pdf.text('EXECUTIVE SUMMARY', margin, yPos);
-      yPos += 20;
-      
-      pdf.setFontSize(14);
-      pdf.text('Overall Compliance Assessment', margin, yPos);
-      yPos += 15;
+      yPos += lineSpacing;
       
       pdf.setFontSize(11);
-      pdf.setFont('helvetica', 'normal');
+      pdf.setTextColor(0, 0, 0); // Black for body text
+      pdf.text(`Report Date: ${new Date(assessmentData.timestamp).toLocaleDateString()}`, margin, yPos);
+      yPos += lineSpacing;
+      pdf.text(`Assessment Type: Enterprise Compliance Framework`, margin, yPos);
+      yPos += lineSpacing;
+      // Bold the score
+      const scoreText = `Overall Score: `;
+      const boldScoreText = `${score}/100 (${scoreLevel.level})`;
+      pdf.text(scoreText, margin, yPos);
+      pdf.setFont('arial', 'bold');
+      pdf.text(boldScoreText, margin + pdf.getTextWidth(scoreText), yPos);
+      pdf.setFont('arial', 'normal');
+      yPos += lineSpacing;
+      pdf.text(`Industry: ${assessmentData.responses.industry_sector || 'N/A'}`, margin, yPos);
+      yPos += lineSpacing;
+      pdf.text(`Organization Size: ${assessmentData.responses.organization_size || 'N/A'}`, margin, yPos);
+      
+      // Executive Summary Page
+      addPageWithBorder();
+      yPos = margin + 20;
+      
+      pdf.setFontSize(13);
+      pdf.setFont('arial', 'normal');
+      pdf.setTextColor(25, 43, 81); // Dark blue for heading
+      pdf.text('EXECUTIVE SUMMARY', margin, yPos);
+      yPos += lineSpacing + 11; // Extra space after heading
+      
+      pdf.setFontSize(13);
+      pdf.text('Overall Compliance Assessment', margin, yPos);
+      yPos += lineSpacing + 11;
+      
+      pdf.setFontSize(11);
+      pdf.setTextColor(0, 0, 0); // Black for body text
       const execSummary = [
-        `This comprehensive assessment evaluated ${assessmentData.responses.company_name || 'your organization'}'s compliance`,
-        `posture across multiple regulatory frameworks and industry standards. The assessment`,
-        `covered ${riskAreas.length} key compliance domains with emphasis on regulatory landscape,`,
-        `governance structure, data protection, cybersecurity, and risk management.`,
+        `This comprehensive assessment evaluated ${assessmentData.responses.company_name || 'your organization'}'s compliance posture across multiple regulatory frameworks and industry standards. The assessment covered ${riskAreas.length} key compliance domains with emphasis on regulatory landscape, governance structure, data protection, cybersecurity, and risk management.`,
         '',
-        `Key Findings:`,
+        'Key Findings:',
         `• Overall Compliance Score: ${score}/100 (${scoreLevel.level})`,
         `• ${riskAreas.filter(r => r.priority === 'Critical').length} Critical Risk Areas Identified`,
         `• ${riskAreas.filter(r => r.priority === 'High').length} High Priority Improvement Opportunities`,
@@ -254,63 +294,187 @@ const AssessmentResults = () => {
       
       execSummary.forEach(line => {
         if (yPos > 250) {
-          pdf.addPage();
-          yPos = margin;
+          addPageWithBorder();
+          yPos = margin + 20;
         }
-        pdf.text(line, margin, yPos);
-        yPos += 6;
+        if (line === '') {
+          yPos += 11; // One space after paragraph
+        } else {
+          const lines = pdf.splitTextToSize(line, contentWidth);
+          lines.forEach((textLine: string) => {
+            pdf.text(textLine, margin, yPos);
+            yPos += lineSpacing;
+          });
+          if (line !== execSummary[execSummary.length - 1]) {
+            yPos += 11; // Extra space after paragraph
+          }
+        }
       });
       
-      // Page 3+ - Detailed Risk Analysis
-      pdf.addPage();
-      yPos = margin;
+      // Detailed Risk Analysis
+      addPageWithBorder();
+      yPos = margin + 20;
       
-      pdf.setFontSize(20);
-      pdf.setFont('helvetica', 'bold');
+      pdf.setFontSize(13);
+      pdf.setTextColor(25, 43, 81); // Dark blue for heading
       pdf.text('DETAILED RISK ANALYSIS', margin, yPos);
-      yPos += 20;
+      yPos += lineSpacing + 11;
       
       riskAreas.forEach((area, index) => {
-        if (yPos > 220) {
-          pdf.addPage();
-          yPos = margin;
+        if (yPos > 200) {
+          addPageWithBorder();
+          yPos = margin + 20;
         }
         
-        pdf.setFontSize(14);
-        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(13);
+        pdf.setTextColor(25, 43, 81); // Dark blue for section heading
         pdf.text(`${index + 1}. ${area.domain}`, margin, yPos);
-        yPos += 10;
+        yPos += lineSpacing;
         
         pdf.setFontSize(11);
-        pdf.setFont('helvetica', 'normal');
-        pdf.text(`Score: ${area.score}/100 | Priority: ${area.priority} | Frameworks: ${area.frameworks}`, margin, yPos);
-        yPos += 12;
+        pdf.setTextColor(0, 0, 0); // Black for body text
+        const scoreText = `Score: `;
+        const boldScore = `${area.score}/100`;
+        const restText = ` | Priority: ${area.priority} | Frameworks: ${area.frameworks}`;
         
-        pdf.setFont('helvetica', 'bold');
+        pdf.text(scoreText, margin, yPos);
+        pdf.setFont('arial', 'bold');
+        pdf.text(boldScore, margin + pdf.getTextWidth(scoreText), yPos);
+        pdf.setFont('arial', 'normal');
+        pdf.text(restText, margin + pdf.getTextWidth(scoreText + boldScore), yPos);
+        yPos += lineSpacing + 11;
+        
+        pdf.setFontSize(13);
+        pdf.setTextColor(25, 43, 81); // Dark blue for sub-heading
         pdf.text('Key Findings:', margin, yPos);
-        yPos += 6;
+        yPos += lineSpacing;
         
-        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(11);
+        pdf.setTextColor(0, 0, 0); // Black for body text
         area.findings.forEach(finding => {
-          pdf.text(`• ${finding}`, margin + 5, yPos);
-          yPos += 6;
+          const lines = pdf.splitTextToSize(`• ${finding}`, contentWidth - 10);
+          lines.forEach((line: string) => {
+            pdf.text(line, margin + 5, yPos);
+            yPos += lineSpacing;
+          });
         });
-        yPos += 3;
+        yPos += 11; // Space after paragraph
         
-        pdf.setFont('helvetica', 'bold');
+        pdf.setFontSize(13);
+        pdf.setTextColor(25, 43, 81); // Dark blue for sub-heading
         pdf.text('Recommendations:', margin, yPos);
-        yPos += 6;
+        yPos += lineSpacing;
         
-        pdf.setFont('helvetica', 'normal');
+        pdf.setFontSize(11);
+        pdf.setTextColor(0, 0, 0); // Black for body text
         area.recommendations.forEach(rec => {
-          pdf.text(`• ${rec}`, margin + 5, yPos);
-          yPos += 6;
+          const lines = pdf.splitTextToSize(`• ${rec}`, contentWidth - 10);
+          lines.forEach((line: string) => {
+            pdf.text(line, margin + 5, yPos);
+            yPos += lineSpacing;
+          });
         });
-        yPos += 10;
+        yPos += 11; // Space after section
       });
       
+      // High Level Review Page with Charts
+      addPageWithBorder();
+      yPos = margin + 20;
+      
+      pdf.setFontSize(13);
+      pdf.setTextColor(25, 43, 81); // Dark blue for heading
+      pdf.text('HIGH LEVEL COMPLIANCE POSTURE REVIEW', margin, yPos);
+      yPos += lineSpacing + 11;
+      
+      // Compliance Score Chart (text-based representation)
+      pdf.setFontSize(11);
+      pdf.setTextColor(0, 0, 0);
+      pdf.text('Compliance Score Distribution:', margin, yPos);
+      yPos += lineSpacing;
+      
+      // Create a simple text-based chart
+      const maxBarWidth = 100;
+      const scoreBar = (score / 100) * maxBarWidth;
+      pdf.setFillColor(25, 43, 81); // Dark blue bar
+      pdf.rect(margin, yPos, scoreBar, 5, 'F');
+      pdf.setDrawColor(0, 0, 0);
+      pdf.rect(margin, yPos, maxBarWidth, 5);
+      yPos += 15;
+      
+      pdf.text(`Overall Score: ${score}/100 (${scoreLevel.level})`, margin, yPos);
+      yPos += lineSpacing + 11;
+      
+      // Risk Areas Summary
+      pdf.text('Risk Areas Summary:', margin, yPos);
+      yPos += lineSpacing;
+      
+      riskAreas.forEach(area => {
+        const areaBar = (area.score / 100) * maxBarWidth;
+        pdf.setFillColor(area.priority === 'Critical' ? 220 : area.priority === 'High' ? 255 : 100, 
+                        area.priority === 'Critical' ? 53 : area.priority === 'High' ? 193 : 149, 
+                        area.priority === 'Critical' ? 69 : area.priority === 'High' ? 7 : 237);
+        pdf.rect(margin, yPos, areaBar, 4, 'F');
+        pdf.setDrawColor(0, 0, 0);
+        pdf.rect(margin, yPos, maxBarWidth, 4);
+        yPos += 8;
+        pdf.text(`${area.domain}: ${area.score}/100`, margin, yPos);
+        yPos += lineSpacing;
+      });
+      
+      yPos += 11;
+      
+      // Contact Information
+      pdf.setFontSize(13);
+      pdf.setTextColor(25, 43, 81); // Dark blue for heading
+      pdf.text('NEXT STEPS - SCHEDULE YOUR DISCOVERY CALL', margin, yPos);
+      yPos += lineSpacing + 11;
+      
+      pdf.setFontSize(11);
+      pdf.setTextColor(0, 0, 0);
+      const contactText = [
+        'Based on your assessment results, our compliance experts can help you develop a comprehensive strategy to address identified gaps and strengthen your compliance posture.',
+        '',
+        'To schedule a confidential discovery call to discuss your findings and potential solutions:',
+        '• Email: consulting@titanidegroup.com',
+        '• Phone: 1-800-TITANIDE',
+        '• Website: www.titanidegroup.com/discovery',
+        '',
+        'During your discovery call, we will:',
+        '• Review your detailed assessment results',
+        '• Identify immediate action items and quick wins',
+        '• Discuss comprehensive compliance program development',
+        '• Explore regulatory technology solutions',
+        '• Provide recommendations for ongoing compliance management'
+      ];
+      
+      contactText.forEach(line => {
+        if (yPos > 250) {
+          addPageWithBorder();
+          yPos = margin + 20;
+        }
+        if (line === '') {
+          yPos += 11;
+        } else {
+          const lines = pdf.splitTextToSize(line, contentWidth);
+          lines.forEach((textLine: string) => {
+            pdf.text(textLine, margin, yPos);
+            yPos += lineSpacing;
+          });
+          if (line !== contactText[contactText.length - 1]) {
+            yPos += 11;
+          }
+        }
+      });
+      
+      // Add page numbers to all pages
+      const totalPages = pageCount;
+      for (let i = 1; i <= totalPages; i++) {
+        pdf.setPage(i);
+        addPageNumber(i, totalPages);
+      }
+      
       // Save PDF
-      const fileName = `Enterprise_Compliance_Assessment_${assessmentData.responses.company_name?.replace(/[^a-zA-Z0-9]/g, '_') || 'Report'}_${new Date().toISOString().split('T')[0]}.pdf`;
+      const fileName = `TITANIDE_Enterprise_Compliance_Assessment_${assessmentData.responses.company_name?.replace(/[^a-zA-Z0-9]/g, '_') || 'Report'}_${new Date().toISOString().split('T')[0]}.pdf`;
       pdf.save(fileName);
       
     } catch (error) {
