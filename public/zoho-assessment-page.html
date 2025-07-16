@@ -477,17 +477,28 @@
 
     <script>
         function generateSampleReport() {
-            // Create sample assessment data
+            // Create comprehensive sample assessment data
             const sampleData = {
                 responses: {
                     full_name: "John Smith",
                     email: "john.smith@acmecorp.com",
                     job_title: "Chief Compliance Officer",
+                    department: "Legal & Compliance",
                     company_name: "ACME Corporation",
                     industry_sector: "Healthcare & Life Sciences",
                     organization_size: "Large Enterprise (1,001-10,000 employees)",
-                    applicable_regulations: ["HIPAA", "GDPR", "SOX"],
-                    compliance_maturity: "Developing: Structured program with defined processes"
+                    applicable_regulations: ["HIPAA", "GDPR", "HITECH", "SOX", "FDA 21 CFR Part 11"],
+                    compliance_maturity: "Developing: Structured program with defined processes",
+                    governance_structure: "Formal compliance committee",
+                    policy_framework: "Comprehensive but some outdated",
+                    training_program: "Regular training with tracking",
+                    audit_program: "Annual third-party audits",
+                    incident_reporting: "Formal incident response process",
+                    vendor_assessment: "Basic vendor assessments",
+                    data_classification: "Formal data classification",
+                    privacy_program: "Comprehensive privacy program",
+                    incident_response: "Documented incident response plan",
+                    regulatory_monitoring: "Manual regulatory tracking"
                 },
                 score: 72,
                 timestamp: new Date().toISOString()
