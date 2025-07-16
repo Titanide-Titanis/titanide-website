@@ -10,9 +10,9 @@ const FreeTools = () => {
       title: "Compliance Assessment Framework",
       description: "A comprehensive template for evaluating your organization's current compliance posture across multiple regulatory domains.",
       icon: CheckSquare,
-      type: "Template",
-      format: "Excel/PDF",
-      downloadUrl: "/tools/compliance-assessment-framework.html",
+      type: "Interactive",
+      format: "Web App",
+      downloadUrl: "/assessment",
       features: [
         "Multi-domain compliance checklist",
         "Risk scoring methodology",
@@ -157,14 +157,25 @@ const FreeTools = () => {
                   <span className="text-xs text-gray-500">
                     Format: {tool.format}
                   </span>
-                  <a 
-                    href={tool.downloadUrl}
-                    className="inline-flex items-center px-4 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: '#00A3AD' }}
-                  >
-                    <Download className="h-4 w-4 mr-2" />
-                    Download
-                  </a>
+                  {tool.id === 1 ? (
+                    <Link 
+                      to={tool.downloadUrl}
+                      className="inline-flex items-center px-4 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition-opacity"
+                      style={{ backgroundColor: '#00A3AD' }}
+                    >
+                      <CheckSquare className="h-4 w-4 mr-2" />
+                      Start Assessment
+                    </Link>
+                  ) : (
+                    <a 
+                      href={tool.downloadUrl}
+                      className="inline-flex items-center px-4 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition-opacity"
+                      style={{ backgroundColor: '#00A3AD' }}
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
