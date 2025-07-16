@@ -7,6 +7,24 @@ const MichadrianHealthcare = () => {
 
   return (
     <div className="min-h-screen" style={{ fontFamily: 'Inter, sans-serif', backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: 1.6 }}>
+      {/* Coming 2026 Banner */}
+      <div className="py-3 px-4 text-center text-white overflow-hidden" style={{ 
+        background: 'linear-gradient(45deg, #FFD700, #FFA500, #FF6B6B, #4ECDC4, #45B7D1)',
+        backgroundSize: '400% 400%',
+        animation: 'gradient 4s ease infinite'
+      }}>
+        <div className="relative">
+          <p className="text-sm sm:text-base font-bold tracking-wide" style={{ animation: 'bounce 2s infinite' }}>
+            🎉 COMING 2026 • Revolutionizing UK Healthcare • COMING 2026 🎉
+          </p>
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-0 left-0 w-2 h-2 bg-white rounded-full opacity-60" style={{ animation: 'sparkle 1.5s ease-in-out infinite' }}></div>
+            <div className="absolute top-1 right-4 w-1 h-1 bg-white rounded-full opacity-80" style={{ animation: 'sparkle 2s ease-in-out infinite 0.5s' }}></div>
+            <div className="absolute bottom-0 left-1/4 w-1.5 h-1.5 bg-white rounded-full opacity-70" style={{ animation: 'sparkle 1.8s ease-in-out infinite 1s' }}></div>
+          </div>
+        </div>
+      </div>
+
       {/* Hero Section */}
       <header className="py-12 sm:py-20 px-4 sm:px-8 text-center text-white" style={{ background: 'linear-gradient(135deg, #002B45, #005870)', animation: 'fadeIn 1.5s ease-out' }}>
         <div className="container mx-auto max-w-6xl">
@@ -147,60 +165,10 @@ const MichadrianHealthcare = () => {
       {/* Contact Section */}
       <section id="contact" className="py-12 sm:py-16 px-4 sm:px-8 text-center text-white" style={{ backgroundColor: '#002837' }}>
         <div className="container mx-auto max-w-4xl">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Contact Our UK Team</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">Ready to Transform Your UK Healthcare Operations?</h2>
           <p className="text-base sm:text-lg mb-8 max-w-2xl mx-auto text-white">
             Ready to explore how Michadrian Healthcare Services can support your UK healthcare needs?
           </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 items-start mb-8">
-            <div className="space-y-6">
-              <div className="flex items-start gap-4 justify-center md:justify-start">
-                <svg className="h-6 w-6 text-white mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                </svg>
-                <div>
-                  <h3 className="font-semibold mb-2 text-white">Email</h3>
-                  <p className="text-gray-200">michadrian.uk@titanideconsulting.com</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-              <form className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2 text-white text-left">Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white/90 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2 text-white text-left">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white/90 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2 text-white text-left">Message</label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md bg-white/90 text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Your message"
-                  ></textarea>
-                </div>
-                <button type="submit" className="w-full text-white hover:opacity-90 px-6 py-3 rounded-md font-semibold transition-opacity" style={{ backgroundColor: '#00A3AD' }}>
-                  Send Message
-                </button>
-              </form>
-            </div>
-          </div>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="mailto:michadrian.uk@titanideconsulting.com" className="w-full sm:w-auto">
               <button className="text-white hover:opacity-90 w-full sm:w-auto px-8 py-3 rounded-md text-lg font-semibold transition-opacity" style={{ backgroundColor: '#00A3AD' }}>
@@ -292,6 +260,29 @@ const MichadrianHealthcare = () => {
           }
           100% {
             box-shadow: 0 0 0 0 rgba(0, 43, 69, 0);
+          }
+        }
+        
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        
+        @keyframes sparkle {
+          0%, 100% {
+            opacity: 0;
+            transform: scale(0);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1);
           }
         }
       `}</style>
