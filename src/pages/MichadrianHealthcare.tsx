@@ -53,7 +53,7 @@ const MichadrianHealthcare = () => {
             <p className="text-sm sm:text-base mb-6 max-w-2xl mx-auto" style={{ color: '#1a1a1a' }}>
               AI-powered compliance advisor providing instant guidance on UK healthcare regulations and best practices, available 24/7 for your team.
             </p>
-            <a href="https://chatgpt.com/g/g-67ff5bc7e0a48191bc849e5aa3a917ad-kj-advisor-the-executive-companion" target="_blank" rel="noopener noreferrer">
+            <a href="https://chatgpt.com/g/g-6877d0b9d1c88191a7b6a85d0b706f53-kj-advisor-uk-eu-edition" target="_blank" rel="noopener noreferrer">
               <button className="text-white hover:opacity-90 px-6 py-3 rounded-md font-semibold transition-opacity text-base sm:text-lg" style={{ backgroundColor: '#002B45' }}>
                 Launch KJ Advisor
                 <span className="ml-2">→</span>
@@ -219,7 +219,7 @@ const MichadrianHealthcare = () => {
 
       {/* Floating KJ Advisor Button */}
       <div className="fixed bottom-6 right-6 z-50" style={{ animation: 'pulse 2s infinite' }}>
-        <a href="https://chatgpt.com/g/g-67ff5bc7e0a48191bc849e5aa3a917ad-kj-advisor-the-executive-companion" target="_blank" rel="noopener noreferrer">
+        <a href="https://chatgpt.com/g/g-6877d0b9d1c88191a7b6a85d0b706f53-kj-advisor-uk-eu-edition" target="_blank" rel="noopener noreferrer">
           <button className="flex items-center gap-2 rounded-full shadow-lg hover:shadow-xl transition-shadow px-4 py-3 text-white font-semibold" style={{ backgroundColor: '#002B45' }}>
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
