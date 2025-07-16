@@ -215,9 +215,9 @@ const FreeTools = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg p-8 shadow-xl">
+            <div className="bg-white rounded-lg p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
               <div className="text-center mb-6">
-                <span className="text-4xl">🇺🇸</span>
+                <span className="text-4xl inline-block hover:scale-110 transition-transform duration-300">🇺🇸</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
                   KJ Advisor US
                 </h3>
@@ -232,15 +232,15 @@ const FreeTools = () => {
                 <li>• Policy template generation</li>
               </ul>
               <div className="text-center">
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300 animate-pulse" style={{ backgroundColor: '#00A3AD' }}>
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:brightness-110 transition-all duration-300 transform hover:scale-[1.02]" style={{ backgroundColor: '#00A3AD' }}>
                   🚀 Start US Compliance Chat
                 </button>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg p-8 shadow-xl border-2 hover:shadow-2xl transition-shadow duration-300" style={{ borderColor: '#002B45' }}>
+            <div className="bg-white rounded-lg p-8 shadow-xl border-2 hover:shadow-2xl transition-all duration-500 hover:border-opacity-80" style={{ borderColor: '#002B45' }}>
               <div className="text-center mb-6">
-                <span className="text-4xl animate-bounce">🇪🇺</span>
+                <span className="text-4xl inline-block hover:rotate-12 transition-transform duration-500">🇪🇺</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
                   KJ Advisor UK/EU
                 </h3>
@@ -255,7 +255,7 @@ const FreeTools = () => {
                 <li>• Regulatory impact analysis</li>
               </ul>
               <div className="text-center">
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:scale-105 hover:shadow-lg transition-all duration-300 animate-pulse" style={{ backgroundColor: '#002B45' }}>
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:brightness-110 transition-all duration-300 hover:shadow-md" style={{ backgroundColor: '#002B45' }}>
                   🌍 Launch EU Compliance AI
                 </button>
               </div>
