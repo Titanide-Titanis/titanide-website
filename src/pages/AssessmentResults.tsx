@@ -171,12 +171,29 @@ const AssessmentResults = () => {
       // Set default font
       pdf.setFont('arial', 'normal');
       
+      // Helper function to add watermark
+      const addWatermark = () => {
+        pdf.saveGraphicsState();
+        pdf.setTextColor(128, 128, 128); // Medium gray
+        pdf.setFont('arial', 'bold');
+        pdf.setFontSize(20);
+        pdf.setGState(pdf.GState({ opacity: 0.5 }));
+        pdf.text('TITANIDE CONSULTING GROUP', pageWidth/2, pageHeight/2, { 
+          align: 'center',
+          angle: 0
+        });
+        pdf.restoreGraphicsState();
+      };
+      
       // Helper function to add page with border and footer
       const addPageWithBorder = () => {
         if (pageCount > 0) {
           pdf.addPage();
         }
         pageCount++;
+        
+        // Add watermark to page
+        addWatermark();
         
         // Add 2pt teal border around page
         pdf.setDrawColor(0, 128, 128); // Teal color
@@ -228,7 +245,7 @@ const AssessmentResults = () => {
       let yPos = margin + 105;
       pdf.setFontSize(11);
       pdf.setFont('arial', 'normal');
-      const lineSpacing = 11 * 1.5; // 1.5 line spacing
+      const lineSpacing = 11; // Single line spacing
       
       pdf.text(`Name: ${assessmentData.responses.full_name || 'N/A'}`, margin, yPos);
       yPos += lineSpacing;
@@ -239,7 +256,7 @@ const AssessmentResults = () => {
       pdf.text(`Department: ${assessmentData.responses.department || 'N/A'}`, margin, yPos);
       yPos += lineSpacing;
       pdf.text(`Email: ${assessmentData.responses.email || 'N/A'}`, margin, yPos);
-      yPos += lineSpacing + 11; // Extra space after paragraph
+      yPos += lineSpacing; // No extra space after paragraph
       
       pdf.setFontSize(13);
       pdf.setTextColor(25, 43, 81); // Dark blue for heading
@@ -272,11 +289,11 @@ const AssessmentResults = () => {
       pdf.setFont('arial', 'normal');
       pdf.setTextColor(25, 43, 81); // Dark blue for heading
       pdf.text('EXECUTIVE SUMMARY', margin, yPos);
-      yPos += lineSpacing + 11; // Extra space after heading
+      yPos += lineSpacing; // No extra space after heading
       
       pdf.setFontSize(13);
       pdf.text('Overall Compliance Assessment', margin, yPos);
-      yPos += lineSpacing + 11;
+      yPos += lineSpacing;
       
       pdf.setFontSize(11);
       pdf.setTextColor(0, 0, 0); // Black for body text
@@ -298,16 +315,13 @@ const AssessmentResults = () => {
           yPos = margin + 20;
         }
         if (line === '') {
-          yPos += 11; // One space after paragraph
+          yPos += lineSpacing; // Single spacing
         } else {
           const lines = pdf.splitTextToSize(line, contentWidth);
           lines.forEach((textLine: string) => {
             pdf.text(textLine, margin, yPos);
             yPos += lineSpacing;
           });
-          if (line !== execSummary[execSummary.length - 1]) {
-            yPos += 11; // Extra space after paragraph
-          }
         }
       });
       
@@ -318,7 +332,7 @@ const AssessmentResults = () => {
       pdf.setFontSize(13);
       pdf.setTextColor(25, 43, 81); // Dark blue for heading
       pdf.text('DETAILED RISK ANALYSIS', margin, yPos);
-      yPos += lineSpacing + 11;
+      yPos += lineSpacing;
       
       riskAreas.forEach((area, index) => {
         if (yPos > 200) {
@@ -342,7 +356,7 @@ const AssessmentResults = () => {
         pdf.text(boldScore, margin + pdf.getTextWidth(scoreText), yPos);
         pdf.setFont('arial', 'normal');
         pdf.text(restText, margin + pdf.getTextWidth(scoreText + boldScore), yPos);
-        yPos += lineSpacing + 11;
+        yPos += lineSpacing;
         
         pdf.setFontSize(13);
         pdf.setTextColor(25, 43, 81); // Dark blue for sub-heading
@@ -358,7 +372,7 @@ const AssessmentResults = () => {
             yPos += lineSpacing;
           });
         });
-        yPos += 11; // Space after paragraph
+        yPos += lineSpacing; // Single spacing
         
         pdf.setFontSize(13);
         pdf.setTextColor(25, 43, 81); // Dark blue for sub-heading
@@ -374,7 +388,7 @@ const AssessmentResults = () => {
             yPos += lineSpacing;
           });
         });
-        yPos += 11; // Space after section
+        yPos += lineSpacing; // Single spacing
       });
       
       // High Level Review Page with Charts
@@ -384,7 +398,7 @@ const AssessmentResults = () => {
       pdf.setFontSize(13);
       pdf.setTextColor(25, 43, 81); // Dark blue for heading
       pdf.text('HIGH LEVEL COMPLIANCE POSTURE REVIEW', margin, yPos);
-      yPos += lineSpacing + 11;
+      yPos += lineSpacing;
       
       // Compliance Score Chart (text-based representation)
       pdf.setFontSize(11);
@@ -402,7 +416,7 @@ const AssessmentResults = () => {
       yPos += 15;
       
       pdf.text(`Overall Score: ${score}/100 (${scoreLevel.level})`, margin, yPos);
-      yPos += lineSpacing + 11;
+      yPos += lineSpacing;
       
       // Risk Areas Summary
       pdf.text('Risk Areas Summary:', margin, yPos);
@@ -421,13 +435,13 @@ const AssessmentResults = () => {
         yPos += lineSpacing;
       });
       
-      yPos += 11;
+      yPos += lineSpacing;
       
       // Contact Information
       pdf.setFontSize(13);
       pdf.setTextColor(25, 43, 81); // Dark blue for heading
       pdf.text('NEXT STEPS - SCHEDULE YOUR DISCOVERY CALL', margin, yPos);
-      yPos += lineSpacing + 11;
+      yPos += lineSpacing;
       
       pdf.setFontSize(11);
       pdf.setTextColor(0, 0, 0);
@@ -453,16 +467,13 @@ const AssessmentResults = () => {
           yPos = margin + 20;
         }
         if (line === '') {
-          yPos += 11;
+          yPos += lineSpacing;
         } else {
           const lines = pdf.splitTextToSize(line, contentWidth);
           lines.forEach((textLine: string) => {
             pdf.text(textLine, margin, yPos);
             yPos += lineSpacing;
           });
-          if (line !== contactText[contactText.length - 1]) {
-            yPos += 11;
-          }
         }
       });
       
