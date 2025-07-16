@@ -300,7 +300,7 @@
                         <polyline points="22,4 12,14.01 9,11.01"/>
                     </svg>
                 </a>
-                <a href="#" class="btn btn-outline">View Sample Report</a>
+                <button class="btn btn-outline" onclick="generateSampleReport()">View Sample Report</button>
             </div>
         </div>
 
@@ -474,5 +474,41 @@
             </a>
         </div>
     </div>
+
+    <script>
+        function generateSampleReport() {
+            // Create sample assessment data
+            const sampleData = {
+                responses: {
+                    full_name: "John Smith",
+                    email: "john.smith@acmecorp.com",
+                    job_title: "Chief Compliance Officer",
+                    company_name: "ACME Corporation",
+                    industry_sector: "Healthcare & Life Sciences",
+                    organization_size: "Large Enterprise (1,001-10,000 employees)",
+                    applicable_regulations: ["HIPAA", "GDPR", "SOX"],
+                    compliance_maturity: "Developing: Structured program with defined processes"
+                },
+                score: 72,
+                timestamp: new Date().toISOString()
+            };
+
+            // Save sample data
+            localStorage.setItem('assessmentData', JSON.stringify(sampleData));
+            
+            // Show loading message
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = 'Generating Sample Report...';
+            button.disabled = true;
+            
+            // Simulate processing and redirect
+            setTimeout(() => {
+                window.open('http://www.titanideconsulting.com/assessment-results', '_blank');
+                button.textContent = originalText;
+                button.disabled = false;
+            }, 1500);
+        }
+    </script>
 </body>
 </html>
