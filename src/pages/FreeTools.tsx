@@ -211,51 +211,53 @@ const FreeTools = () => {
       <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#002B45' }}>
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl font-bold text-center mb-12 text-white">
-            Digital Products
+            AI-Powered GPT Solutions
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg p-8 shadow-xl">
               <div className="text-center mb-6">
-                <span className="text-4xl">👑</span>
+                <span className="text-4xl">🤖</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
-                  KJ Advisor Classic
+                  KJ Advisor Classic GPT
                 </h3>
-                <p className="text-gray-600 mt-2">Essential compliance guidance</p>
+                <p className="text-gray-600 mt-2">AI-powered compliance guidance</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
-                <li>• Core compliance templates</li>
-                <li>• Basic risk assessments</li>
-                <li>• Standard reporting tools</li>
-                <li>• Email support</li>
+                <li>• Instant compliance Q&A</li>
+                <li>• Risk assessment automation</li>
+                <li>• Policy generation assistance</li>
+                <li>• 24/7 AI-powered support</li>
+                <li>• Integration with ChatGPT</li>
               </ul>
               <div className="text-center">
-                <div className="text-2xl font-bold mb-4" style={{ color: '#00A3AD' }}>$299</div>
+                <div className="text-2xl font-bold mb-4" style={{ color: '#00A3AD' }}>$199/month</div>
                 <button className="w-full px-6 py-3 rounded-md text-white font-semibold" style={{ backgroundColor: '#00A3AD' }}>
-                  Get KJ Advisor Classic
+                  Access Classic GPT
                 </button>
               </div>
             </div>
             
             <div className="bg-white rounded-lg p-8 shadow-xl border-2" style={{ borderColor: '#002B45' }}>
               <div className="text-center mb-6">
-                <span className="text-4xl">👑</span>
+                <span className="text-4xl">🧠</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
-                  KJ Advisor Premium
+                  KJ Advisor Premium GPT
                 </h3>
-                <p className="text-gray-600 mt-2">Advanced compliance platform</p>
+                <p className="text-gray-600 mt-2">Advanced AI compliance platform</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
-                <li>• Everything in Classic</li>
-                <li>• Advanced analytics dashboard</li>
-                <li>• Custom compliance workflows</li>
-                <li>• Priority phone support</li>
-                <li>• Quarterly strategy sessions</li>
+                <li>• Everything in Classic GPT</li>
+                <li>• Custom AI model training</li>
+                <li>• Advanced compliance analytics</li>
+                <li>• Multi-domain expertise</li>
+                <li>• Priority AI response times</li>
+                <li>• Human expert fallback</li>
               </ul>
               <div className="text-center">
-                <div className="text-2xl font-bold mb-4" style={{ color: '#002B45' }}>$599</div>
+                <div className="text-2xl font-bold mb-4" style={{ color: '#002B45' }}>$399/month</div>
                 <button className="w-full px-6 py-3 rounded-md text-white font-semibold" style={{ backgroundColor: '#002B45' }}>
-                  Get KJ Advisor Premium
+                  Access Premium GPT
                 </button>
               </div>
             </div>
