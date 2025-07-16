@@ -12,7 +12,7 @@ const FreeTools = () => {
       icon: CheckSquare,
       type: "Template",
       format: "Excel/PDF",
-      downloadUrl: "#",
+      downloadUrl: "/tools/compliance-assessment-framework.html",
       features: [
         "Multi-domain compliance checklist",
         "Risk scoring methodology",
@@ -27,7 +27,7 @@ const FreeTools = () => {
       icon: Shield,
       type: "Guide",
       format: "PDF",
-      downloadUrl: "#",
+      downloadUrl: "/tools/risk-management-playbook.pdf",
       features: [
         "Risk identification strategies",
         "Mitigation planning templates",
@@ -202,6 +202,62 @@ const FreeTools = () => {
                 <li>• Training and implementation support</li>
                 <li>• Enterprise solutions for larger needs</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Digital Products Section */}
+      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#002B45' }}>
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12 text-white">
+            Digital Products
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-lg p-8 shadow-xl">
+              <div className="text-center mb-6">
+                <span className="text-4xl">👑</span>
+                <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
+                  KJ Advisor Classic
+                </h3>
+                <p className="text-gray-600 mt-2">Essential compliance guidance</p>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                <li>• Core compliance templates</li>
+                <li>• Basic risk assessments</li>
+                <li>• Standard reporting tools</li>
+                <li>• Email support</li>
+              </ul>
+              <div className="text-center">
+                <div className="text-2xl font-bold mb-4" style={{ color: '#00A3AD' }}>$299</div>
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold" style={{ backgroundColor: '#00A3AD' }}>
+                  Get KJ Advisor Classic
+                </button>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-8 shadow-xl border-2" style={{ borderColor: '#002B45' }}>
+              <div className="text-center mb-6">
+                <span className="text-4xl">👑</span>
+                <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
+                  KJ Advisor Premium
+                </h3>
+                <p className="text-gray-600 mt-2">Advanced compliance platform</p>
+              </div>
+              <ul className="space-y-2 text-sm text-gray-600 mb-6">
+                <li>• Everything in Classic</li>
+                <li>• Advanced analytics dashboard</li>
+                <li>• Custom compliance workflows</li>
+                <li>• Priority phone support</li>
+                <li>• Quarterly strategy sessions</li>
+              </ul>
+              <div className="text-center">
+                <div className="text-2xl font-bold mb-4" style={{ color: '#002B45' }}>$599</div>
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold" style={{ backgroundColor: '#002B45' }}>
+                  Get KJ Advisor Premium
+                </button>
+              </div>
             </div>
           </div>
         </div>
