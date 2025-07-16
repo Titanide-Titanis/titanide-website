@@ -42,7 +42,7 @@ const FreeTools = () => {
       icon: FileText,
       type: "Toolkit",
       format: "Multi-format",
-      downloadUrl: "#",
+      downloadUrl: "https://drive.google.com/file/d/1HIPAA_TOOLKIT_SAMPLE/view?usp=sharing",
       features: [
         "Policy templates",
         "Training materials",
@@ -57,7 +57,7 @@ const FreeTools = () => {
       icon: BarChart,
       type: "Assessment",
       format: "Excel",
-      downloadUrl: "#",
+      downloadUrl: "https://drive.google.com/file/d/1VENDOR_RISK_MATRIX_SAMPLE/view?usp=sharing",
       features: [
         "Vendor evaluation criteria",
         "Risk scoring algorithms",
@@ -72,7 +72,7 @@ const FreeTools = () => {
       icon: BarChart,
       type: "Dashboard",
       format: "Excel/PowerBI",
-      downloadUrl: "#",
+      downloadUrl: "https://drive.google.com/file/d/1EXEC_DASHBOARD_SAMPLE/view?usp=sharing",
       features: [
         "Executive KPI tracking",
         "Visual compliance metrics",
@@ -87,7 +87,7 @@ const FreeTools = () => {
       icon: Users,
       type: "Program",
       format: "PDF/PPT",
-      downloadUrl: "#",
+      downloadUrl: "https://drive.google.com/file/d/1TRAINING_PROGRAM_SAMPLE/view?usp=sharing",
       features: [
         "Training curriculum design",
         "Assessment methodologies",
@@ -232,9 +232,11 @@ const FreeTools = () => {
                 <li>• Policy template generation</li>
               </ul>
               <div className="text-center">
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:brightness-110 transition-all duration-300 transform hover:scale-[1.02]" style={{ backgroundColor: '#00A3AD' }}>
-                  🚀 Start US Compliance Chat
-                </button>
+                <a href="https://chatgpt.com/g/g-6745f6a978388191bbb35aad4ad4cba8-kj-advisor-us" target="_blank" rel="noopener noreferrer" className="block">
+                  <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:brightness-110 transition-all duration-300 transform hover:scale-[1.02]" style={{ backgroundColor: '#00A3AD' }}>
+                    🚀 Start US Compliance Chat
+                  </button>
+                </a>
               </div>
             </div>
             
@@ -255,9 +257,11 @@ const FreeTools = () => {
                 <li>• Regulatory impact analysis</li>
               </ul>
               <div className="text-center">
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:brightness-110 transition-all duration-300 hover:shadow-md" style={{ backgroundColor: '#002B45' }}>
-                  🌍 Launch EU Compliance AI
-                </button>
+                <a href="https://chatgpt.com/g/g-6745f6e778388191bbb35aad4ad4cc39-kj-advisor-uk-eu" target="_blank" rel="noopener noreferrer" className="block">
+                  <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:brightness-110 transition-all duration-300 hover:shadow-md" style={{ backgroundColor: '#002B45' }}>
+                    🌍 Launch EU Compliance AI
+                  </button>
+                </a>
               </div>
             </div>
           </div>
