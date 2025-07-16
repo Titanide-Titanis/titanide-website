@@ -217,47 +217,46 @@ const FreeTools = () => {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-lg p-8 shadow-xl">
               <div className="text-center mb-6">
-                <span className="text-4xl">🤖</span>
+                <span className="text-4xl">🇺🇸</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
-                  KJ Advisor Classic GPT
+                  KJ Advisor US
                 </h3>
-                <p className="text-gray-600 mt-2">AI-powered compliance guidance</p>
+                <p className="text-gray-600 mt-2">US compliance and regulatory guidance</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
-                <li>• Instant compliance Q&A</li>
+                <li>• US federal regulatory compliance</li>
+                <li>• HIPAA and healthcare guidance</li>
+                <li>• Financial services regulations</li>
+                <li>• State-specific compliance requirements</li>
                 <li>• Risk assessment automation</li>
-                <li>• Policy generation assistance</li>
-                <li>• 24/7 AI-powered support</li>
-                <li>• Integration with ChatGPT</li>
+                <li>• Policy template generation</li>
               </ul>
               <div className="text-center">
-                <div className="text-2xl font-bold mb-4" style={{ color: '#00A3AD' }}>$199/month</div>
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold" style={{ backgroundColor: '#00A3AD' }}>
-                  Access Classic GPT
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: '#00A3AD' }}>
+                  Access GPT →
                 </button>
               </div>
             </div>
             
             <div className="bg-white rounded-lg p-8 shadow-xl border-2" style={{ borderColor: '#002B45' }}>
               <div className="text-center mb-6">
-                <span className="text-4xl">🧠</span>
+                <span className="text-4xl">🇪🇺</span>
                 <h3 className="text-2xl font-bold mt-4" style={{ color: '#002B45' }}>
-                  KJ Advisor Premium GPT
+                  KJ Advisor UK/EU
                 </h3>
-                <p className="text-gray-600 mt-2">Advanced AI compliance platform</p>
+                <p className="text-gray-600 mt-2">UK and European compliance guidance</p>
               </div>
               <ul className="space-y-2 text-sm text-gray-600 mb-6">
-                <li>• Everything in Classic GPT</li>
-                <li>• Custom AI model training</li>
-                <li>• Advanced compliance analytics</li>
-                <li>• Multi-domain expertise</li>
-                <li>• Priority AI response times</li>
-                <li>• Human expert fallback</li>
+                <li>• GDPR and data protection compliance</li>
+                <li>• UK post-Brexit regulatory changes</li>
+                <li>• EU financial services directives</li>
+                <li>• Cross-border compliance requirements</li>
+                <li>• Multi-jurisdictional risk assessment</li>
+                <li>• Regulatory impact analysis</li>
               </ul>
               <div className="text-center">
-                <div className="text-2xl font-bold mb-4" style={{ color: '#002B45' }}>$399/month</div>
-                <button className="w-full px-6 py-3 rounded-md text-white font-semibold" style={{ backgroundColor: '#002B45' }}>
-                  Access Premium GPT
+                <button className="w-full px-6 py-3 rounded-md text-white font-semibold hover:opacity-90 transition-opacity" style={{ backgroundColor: '#002B45' }}>
+                  Access GPT →
                 </button>
               </div>
             </div>
