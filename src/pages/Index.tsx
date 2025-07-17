@@ -211,9 +211,7 @@ const Index = () => {
 
           <div className="text-center mt-8 sm:mt-12">
             <a 
-              href="https://www.titanideconsulting.com/services"
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="/services"
             >
               <Button 
                 size="lg" 
