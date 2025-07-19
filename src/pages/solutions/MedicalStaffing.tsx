@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-const MichadrianHealthcare = () => {
+const MedicalStaffing = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -290,4 +291,4 @@ const MichadrianHealthcare = () => {
   );
 };
 
-export default MichadrianHealthcare;
+export default MedicalStaffing;

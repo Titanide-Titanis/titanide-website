@@ -10,12 +10,18 @@ import About from "./pages/About";
 import Resources from "./pages/Resources";
 import Blog from "./pages/Blog";
 import BlogAdmin from "./pages/BlogAdmin";
-import UseCases from "./pages/UseCases";
+import CaseStudies from "./pages/CaseStudies";
 import FreeTools from "./pages/FreeTools";
 import Assessment from "./pages/Assessment";
 import AssessmentStart from "./pages/AssessmentStart";
 import AssessmentResults from "./pages/AssessmentResults";
 import NotFound from "./pages/NotFound";
+import Solutions from "./pages/Solutions";
+import Contact from "./pages/Contact";
+import Legal from "./pages/Legal";
+import Risk from "./pages/services/Risk";
+import Compliance from "./pages/services/Compliance";
+import MedicalStaffing from "./pages/solutions/MedicalStaffing";
 import FutureOfComplianceLeadership from "./pages/articles/FutureOfComplianceLeadership";
 import FractionalLeadershipAdvantage from "./pages/articles/FractionalLeadershipAdvantage";
 import RiskManagementFrameworks from "./pages/articles/RiskManagementFrameworks";
@@ -23,7 +29,6 @@ import HIPAADigitalAge from "./pages/articles/HIPAADigitalAge";
 import ComplianceTrainingBestPractices from "./pages/articles/ComplianceTrainingBestPractices";
 import PolicyDevelopmentFramework from "./pages/articles/PolicyDevelopmentFramework";
 import StrategicCompliancePlanning from "./pages/articles/StrategicCompliancePlanning";
-import MichadrianHealthcare from "./pages/MichadrianHealthcare";
 
 const queryClient = new QueryClient();
 
@@ -36,8 +41,13 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/services/michadrian-healthcare" element={<MichadrianHealthcare />} />
+          <Route path="/services/risk" element={<Risk />} />
+          <Route path="/services/compliance" element={<Compliance />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/medical-staffing" element={<MedicalStaffing />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/legal" element={<Legal />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/resources/blog" element={<Blog />} />
           <Route path="/resources/blog/admin" element={<BlogAdmin />} />
@@ -48,7 +58,7 @@ const App = () => (
           <Route path="/resources/blog/compliance-training-best-practices" element={<ComplianceTrainingBestPractices />} />
           <Route path="/resources/blog/policy-development-framework" element={<PolicyDevelopmentFramework />} />
           <Route path="/resources/blog/strategic-compliance-planning" element={<StrategicCompliancePlanning />} />
-          <Route path="/resources/use-cases" element={<UseCases />} />
+          <Route path="/resources/case-studies" element={<CaseStudies />} />
           <Route path="/resources/free-tools" element={<FreeTools />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/assessment-start" element={<AssessmentStart />} />

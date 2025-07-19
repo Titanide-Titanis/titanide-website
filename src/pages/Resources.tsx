@@ -42,7 +42,7 @@ const Resources = () => {
             </Link>
 
             {/* Client Impact Stories Section */}
-            <Link to="/resources/use-cases" className="group">
+            <Link to="/resources/case-studies" className="group">
               <div className="bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105 border border-gray-100">
                 <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: '#002B45' }}>
                   <FileText className="h-8 w-8 text-white" />
