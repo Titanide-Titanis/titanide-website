@@ -512,6 +512,73 @@ const Legal = () => {
                           <p className="text-gray-700 leading-relaxed">{area.content.statement}</p>
                         </div>
 
+                        {/* Our Policy - Comprehensive Implementation */}
+                        <div>
+                          <h4 className="font-semibold mb-3 text-lg" style={{ color: '#005870' }}>Our Policy</h4>
+                          <div className="bg-gray-50 p-6 rounded-lg">
+                            <p className="text-gray-700 leading-relaxed mb-4">
+                              Titanide Consulting Group has implemented a comprehensive policy framework that goes beyond mere compliance to establish a culture of ethical conduct, transparency, and operational excellence. This framework serves as the foundation for all business operations and client engagements.
+                            </p>
+                            <div className="grid md:grid-cols-2 gap-4">
+                              <div>
+                                <h5 className="font-medium text-gray-900 mb-2">Core Principles</h5>
+                                <ul className="text-sm text-gray-600 space-y-1">
+                                  <li>• Integrity in all business dealings</li>
+                                  <li>• Transparency in operations and reporting</li>
+                                  <li>• Accountability at all organizational levels</li>
+                                  <li>• Continuous improvement and adaptation</li>
+                                </ul>
+                              </div>
+                              <div>
+                                <h5 className="font-medium text-gray-900 mb-2">Implementation Standards</h5>
+                                <ul className="text-sm text-gray-600 space-y-1">
+                                  <li>• Regular policy review and updates</li>
+                                  <li>• Comprehensive staff training programs</li>
+                                  <li>• Robust monitoring and audit procedures</li>
+                                  <li>• Clear escalation and reporting pathways</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Legal Citations */}
+                        {area.content.legalCitations && (
+                          <div>
+                            <h4 className="font-semibold mb-3 text-lg" style={{ color: '#005870' }}>Legal Framework & Citations</h4>
+                            <div className="bg-blue-50 p-4 rounded-lg">
+                              <ul className="space-y-2">
+                                {area.content.legalCitations.map((citation, index) => (
+                                  <li key={index} className="flex items-start gap-3">
+                                    <Gavel className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
+                                    <span className="text-sm text-gray-700">{citation}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Trademarked Resources for Proprietary Technology */}
+                        {area.id === 'proprietary-technology' && area.content.trademarkResources && (
+                          <div>
+                            <h4 className="font-semibold mb-3 text-lg" style={{ color: '#005870' }}>The Titanide Compliance Toolkit™</h4>
+                            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+                              <p className="text-gray-700 mb-4">
+                                Our proprietary toolkit represents a comprehensive suite of trademarked resources designed to streamline compliance operations and enhance organizational governance capabilities.
+                              </p>
+                              <div className="grid md:grid-cols-2 gap-4">
+                                {area.content.trademarkResources.map((resource, index) => (
+                                  <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
+                                    <h5 className="font-medium text-gray-900 mb-1">{resource.split(' - ')[0]}</h5>
+                                    <p className="text-sm text-gray-600">{resource.split(' - ')[1]}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
                         {/* Procedures */}
                         <div>
                           <h4 className="font-semibold mb-3 text-lg" style={{ color: '#005870' }}>Implementation Procedures</h4>
@@ -586,8 +653,25 @@ const Legal = () => {
                 Proprietary Technology Governance
               </h2>
               <p className="text-gray-700 mb-6">
-                Our AI-powered tools and proprietary platforms operate under strict governance frameworks ensuring ethical AI usage, data protection, and regulatory compliance.
+                Our AI-powered tools and proprietary platforms operate under strict governance frameworks ensuring ethical AI usage, data protection, and regulatory compliance through The Titanide Compliance Toolkit™.
               </p>
+              
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200 mb-6">
+                <h3 className="text-xl font-semibold mb-4" style={{ color: '#005870' }}>The Titanide Compliance Toolkit™</h3>
+                <p className="text-gray-700 mb-4">
+                  Our comprehensive suite of trademarked compliance resources and AI-powered solutions designed to streamline governance operations.
+                </p>
+                <div className="grid md:grid-cols-1 gap-3">
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-semibold text-gray-900 mb-2">Compliance Assessment Framework™</h4>
+                    <p className="text-sm text-gray-600">Multi-domain compliance evaluation system with risk scoring methodology</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg shadow-sm">
+                    <h4 className="font-semibold text-gray-900 mb-2">Risk Management Playbook™</h4>
+                    <p className="text-sm text-gray-600">Strategic risk mitigation toolkit with monitoring and reporting frameworks</p>
+                  </div>
+                </div>
+              </div>
               
               <h3 className="text-xl font-semibold mb-4" style={{ color: '#005870' }}>AI-Powered Solutions</h3>
               <div className="space-y-4">
