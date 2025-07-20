@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, Users, TrendingUp, Shield, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, TrendingUp, Shield, CheckCircle, FileText, AlertTriangle } from 'lucide-react';
 
 const CaseStudies = () => {
   return (

@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail } from "lucide-react";
+import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail, FileText } from "lucide-react";
 
 const Index = () => {
   return (
@@ -124,7 +124,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Services Preview Section */}
+      {/* Services & Solutions Preview Section */}
       <div 
         id="services"
         className="py-12 sm:py-16 px-4 sm:px-8"
@@ -150,6 +150,12 @@ const Index = () => {
               We deliver specialized compliance solutions that protect your organization while driving competitive advantage.
             </p>
           </div>
+
+          {/* Services Section */}
+          <div className="mb-12">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-8" style={{ color: '#002B45' }}>
+              Our Services
+            </h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <Card className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0">
@@ -209,19 +215,86 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="text-center mt-8 sm:mt-12">
-            <a 
-              href="/services"
-            >
-              <Button 
-                size="lg" 
-                className="text-white hover:opacity-90 w-full sm:w-auto"
-                style={{ backgroundColor: '#002B45' }}
+            <div className="text-center mt-8">
+              <a 
+                href="/services"
               >
-                View All Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </a>
+                <Button 
+                  size="lg" 
+                  className="text-white hover:opacity-90 w-full sm:w-auto"
+                  style={{ backgroundColor: '#002B45' }}
+                >
+                  View All Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+            </div>
+          </div>
+
+          {/* Solutions Section */}
+          <div>
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-8" style={{ color: '#002B45' }}>
+              Our Solutions
+            </h3>
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              <Card className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0">
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-3 sm:mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                    <Users className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: '#005870' }} />
+                  </div>
+                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Medical Staffing</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <CardDescription className="text-sm sm:text-base" style={{ color: '#1a1a1a' }}>
+                    Comprehensive healthcare personnel solutions through our UK division, Michadrian Healthcare Services.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0">
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-3 sm:mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                    <Shield className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: '#005870' }} />
+                  </div>
+                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Compliance Services</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <CardDescription className="text-sm sm:text-base" style={{ color: '#1a1a1a' }}>
+                    Comprehensive regulatory compliance solutions to ensure your organization meets all healthcare requirements.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0">
+                <CardHeader className="p-4 sm:p-6">
+                  <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-3 sm:mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                    <FileText className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: '#005870' }} />
+                  </div>
+                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Risk Management</CardTitle>
+                </CardHeader>
+                <CardContent className="p-4 sm:p-6 pt-0">
+                  <CardDescription className="text-sm sm:text-base" style={{ color: '#1a1a1a' }}>
+                    Strategic risk assessment and management solutions to protect your organization and ensure operational excellence.
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center mt-8">
+              <a 
+                href="/solutions"
+              >
+                <Button 
+                  size="lg" 
+                  className="text-white hover:opacity-90 w-full sm:w-auto"
+                  style={{ backgroundColor: '#002B45' }}
+                >
+                  View All Solutions
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </div>

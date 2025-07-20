@@ -97,7 +97,7 @@ const Contact = () => {
                     name="name"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:border-transparent"
-                    style={{ focusRingColor: '#00A3AD' }}
+                    style={{ borderColor: '#E5E7EB' }}
                   />
                 </div>
 
@@ -111,7 +111,7 @@ const Contact = () => {
                     name="email"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:border-transparent"
-                    style={{ focusRingColor: '#00A3AD' }}
+                    style={{ borderColor: '#E5E7EB' }}
                   />
                 </div>
 
@@ -124,7 +124,7 @@ const Contact = () => {
                     id="organization"
                     name="organization"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:border-transparent"
-                    style={{ focusRingColor: '#00A3AD' }}
+                    style={{ borderColor: '#E5E7EB' }}
                   />
                 </div>
 
@@ -136,7 +136,7 @@ const Contact = () => {
                     id="subject"
                     name="subject"
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:border-transparent"
-                    style={{ focusRingColor: '#00A3AD' }}
+                    style={{ borderColor: '#E5E7EB' }}
                   >
                     <option value="">Select a topic</option>
                     <option value="compliance">Compliance Services</option>
@@ -158,7 +158,7 @@ const Contact = () => {
                     rows={5}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:border-transparent"
-                    style={{ focusRingColor: '#00A3AD' }}
+                    style={{ borderColor: '#E5E7EB' }}
                     placeholder="Tell us about your specific needs and how we can help..."
                   />
                 </div>
