@@ -32,11 +32,20 @@ const Legal = () => {
           'Monitor and audit compliance program effectiveness through regular reviews'
         ],
         requirements: [
-          'US HHS-OIG Compliance Program Guidance implementation',
-          'ISO 37301 Compliance Management Systems certification',
-          'DOJ Criminal Division Compliance Guidance alignment',
+          'US HHS-OIG Compliance Program Guidance implementation (Federal Register Vol. 63, No. 35)',
+          'ISO 37301:2021 Compliance Management Systems certification',
+          'DOJ Criminal Division Compliance Guidance alignment (April 2019)',
+          'Sarbanes-Oxley Act Section 404 internal controls compliance (15 U.S.C. § 7262)',
+          'Federal Sentencing Guidelines § 8B2.1 organizational compliance requirements',
           'Annual compliance certification by all personnel',
           'Quarterly compliance reporting to executive leadership'
+        ],
+        legalCitations: [
+          '45 CFR Part 162 - Administrative Requirements for Healthcare Organizations',
+          'U.S. Sentencing Guidelines Manual § 8B2.1 (Effective Compliance Programs)',
+          'Foreign Corrupt Practices Act, 15 U.S.C. § 78dd-1 et seq.',
+          'Companies Act 2006 (UK) - Directors\' Duties and Corporate Governance',
+          'UK Corporate Governance Code 2018 - Accountability and Audit'
         ]
       }
     },
@@ -58,12 +67,20 @@ const Legal = () => {
           'Maintain incident response procedures and forensic capabilities'
         ],
         requirements: [
-          'HIPAA Privacy and Security Rules full compliance',
-          'GDPR compliance for EU/UK operations including data subject rights',
-          'CCPA compliance for California residents including opt-out rights',
-          'NIST Cybersecurity Framework implementation',
-          'ISO/IEC 27001 information security management alignment',
-          'Cross-border data transfer safeguards (Standard Contractual Clauses)'
+          'HIPAA Privacy and Security Rules full compliance (45 CFR Parts 160 & 164)',
+          'GDPR compliance for EU/UK operations including data subject rights (EU 2016/679)',
+          'CCPA compliance for California residents including opt-out rights (Cal. Civ. Code § 1798.100 et seq.)',
+          'NIST Cybersecurity Framework v1.1 implementation',
+          'ISO/IEC 27001:2013 information security management alignment',
+          'Cross-border data transfer safeguards (Commission Decision 2021/914)'
+        ],
+        legalCitations: [
+          'Health Insurance Portability and Accountability Act, Pub. L. 104-191 (1996)',
+          'Regulation (EU) 2016/679 (General Data Protection Regulation)',
+          'California Consumer Privacy Act, Cal. Civ. Code § 1798.100-1798.150',
+          'Data Protection Act 2018 (UK) implementing GDPR',
+          'NIST Special Publication 800-53 Rev. 5 - Security Controls Catalog',
+          'Federal Information Security Modernization Act, 44 U.S.C. § 3551 et seq.'
         ]
       }
     },
@@ -85,11 +102,20 @@ const Legal = () => {
           'Maintain cultural competency and local law training for international staff'
         ],
         requirements: [
-          'UK/EU GDPR compliance including data localization requirements',
-          'Brexit regulatory framework adaptation and monitoring',
-          'Multi-jurisdictional employment law compliance',
-          'International anti-money laundering (AML) requirements',
-          'Cross-border tax compliance and transfer pricing documentation'
+          'UK/EU GDPR compliance including data localization requirements (EU 2016/679, DPA 2018)',
+          'Brexit regulatory framework adaptation and monitoring (EU Exit Regulations)',
+          'Multi-jurisdictional employment law compliance (Employment Rights Act 1996, Title VII)',
+          'International anti-money laundering requirements (4th/5th AML Directives, BSA)',
+          'Cross-border tax compliance and transfer pricing documentation (OECD Guidelines)'
+        ],
+        legalCitations: [
+          'EU-UK Trade and Cooperation Agreement (2020)',
+          'Data Protection Act 2018 (UK) - International Transfers',
+          'Employment Rights Act 1996 (UK)',
+          'Title VII of the Civil Rights Act of 1964 (US)',
+          'Fourth Anti-Money Laundering Directive (EU) 2015/849',
+          'Bank Secrecy Act, 31 U.S.C. § 5311 et seq.',
+          'OECD Transfer Pricing Guidelines for Multinational Enterprises'
         ]
       }
     },
@@ -111,11 +137,27 @@ const Legal = () => {
           'Establish intellectual property protection and trade secret procedures'
         ],
         requirements: [
-          'KJ Advisor™ platform compliance with healthcare regulatory requirements',
-          'Texas Tax Bot™ accuracy validation and audit trail maintenance',
-          'GPT-powered advisor deployment security and privacy controls',
-          'Interactive dashboard data encryption and access control implementation',
-          'AI model explainability and transparency documentation'
+          'The Titanide Compliance Toolkit™ - Comprehensive compliance framework implementation',
+          'KJ Advisor™ platform compliance with healthcare regulatory requirements (45 CFR Part 164)',
+          'Texas Tax Bot™ accuracy validation and audit trail maintenance (IRC Section 6001)',
+          'GPT-powered advisor deployment security and privacy controls (NIST AI Framework)',
+          'Interactive dashboard data encryption and access control implementation (FIPS 140-2)',
+          'AI model explainability and transparency documentation (EU AI Act requirements)'
+        ],
+        trademarkResources: [
+          'The Titanide Compliance Toolkit™ - Proprietary compliance management system',
+          'KJ Advisor™ - AI-powered healthcare advisory platform',
+          'Texas Tax Bot™ - Automated tax compliance verification system',
+          'Compliance Assessment Framework™ - Risk evaluation methodology',
+          'Risk Management Playbook™ - Strategic risk mitigation toolkit'
+        ],
+        legalCitations: [
+          'Algorithmic Accountability Act (Proposed) - AI Transparency Requirements',
+          'EU Artificial Intelligence Act (Regulation 2024/1689)',
+          'NIST AI Risk Management Framework (AI RMF 1.0)',
+          'Federal Trade Commission Act Section 5 - Unfair/Deceptive Practices',
+          'Internal Revenue Code Section 6001 - Record Keeping Requirements',
+          'FIPS Publication 140-2 - Cryptographic Module Validation'
         ]
       }
     },
