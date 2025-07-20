@@ -473,44 +473,6 @@ const Legal = () => {
         </div>
       </section>
 
-      {/* Regulatory Compliance Matrix */}
-      <section className="py-16 px-4 sm:px-8 bg-gray-50">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-8 text-center" style={{ color: '#002B45' }}>
-            Regulatory Compliance Matrix
-          </h2>
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead style={{ backgroundColor: '#002B45' }}>
-                  <tr>
-                    <th className="px-6 py-4 text-left text-white font-semibold">Regulatory Framework</th>
-                    <th className="px-6 py-4 text-left text-white font-semibold">Compliance Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200">
-                  {regulatoryFrameworks.map((framework, index) => (
-                    <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-gray-900 font-medium">{framework.name}</td>
-                      <td className="px-6 py-4">
-                        <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                          framework.status === 'Fully Compliant' || framework.status === 'Fully Implemented' || framework.status === 'Certified'
-                            ? 'bg-green-100 text-green-800'
-                            : framework.status === 'Compliant' || framework.status === 'Implemented' || framework.status === 'Aligned'
-                            ? 'bg-blue-100 text-blue-800'
-                            : 'bg-yellow-100 text-yellow-800'
-                        }`}>
-                          {framework.status}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* International Operations */}
       <section className="py-16 px-4 sm:px-8">
