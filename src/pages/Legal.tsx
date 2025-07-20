@@ -31,12 +31,6 @@ const Legal = () => {
           'Implement appropriate disciplinary measures for compliance violations',
           'Monitor and audit compliance program effectiveness through regular reviews'
         ],
-        responsibilities: {
-          'Chief Compliance Officer': 'Overall program oversight, board reporting, investigation coordination',
-          'Department Heads': 'Implementation of policies within their areas, staff training, incident reporting',
-          'All Employees': 'Adherence to policies, reporting suspected violations, cooperation with investigations',
-          'Board of Directors': 'Program oversight, resource allocation, executive accountability'
-        },
         requirements: [
           'US HHS-OIG Compliance Program Guidance implementation',
           'ISO 37301 Compliance Management Systems certification',
@@ -63,12 +57,6 @@ const Legal = () => {
           'Perform quarterly vulnerability assessments and annual penetration testing',
           'Maintain incident response procedures and forensic capabilities'
         ],
-        responsibilities: {
-          'Data Protection Officer': 'Privacy program oversight, regulatory liaison, breach coordination',
-          'Information Security Manager': 'Technical security controls, risk assessment, incident response',
-          'Data Controllers/Processors': 'Lawful basis documentation, data subject rights, processing records',
-          'All Staff': 'Data handling compliance, security awareness, incident reporting'
-        },
         requirements: [
           'HIPAA Privacy and Security Rules full compliance',
           'GDPR compliance for EU/UK operations including data subject rights',
@@ -96,12 +84,6 @@ const Legal = () => {
           'Establish cross-border vendor due diligence and management protocols',
           'Maintain cultural competency and local law training for international staff'
         ],
-        responsibilities: {
-          'International Operations Director': 'Cross-border strategy, regulatory compliance, local partnerships',
-          'Local Country Managers': 'In-country operations, local law compliance, staff management',
-          'Legal Counsel': 'Multi-jurisdictional legal advice, contract review, regulatory interpretation',
-          'Compliance Team': 'International compliance monitoring, training delivery, audit coordination'
-        },
         requirements: [
           'UK/EU GDPR compliance including data localization requirements',
           'Brexit regulatory framework adaptation and monitoring',
@@ -128,12 +110,6 @@ const Legal = () => {
           'Maintain disaster recovery and business continuity for critical systems',
           'Establish intellectual property protection and trade secret procedures'
         ],
-        responsibilities: {
-          'Chief Technology Officer': 'Technology strategy, platform oversight, innovation governance',
-          'AI Ethics Committee': 'Ethical AI review, bias assessment, fairness monitoring',
-          'Platform Development Teams': 'Secure coding, testing, documentation, maintenance',
-          'Quality Assurance Teams': 'Platform testing, performance monitoring, user acceptance'
-        },
         requirements: [
           'KJ Advisor™ platform compliance with healthcare regulatory requirements',
           'Texas Tax Bot™ accuracy validation and audit trail maintenance',
@@ -160,12 +136,6 @@ const Legal = () => {
           'Maintain confidentiality and data protection throughout engagements',
           'Establish clear escalation procedures for project issues and disputes'
         ],
-        responsibilities: {
-          'Engagement Partners': 'Client relationship management, project oversight, quality accountability',
-          'Project Managers': 'Day-to-day execution, timeline management, resource coordination',
-          'Subject Matter Experts': 'Technical delivery, quality standards, methodology compliance',
-          'Client Success Team': 'Relationship maintenance, feedback collection, satisfaction monitoring'
-        },
         requirements: [
           'Professional liability insurance coverage for all service lines',
           'Client confidentiality and non-disclosure agreement execution',
@@ -192,12 +162,6 @@ const Legal = () => {
           'Establish crisis management and incident response procedures',
           'Implement insurance coverage reviews and risk transfer strategies'
         ],
-        responsibilities: {
-          'Chief Risk Officer': 'Enterprise risk strategy, board reporting, program oversight',
-          'Risk Committee': 'Risk appetite setting, policy approval, escalation review',
-          'Business Unit Leaders': 'Risk identification, mitigation implementation, reporting',
-          'Vendor Management Office': 'Third-party risk assessment, contract management, performance monitoring'
-        },
         requirements: [
           'Annual risk assessment documentation and board presentation',
           'Vendor risk assessment completion before contract execution',
@@ -224,12 +188,6 @@ const Legal = () => {
           'Implement employee privacy protection and monitoring disclosure procedures',
           'Conduct regular compensation equity reviews and market benchmarking'
         ],
-        responsibilities: {
-          'Human Resources Director': 'Policy development, compliance oversight, employee relations',
-          'Managers and Supervisors': 'Policy implementation, staff development, issue escalation',
-          'Diversity and Inclusion Committee': 'DEI strategy, training development, culture monitoring',
-          'All Employees': 'Policy compliance, respectful conduct, professional development participation'
-        },
         requirements: [
           'Multi-jurisdictional employment law compliance (US, UK, EU)',
           'Equal employment opportunity and affirmative action compliance',
@@ -256,12 +214,6 @@ const Legal = () => {
           'Implement expense management and approval workflows with supporting documentation',
           'Conduct annual financial audits and quarterly compliance reviews'
         ],
-        responsibilities: {
-          'Chief Financial Officer': 'Financial strategy, controls oversight, regulatory reporting',
-          'Financial Compliance Officer': 'AML program management, suspicious activity reporting',
-          'Accounting Team': 'Transaction processing, reconciliation, financial reporting',
-          'Internal Audit': 'Controls testing, compliance verification, risk assessment'
-        },
         requirements: [
           'Anti-money laundering (AML) program implementation and monitoring',
           'Customer identification and beneficial ownership verification',
@@ -288,18 +240,120 @@ const Legal = () => {
           'Implement remote access controls and VPN usage requirements',
           'Establish mobile device and BYOD security policies and enforcement'
         ],
-        responsibilities: {
-          'Chief Information Officer': 'Technology strategy, security oversight, platform governance',
-          'IT Security Team': 'Security controls implementation, monitoring, incident response',
-          'Communications Team': 'Public communications approval, brand compliance, social media oversight',
-          'All Users': 'Approved technology usage, security compliance, incident reporting'
-        },
         requirements: [
           'Approved technology list maintenance and security validation',
           'Secure communication protocol implementation and training',
           'Data loss prevention and backup procedure compliance',
           'Remote access security and monitoring implementation',
           'Mobile device management and security policy enforcement'
+        ]
+      }
+    },
+    {
+      id: 'privacy-policy',
+      title: 'Privacy Policy',
+      icon: Lock,
+      description: 'Comprehensive privacy protection and personal data handling procedures',
+      content: {
+        statement: 'Titanide Consulting Group is committed to protecting your personal information and respecting your privacy. This Privacy Policy explains how we collect, use, store, and protect your personal information when you interact with our services.',
+        procedures: [
+          'Collection of personal information only for legitimate business purposes',
+          'Implementation of purpose limitation ensuring data is used only for stated purposes',
+          'Data minimization practices collecting only necessary information',
+          'Transparent data processing with clear consent mechanisms',
+          'Secure data storage with encryption and access controls',
+          'Regular data retention review and secure disposal procedures',
+          'Individual rights implementation including access, rectification, and erasure',
+          'Cross-border data transfer protection through appropriate safeguards'
+        ],
+        requirements: [
+          'GDPR Article 6 lawful basis documentation for all processing activities',
+          'CCPA compliance including opt-out rights and consumer request processing',
+          'HIPAA privacy compliance for protected health information',
+          'Breach notification within 72 hours to supervisory authorities',
+          'Data Protection Impact Assessment completion for high-risk processing',
+          'Privacy by design implementation in all new systems and processes'
+        ]
+      }
+    },
+    {
+      id: 'cookie-policy',
+      title: 'Cookie & Tracking Policy',
+      icon: Shield,
+      description: 'Website cookies, tracking technologies, and digital analytics governance',
+      content: {
+        statement: 'This Cookie Policy explains how Titanide Consulting Group uses cookies and similar tracking technologies on our websites and digital platforms to enhance user experience while respecting your privacy preferences.',
+        procedures: [
+          'Cookie consent banner implementation with granular opt-in options',
+          'Essential cookies deployment for website functionality only',
+          'Analytics cookies usage with anonymization and data minimization',
+          'Marketing cookies implementation only with explicit consent',
+          'Regular cookie audit and inventory maintenance',
+          'Cookie retention period enforcement and automatic deletion',
+          'User preference center for cookie management and withdrawal',
+          'Third-party cookie processor due diligence and data processing agreements'
+        ],
+        requirements: [
+          'ePrivacy Directive compliance for EU/UK website visitors',
+          'GDPR consent requirements for non-essential cookies',
+          'CCPA opt-out mechanisms for tracking and targeted advertising',
+          'Cookie declaration accuracy and regular updates',
+          'User consent record maintenance with audit trail',
+          'Cookie policy accessibility and plain language requirements'
+        ]
+      }
+    },
+    {
+      id: 'data-protection',
+      title: 'Data Protection & Security Policy',
+      icon: Shield,
+      description: 'Comprehensive data protection measures and cybersecurity framework',
+      content: {
+        statement: 'Titanide Consulting Group implements comprehensive data protection and cybersecurity measures to safeguard all personal, confidential, and proprietary information against unauthorized access, disclosure, alteration, or destruction.',
+        procedures: [
+          'Multi-factor authentication implementation for all system access',
+          'Data encryption in transit and at rest using industry-standard protocols',
+          'Regular security awareness training and phishing simulation exercises',
+          'Vulnerability assessment and penetration testing on quarterly basis',
+          'Incident response procedures with 24/7 monitoring and rapid response',
+          'Secure software development lifecycle with security testing integration',
+          'Vendor security assessment and ongoing monitoring procedures',
+          'Business continuity and disaster recovery planning with regular testing'
+        ],
+        requirements: [
+          'ISO/IEC 27001 information security management system implementation',
+          'NIST Cybersecurity Framework alignment across all security controls',
+          'SOC 2 Type II compliance for service organization controls',
+          'HIPAA Security Rule technical, administrative, and physical safeguards',
+          'PCI DSS compliance for payment card data processing (where applicable)',
+          'Industry-specific security standards compliance and certification maintenance'
+        ]
+      }
+    },
+    {
+      id: 'terms-of-service',
+      title: 'Terms of Service & Use',
+      icon: FileText,
+      description: 'Service terms, user agreements, and platform usage conditions',
+      content: {
+        statement: 'These Terms of Service govern your use of Titanide Consulting Group services, platforms, and digital resources. By accessing or using our services, you agree to be bound by these terms and conditions.',
+        procedures: [
+          'Clear service scope definition and deliverable specifications',
+          'User account creation and authentication procedures',
+          'Acceptable use policy enforcement and violation response',
+          'Intellectual property protection and usage rights clarification',
+          'Service availability and maintenance scheduling with advance notice',
+          'Billing, payment, and refund procedures with transparent pricing',
+          'Dispute resolution mechanisms including mediation and arbitration',
+          'Terms modification procedures with appropriate user notification'
+        ],
+        requirements: [
+          'Contract formation validity under applicable jurisdiction laws',
+          'Consumer protection law compliance for individual service users',
+          'Accessibility standards compliance for digital service delivery',
+          'Professional liability and limitation of liability clauses',
+          'Governing law and jurisdiction specification for legal disputes',
+          'Termination procedures and data retention post-contract expiration'
         ]
       }
     }
@@ -329,15 +383,6 @@ const Legal = () => {
           <p className="text-lg sm:text-xl max-w-4xl mx-auto text-white mb-6">
             Comprehensive policies and procedures governing Titanide Consulting Group's global operations, regulatory compliance, and professional service delivery.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <button className="bg-white text-gray-800 hover:bg-gray-100 px-6 py-3 rounded-md font-semibold transition-colors flex items-center gap-2">
-              <Download className="h-4 w-4" />
-              Download Policy Manual (PDF)
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-gray-800 px-6 py-3 rounded-md font-semibold transition-colors">
-              Contact Compliance Office
-            </button>
-          </div>
         </div>
       </header>
 
@@ -436,19 +481,6 @@ const Legal = () => {
                               </li>
                             ))}
                           </ul>
-                        </div>
-
-                        {/* Roles & Responsibilities */}
-                        <div>
-                          <h4 className="font-semibold mb-3 text-lg" style={{ color: '#005870' }}>Roles & Responsibilities</h4>
-                          <div className="grid md:grid-cols-2 gap-4">
-                            {Object.entries(area.content.responsibilities).map(([role, responsibility]) => (
-                              <div key={role} className="p-4 bg-gray-50 rounded-lg">
-                                <h5 className="font-semibold text-gray-900 mb-2">{role}</h5>
-                                <p className="text-sm text-gray-600">{responsibility}</p>
-                              </div>
-                            ))}
-                          </div>
                         </div>
 
                         {/* Compliance Requirements */}
