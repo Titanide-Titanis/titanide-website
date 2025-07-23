@@ -156,6 +156,7 @@ const Compliance = () => {
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* US Frameworks */}
             <div className="bg-white rounded-lg p-6 shadow-md">
               <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>HIPAA</h3>
               <p className="text-gray-600 text-sm">Privacy Rule, Security Rule, Breach Notification, and Business Associate Agreements</p>
@@ -179,6 +180,37 @@ const Compliance = () => {
             <div className="bg-white rounded-lg p-6 shadow-md">
               <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>Anti-Kickback Statute</h3>
               <p className="text-gray-600 text-sm">Federal fraud and abuse prevention requirements</p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>CCPA</h3>
+              <p className="text-gray-600 text-sm">California Consumer Privacy Act compliance including opt-out rights</p>
+            </div>
+
+            {/* EU/UK Frameworks */}
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>EU/UK GDPR</h3>
+              <p className="text-gray-600 text-sm">General Data Protection Regulation compliance including data subject rights and privacy by design</p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>Data Protection Act 2018</h3>
+              <p className="text-gray-600 text-sm">UK implementation of GDPR with specific provisions for data processing and transfers</p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>ePrivacy Directive</h3>
+              <p className="text-gray-600 text-sm">EU/UK cookie consent requirements and electronic communications privacy</p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>EU AI Act</h3>
+              <p className="text-gray-600 text-sm">AI system transparency, risk management, and governance requirements</p>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 shadow-md">
+              <h3 className="text-lg font-semibold mb-3" style={{ color: '#002B45' }}>UK Corporate Governance Code</h3>
+              <p className="text-gray-600 text-sm">Board accountability, audit requirements, and corporate governance standards</p>
             </div>
             
             <div className="bg-white rounded-lg p-6 shadow-md">
