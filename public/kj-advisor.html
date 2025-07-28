@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KJ Advisor™ - Executive Companion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fdfdfd;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .btn-lg {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+        
+        .btn-primary {
+            background-color: #002B45;
+            color: white;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: #002B45;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .badge-secondary {
+            background-color: #002B45;
+            color: white;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 32px;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .icon {
+            width: 24px;
+            height: 24px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+        
+        .icon-lg {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .icon-xl {
+            width: 48px;
+            height: 48px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section style="background: linear-gradient(135deg, #002B45 0%, #005870 100%); padding: 80px 24px; text-align: center;">
+        <div style="max-width: 1024px; margin: 0 auto;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 24px;">
+                <svg class="icon icon-xl" style="color: white; margin-right: 16px;">
+                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-1.36c0-1.1.9-2 2-2a2 2 0 0 1 2 2c0 1.1.9 2 2 2s2-.9 2-2V4.5A2.5 2.5 0 0 1 9.5 2Z"/>
+                    <path d="M14 6.5V12a2 2 0 0 0 4 0V9a2 2 0 0 0-2-2"/>
+                    <path d="M15.282 12.906a3 3 0 0 0 4.436 2.188"/>
+                </svg>
+                <h1 style="font-size: 48px; font-weight: 700; color: white;">
+                    KJ Advisor™
+                </h1>
+            </div>
+            <h2 style="font-size: 24px; color: rgba(255,255,255,0.9); margin-bottom: 24px;">Executive Companion</h2>
+            <p style="font-size: 20px; color: rgba(255,255,255,0.8); margin-bottom: 32px; max-width: 768px; margin-left: auto; margin-right: auto;">
+                Your AI-powered executive partner providing 24/7 strategic compliance guidance, 
+                risk intelligence, and executive decision support across global regulatory frameworks.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+                <a href="https://chatgpt.com/g/g-676e4c9d83f08191b067b13fc53b3e64-kj-advisor-executive-companion" target="_blank" class="btn btn-lg" style="background-color: white; color: #002B45;">
+                    Launch KJ Advisor™ 
+                    <svg class="icon" style="margin-left: 8px;">
+                        <path d="M7 7h10v10"/>
+                        <path d="m7 17 10-10"/>
+                    </svg>
+                </a>
+                <a href="#" class="btn btn-lg btn-outline">
+                    Schedule Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Value Proposition -->
+    <section style="padding: 64px 24px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #002B45;">
+                    Executive-Level AI Guidance When You Need It Most
+                </h2>
+                <p style="font-size: 20px; max-width: 768px; margin: 0 auto; color: #1a1a1a;">
+                    KJ Advisor™ combines deep regulatory expertise with AI capabilities to provide 
+                    instant executive guidance for critical compliance and risk decisions.
+                </p>
+            </div>
+
+            <div class="grid grid-3">
+                <div class="card">
+                    <svg class="icon icon-lg" style="color: #00A3AD; margin-bottom: 8px;">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="m12 1 0 6"/>
+                        <path d="m12 17 0 6"/>
+                        <path d="m3 12 6 0"/>
+                        <path d="m15 12 6 0"/>
+                        <path d="m4.5 4.5 4.24 4.24"/>
+                        <path d="m15.76 15.76 4.24 4.24"/>
+                        <path d="m19.5 4.5-4.24 4.24"/>
+                        <path d="m8.24 15.76-4.24 4.24"/>
+                    </svg>
+                    <h3 style="font-size: 18px; color: #002B45; margin-bottom: 8px;">24/7 Executive Guidance</h3>
+                    <p style="color: #1a1a1a;">Round-the-clock access to executive-level compliance and risk insights</p>
+                </div>
+
+                <div class="card">
+                    <svg class="icon icon-lg" style="color: #00A3AD; margin-bottom: 8px;">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="12" cy="12" r="6"/>
+                        <circle cx="12" cy="12" r="2"/>
+                    </svg>
+                    <h3 style="font-size: 18px; color: #002B45; margin-bottom: 8px;">Strategic Planning Support</h3>
+                    <p style="color: #1a1a1a;">Long-term compliance strategy development and implementation planning</p>
+                </div>
+
+                <div class="card">
+                    <svg class="icon icon-lg" style="color: #00A3AD; margin-bottom: 8px;">
+                        <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
+                    </svg>
+                    <h3 style="font-size: 18px; color: #002B45; margin-bottom: 8px;">Real-time Regulatory Intelligence</h3>
+                    <p style="color: #1a1a1a;">Up-to-date information on regulatory changes and their business impact</p>
+                </div>
+
+                <div class="card">
+                    <svg class="icon icon-lg" style="color: #00A3AD; margin-bottom: 8px;">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                    </svg>
+                    <h3 style="font-size: 18px; color: #002B45; margin-bottom: 8px;">Risk Assessment Automation</h3>
+                    <p style="color: #1a1a1a;">Rapid evaluation of compliance risks and mitigation strategies</p>
+                </div>
+
+                <div class="card">
+                    <svg class="icon icon-lg" style="color: #00A3AD; margin-bottom: 8px;">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                        <path d="m9 15 2 2 4-4"/>
+                    </svg>
+                    <h3 style="font-size: 18px; color: #002B45; margin-bottom: 8px;">Executive Briefing Creation</h3>
+                    <p style="color: #1a1a1a;">Generate board-ready reports and executive summaries</p>
+                </div>
+
+                <div class="card">
+                    <svg class="icon icon-lg" style="color: #00A3AD; margin-bottom: 8px;">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="m4.93 4.93 4.24 4.24"/>
+                        <path d="m14.83 9.17 4.24-4.24"/>
+                        <path d="m14.83 14.83 4.24 4.24"/>
+                        <path d="m9.17 14.83-4.24 4.24"/>
+                        <circle cx="12" cy="12" r="4"/>
+                    </svg>
+                    <h3 style="font-size: 18px; color: #002B45; margin-bottom: 8px;">Multi-jurisdictional Expertise</h3>
+                    <p style="color: #1a1a1a;">Coverage across US, UK, and EU regulatory frameworks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market-Specific Variants -->
+    <section style="padding: 64px 24px; background-color: #f4f4f4;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 48px;">
+                <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 16px; color: #002B45;">
+                    Choose Your Regulatory Framework Coverage
+                </h2>
+                <p style="font-size: 20px; color: #1a1a1a;">
+                    One Executive Companion - Different Regulatory Framework Scope
+                </p>
+            </div>
+
+            <div class="grid grid-2" style="max-width: 1024px; margin: 0 auto;">
+                <!-- US Edition -->
+                <div class="card" style="position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; width: 80px; height: 80px; transform: rotate(45deg) translateX(32px) translateY(-32px); background: linear-gradient(135deg, #002B45 0%, #005870 100%);"></div>
+                    <div class="badge badge-secondary" style="margin-bottom: 8px;">US Edition</div>
+                    <h3 style="font-size: 20px; color: #002B45; margin-bottom: 8px;">KJ Advisor™ Executive Companion</h3>
+                    <p style="color: #1a1a1a; margin-bottom: 24px;">
+                        US Regulatory Framework Coverage: HIPAA, SOX, CCPA, and federal compliance requirements
+                    </p>
+                    <ul style="margin-bottom: 24px; list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            HIPAA Privacy & Security Rules
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            Sarbanes-Oxley Act
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            CCPA & State Privacy Laws
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            Federal Healthcare Regulations
+                        </li>
+                    </ul>
+                    <a href="https://chatgpt.com/g/g-6760c3ed76c88191b4d2c4c8f8ef85e1-kj-advisor-us" target="_blank" class="btn" style="width: 100%; background-color: #002B45; color: white;">
+                        Launch US Edition 
+                        <svg class="icon" style="margin-left: 8px;">
+                            <path d="M7 7h10v10"/>
+                            <path d="m7 17 10-10"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- UK/EU Edition -->
+                <div class="card" style="position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; right: 0; width: 80px; height: 80px; transform: rotate(45deg) translateX(32px) translateY(-32px); background: linear-gradient(135deg, #00A3AD 0%, #005870 100%);"></div>
+                    <div class="badge" style="background-color: #00A3AD; color: white; margin-bottom: 8px;">UK/EU Edition</div>
+                    <h3 style="font-size: 20px; color: #002B45; margin-bottom: 8px;">KJ Advisor™ Executive Companion</h3>
+                    <p style="color: #1a1a1a; margin-bottom: 24px;">
+                        UK/EU Regulatory Framework Coverage: GDPR, EU AI Act, UK Data Protection Act, and European compliance
+                    </p>
+                    <ul style="margin-bottom: 24px; list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            EU/UK GDPR Compliance
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            EU AI Act Requirements
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            Data Protection Act 2018
+                        </li>
+                        <li style="display: flex; align-items: center; margin-bottom: 8px; color: #1a1a1a;">
+                            <svg class="icon" style="color: #00A3AD; margin-right: 8px;">
+                                <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                            ePrivacy Directive
+                        </li>
+                    </ul>
+                    <a href="https://chatgpt.com/g/g-6760c46576c88191b4d2c4c8f8ef85e2-kj-advisor-uk-eu" target="_blank" class="btn" style="width: 100%; background-color: #00A3AD; color: white;">
+                        Launch UK/EU Edition 
+                        <svg class="icon" style="margin-left: 8px;">
+                            <path d="M7 7h10v10"/>
+                            <path d="m7 17 10-10"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="padding: 80px 24px; text-align: center; background: linear-gradient(135deg, #00A3AD 0%, #005870 100%);">
+        <div style="max-width: 1024px; margin: 0 auto;">
+            <h2 style="font-size: 48px; font-weight: 700; color: white; margin-bottom: 24px;">
+                Ready to Transform Your Executive Decision-Making?
+            </h2>
+            <p style="font-size: 20px; color: rgba(255,255,255,0.9); margin-bottom: 32px; max-width: 512px; margin-left: auto; margin-right: auto;">
+                Join executives who rely on KJ Advisor™ for strategic compliance guidance and risk intelligence.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+                <a href="https://chatgpt.com/g/g-676e4c9d83f08191b067b13fc53b3e64-kj-advisor-executive-companion" target="_blank" class="btn btn-lg" style="background-color: white; color: #002B45;">
+                    Start Using KJ Advisor™ 
+                    <svg class="icon" style="margin-left: 8px;">
+                        <path d="M7 7h10v10"/>
+                        <path d="m7 17 10-10"/>
+                    </svg>
+                </a>
+                <a href="/contact" class="btn btn-lg btn-outline">
+                    Contact Our Team
+                </a>
+            </div>
+            <p style="color: rgba(255,255,255,0.8); margin-top: 24px;">
+                Available 24/7 • No installation required • Immediate access
+            </p>
+        </div>
+    </section>
+</body>
+</html>
