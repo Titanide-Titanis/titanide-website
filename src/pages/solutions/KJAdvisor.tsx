@@ -121,7 +121,7 @@ const KJAdvisor = () => {
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
               Executive-Level AI Guidance When You Need It Most
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -150,11 +150,11 @@ const KJAdvisor = () => {
       <section className="py-16 px-6 bg-muted/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
-              Tailored Regulatory Expertise
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
+              Choose Your Regulatory Framework Coverage
             </h2>
             <p className="text-xl text-muted-foreground">
-              Choose your market-specific version for targeted regulatory framework coverage
+              One Executive Companion - Different Regulatory Framework Scope
             </p>
           </div>
 
@@ -164,9 +164,9 @@ const KJAdvisor = () => {
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 transform rotate-45 translate-x-8 -translate-y-8"></div>
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">US Edition</Badge>
-                <CardTitle className="text-xl">KJ Advisor™ US</CardTitle>
-                <CardDescription>
-                  Specialized in US regulatory frameworks including HIPAA, SOX, CCPA, and federal compliance requirements
+                <CardTitle className="text-xl text-foreground">KJ Advisor™ Executive Companion</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  US Regulatory Framework Coverage: HIPAA, SOX, CCPA, and federal compliance requirements
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -190,9 +190,9 @@ const KJAdvisor = () => {
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 transform rotate-45 translate-x-8 -translate-y-8"></div>
               <CardHeader>
                 <Badge variant="secondary" className="w-fit mb-2">UK/EU Edition</Badge>
-                <CardTitle className="text-xl">KJ Advisor™ UK/EU</CardTitle>
-                <CardDescription>
-                  Expert in GDPR, EU AI Act, UK Data Protection Act, and European regulatory compliance
+                <CardTitle className="text-xl text-foreground">KJ Advisor™ Executive Companion</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  UK/EU Regulatory Framework Coverage: GDPR, EU AI Act, UK Data Protection Act, and European compliance
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -216,9 +216,9 @@ const KJAdvisor = () => {
               <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 transform rotate-45 translate-x-8 -translate-y-8"></div>
               <CardHeader>
                 <Badge className="w-fit mb-2" style={{ backgroundColor: '#00A3AD' }}>Premium</Badge>
-                <CardTitle className="text-xl">KJ Advisor™ Executive</CardTitle>
-                <CardDescription>
-                  Comprehensive executive companion with global regulatory expertise and strategic guidance
+                <CardTitle className="text-xl text-foreground">KJ Advisor™ Executive Companion</CardTitle>
+                <CardDescription className="text-muted-foreground">
+                  Global Regulatory Framework Coverage: Multi-jurisdictional expertise with strategic guidance
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -244,7 +244,7 @@ const KJAdvisor = () => {
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
               When Every Decision Counts
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -288,7 +288,7 @@ const KJAdvisor = () => {
       <section className="py-16 px-6 bg-muted/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
               Powered by Complementary Resources
             </h2>
             <p className="text-xl text-muted-foreground">
@@ -332,7 +332,7 @@ const KJAdvisor = () => {
       <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h2 className="text-3xl font-bold mb-4 text-foreground">
               Technical Specifications
             </h2>
           </div>
