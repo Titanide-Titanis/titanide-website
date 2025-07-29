@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -26,6 +27,48 @@ import {
 } from "lucide-react";
 
 const TitanisGRC = () => {
+  // Add CSS animations for the dashboard
+  const dashboardAnimations = `
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes progressFill {
+      0% { width: 0%; }
+      100% { width: 98.7%; }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes slideInLeft {
+      0% { transform: translateX(-50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+      0% { transform: translateX(50px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  `;
+
+  // Add the animations to the document head
+  React.useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = dashboardAnimations;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
   const features = [
     {
       icon: Shield,
@@ -108,12 +151,9 @@ const TitanisGRC = () => {
             Titanide Consulting Group
           </Link>
           <div className="flex items-center space-x-6">
-            <Link to="/solutions" className="text-gray-200 hover:text-white transition-colors">
-              Solutions
-            </Link>
-            <Link to="/services" className="text-gray-200 hover:text-white transition-colors">
-              Services
-            </Link>
+            <div className="text-sm text-gray-300">
+              Support: <a href="https://support.titanideholdings.com/portal/en/home" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Portal</a> | <a href="mailto:support@titanideconsulting.com" className="text-white hover:underline">Email</a>
+            </div>
             <Link to="/contact">
               <Button 
                 className="text-white hover:opacity-90"
@@ -201,11 +241,11 @@ const TitanisGRC = () => {
             
             <div className="text-center order-first lg:order-last" style={{ animation: 'slideInRight 1.2s ease-out' }}>
               <div 
-                className="mx-auto bg-white rounded-2xl shadow-2xl p-6 max-w-md"
-                style={{ border: '3px solid #00A3AD' }}
+                className="mx-auto bg-white rounded-2xl shadow-2xl p-6 max-w-md cursor-pointer hover:shadow-3xl transition-all duration-300 group"
+                style={{ border: '3px solid #00A3AD', animation: 'float 3s ease-in-out infinite' }}
               >
                 <div className="mb-4">
-                  <Monitor className="h-16 w-16 mx-auto" style={{ color: '#002B45' }} />
+                  <Monitor className="h-16 w-16 mx-auto group-hover:scale-110 transition-transform duration-300" style={{ color: '#002B45' }} />
                 </div>
                 <h3 className="text-xl font-bold mb-2" style={{ color: '#002B45' }}>
                   Live Compliance Dashboard
@@ -214,18 +254,39 @@ const TitanisGRC = () => {
                   Real-time visibility into your compliance posture
                 </p>
                 <div className="space-y-2">
-                  <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#eaf6f8' }}>
+                  <div className="flex justify-between items-center p-2 rounded hover:scale-105 transition-transform duration-200" style={{ backgroundColor: '#eaf6f8' }}>
                     <span className="text-sm">HIPAA Compliance</span>
-                    <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>98.7%</span>
+                    <div className="flex items-center">
+                      <div className="w-20 h-2 bg-gray-200 rounded mr-2">
+                        <div className="h-2 rounded transition-all duration-1000" style={{ backgroundColor: '#00A3AD', width: '98.7%', animation: 'progressFill 2s ease-out' }}></div>
+                      </div>
+                      <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>98.7%</span>
+                    </div>
                   </div>
-                  <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#eaf6f8' }}>
+                  <div className="flex justify-between items-center p-2 rounded hover:scale-105 transition-transform duration-200" style={{ backgroundColor: '#eaf6f8' }}>
                     <span className="text-sm">Risk Score</span>
-                    <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>Low</span>
+                    <span className="text-sm font-semibold flex items-center" style={{ color: '#00A3AD' }}>
+                      <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#00A3AD', animation: 'pulse 2s infinite' }}></div>
+                      Low
+                    </span>
                   </div>
-                  <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#eaf6f8' }}>
+                  <div className="flex justify-between items-center p-2 rounded hover:scale-105 transition-transform duration-200" style={{ backgroundColor: '#eaf6f8' }}>
                     <span className="text-sm">Next Audit</span>
-                    <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>Ready</span>
+                    <span className="text-sm font-semibold flex items-center" style={{ color: '#00A3AD' }}>
+                      <CheckCircle className="w-3 h-3 mr-1" />
+                      Ready
+                    </span>
                   </div>
+                  <div className="flex justify-between items-center p-2 rounded hover:scale-105 transition-transform duration-200" style={{ backgroundColor: '#eaf6f8' }}>
+                    <span className="text-sm">Active Monitoring</span>
+                    <span className="text-sm font-semibold flex items-center" style={{ color: '#00A3AD' }}>
+                      <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#f25022', animation: 'blink 1s infinite' }}></div>
+                      Live
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-4 text-xs text-gray-500">
+                  Click to interact with demo
                 </div>
               </div>
             </div>
@@ -341,7 +402,7 @@ const TitanisGRC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#ffffff' }}>
+      <section id="features" className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#ffffff' }}>
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 
@@ -383,8 +444,8 @@ const TitanisGRC = () => {
           <div className="text-center mt-12">
             <Button 
               size="lg" 
-              className="text-white hover:opacity-90 text-lg px-8"
-              style={{ backgroundColor: '#f25022' }}
+              className="text-gray-700 hover:text-gray-900 border border-gray-300 hover:bg-gray-50 text-lg px-8"
+              style={{ backgroundColor: 'white' }}
             >
               <PlayCircle className="mr-2 h-5 w-5" />
               See All Features in Action
