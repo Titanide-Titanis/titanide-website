@@ -140,28 +140,33 @@ const TitanisGRC = () => {
     <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a' }}>
       {/* Navigation */}
       <header 
-        className="py-4 px-4 sm:px-8 sticky top-0 z-50"
+        className="py-6 px-4 sm:px-8 sticky top-0 z-50"
         style={{ 
           backgroundColor: '#002B45',
           boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
         }}
       >
-        <div className="container mx-auto max-w-6xl flex justify-between items-center">
-          <Link to="/" className="text-2xl font-bold text-white">
-            Titanide Consulting Group
-          </Link>
-          <div className="flex items-center space-x-6">
-            <div className="text-sm text-gray-300">
-              Support: <a href="https://support.titanideholdings.com/portal/en/home" target="_blank" rel="noopener noreferrer" className="text-white hover:underline">Portal</a> | <a href="mailto:support@titanideconsulting.com" className="text-white hover:underline">Email</a>
-            </div>
-            <Link to="/contact">
-              <Button 
-                className="text-white hover:opacity-90"
-                style={{ backgroundColor: '#f25022' }}
-              >
-                Contact Us
-              </Button>
-            </Link>
+        <div className="container mx-auto max-w-6xl flex justify-center items-center">
+          <div className="text-center">
+            <h1 
+              className="text-3xl sm:text-4xl font-bold text-white mb-2"
+              style={{ 
+                animation: 'slideInLeft 1.2s ease-out, fadeIn 1.5s ease-out',
+                letterSpacing: '0.05em'
+              }}
+            >
+              TITANIS™
+            </h1>
+            <p 
+              className="text-sm sm:text-base text-white/90"
+              style={{ 
+                animation: 'slideInRight 1.2s ease-out 0.3s both',
+                fontWeight: '300',
+                letterSpacing: '0.02em'
+              }}
+            >
+              Titanide's Intelligent Governance, Risk & Compliance Platform
+            </p>
           </div>
         </div>
       </header>
@@ -197,9 +202,9 @@ const TitanisGRC = () => {
                 <span style={{ color: '#00A3AD' }}> Compliance</span>
               </h1>
               <p className="text-lg sm:text-xl" style={{ color: '#005870' }}>
-                AI-powered GRC platform that transforms healthcare compliance from reactive burden 
-                to predictive advantage. Automate audits, predict risks, and ensure regulatory readiness 
-                with intelligent automation.
+                AI-powered GRC platform serving healthcare organizations worldwide. Covers HIPAA, SOX, HITECH, 
+                ISO 27001, GDPR, and custom frameworks with intelligent automation for audit management, 
+                risk assessment, and continuous compliance monitoring.
               </p>
               <div className="space-y-4">
                 <div className="grid grid-cols-2 gap-4 text-center">
@@ -840,43 +845,72 @@ const TitanisGRC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-8" style={{ backgroundColor: '#f4f4f4', borderTop: '1px solid #e0e0e0' }}>
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <h3 className="text-lg font-semibold mb-4" style={{ color: '#002B45' }}>
-                Titanide Consulting Group
+      <footer className="py-16 px-6" style={{ backgroundColor: '#f4f4f4' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div className="col-span-2">
+              <h3 className="text-2xl font-bold mb-4" style={{ color: '#002B45' }}>
+                TITANIS™
               </h3>
-              <p className="text-gray-600 mb-4">
-                Leading healthcare compliance and risk management solutions provider.
-                Transforming GRC operations through intelligent automation.
+              <p className="mb-4" style={{ color: '#1a1a1a' }}>
+                Titanide's Intelligent Governance, Risk & Compliance Platform serving healthcare organizations worldwide. 
+                Comprehensive coverage of HIPAA, SOX, HITECH, ISO 27001, GDPR, and custom regulatory frameworks.
               </p>
-              <div className="flex items-center text-gray-600">
+              <div className="flex items-center mb-4" style={{ color: '#1a1a1a' }}>
                 <Globe className="w-4 h-4 mr-2" />
-                <span>Serving healthcare organizations nationwide</span>
+                <span>Global healthcare compliance solutions</span>
               </div>
             </div>
+            
             <div>
-              <h4 className="text-sm font-semibold mb-4" style={{ color: '#002B45' }}>Solutions</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link to="/solutions" className="hover:text-blue-600">All Solutions</Link></li>
-                <li><Link to="/solutions/medical-staffing" className="hover:text-blue-600">Medical Staffing</Link></li>
-                <li><Link to="/solutions/digital-products/kj-advisor" className="hover:text-blue-600">KJ Advisor</Link></li>
-                <li><Link to="/solutions/digital-products/titanis" className="hover:text-blue-600">TITANIS GRC</Link></li>
+              <h4 className="font-semibold mb-4" style={{ color: '#002B45' }}>Platform Access</h4>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer" 
+                     className="hover:underline" style={{ color: '#1a1a1a' }}>
+                    Access TITANIS Platform
+                  </a>
+                </li>
+                <li>
+                  <a href="https://support.titanideholdings.com/portal/en/home" target="_blank" rel="noopener noreferrer" 
+                     className="hover:underline" style={{ color: '#1a1a1a' }}>
+                    Support Portal
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:support@titanideconsulting.com" 
+                     className="hover:underline" style={{ color: '#1a1a1a' }}>
+                    Email Support
+                  </a>
+                </li>
+                <li>
+                  <Link to="/contact" className="hover:underline" style={{ color: '#1a1a1a' }}>
+                    Contact Sales
+                  </Link>
+                </li>
               </ul>
             </div>
+            
             <div>
-              <h4 className="text-sm font-semibold mb-4" style={{ color: '#002B45' }}>Company</h4>
-              <ul className="space-y-2 text-sm text-gray-600">
-                <li><Link to="/about" className="hover:text-blue-600">About</Link></li>
-                <li><Link to="/contact" className="hover:text-blue-600">Contact</Link></li>
-                <li><Link to="/legal" className="hover:text-blue-600">Legal</Link></li>
-                <li><Link to="/resources" className="hover:text-blue-600">Resources</Link></li>
+              <h4 className="font-semibold mb-4" style={{ color: '#002B45' }}>Framework Coverage</h4>
+              <ul className="space-y-2 text-sm">
+                <li style={{ color: '#1a1a1a' }}>• HIPAA Privacy & Security</li>
+                <li style={{ color: '#1a1a1a' }}>• Sarbanes-Oxley (SOX)</li>
+                <li style={{ color: '#1a1a1a' }}>• HITECH Act</li>
+                <li style={{ color: '#1a1a1a' }}>• ISO 27001</li>
+                <li style={{ color: '#1a1a1a' }}>• GDPR Compliance</li>
+                <li style={{ color: '#1a1a1a' }}>• Custom Frameworks</li>
               </ul>
             </div>
           </div>
-          <div className="border-t pt-8 mt-8 text-center text-gray-500 text-sm">
-            <p>&copy; 2024 Titanide Consulting Group. All rights reserved. | Healthcare GRC Solutions</p>
+          
+          <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center text-sm" style={{ color: '#1a1a1a' }}>
+            <p>&copy; 2024 Titanide Consulting Group. All rights reserved.</p>
+            <div className="flex space-x-4 mt-4 md:mt-0">
+              <Link to="/legal" className="hover:underline">Privacy Policy</Link>
+              <Link to="/legal" className="hover:underline">Terms of Service</Link>
+              <Link to="/about" className="hover:underline">About Titanide</Link>
+            </div>
           </div>
         </div>
       </footer>
