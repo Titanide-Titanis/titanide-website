@@ -104,8 +104,8 @@ const Index = () => {
                 <Button 
                   size="lg" 
                   variant="outline"
-                  className="w-full sm:w-auto text-base sm:text-lg px-6 py-3 border-2 hover:shadow-lg transition-all duration-300"
-                  style={{ borderColor: '#00A3AD', color: '#002B45' }}
+                  className="w-full sm:w-auto text-base sm:text-lg px-6 py-3 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900"
+                  style={{ borderColor: '#00A3AD' }}
                   onClick={() => document.getElementById('digital-showcase')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <Brain className="mr-2 h-5 w-5" />
@@ -1005,7 +1005,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+                className="w-full sm:w-auto border-white text-gray-900 bg-white/90 hover:bg-white hover:text-gray-900 transition-all duration-300"
               >
                 <Target className="mr-2 h-5 w-5" />
                 Try AI Platform Demo
@@ -1022,7 +1022,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-gray-900 transition-all duration-300"
+                className="w-full sm:w-auto border-white text-gray-900 bg-white/90 hover:bg-white hover:text-gray-900 transition-all duration-300"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Capability Statement
