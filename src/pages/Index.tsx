@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail, FileText } from "lucide-react";
+import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail, FileText, Globe, Award, TrendingUp, Zap, Monitor, Building2, Briefcase } from "lucide-react";
 
 const Index = () => {
   return (
@@ -36,14 +36,17 @@ const Index = () => {
                   lineHeight: '1.1'
                 }}
               >
-                Full-Service Healthcare Compliance at a Fraction of the Cost
+                Global Healthcare Compliance & Digital Solutions Leader
               </h1>
               <div className="space-y-4">
                 <p className="text-lg sm:text-xl" style={{ color: '#005870' }}>
-                  "Get fractional compliance support without the extensive search or long-term commitment."
+                  From fractional compliance leadership to AI-powered GRC platforms, we deliver comprehensive solutions across the US and UK.
                 </p>
                 <p className="font-semibold text-base sm:text-lg" style={{ color: '#002B45' }}>
-                  - Kelly Menefee Okpala, Fractional CCO
+                  "Get fractional compliance support without the extensive search or long-term commitment."
+                </p>
+                <p className="text-sm sm:text-base font-medium" style={{ color: '#005870' }}>
+                  - Kelly Menefee Okpala, Fractional CCO & Founder
                 </p>
               </div>
               <div className="flex justify-center lg:justify-start">
@@ -90,35 +93,86 @@ const Index = () => {
       >
         <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-white">
-            Why Choose Fractional Compliance Leadership?
+            Why Choose Titanide Consulting Group?
           </h2>
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-4 gap-6 sm:gap-8">
             <div className="space-y-4">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <Shield className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Executive-Level Expertise</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                Access C-suite compliance leadership without the full-time commitment or executive salary.
+                C-suite compliance leadership with proven results across Fortune 500 companies.
               </p>
             </div>
             <div className="space-y-4">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
-                <Users className="h-8 w-8 text-white" />
+                <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">Immediate Impact</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Global Presence</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                Hit the ground running with proven strategies and immediate implementation.
+                Serving clients across the US and UK with localized expertise and 24/7 support.
               </p>
             </div>
             <div className="space-y-4">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
-                <CheckCircle className="h-8 w-8 text-white" />
+                <Monitor className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">Scalable Solutions</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">AI-Powered Solutions</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                Flexible engagement models that grow with your organization's needs.
+                Cutting-edge TITANIS GRC platform and KJ Advisor for intelligent compliance management.
               </p>
+            </div>
+            <div className="space-y-4">
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">90-Day ROI Guarantee</h3>
+              <p className="text-gray-200 text-sm sm:text-base">
+                Guaranteed return on investment within 90 days or receive additional consulting at no charge.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Industry Certifications & Recognition */}
+      <div 
+        className="py-8 sm:py-12 px-4 sm:px-8"
+        style={{ 
+          backgroundColor: '#f8f9fa'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: '#002B45' }}>
+              Industry Recognition & Certifications
+            </h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6 items-center">
+            <div className="text-center p-4">
+              <Award className="h-8 w-8 mx-auto mb-2" style={{ color: '#00A3AD' }} />
+              <p className="text-xs sm:text-sm font-medium" style={{ color: '#002B45' }}>SOC 2 Type II</p>
+            </div>
+            <div className="text-center p-4">
+              <Shield className="h-8 w-8 mx-auto mb-2" style={{ color: '#00A3AD' }} />
+              <p className="text-xs sm:text-sm font-medium" style={{ color: '#002B45' }}>HIPAA Compliant</p>
+            </div>
+            <div className="text-center p-4">
+              <Lock className="h-8 w-8 mx-auto mb-2" style={{ color: '#00A3AD' }} />
+              <p className="text-xs sm:text-sm font-medium" style={{ color: '#002B45' }}>ISO 27001</p>
+            </div>
+            <div className="text-center p-4">
+              <Building2 className="h-8 w-8 mx-auto mb-2" style={{ color: '#00A3AD' }} />
+              <p className="text-xs sm:text-sm font-medium" style={{ color: '#002B45' }}>GDPR Ready</p>
+            </div>
+            <div className="text-center p-4">
+              <CheckCircle className="h-8 w-8 mx-auto mb-2" style={{ color: '#00A3AD' }} />
+              <p className="text-xs sm:text-sm font-medium" style={{ color: '#002B45' }}>FDA 21 CFR Part 11</p>
+            </div>
+            <div className="text-center p-4">
+              <Briefcase className="h-8 w-8 mx-auto mb-2" style={{ color: '#00A3AD' }} />
+              <p className="text-xs sm:text-sm font-medium" style={{ color: '#002B45' }}>Fortune 500 Trusted</p>
             </div>
           </div>
         </div>
@@ -231,10 +285,59 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Solutions Section */}
+          {/* Digital Solutions Section */}
+          <div className="mb-12">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-8" style={{ color: '#002B45' }}>
+              Digital Solutions & Platforms
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8">
+              <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0 overflow-hidden">
+                <div className="p-6 sm:p-8" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4" style={{ backgroundColor: '#00A3AD' }}>
+                      <Monitor className="h-6 w-6 text-white" />
+                    </div>
+                    <h4 className="text-xl font-bold text-white">TITANIS GRC Platform</h4>
+                  </div>
+                  <p className="text-gray-200 mb-4">
+                    AI-powered Governance, Risk & Compliance platform with 90-day ROI guarantee. Real-time monitoring, automated workflows, and comprehensive reporting.
+                  </p>
+                  <a 
+                    href="/solutions/digital-products/titanis"
+                    className="inline-flex items-center text-white hover:opacity-80 font-medium"
+                  >
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </Card>
+
+              <Card className="hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0 overflow-hidden">
+                <div className="p-6 sm:p-8" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4" style={{ backgroundColor: '#005870' }}>
+                      <Zap className="h-6 w-6 text-white" />
+                    </div>
+                    <h4 className="text-xl font-bold text-white">KJ Advisor</h4>
+                  </div>
+                  <p className="text-gray-200 mb-4">
+                    AI-powered executive partner providing instant access to compliance expertise, regulatory guidance, and strategic insights 24/7.
+                  </p>
+                  <a 
+                    href="/solutions/digital-products/kj-advisor"
+                    className="inline-flex items-center text-white hover:opacity-80 font-medium"
+                  >
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </div>
+              </Card>
+            </div>
+          </div>
+
+          {/* Traditional Solutions Section */}
           <div>
             <h3 className="text-xl sm:text-2xl font-bold text-center mb-8" style={{ color: '#002B45' }}>
-              Our Solutions
+              Traditional Solutions & Services
             </h3>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -243,7 +346,7 @@ const Index = () => {
                   <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-3 sm:mb-4" style={{ backgroundColor: '#eaf6f8' }}>
                     <Users className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: '#005870' }} />
                   </div>
-                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Medical Staffing</CardTitle>
+                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Medical Staffing (UK)</CardTitle>
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6 pt-0">
                   <CardDescription className="text-sm sm:text-base" style={{ color: '#1a1a1a' }}>
@@ -257,11 +360,11 @@ const Index = () => {
                   <div className="mx-auto w-12 h-12 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-3 sm:mb-4" style={{ backgroundColor: '#eaf6f8' }}>
                     <Shield className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: '#005870' }} />
                   </div>
-                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Compliance Services</CardTitle>
+                  <CardTitle className="text-base sm:text-lg" style={{ color: '#002B45' }}>Fractional Compliance</CardTitle>
                 </CardHeader>
                 <CardContent className="p-4 sm:p-6 pt-0">
                   <CardDescription className="text-sm sm:text-base" style={{ color: '#1a1a1a' }}>
-                    Comprehensive regulatory compliance solutions to ensure your organization meets all healthcare requirements.
+                    Executive-level compliance leadership and regulatory expertise without full-time executive costs.
                   </CardDescription>
                 </CardContent>
               </Card>
@@ -299,6 +402,55 @@ const Index = () => {
         </div>
       </div>
 
+      {/* ROI & Success Metrics Section */}
+      <div 
+        className="py-12 sm:py-16 px-4 sm:px-8 text-white"
+        style={{ 
+          background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
+              Proven Results & ROI Guarantee
+            </h2>
+            <p className="text-gray-200 text-base sm:text-lg max-w-3xl mx-auto">
+              Our clients see measurable improvements within 90 days, backed by our industry-first ROI guarantee.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            <div className="space-y-2">
+              <div className="text-3xl sm:text-4xl font-bold" style={{ color: '#00A3AD' }}>90%</div>
+              <p className="text-white font-medium">Compliance Score Improvement</p>
+              <p className="text-gray-300 text-sm">Average within 6 months</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl sm:text-4xl font-bold" style={{ color: '#00A3AD' }}>$2.4M</div>
+              <p className="text-white font-medium">Average Cost Savings</p>
+              <p className="text-gray-300 text-sm">Per year for mid-size orgs</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl sm:text-4xl font-bold" style={{ color: '#00A3AD' }}>98%</div>
+              <p className="text-white font-medium">Client Retention Rate</p>
+              <p className="text-gray-300 text-sm">Long-term partnerships</p>
+            </div>
+            <div className="space-y-2">
+              <div className="text-3xl sm:text-4xl font-bold" style={{ color: '#00A3AD' }}>24/7</div>
+              <p className="text-white font-medium">Global Support</p>
+              <p className="text-gray-300 text-sm">US & UK coverage</p>
+            </div>
+          </div>
+
+          <div className="text-center mt-8">
+            <div className="inline-flex items-center p-4 rounded-lg" style={{ backgroundColor: 'rgba(0, 163, 173, 0.1)', border: '1px solid #00A3AD' }}>
+              <TrendingUp className="h-6 w-6 text-white mr-3" />
+              <span className="text-white font-medium">90-Day ROI Guarantee or Additional Consulting at No Charge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Testimonials Section */}
       <div 
         id="testimonials"
@@ -324,9 +476,14 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <Card className="hover:shadow-lg transition-shadow bg-white">
               <CardContent className="p-4 sm:p-6">
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+                  ))}
+                </div>
                 <p className="italic mb-4 text-gray-700 text-sm sm:text-base">
                   "Kelly demonstrated an extraordinary ability to dissect complex regulatory frameworks and translate them into actionable strategies."
                 </p>
@@ -338,6 +495,27 @@ const Index = () => {
 
             <Card className="hover:shadow-lg transition-shadow bg-white">
               <CardContent className="p-4 sm:p-6">
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+                  ))}
+                </div>
+                <p className="italic mb-4 text-gray-700 text-sm sm:text-base">
+                  "The TITANIS platform transformed our compliance operations. ROI was evident within 60 days."
+                </p>
+                <div className="font-semibold text-sm sm:text-base" style={{ color: '#00A3AD' }}>
+                  Compliance Director, Regional Health System
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="hover:shadow-lg transition-shadow bg-white">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+                  ))}
+                </div>
                 <p className="italic mb-4 text-gray-700 text-sm sm:text-base">
                   "Kelly's leadership in mission-critical projects enhanced IT system stability, risk management, and security compliance."
                 </p>
@@ -349,11 +527,16 @@ const Index = () => {
 
             <Card className="hover:shadow-lg transition-shadow bg-white">
               <CardContent className="p-4 sm:p-6">
+                <div className="flex mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+                  ))}
+                </div>
                 <p className="italic mb-4 text-gray-700 text-sm sm:text-base">
-                  "Kelly is a wealth of knowledge. She consistently identifies what others overlook."
+                  "Michadrian Healthcare Services provided exceptional staffing solutions for our UK operations."
                 </p>
                 <div className="font-semibold text-sm sm:text-base" style={{ color: '#00A3AD' }}>
-                  Director, TAN Healthcare
+                  Operations Manager, NHS Trust
                 </div>
               </CardContent>
             </Card>
