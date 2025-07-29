@@ -69,6 +69,7 @@ const TitanisGRC = () => {
       document.head.removeChild(style);
     };
   }, []);
+
   const features = [
     {
       icon: Shield,
@@ -461,46 +462,532 @@ const TitanisGRC = () => {
         </div>
       </section>
 
+      {/* ROI Guarantee Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ 
+          background: 'linear-gradient(135deg, #00A3AD 0%, #005870 100%)',
+          color: 'white'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl text-center">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              90-Day ROI Guarantee
+            </h2>
+            <p className="text-xl mb-8 text-white/90">
+              We're so confident in TITANIS that we guarantee measurable ROI within 90 days, 
+              or we'll refund your investment.
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                <div className="text-3xl font-bold mb-2">75%</div>
+                <div className="text-sm">Reduction in audit prep time</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                <div className="text-3xl font-bold mb-2">90%</div>
+                <div className="text-sm">Faster compliance updates</div>
+              </div>
+              <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm">
+                <div className="text-3xl font-bold mb-2">85%</div>
+                <div className="text-sm">Reduction in violations</div>
+              </div>
+            </div>
+            
+            <div className="bg-white/5 rounded-lg p-6 border border-white/20">
+              <h3 className="text-xl font-semibold mb-4">Our Guarantee Includes:</h3>
+              <div className="grid md:grid-cols-2 gap-4 text-left">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
+                  <span>Measurable time savings within 30 days</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
+                  <span>Improved compliance scores by day 60</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
+                  <span>Full audit readiness by day 90</span>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-5 w-5 mt-1 flex-shrink-0" />
+                  <span>Complete staff training and adoption</span>
+                </div>
+              </div>
+            </div>
+            
+            <p className="text-sm text-white/70 mt-6">
+              *Terms and conditions apply. ROI measurement based on time savings, reduced violations, and operational efficiency improvements. 
+              Guarantee requires completion of onboarding program and minimum 90-day usage period. Results may vary based on organization size and implementation scope.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Implementation & Onboarding Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#f8f9fa' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-4"
+              style={{ color: '#002B45' }}
+            >
+              Seamless Implementation
+            </h2>
+            <p className="text-xl text-gray-600">
+              From setup to success in 30 days with our proven implementation methodology
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00A3AD' }}>
+                <span className="text-white font-bold text-xl">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#002B45' }}>Discovery</h3>
+              <p className="text-gray-600">
+                Comprehensive assessment of current compliance state and integration requirements
+              </p>
+              <div className="text-sm text-gray-500 mt-2">Days 1-5</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00A3AD' }}>
+                <span className="text-white font-bold text-xl">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#002B45' }}>Configuration</h3>
+              <p className="text-gray-600">
+                Platform setup, data migration, and integration with existing systems
+              </p>
+              <div className="text-sm text-gray-500 mt-2">Days 6-15</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00A3AD' }}>
+                <span className="text-white font-bold text-xl">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#002B45' }}>Training</h3>
+              <p className="text-gray-600">
+                Comprehensive user training and change management support
+              </p>
+              <div className="text-sm text-gray-500 mt-2">Days 16-25</div>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: '#00A3AD' }}>
+                <span className="text-white font-bold text-xl">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3" style={{ color: '#002B45' }}>Go-Live</h3>
+              <p className="text-gray-600">
+                Full platform activation with ongoing support and optimization
+              </p>
+              <div className="text-sm text-gray-500 mt-2">Days 26-30</div>
+            </div>
+          </div>
+          
+          <div className="mt-12 bg-white rounded-lg p-8 shadow-lg">
+            <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#002B45' }}>Implementation Success Metrics</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>95%</div>
+                <div className="text-gray-600">On-time delivery rate</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>98%</div>
+                <div className="text-gray-600">User adoption within 60 days</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>100%</div>
+                <div className="text-gray-600">Data migration accuracy</div>
+              </div>
+            </div>
+            <p className="text-sm text-gray-500 text-center mt-6">
+              *Implementation timeline varies by organization size and complexity. Additional fees may apply for custom integrations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Integration Capabilities Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#ffffff' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-4"
+              style={{ color: '#002B45' }}
+            >
+              Enterprise-Grade Integrations
+            </h2>
+            <p className="text-xl text-gray-600">
+              Native APIs and pre-built connectors for seamless data flow across your entire healthcare ecosystem
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <Card className="border-2 hover:shadow-lg transition-shadow duration-300" style={{ borderColor: '#00A3AD' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center" style={{ color: '#002B45' }}>
+                  <Database className="h-6 w-6 mr-2" style={{ color: '#00A3AD' }} />
+                  EHR Systems
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Epic</li>
+                  <li>• Cerner (Oracle Health)</li>
+                  <li>• Allscripts</li>
+                  <li>• athenahealth</li>
+                  <li>• NextGen</li>
+                  <li>• + 50 more systems</li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 hover:shadow-lg transition-shadow duration-300" style={{ borderColor: '#00A3AD' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center" style={{ color: '#002B45' }}>
+                  <Shield className="h-6 w-6 mr-2" style={{ color: '#00A3AD' }} />
+                  Security Tools
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Microsoft Sentinel</li>
+                  <li>• Splunk</li>
+                  <li>• CrowdStrike</li>
+                  <li>• Okta</li>
+                  <li>• Active Directory</li>
+                  <li>• Custom SIEM solutions</li>
+                </ul>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-2 hover:shadow-lg transition-shadow duration-300" style={{ borderColor: '#00A3AD' }}>
+              <CardHeader>
+                <CardTitle className="flex items-center" style={{ color: '#002B45' }}>
+                  <Settings className="h-6 w-6 mr-2" style={{ color: '#00A3AD' }} />
+                  Business Systems
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• SAP</li>
+                  <li>• Oracle</li>
+                  <li>• Workday</li>
+                  <li>• Salesforce</li>
+                  <li>• ServiceNow</li>
+                  <li>• Microsoft 365</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="bg-gray-50 rounded-lg p-8">
+            <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#002B45' }}>API-First Architecture</h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold mb-4" style={{ color: '#00A3AD' }}>RESTful APIs</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Complete API documentation</li>
+                  <li>• Webhook support</li>
+                  <li>• Real-time data sync</li>
+                  <li>• Rate limiting and security</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4" style={{ color: '#00A3AD' }}>Custom Integrations</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Dedicated integration team</li>
+                  <li>• Custom connector development</li>
+                  <li>• Legacy system support</li>
+                  <li>• White-glove implementation</li>
+                </ul>
+              </div>
+            </div>
+            <p className="text-sm text-gray-500 text-center mt-6">
+              *Custom integration services available. Additional fees may apply for complex legacy system integrations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Security & Compliance Certifications Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#f8f9fa' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-4"
+              style={{ color: '#002B45' }}
+            >
+              Security & Compliance Certifications
+            </h2>
+            <p className="text-xl text-gray-600">
+              Built with the highest security standards to protect your most sensitive healthcare data
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="text-center bg-white rounded-lg p-6 shadow-lg">
+              <Award className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#002B45' }}>SOC 2 Type II</h3>
+              <p className="text-sm text-gray-600">Security, availability, and confidentiality controls</p>
+            </div>
+            
+            <div className="text-center bg-white rounded-lg p-6 shadow-lg">
+              <Shield className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#002B45' }}>HITRUST CSF</h3>
+              <p className="text-sm text-gray-600">Healthcare industry security framework certification</p>
+            </div>
+            
+            <div className="text-center bg-white rounded-lg p-6 shadow-lg">
+              <Lock className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#002B45' }}>ISO 27001</h3>
+              <p className="text-sm text-gray-600">International information security management</p>
+            </div>
+            
+            <div className="text-center bg-white rounded-lg p-6 shadow-lg">
+              <Globe className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-lg font-semibold mb-2" style={{ color: '#002B45' }}>GDPR Ready</h3>
+              <p className="text-sm text-gray-600">European data protection regulation compliance</p>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg p-8 shadow-lg">
+            <h3 className="text-2xl font-semibold mb-6 text-center" style={{ color: '#002B45' }}>Data Security Features</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold mb-4" style={{ color: '#00A3AD' }}>Encryption</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• AES 256-bit encryption at rest</li>
+                  <li>• TLS 1.3 in transit</li>
+                  <li>• End-to-end encryption</li>
+                  <li>• Key management system</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4" style={{ color: '#00A3AD' }}>Access Control</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• Multi-factor authentication</li>
+                  <li>• Role-based permissions</li>
+                  <li>• Single sign-on (SSO)</li>
+                  <li>• Audit trail logging</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4" style={{ color: '#00A3AD' }}>Infrastructure</h4>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• AWS/Azure hosting</li>
+                  <li>• 99.99% uptime SLA</li>
+                  <li>• Disaster recovery</li>
+                  <li>• Regular penetration testing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories & Case Studies Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#ffffff' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-4"
+              style={{ color: '#002B45' }}
+            >
+              Success Stories & Case Studies
+            </h2>
+            <p className="text-xl text-gray-600">
+              Real results from healthcare organizations worldwide
+            </p>
+          </div>
+          
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {/* Case Study 1 */}
+            <Card className="border-2 hover:shadow-xl transition-shadow duration-300" style={{ borderColor: '#00A3AD' }}>
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>Regional Health System</CardTitle>
+                <CardDescription>15 hospitals, 50,000 employees</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2" style={{ color: '#00A3AD' }}>Challenge</h4>
+                    <p className="text-sm text-gray-600">
+                      Manual compliance tracking across multiple facilities leading to 
+                      inconsistent audit results and regulatory findings.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2" style={{ color: '#00A3AD' }}>Solution</h4>
+                    <p className="text-sm text-gray-600">
+                      Deployed TITANIS across all facilities with unified compliance 
+                      monitoring and automated audit preparation.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm">Audit Prep Time</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>-80%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm">Compliance Violations</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>-95%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm">Annual Savings</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>$2.1M</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 2 */}
+            <Card className="border-2 hover:shadow-xl transition-shadow duration-300" style={{ borderColor: '#00A3AD' }}>
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>Academic Medical Center</CardTitle>
+                <CardDescription>Teaching hospital with research facilities</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2" style={{ color: '#00A3AD' }}>Challenge</h4>
+                    <p className="text-sm text-gray-600">
+                      Complex compliance requirements for clinical research and 
+                      patient care across multiple regulatory frameworks.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2" style={{ color: '#00A3AD' }}>Solution</h4>
+                    <p className="text-sm text-gray-600">
+                      Implemented multi-framework monitoring covering HIPAA, 
+                      FDA, and institutional research protocols.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm">Regulatory Updates</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>Real-time</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm">Risk Detection</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>+300%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm">Compliance Score</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>99.2%</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 3 */}
+            <Card className="border-2 hover:shadow-xl transition-shadow duration-300" style={{ borderColor: '#00A3AD' }}>
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>Multi-State Hospital Group</CardTitle>
+                <CardDescription>30+ facilities across 8 states</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2" style={{ color: '#00A3AD' }}>Challenge</h4>
+                    <p className="text-sm text-gray-600">
+                      Inconsistent compliance practices across states with 
+                      varying regulatory requirements and audit schedules.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h4 className="font-semibold mb-2" style={{ color: '#00A3AD' }}>Solution</h4>
+                    <p className="text-sm text-gray-600">
+                      Centralized compliance management with state-specific 
+                      customizations and automated reporting.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex justify-between">
+                      <span className="text-sm">Standardization</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>100%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm">Audit Success Rate</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>100%</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-sm">Cost Reduction</span>
+                      <span className="font-semibold" style={{ color: '#00A3AD' }}>$3.5M</span>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="text-center">
+            <Button 
+              size="lg" 
+              className="text-white hover:opacity-90"
+              style={{ backgroundColor: '#00A3AD' }}
+            >
+              View Complete Case Studies
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <p className="text-sm text-gray-500 mt-4">
+              *Results may vary based on implementation scope and organizational factors. Subject to contract terms.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section 
         className="py-16 px-4 sm:px-8"
-        style={{ backgroundColor: '#f4f4f4' }}
+        style={{ backgroundColor: '#f8f9fa' }}
       >
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-3xl md:text-4xl font-bold mb-4"
               style={{ color: '#002B45' }}
             >
-              Proven Results from Healthcare Leaders
+              What Our Clients Say
             </h2>
-            <div className="flex justify-center mb-6">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-6 w-6 fill-current mx-1" style={{ color: '#f25022' }} />
-              ))}
-              <span className="ml-3 text-lg" style={{ color: '#005870' }}>4.9/5 Average Rating</span>
-            </div>
+            <p className="text-xl text-gray-600">
+              Healthcare leaders worldwide trust TITANIS to transform their compliance programs
+            </p>
           </div>
-
+          
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow bg-white">
+              <Card key={index} className="border-none shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
-                  <div className="flex mb-4">
+                  <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
                     ))}
                   </div>
-                  <p className="italic mb-4 text-gray-700">
+                  <blockquote className="text-gray-700 mb-4 italic">
                     "{testimonial.quote}"
-                  </p>
-                  <div className="border-t pt-4">
-                    <div className="font-semibold" style={{ color: '#002B45' }}>
+                  </blockquote>
+                  <div>
+                    <cite className="font-semibold" style={{ color: '#002B45' }}>
                       {testimonial.author}
-                    </div>
-                    <div className="text-sm" style={{ color: '#00A3AD' }}>
-                      {testimonial.company}
-                    </div>
+                    </cite>
+                    <p className="text-sm text-gray-600">{testimonial.company}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -509,8 +996,120 @@ const TitanisGRC = () => {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#ffffff' }}
+      >
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-4"
+              style={{ color: '#002B45' }}
+            >
+              Frequently Asked Questions
+            </h2>
+            <p className="text-xl text-gray-600">
+              Get answers to common questions about TITANIS implementation and features
+            </p>
+          </div>
+          
+          <div className="space-y-6">
+            <Card className="border border-gray-200">
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>How long does implementation take?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Standard implementation takes 30 days for most organizations. This includes discovery, 
+                  configuration, data migration, training, and go-live support. Complex environments with 
+                  extensive customizations may require additional time.
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  *Implementation timeline varies by organization size and complexity.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-200">
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>What compliance frameworks does TITANIS support?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  TITANIS supports all major healthcare compliance frameworks including HIPAA, HITECH, 
+                  SOX, ISO 27001, GDPR, and custom organizational frameworks. Our AI continuously monitors 
+                  regulatory changes across 50+ sources to ensure current compliance requirements.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-200">
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>How does the 90-day ROI guarantee work?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  We guarantee measurable ROI within 90 days of full implementation. This includes time 
+                  savings in audit preparation, improved compliance scores, and operational efficiency gains. 
+                  If you don't see documented improvements, we'll refund your investment.
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  *Terms and conditions apply. Requires completion of onboarding program and minimum 90-day usage period.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-200">
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>Can TITANIS integrate with our existing EHR system?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Yes, TITANIS has native integrations with 200+ healthcare systems including Epic, 
+                  Cerner, Allscripts, and athenahealth. We also provide custom API connections for 
+                  legacy systems and specialized applications.
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  *Additional fees may apply for custom integrations with legacy systems.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-200">
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>What kind of ongoing support is provided?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  All TITANIS customers receive 24/7 technical support, regular system updates, 
+                  quarterly business reviews, and access to our compliance experts. We also provide 
+                  ongoing training and change management support.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border border-gray-200">
+              <CardHeader>
+                <CardTitle style={{ color: '#002B45' }}>Is TITANIS suitable for smaller healthcare organizations?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  TITANIS scales from single practices to large health systems. Our tiered pricing 
+                  model ensures cost-effective solutions for organizations of all sizes, with core 
+                  compliance features available in every tier.
+                </p>
+                <p className="text-sm text-gray-500 mt-2">
+                  *Pricing varies based on organization size and feature requirements. Subject to contract terms.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Platform Tiers */}
-      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#ffffff' }}>
+      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#f8f9fa' }}>
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 
@@ -522,6 +1121,9 @@ const TitanisGRC = () => {
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               Scalable GRC solutions designed to grow with your organization. 
               Start small, scale seamlessly, transform completely.
+            </p>
+            <p className="text-sm text-gray-500 mt-4">
+              *Subject to contract terms. Additional fees may apply for premium features and custom integrations.
             </p>
           </div>
 
@@ -768,149 +1370,219 @@ const TitanisGRC = () => {
                 </ul>
                 <Button 
                   className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#002B45' }}
+                  style={{ backgroundColor: '#005870' }}
                 >
                   Contact Sales
                 </Button>
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-12 p-6 rounded-lg" style={{ backgroundColor: '#eaf6f8' }}>
-            <p className="text-lg font-semibold mb-2" style={{ color: '#002B45' }}>
-              🎯 ROI Guarantee: See measurable compliance improvements within 90 days or your money back
-            </p>
-            <p className="text-gray-600">
-              Join 500+ healthcare organizations already transforming their compliance operations
-            </p>
+      {/* Worldwide Coverage Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#ffffff' }}
+      >
+        <div className="container mx-auto max-w-6xl text-center">
+          <h2 
+            className="text-3xl md:text-4xl font-bold mb-6"
+            style={{ color: '#002B45' }}
+          >
+            Global Healthcare Compliance Coverage
+          </h2>
+          <p className="text-xl text-gray-600 mb-12">
+            TITANIS serves healthcare organizations worldwide with localized compliance expertise and 24/7 support
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-lg p-8 shadow-lg">
+              <Globe className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-xl font-semibold mb-4" style={{ color: '#002B45' }}>Global Regulatory Framework Support</h3>
+              <ul className="text-left space-y-2 text-gray-600">
+                <li>• HIPAA & HITECH (United States)</li>
+                <li>• GDPR (European Union)</li>
+                <li>• PIPEDA (Canada)</li>
+                <li>• Privacy Act (Australia)</li>
+                <li>• Custom national frameworks</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg p-8 shadow-lg">
+              <Clock className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-xl font-semibold mb-4" style={{ color: '#002B45' }}>24/7 Multi-Timezone Support</h3>
+              <ul className="text-left space-y-2 text-gray-600">
+                <li>• Follow-the-sun support model</li>
+                <li>• Local language assistance</li>
+                <li>• Regional compliance experts</li>
+                <li>• Emergency response teams</li>
+                <li>• Business hours coverage globally</li>
+              </ul>
+            </div>
+            
+            <div className="bg-white rounded-lg p-8 shadow-lg">
+              <Shield className="h-12 w-12 mx-auto mb-4" style={{ color: '#00A3AD' }} />
+              <h3 className="text-xl font-semibold mb-4" style={{ color: '#002B45' }}>Data Residency Options</h3>
+              <ul className="text-left space-y-2 text-gray-600">
+                <li>• Regional data centers</li>
+                <li>• Compliance with local data laws</li>
+                <li>• Cross-border data transfer controls</li>
+                <li>• Sovereign cloud options</li>
+                <li>• Government security clearance</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-lg p-8 shadow-lg">
+            <h3 className="text-2xl font-semibold mb-6" style={{ color: '#002B45' }}>Worldwide Implementation Success</h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>50+</div>
+                <div className="text-gray-600">Countries served</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>25+</div>
+                <div className="text-gray-600">Languages supported</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>99.9%</div>
+                <div className="text-gray-600">Global uptime SLA</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold mb-2" style={{ color: '#00A3AD' }}>500+</div>
+                <div className="text-gray-600">Healthcare organizations</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
       <section 
-        className="py-16 px-4 sm:px-8 text-white"
-        style={{ backgroundColor: '#002B45' }}
+        className="py-16 px-4 sm:px-8"
+        style={{ 
+          background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)',
+          color: 'white'
+        }}
       >
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Transform Your Compliance Operations Today
-            </h2>
-            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-              Join 500+ healthcare organizations who've revolutionized their GRC operations with TITANIS. 
-              Stop playing compliance catch-up and start leading with predictive intelligence.
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">30-Day</div>
-                <div className="text-gray-200">Free Trial</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">90-Day</div>
-                <div className="text-gray-200">ROI Guarantee</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">24/7</div>
-                <div className="text-gray-200">Expert Support</div>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Transform Your Compliance Program?
+          </h2>
+          <p className="text-xl mb-8 text-white/90">
+            Join 500+ healthcare organizations using TITANIS to stay ahead of regulatory changes 
+            and maintain continuous compliance across all frameworks.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button 
+              size="lg" 
+              className="text-white hover:opacity-90 text-lg px-8"
+              style={{ backgroundColor: '#f25022' }}
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              Schedule Demo
+            </Button>
+            <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
               <Button 
                 size="lg" 
-                className="text-white hover:opacity-90 text-lg px-8"
-                style={{ backgroundColor: '#f25022' }}
+                className="text-lg px-8 w-full sm:w-auto"
+                style={{ 
+                  backgroundColor: 'transparent',
+                  color: 'white',
+                  border: '2px solid white'
+                }}
               >
-                <PlayCircle className="mr-2 h-5 w-5" />
-                Watch Live Demo
+                Access Platform
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
-                <Button 
-                  size="lg" 
-                  className="text-gray-700 hover:opacity-90 text-lg px-8 bg-white"
-                >
-                  Access Platform
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </a>
-            </div>
-            
-            <p className="text-sm text-gray-300 mt-6">
-              No credit card required • Full platform access • Expert onboarding included
-            </p>
+            </a>
           </div>
+          
+          <div className="flex items-center justify-center space-x-1">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+            ))}
+            <span className="ml-2 text-sm text-white/80">
+              Trusted by 500+ healthcare organizations worldwide
+            </span>
+          </div>
+          
+          <p className="text-white/60 text-sm mt-6">
+            *90-day ROI guarantee applies. Terms and conditions apply. Results may vary based on implementation scope.
+          </p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6" style={{ backgroundColor: '#f4f4f4' }}>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div className="col-span-2">
-              <h3 className="text-2xl font-bold mb-4" style={{ color: '#002B45' }}>
-                TITANIS™
-              </h3>
-              <p className="mb-4" style={{ color: '#1a1a1a' }}>
-                Titanide's Intelligent Governance, Risk & Compliance Platform serving healthcare organizations worldwide. 
-                Comprehensive coverage of HIPAA, SOX, HITECH, ISO 27001, GDPR, and custom regulatory frameworks.
+      <footer 
+        className="py-12 px-4 sm:px-8"
+        style={{ backgroundColor: '#002B45', color: 'white' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="md:col-span-2">
+              <h3 className="text-2xl font-bold mb-4">TITANIS™</h3>
+              <p className="text-white/80 mb-4">
+                The world's most advanced AI-powered GRC platform for healthcare organizations. 
+                Serving clients worldwide with comprehensive compliance framework coverage.
               </p>
-              <div className="flex items-center mb-4" style={{ color: '#1a1a1a' }}>
-                <Globe className="w-4 h-4 mr-2" />
-                <span>Global healthcare compliance solutions</span>
+              <div className="flex space-x-4">
+                <Button 
+                  size="sm" 
+                  className="text-white hover:opacity-90"
+                  style={{ backgroundColor: '#00A3AD' }}
+                >
+                  Support Portal
+                </Button>
+                <Button 
+                  size="sm" 
+                  className="text-white hover:opacity-90"
+                  style={{ backgroundColor: '#005870' }}
+                >
+                  API Documentation
+                </Button>
               </div>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4" style={{ color: '#002B45' }}>Platform Access</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer" 
-                     className="hover:underline" style={{ color: '#1a1a1a' }}>
-                    Access TITANIS Platform
-                  </a>
-                </li>
-                <li>
-                  <a href="https://support.titanideholdings.com/portal/en/home" target="_blank" rel="noopener noreferrer" 
-                     className="hover:underline" style={{ color: '#1a1a1a' }}>
-                    Support Portal
-                  </a>
-                </li>
-                <li>
-                  <a href="mailto:support@titanideconsulting.com" 
-                     className="hover:underline" style={{ color: '#1a1a1a' }}>
-                    Email Support
-                  </a>
-                </li>
-                <li>
-                  <Link to="/contact" className="hover:underline" style={{ color: '#1a1a1a' }}>
-                    Contact Sales
-                  </Link>
-                </li>
+              <h4 className="text-lg font-semibold mb-4">Platform</h4>
+              <ul className="space-y-2 text-white/80">
+                <li><Link to="#" className="hover:text-white transition-colors">Features</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Integrations</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Security</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Pricing</Link></li>
+                <li><a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Access Platform</a></li>
               </ul>
             </div>
             
             <div>
-              <h4 className="font-semibold mb-4" style={{ color: '#002B45' }}>Framework Coverage</h4>
-              <ul className="space-y-2 text-sm">
-                <li style={{ color: '#1a1a1a' }}>• HIPAA Privacy & Security</li>
-                <li style={{ color: '#1a1a1a' }}>• Sarbanes-Oxley (SOX)</li>
-                <li style={{ color: '#1a1a1a' }}>• HITECH Act</li>
-                <li style={{ color: '#1a1a1a' }}>• ISO 27001</li>
-                <li style={{ color: '#1a1a1a' }}>• GDPR Compliance</li>
-                <li style={{ color: '#1a1a1a' }}>• Custom Frameworks</li>
+              <h4 className="text-lg font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-white/80">
+                <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Training</Link></li>
+                <li><Link to="#" className="hover:text-white transition-colors">Status</Link></li>
+                <li><Link to="/legal" className="hover:text-white transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t pt-8 flex flex-col md:flex-row justify-between items-center text-sm" style={{ color: '#1a1a1a' }}>
-            <p>&copy; 2024 Titanide Consulting Group. All rights reserved.</p>
-            <div className="flex space-x-4 mt-4 md:mt-0">
-              <Link to="/legal" className="hover:underline">Privacy Policy</Link>
-              <Link to="/legal" className="hover:underline">Terms of Service</Link>
-              <Link to="/about" className="hover:underline">About Titanide</Link>
+          <div className="border-t border-white/20 mt-8 pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center">
+              <p className="text-white/60 text-sm">
+                © 2024 Titanide Consulting. All rights reserved. TITANIS is a trademark of Titanide Consulting.
+              </p>
+              <div className="flex items-center space-x-4 mt-4 md:mt-0">
+                <Globe className="h-4 w-4 text-white/60" />
+                <span className="text-white/60 text-sm">Available worldwide</span>
+              </div>
             </div>
+            <p className="text-white/40 text-xs mt-4 text-center">
+              *Terms and conditions apply to all offers and guarantees. Results may vary based on implementation and organizational factors. 
+              Additional fees may apply for premium features and custom integrations. Subject to contract terms.
+            </p>
           </div>
         </div>
       </footer>
