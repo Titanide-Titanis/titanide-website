@@ -520,123 +520,245 @@ const TitanisGRC = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {/* Free Plan */}
             <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '1px solid #e0e0e0' }}>
               <CardHeader className="p-6">
-                <CardTitle className="text-2xl" style={{ color: '#002B45' }}>Essentials</CardTitle>
-                <CardDescription className="text-gray-600">Perfect for small practices and clinics</CardDescription>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Free</CardTitle>
+                <CardDescription className="text-gray-600 text-sm">Current Plan</CardDescription>
                 <div className="mt-4">
-                  <span className="text-3xl font-bold" style={{ color: '#002B45' }}>$299</span>
-                  <span className="text-gray-500">/month</span>
+                  <span className="text-2xl font-bold" style={{ color: '#002B45' }}>Free</span>
                 </div>
               </CardHeader>
               <CardContent className="p-6 pt-0">
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 mb-6 text-sm">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Core HIPAA compliance tracking
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Basic compliance assessment
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Basic risk assessment tools
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Risk calculator
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Standard compliance reports
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Up to 1 user
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Email support
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    1 framework
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    1GB storage
                   </li>
                 </ul>
-                <Button 
-                  className="w-full text-gray-700 hover:opacity-90"
-                  style={{ backgroundColor: '#f4f4f4', border: '1px solid #ddd' }}
-                >
-                  Get Started
-                </Button>
+                <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    className="w-full text-gray-700 hover:opacity-90"
+                    style={{ backgroundColor: '#f4f4f4', border: '1px solid #ddd' }}
+                  >
+                    Current Plan
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
+            {/* Starter Plan */}
+            <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '1px solid #e0e0e0' }}>
+              <CardHeader className="p-6">
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Starter</CardTitle>
+                <CardDescription className="text-gray-600 text-sm">Small business compliance management</CardDescription>
+                <div className="mt-4">
+                  <span className="text-2xl font-bold" style={{ color: '#002B45' }}>$2,500</span>
+                  <span className="text-gray-500 text-sm">/month</span>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6 pt-0">
+                <ul className="space-y-2 mb-6 text-sm">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Full compliance assessment
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Advanced risk management
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Policy template library
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Up to 5 users
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    1 framework
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    10GB storage
+                  </li>
+                </ul>
+                <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    className="w-full text-white hover:opacity-90"
+                    style={{ backgroundColor: '#00A3AD' }}
+                  >
+                    Get Started
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Professional Plan - Most Popular */}
             <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '3px solid #00A3AD' }}>
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span 
-                  className="px-4 py-1 rounded-full text-sm font-semibold text-white"
+                  className="px-3 py-1 rounded-full text-xs font-semibold text-white"
                   style={{ backgroundColor: '#00A3AD' }}
                 >
                   Most Popular
                 </span>
               </div>
               <CardHeader className="p-6">
-                <CardTitle className="text-2xl" style={{ color: '#002B45' }}>Professional</CardTitle>
-                <CardDescription className="text-gray-600">Ideal for healthcare organizations</CardDescription>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Professional</CardTitle>
+                <CardDescription className="text-gray-600 text-sm">Mid-market enterprise features</CardDescription>
                 <div className="mt-4">
-                  <span className="text-3xl font-bold" style={{ color: '#002B45' }}>$899</span>
-                  <span className="text-gray-500">/month</span>
+                  <span className="text-2xl font-bold" style={{ color: '#002B45' }}>$7,500</span>
+                  <span className="text-gray-500 text-sm">/month</span>
                 </div>
               </CardHeader>
               <CardContent className="p-6 pt-0">
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 mb-6 text-sm">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    AI-powered workflow automation
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Multiple frameworks support
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Predictive risk analytics
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Advanced analytics & reporting
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Executive compliance dashboards
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Custom report builder
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    API integrations included
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Workflow automation
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Priority phone support
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Up to 25 users
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    3 frameworks
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    100GB storage
                   </li>
                 </ul>
-                <Button 
-                  className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#f25022' }}
-                >
-                  Start Free Trial
-                </Button>
+                <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    className="w-full text-white hover:opacity-90"
+                    style={{ backgroundColor: '#f25022' }}
+                  >
+                    Start Trial
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
+            {/* Enterprise Plan */}
             <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '1px solid #e0e0e0' }}>
               <CardHeader className="p-6">
-                <CardTitle className="text-2xl" style={{ color: '#002B45' }}>Enterprise</CardTitle>
-                <CardDescription className="text-gray-600">For large healthcare systems</CardDescription>
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Enterprise</CardTitle>
+                <CardDescription className="text-gray-600 text-sm">Large enterprise with full features</CardDescription>
                 <div className="mt-4">
-                  <span className="text-3xl font-bold" style={{ color: '#002B45' }}>Custom</span>
-                  <span className="text-gray-500"> pricing</span>
+                  <span className="text-2xl font-bold" style={{ color: '#002B45' }}>$15,000</span>
+                  <span className="text-gray-500 text-sm">/month</span>
                 </div>
               </CardHeader>
               <CardContent className="p-6 pt-0">
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2 mb-6 text-sm">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Custom compliance frameworks
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Unlimited frameworks
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Advanced AI analytics & ML
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    AI-powered analytics
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    Dedicated customer success manager
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Custom integrations
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    White-label deployment options
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    White-label reports
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
-                    24/7 premium support
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Dedicated customer success
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Up to 100 users
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    1000GB storage
+                  </li>
+                </ul>
+                <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    className="w-full text-white hover:opacity-90"
+                    style={{ backgroundColor: '#002B45' }}
+                  >
+                    Get Started
+                  </Button>
+                </a>
+              </CardContent>
+            </Card>
+
+            {/* Enterprise Plus Plan */}
+            <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '1px solid #e0e0e0' }}>
+              <CardHeader className="p-6">
+                <CardTitle className="text-xl" style={{ color: '#002B45' }}>Enterprise Plus</CardTitle>
+                <CardDescription className="text-gray-600 text-sm">Custom enterprise solutions</CardDescription>
+                <div className="mt-4">
+                  <span className="text-xl font-bold" style={{ color: '#002B45' }}>Contact</span>
+                  <span className="text-gray-500 text-sm"> Sales</span>
+                </div>
+              </CardHeader>
+              <CardContent className="p-6 pt-0">
+                <ul className="space-y-2 mb-6 text-sm">
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Everything included
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Custom deployment options
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Unlimited users
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Unlimited frameworks
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    Unlimited storage
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />
+                    24/7 dedicated support
                   </li>
                 </ul>
                 <Button 
