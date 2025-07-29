@@ -23,6 +23,7 @@ import Risk from "./pages/services/Risk";
 import Compliance from "./pages/services/Compliance";
 import MedicalStaffing from "./pages/solutions/MedicalStaffing";
 import KJAdvisor from "./pages/solutions/KJAdvisor";
+import TitanisGRC from "./pages/solutions/TitanisGRC";
 import FutureOfComplianceLeadership from "./pages/articles/FutureOfComplianceLeadership";
 import FractionalLeadershipAdvantage from "./pages/articles/FractionalLeadershipAdvantage";
 import RiskManagementFrameworks from "./pages/articles/RiskManagementFrameworks";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/solutions/medical-staffing" element={<MedicalStaffing />} />
           <Route path="/solutions/digital-products/kj-advisor" element={<KJAdvisor />} />
+          <Route path="/solutions/digital-products/titanis" element={<TitanisGRC />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/legal" element={<Legal />} />
