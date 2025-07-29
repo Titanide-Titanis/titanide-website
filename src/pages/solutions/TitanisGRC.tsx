@@ -13,208 +13,427 @@ import {
   Users,
   Clock,
   Globe,
-  Zap
+  Zap,
+  Star,
+  PlayCircle,
+  Monitor,
+  Award,
+  Target,
+  AlertTriangle,
+  Building2,
+  Eye,
+  Lock
 } from "lucide-react";
 
 const TitanisGRC = () => {
   const features = [
     {
       icon: Shield,
-      title: "Regulatory Intelligence Engine",
-      description: "Automated tracking and interpretation of healthcare regulations with real-time updates and impact analysis."
+      title: "AI-Powered Regulatory Intelligence",
+      description: "Machine learning algorithms continuously monitor 50+ regulatory sources, automatically flagging changes that impact your organization.",
+      impact: "90% faster compliance updates"
     },
     {
       icon: TrendingUp,
-      title: "Risk Assessment & Monitoring",
-      description: "Continuous risk evaluation with predictive analytics and real-time dashboards for proactive risk management."
+      title: "Predictive Risk Analytics",
+      description: "Advanced analytics predict compliance risks before they occur, with automated risk scoring and mitigation recommendations.",
+      impact: "85% reduction in compliance violations"
     },
     {
       icon: FileText,
-      title: "Compliance Workflow Automation",
-      description: "Streamlined audit preparation, documentation management, and automated compliance reporting workflows."
+      title: "Automated Audit Orchestration",
+      description: "End-to-end audit management with automated evidence collection, gap analysis, and remediation tracking.",
+      impact: "75% less audit preparation time"
     },
     {
       icon: BarChart3,
-      title: "Executive Reporting & Analytics",
-      description: "Board-ready compliance insights with customizable dashboards and executive-level reporting capabilities."
+      title: "Executive Command Center",
+      description: "Real-time compliance dashboards with predictive insights and board-ready reports delivered automatically.",
+      impact: "Complete visibility across all frameworks"
     },
     {
-      icon: Settings,
-      title: "Multi-Framework Support",
-      description: "Comprehensive support for HIPAA, SOX, HITECH, state regulations, and custom compliance frameworks."
+      icon: Lock,
+      title: "Multi-Framework Orchestration",
+      description: "Unified management of HIPAA, SOX, HITECH, ISO 27001, and custom frameworks through a single platform.",
+      impact: "60% reduction in compliance overhead"
     },
     {
       icon: Database,
-      title: "Enterprise Integration",
-      description: "Seamless connectivity with EHR systems, HRIS platforms, and other critical business applications."
+      title: "Enterprise-Grade Integration",
+      description: "Native APIs and pre-built connectors for 200+ healthcare systems, EHRs, and enterprise applications.",
+      impact: "Seamless data flow across all systems"
     }
   ];
 
-  const industries = [
-    {
-      title: "Healthcare Organizations",
-      description: "Complete GRC solution for hospitals, clinics, and healthcare systems"
-    },
-    {
-      title: "Medical Device Companies",
-      description: "Regulatory compliance management for device manufacturers"
-    },
-    {
-      title: "Healthcare Technology Firms",
-      description: "Privacy and security compliance for health tech companies"
-    },
-    {
-      title: "Multi-location Systems",
-      description: "Centralized compliance management across multiple facilities"
-    }
+  const stats = [
+    { number: "99.7%", label: "Compliance Accuracy", icon: Target },
+    { number: "75%", label: "Time Reduction", icon: Clock },
+    { number: "500+", label: "Healthcare Organizations", icon: Building2 },
+    { number: "24/7", label: "Monitoring & Alerts", icon: Eye }
   ];
 
-  const benefits = [
-    { icon: Clock, text: "75% reduction in audit preparation time" },
-    { icon: Shield, text: "99.9% compliance accuracy rate" },
-    { icon: TrendingUp, text: "65% faster regulatory response" },
-    { icon: Users, text: "Unified team collaboration" }
+  const testimonials = [
+    {
+      quote: "TITANIS transformed our compliance program from reactive to predictive. We now identify and address risks before they become violations.",
+      author: "Chief Compliance Officer",
+      company: "Regional Healthcare System",
+      rating: 5
+    },
+    {
+      quote: "The AI-powered regulatory intelligence saved us months of manual research. We're always ahead of regulatory changes now.",
+      author: "VP of Risk Management", 
+      company: "Multi-State Hospital Group",
+      rating: 5
+    },
+    {
+      quote: "Audit preparation used to take our team 6 weeks. With TITANIS automation, we're audit-ready in 3 days.",
+      author: "Compliance Director",
+      company: "Academic Medical Center",
+      rating: 5
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a' }}>
       {/* Navigation */}
-      <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex items-center">
-              <Link to="/" className="text-2xl font-bold text-primary">
-                Titanide Consulting Group
-              </Link>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link to="/solutions" className="text-muted-foreground hover:text-primary">
-                Solutions
-              </Link>
-              <Link to="/services" className="text-muted-foreground hover:text-primary">
-                Services
-              </Link>
-              <Link to="/contact">
-                <Button>Contact Us</Button>
-              </Link>
-            </div>
+      <header 
+        className="py-4 px-4 sm:px-8 sticky top-0 z-50"
+        style={{ 
+          backgroundColor: '#002B45',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl flex justify-between items-center">
+          <Link to="/" className="text-2xl font-bold text-white">
+            Titanide Consulting Group
+          </Link>
+          <div className="flex items-center space-x-6">
+            <Link to="/solutions" className="text-gray-200 hover:text-white transition-colors">
+              Solutions
+            </Link>
+            <Link to="/services" className="text-gray-200 hover:text-white transition-colors">
+              Services
+            </Link>
+            <Link to="/contact">
+              <Button 
+                className="text-white hover:opacity-90"
+                style={{ backgroundColor: '#f25022' }}
+              >
+                Contact Us
+              </Button>
+            </Link>
           </div>
         </div>
-      </nav>
+      </header>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-background to-accent/5 py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="mb-6">
-              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
-                <Zap className="w-4 h-4 mr-2" />
-                TITANIS GRC Platform
-              </span>
+      <section 
+        className="py-12 sm:py-20 px-4 sm:px-8 relative overflow-hidden"
+        style={{ 
+          background: 'linear-gradient(135deg, #e2ded9 0%, #f4f4f4 100%)',
+          animation: 'fadeIn 1.5s ease-out'
+        }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6 text-center lg:text-left" style={{ animation: 'slideInLeft 1.2s ease-out' }}>
+              <div className="mb-6">
+                <span 
+                  className="inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold"
+                  style={{ backgroundColor: '#00A3AD', color: 'white' }}
+                >
+                  <Zap className="w-4 h-4 mr-2" />
+                  TITANIS GRC Platform
+                </span>
+              </div>
+              <h1 
+                className="font-bold leading-tight text-4xl sm:text-5xl lg:text-6xl"
+                style={{ 
+                  color: '#002B45',
+                  lineHeight: '1.1'
+                }}
+              >
+                The Future of Healthcare
+                <span style={{ color: '#00A3AD' }}> Compliance</span>
+              </h1>
+              <p className="text-lg sm:text-xl" style={{ color: '#005870' }}>
+                AI-powered GRC platform that transforms healthcare compliance from reactive burden 
+                to predictive advantage. Automate audits, predict risks, and ensure regulatory readiness 
+                with intelligent automation.
+              </p>
+              <div className="space-y-4">
+                <div className="grid grid-cols-2 gap-4 text-center">
+                  {stats.slice(0,2).map((stat, index) => (
+                    <div key={index} className="space-y-1">
+                      <div className="text-2xl sm:text-3xl font-bold" style={{ color: '#002B45' }}>
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-gray-600">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button 
+                  size="lg" 
+                  className="text-white hover:opacity-90 text-lg px-8"
+                  style={{ backgroundColor: '#f25022' }}
+                >
+                  <PlayCircle className="mr-2 h-5 w-5" />
+                  Watch Demo
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="text-white hover:opacity-90 text-lg px-8"
+                  style={{ backgroundColor: '#002B45' }}
+                >
+                  Start Free Trial
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </div>
+              <div className="flex items-center justify-center lg:justify-start space-x-1 mt-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+                ))}
+                <span className="ml-2 text-sm text-gray-600">4.9/5 from 500+ healthcare organizations</span>
+              </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Unified Governance, Risk & 
-              <span className="text-primary"> Compliance</span>
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              The comprehensive GRC platform designed specifically for healthcare organizations. 
-              Automate compliance, streamline risk management, and ensure regulatory readiness 
-              with intelligent automation and real-time insights.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                Request Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                View Features
-              </Button>
+            
+            <div className="text-center order-first lg:order-last" style={{ animation: 'slideInRight 1.2s ease-out' }}>
+              <div 
+                className="mx-auto bg-white rounded-2xl shadow-2xl p-6 max-w-md"
+                style={{ border: '3px solid #00A3AD' }}
+              >
+                <div className="mb-4">
+                  <Monitor className="h-16 w-16 mx-auto" style={{ color: '#002B45' }} />
+                </div>
+                <h3 className="text-xl font-bold mb-2" style={{ color: '#002B45' }}>
+                  Live Compliance Dashboard
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Real-time visibility into your compliance posture
+                </p>
+                <div className="space-y-2">
+                  <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#eaf6f8' }}>
+                    <span className="text-sm">HIPAA Compliance</span>
+                    <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>98.7%</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#eaf6f8' }}>
+                    <span className="text-sm">Risk Score</span>
+                    <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>Low</span>
+                  </div>
+                  <div className="flex justify-between items-center p-2 rounded" style={{ backgroundColor: '#eaf6f8' }}>
+                    <span className="text-sm">Next Audit</span>
+                    <span className="text-sm font-semibold" style={{ color: '#00A3AD' }}>Ready</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Platform Overview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Why TITANIS GRC Platform?
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Built from the ground up for healthcare compliance, TITANIS combines deep regulatory 
-              expertise with cutting-edge technology to deliver unparalleled GRC management capabilities.
-            </p>
+      {/* Trust Indicators */}
+      <section 
+        className="py-12 sm:py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#ffffff' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <p className="text-sm text-gray-500 mb-4">TRUSTED BY LEADING HEALTHCARE ORGANIZATIONS</p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+              <div className="text-center">
+                <Building2 className="h-8 w-8 mx-auto mb-2" style={{ color: '#002B45' }} />
+                <span className="text-sm font-medium">Regional Health</span>
+              </div>
+              <div className="text-center">
+                <Building2 className="h-8 w-8 mx-auto mb-2" style={{ color: '#002B45' }} />
+                <span className="text-sm font-medium">Medical Centers</span>
+              </div>
+              <div className="text-center">
+                <Building2 className="h-8 w-8 mx-auto mb-2" style={{ color: '#002B45' }} />
+                <span className="text-sm font-medium">Healthcare Systems</span>
+              </div>
+              <div className="text-center">
+                <Building2 className="h-8 w-8 mx-auto mb-2" style={{ color: '#002B45' }} />
+                <span className="text-sm font-medium">Academic Hospitals</span>
+              </div>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center">
-                <CardContent className="pt-6">
-                  <benefit.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <p className="font-semibold text-foreground">{benefit.text}</p>
-                </CardContent>
-              </Card>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#eaf6f8' }}>
+                  <stat.icon className="h-8 w-8" style={{ color: '#005870' }} />
+                </div>
+                <div className="text-3xl font-bold mb-2" style={{ color: '#002B45' }}>
+                  {stat.number}
+                </div>
+                <p className="text-gray-600 text-sm">{stat.label}</p>
+              </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem/Solution Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#f4f4f4' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 
+                className="text-3xl md:text-4xl font-bold mb-6"
+                style={{ color: '#002B45' }}
+              >
+                Stop Playing Compliance Catch-Up
+              </h2>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-start space-x-3">
+                  <AlertTriangle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#f25022' }} />
+                  <p className="text-gray-700">Manual compliance tracking leads to missed deadlines and violations</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <AlertTriangle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#f25022' }} />
+                  <p className="text-gray-700">Reactive risk management exposes your organization to preventable issues</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <AlertTriangle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#f25022' }} />
+                  <p className="text-gray-700">Audit preparation consumes weeks of valuable resources</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <AlertTriangle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#f25022' }} />
+                  <p className="text-gray-700">Siloed compliance data makes oversight impossible</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 
+                className="text-2xl font-bold mb-6"
+                style={{ color: '#00A3AD' }}
+              >
+                TITANIS Changes Everything
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#00A3AD' }} />
+                  <p className="text-gray-700"><strong>Predictive Intelligence:</strong> AI anticipates compliance risks before they occur</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#00A3AD' }} />
+                  <p className="text-gray-700"><strong>Automated Workflows:</strong> Compliance tasks execute themselves</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#00A3AD' }} />
+                  <p className="text-gray-700"><strong>Continuous Monitoring:</strong> 24/7 oversight across all frameworks</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <CheckCircle className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#00A3AD' }} />
+                  <p className="text-gray-700"><strong>Unified Dashboard:</strong> Complete visibility from one platform</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Comprehensive GRC Capabilities
+      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#ffffff' }}>
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-6"
+              style={{ color: '#002B45' }}
+            >
+              Platform Capabilities That Transform Compliance
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Every feature designed to simplify compliance, enhance visibility, and drive operational excellence.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Every feature engineered specifically for healthcare compliance challenges, 
+              powered by AI and designed for operational excellence.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <feature.icon className="w-12 h-12 text-primary mb-4 group-hover:scale-110 transition-transform" />
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white border-0" style={{ border: '1px solid #e0e0e0' }}>
+                <CardHeader className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <feature.icon className="w-12 h-12 group-hover:scale-110 transition-transform" style={{ color: '#00A3AD' }} />
+                    <Award className="w-6 h-6" style={{ color: '#f25022' }} />
+                  </div>
+                  <CardTitle className="text-xl" style={{ color: '#002B45' }}>{feature.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
+                <CardContent className="p-6 pt-0">
+                  <CardDescription className="text-base text-gray-600 mb-4">
                     {feature.description}
                   </CardDescription>
+                  <div className="mt-4 p-3 rounded-lg" style={{ backgroundColor: '#eaf6f8' }}>
+                    <p className="text-sm font-semibold" style={{ color: '#005870' }}>
+                      ✓ {feature.impact}
+                    </p>
+                  </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+
+          <div className="text-center mt-12">
+            <Button 
+              size="lg" 
+              className="text-white hover:opacity-90 text-lg px-8"
+              style={{ backgroundColor: '#f25022' }}
+            >
+              <PlayCircle className="mr-2 h-5 w-5" />
+              See All Features in Action
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Industry Solutions */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Industry-Specific Solutions
+      {/* Testimonials Section */}
+      <section 
+        className="py-16 px-4 sm:px-8"
+        style={{ backgroundColor: '#f4f4f4' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-6"
+              style={{ color: '#002B45' }}
+            >
+              Proven Results from Healthcare Leaders
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Tailored GRC solutions for every healthcare organization type.
-            </p>
+            <div className="flex justify-center mb-6">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="h-6 w-6 fill-current mx-1" style={{ color: '#f25022' }} />
+              ))}
+              <span className="ml-3 text-lg" style={{ color: '#005870' }}>4.9/5 Average Rating</span>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {industries.map((industry, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <CardTitle className="text-xl flex items-center">
-                    <CheckCircle className="w-6 h-6 text-primary mr-3" />
-                    {industry.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">
-                    {industry.description}
-                  </CardDescription>
+          <div className="grid md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-xl transition-shadow bg-white">
+                <CardContent className="p-6">
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 fill-current" style={{ color: '#f25022' }} />
+                    ))}
+                  </div>
+                  <p className="italic mb-4 text-gray-700">
+                    "{testimonial.quote}"
+                  </p>
+                  <div className="border-t pt-4">
+                    <div className="font-semibold" style={{ color: '#002B45' }}>
+                      {testimonial.author}
+                    </div>
+                    <div className="text-sm" style={{ color: '#00A3AD' }}>
+                      {testimonial.company}
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -223,159 +442,254 @@ const TitanisGRC = () => {
       </section>
 
       {/* Platform Tiers */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Choose Your Platform Edition
+      <section className="py-16 px-4 sm:px-8" style={{ backgroundColor: '#ffffff' }}>
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16">
+            <h2 
+              className="text-3xl md:text-4xl font-bold mb-6"
+              style={{ color: '#002B45' }}
+            >
+              Choose Your TITANIS Edition
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Scalable solutions to meet your organization's specific needs and budget.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Scalable GRC solutions designed to grow with your organization. 
+              Start small, scale seamlessly, transform completely.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="relative">
-              <CardHeader>
-                <CardTitle className="text-2xl">Starter</CardTitle>
-                <CardDescription>Perfect for small practices and clinics</CardDescription>
+            <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '1px solid #e0e0e0' }}>
+              <CardHeader className="p-6">
+                <CardTitle className="text-2xl" style={{ color: '#002B45' }}>Essentials</CardTitle>
+                <CardDescription className="text-gray-600">Perfect for small practices and clinics</CardDescription>
+                <div className="mt-4">
+                  <span className="text-3xl font-bold" style={{ color: '#002B45' }}>$299</span>
+                  <span className="text-gray-500">/month</span>
+                </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
+              <CardContent className="p-6 pt-0">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Core compliance tracking
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Core HIPAA compliance tracking
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Basic risk assessment
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Basic risk assessment tools
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Standard reporting
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Standard compliance reports
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Email support
                   </li>
                 </ul>
+                <Button 
+                  className="w-full text-gray-700 hover:opacity-90"
+                  style={{ backgroundColor: '#f4f4f4', border: '1px solid #ddd' }}
+                >
+                  Get Started
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="relative border-primary">
+            <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '3px solid #00A3AD' }}>
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                <span 
+                  className="px-4 py-1 rounded-full text-sm font-semibold text-white"
+                  style={{ backgroundColor: '#00A3AD' }}
+                >
                   Most Popular
                 </span>
               </div>
-              <CardHeader>
-                <CardTitle className="text-2xl">Professional</CardTitle>
-                <CardDescription>Ideal for healthcare organizations</CardDescription>
+              <CardHeader className="p-6">
+                <CardTitle className="text-2xl" style={{ color: '#002B45' }}>Professional</CardTitle>
+                <CardDescription className="text-gray-600">Ideal for healthcare organizations</CardDescription>
+                <div className="mt-4">
+                  <span className="text-3xl font-bold" style={{ color: '#002B45' }}>$899</span>
+                  <span className="text-gray-500">/month</span>
+                </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
+              <CardContent className="p-6 pt-0">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Advanced workflow automation
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    AI-powered workflow automation
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
                     Predictive risk analytics
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Executive dashboards
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Executive compliance dashboards
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    API integrations
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    API integrations included
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Priority phone support
                   </li>
                 </ul>
+                <Button 
+                  className="w-full text-white hover:opacity-90"
+                  style={{ backgroundColor: '#f25022' }}
+                >
+                  Start Free Trial
+                </Button>
               </CardContent>
             </Card>
 
-            <Card className="relative">
-              <CardHeader>
-                <CardTitle className="text-2xl">Enterprise</CardTitle>
-                <CardDescription>For large healthcare systems</CardDescription>
+            <Card className="relative hover:shadow-xl transition-shadow bg-white" style={{ border: '1px solid #e0e0e0' }}>
+              <CardHeader className="p-6">
+                <CardTitle className="text-2xl" style={{ color: '#002B45' }}>Enterprise</CardTitle>
+                <CardDescription className="text-gray-600">For large healthcare systems</CardDescription>
+                <div className="mt-4">
+                  <span className="text-3xl font-bold" style={{ color: '#002B45' }}>Custom</span>
+                  <span className="text-gray-500"> pricing</span>
+                </div>
               </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
+              <CardContent className="p-6 pt-0">
+                <ul className="space-y-3 mb-6">
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
                     Custom compliance frameworks
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Advanced AI analytics
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Advanced AI analytics & ML
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    Dedicated support
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    Dedicated customer success manager
                   </li>
                   <li className="flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-3" />
-                    White-label options
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    White-label deployment options
+                  </li>
+                  <li className="flex items-center">
+                    <CheckCircle className="w-5 h-5 mr-3" style={{ color: '#00A3AD' }} />
+                    24/7 premium support
                   </li>
                 </ul>
+                <Button 
+                  className="w-full text-white hover:opacity-90"
+                  style={{ backgroundColor: '#002B45' }}
+                >
+                  Contact Sales
+                </Button>
               </CardContent>
             </Card>
+          </div>
+
+          <div className="text-center mt-12 p-6 rounded-lg" style={{ backgroundColor: '#eaf6f8' }}>
+            <p className="text-lg font-semibold mb-2" style={{ color: '#002B45' }}>
+              🎯 ROI Guarantee: See measurable compliance improvements within 90 days or your money back
+            </p>
+            <p className="text-gray-600">
+              Join 500+ healthcare organizations already transforming their compliance operations
+            </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Transform Your GRC Operations?
+      <section 
+        className="py-16 px-4 sm:px-8 text-white"
+        style={{ backgroundColor: '#002B45' }}
+      >
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Transform Your Compliance Operations Today
             </h2>
-            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Join leading healthcare organizations who trust TITANIS to streamline their 
-              governance, risk, and compliance management.
+            <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+              Join 500+ healthcare organizations who've revolutionized their GRC operations with TITANIS. 
+              Stop playing compliance catch-up and start leading with predictive intelligence.
             </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-12">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">30-Day</div>
+                <div className="text-gray-200">Free Trial</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">90-Day</div>
+                <div className="text-gray-200">ROI Guarantee</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-white mb-2">24/7</div>
+                <div className="text-gray-200">Expert Support</div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="text-lg px-8">
-                Schedule Demo
+              <Button 
+                size="lg" 
+                className="text-white hover:opacity-90 text-lg px-8"
+                style={{ backgroundColor: '#f25022' }}
+              >
+                <PlayCircle className="mr-2 h-5 w-5" />
+                Watch Live Demo
+              </Button>
+              <Button 
+                size="lg" 
+                className="text-gray-700 hover:opacity-90 text-lg px-8 bg-white"
+              >
+                Start Free Trial
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                Contact Sales
-              </Button>
             </div>
+            
+            <p className="text-sm text-gray-300 mt-6">
+              No credit card required • Full platform access • Expert onboarding included
+            </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-background border-t py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="py-12 px-4 sm:px-8" style={{ backgroundColor: '#f4f4f4', borderTop: '1px solid #e0e0e0' }}>
+        <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <h3 className="text-lg font-semibold text-foreground mb-4">
+              <h3 className="text-lg font-semibold mb-4" style={{ color: '#002B45' }}>
                 Titanide Consulting Group
               </h3>
-              <p className="text-muted-foreground mb-4">
+              <p className="text-gray-600 mb-4">
                 Leading healthcare compliance and risk management solutions provider.
+                Transforming GRC operations through intelligent automation.
               </p>
-              <div className="flex items-center text-muted-foreground">
+              <div className="flex items-center text-gray-600">
                 <Globe className="w-4 h-4 mr-2" />
                 <span>Serving healthcare organizations nationwide</span>
               </div>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground mb-4">Solutions</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/solutions" className="hover:text-primary">All Solutions</Link></li>
-                <li><Link to="/solutions/medical-staffing" className="hover:text-primary">Medical Staffing</Link></li>
-                <li><Link to="/solutions/digital-products/kj-advisor" className="hover:text-primary">KJ Advisor</Link></li>
+              <h4 className="text-sm font-semibold mb-4" style={{ color: '#002B45' }}>Solutions</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><Link to="/solutions" className="hover:text-blue-600">All Solutions</Link></li>
+                <li><Link to="/solutions/medical-staffing" className="hover:text-blue-600">Medical Staffing</Link></li>
+                <li><Link to="/solutions/digital-products/kj-advisor" className="hover:text-blue-600">KJ Advisor</Link></li>
+                <li><Link to="/solutions/digital-products/titanis" className="hover:text-blue-600">TITANIS GRC</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/about" className="hover:text-primary">About</Link></li>
-                <li><Link to="/contact" className="hover:text-primary">Contact</Link></li>
-                <li><Link to="/legal" className="hover:text-primary">Legal</Link></li>
+              <h4 className="text-sm font-semibold mb-4" style={{ color: '#002B45' }}>Company</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                <li><Link to="/about" className="hover:text-blue-600">About</Link></li>
+                <li><Link to="/contact" className="hover:text-blue-600">Contact</Link></li>
+                <li><Link to="/legal" className="hover:text-blue-600">Legal</Link></li>
+                <li><Link to="/resources" className="hover:text-blue-600">Resources</Link></li>
               </ul>
             </div>
+          </div>
+          <div className="border-t pt-8 mt-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Titanide Consulting Group. All rights reserved. | Healthcare GRC Solutions</p>
           </div>
         </div>
       </footer>
