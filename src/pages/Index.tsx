@@ -35,12 +35,6 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 text-center lg:text-left" style={{ animation: 'slideInLeft 1.2s ease-out' }}>
-              <div className="flex items-center justify-center lg:justify-start mb-4">
-                <div className="flex items-center space-x-2 px-4 py-2 rounded-full border-2" style={{ borderColor: '#00A3AD', backgroundColor: 'rgba(0, 163, 173, 0.1)' }}>
-                  <Sparkles className="h-5 w-5" style={{ color: '#00A3AD' }} />
-                  <span className="text-sm font-semibold" style={{ color: '#002B45' }}>AI-Powered Digital Innovation</span>
-                </div>
-              </div>
               
               <h1 
                 className="font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl"
@@ -101,14 +95,14 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
-                <Button 
+                  <Button 
                   size="lg" 
                   variant="outline"
-                  className="w-full sm:w-auto text-base sm:text-lg px-6 py-3 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900"
+                  className="w-full sm:w-auto text-base sm:text-lg px-6 py-3 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900 bg-white"
                   style={{ borderColor: '#00A3AD' }}
                   onClick={() => document.getElementById('digital-showcase')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  <Brain className="mr-2 h-5 w-5" />
+                  <Cpu className="mr-2 h-5 w-5" />
                   Discover TITANIS™—Our Flagship GRC Solution
                 </Button>
               </div>
@@ -256,7 +250,7 @@ const Index = () => {
                 <div className="p-8" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#00A3AD' }}>
-                      <Monitor className="h-8 w-8 text-white" />
+                      <Cpu className="h-8 w-8 text-white" />
                     </div>
                     <div>
                       <h4 className="text-2xl font-bold text-white">TITANIS™</h4>
@@ -1005,7 +999,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto border-white text-gray-900 bg-white/90 hover:bg-white hover:text-gray-900 transition-all duration-300"
+                className="w-full sm:w-auto border-white text-gray-900 bg-white hover:bg-gray-100 shadow-lg group-hover:shadow-xl transition-all duration-300"
               >
                 <Target className="mr-2 h-5 w-5" />
                 Try AI Platform Demo
@@ -1022,7 +1016,7 @@ const Index = () => {
               <Button 
                 size="lg" 
                 variant="outline"
-                className="w-full sm:w-auto border-white text-gray-900 bg-white/90 hover:bg-white hover:text-gray-900 transition-all duration-300"
+                className="w-full sm:w-auto border-white text-gray-900 bg-white hover:bg-gray-100 shadow-lg group-hover:shadow-xl transition-all duration-300"
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Capability Statement
