@@ -222,14 +222,16 @@ const TitanisGRC = () => {
                   <PlayCircle className="mr-2 h-5 w-5" />
                   Watch Demo
                 </Button>
-                <Button 
-                  size="lg" 
-                  className="text-white hover:opacity-90 text-lg px-8"
-                  style={{ backgroundColor: '#002B45' }}
-                >
-                  Start Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+                <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg" 
+                    className="text-white hover:opacity-90 text-lg px-8"
+                    style={{ backgroundColor: '#002B45' }}
+                  >
+                    Access Platform
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
               </div>
               <div className="flex items-center justify-center lg:justify-start space-x-1 mt-4">
                 {[...Array(5)].map((_, i) => (
@@ -697,13 +699,15 @@ const TitanisGRC = () => {
                 <PlayCircle className="mr-2 h-5 w-5" />
                 Watch Live Demo
               </Button>
-              <Button 
-                size="lg" 
-                className="text-gray-700 hover:opacity-90 text-lg px-8 bg-white"
-              >
-                Start Free Trial
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer">
+                <Button 
+                  size="lg" 
+                  className="text-gray-700 hover:opacity-90 text-lg px-8 bg-white"
+                >
+                  Access Platform
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </a>
             </div>
             
             <p className="text-sm text-gray-300 mt-6">
