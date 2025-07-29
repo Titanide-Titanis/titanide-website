@@ -50,36 +50,36 @@ const Index = () => {
                 }}
               >
                 <span className="bg-gradient-to-r from-blue-900 to-teal-600 bg-clip-text text-transparent">
-                  Global Healthcare Compliance & Digital Solutions Leader
+                  Your Partner for Global Healthcare Compliance & Next-Gen Digital Solutions
                 </span>
               </h1>
               
               {/* Live metrics counter */}
               <div className="grid grid-cols-3 gap-4 my-6">
                 <div className="text-center p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 43, 69, 0.05)' }}>
-                  <div className="text-2xl font-bold" style={{ color: '#002B45' }}>1000+</div>
+                  <div className="text-2xl font-bold" style={{ color: '#002B45' }}>100+</div>
                   <div className="text-xs" style={{ color: '#005870' }}>Organizations Served</div>
                 </div>
                 <div className="text-center p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 163, 173, 0.05)' }}>
-                  <div className="text-2xl font-bold" style={{ color: '#00A3AD' }}>85%</div>
-                  <div className="text-xs" style={{ color: '#005870' }}>AI Efficiency Boost</div>
+                  <div className="text-2xl font-bold" style={{ color: '#00A3AD' }}>95%+</div>
+                  <div className="text-xs" style={{ color: '#005870' }}>Improve Regulatory Reporting Accuracy</div>
                 </div>
                 <div className="text-center p-3 rounded-lg" style={{ backgroundColor: 'rgba(242, 80, 34, 0.05)' }}>
-                  <div className="text-2xl font-bold" style={{ color: '#f25022' }}>24/7</div>
-                  <div className="text-xs" style={{ color: '#005870' }}>AI Support</div>
+                  <div className="text-2xl font-bold" style={{ color: '#f25022' }}>80%+</div>
+                  <div className="text-xs" style={{ color: '#005870' }}>Policy Adoption and Alignment</div>
                 </div>
               </div>
               
               <div className="space-y-4">
                 <p className="text-lg sm:text-xl" style={{ color: '#005870' }}>
-                  From fractional compliance leadership to <strong style={{ color: '#002B45' }}>AI-powered GRC platforms</strong>, we deliver comprehensive solutions across the US and UK.
+                  From fractional C-suite compliance support to intelligent GRC platforms <strong style={{ color: '#002B45' }}>we deliver</strong> global, end-to-end risk management solutions.
                 </p>
                 <div className="p-4 rounded-lg" style={{ backgroundColor: 'rgba(0, 43, 69, 0.05)', border: '1px solid rgba(0, 163, 173, 0.2)' }}>
                   <p className="font-semibold text-base sm:text-lg" style={{ color: '#002B45' }}>
-                    💡 "Get fractional compliance support without the extensive search or long-term commitment."
+                    "Designed for Compliance Leaders, by Compliance Leaders.​"
                   </p>
                   <p className="text-sm sm:text-base font-medium mt-2" style={{ color: '#005870' }}>
-                    - Kelly Menefee Okpala, Fractional CCO & Founder
+                    - Kelly Menefee Okpala, Founder & Fractional CCO
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const Index = () => {
                     style={{ backgroundColor: '#f25022' }}
                   >
                     <Clock className="mr-2 h-5 w-5" />
-                    Schedule Discovery Call
+                    Schedule Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
@@ -109,7 +109,7 @@ const Index = () => {
                   onClick={() => document.getElementById('digital-showcase')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <Brain className="mr-2 h-5 w-5" />
-                  Try AI Platforms
+                  Discover TITANIS™—Our Flagship GRC Solution
                 </Button>
               </div>
             </div>
@@ -153,34 +153,34 @@ const Index = () => {
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Executive-Level Expertise</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                C-suite compliance leadership with proven results across Fortune 500 companies.
+                Proven C-suite compliance leadership serving Fortune 500 companies.
               </p>
             </div>
             <div className="space-y-4">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <Globe className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">Global Presence</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Global Footprint</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                Serving clients across the US and UK with localized expertise and 24/7 support.
+                Delivering localized expertise and 24/7 support to clients throughout the US and UK.
               </p>
             </div>
             <div className="space-y-4">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <Monitor className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">AI-Powered Solutions</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Smarter Compliance Starts with AI-Powered Solutions</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                Cutting-edge TITANIS GRC platform and KJ Advisor for intelligent compliance management.
+                Leverage the power of TITANIS™ GRC and KJ Advisor—innovative tools for intelligent compliance management.
               </p>
             </div>
             <div className="space-y-4">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">90-Day ROI Guarantee</h3>
+              <h3 className="text-lg sm:text-xl font-semibold text-white">90-Day ROI Guarantee*</h3>
               <p className="text-gray-200 text-sm sm:text-base">
-                Guaranteed return on investment within 90 days or receive additional consulting at no charge.
+                Guaranteed ROI within 90 days—or receive additional consulting at no extra cost.
               </p>
             </div>
           </div>
@@ -200,43 +200,43 @@ const Index = () => {
             <div className="flex items-center justify-center mb-4">
               <div className="flex items-center space-x-2 px-6 py-3 rounded-full border-2 border-white/20 bg-white/10">
                 <Brain className="h-6 w-6 text-white" />
-                <span className="text-white font-bold text-lg">Digital Innovation Hub</span>
+                <span className="text-white font-bold text-lg">Your Gateway to Digital Innovation</span>
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-              🚀 Industry-First AI-Powered Platforms
+              Setting the Standard: The Industry's First AI-Powered Platforms
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Transform your compliance operations with cutting-edge AI technology that Fortune 500 companies trust
+              Reimagine compliance with advanced AI solutions, relied on by healthcare organizations across the globe.
             </p>
             
             {/* Live platform metrics */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 mb-8">
               <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">85%</div>
-                <div className="text-sm text-white/80">Time Reduction</div>
+                <div className="text-3xl font-bold text-white mb-1">99.95%</div>
+                <div className="text-sm text-white/80">Platform Uptime</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-4/5 h-1 bg-white rounded-full animate-pulse"></div>
                 </div>
               </div>
               <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">24/7</div>
-                <div className="text-sm text-white/80">AI Support</div>
+                <div className="text-3xl font-bold text-white mb-1">3,200+</div>
+                <div className="text-sm text-white/80">Audits Completed:</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-full h-1 bg-green-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
               <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">90</div>
-                <div className="text-sm text-white/80">Day ROI</div>
+                <div className="text-3xl font-bold text-white mb-1">7,500+</div>
+                <div className="text-sm text-white/80">Compliance Issues Resolved:</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-full h-1 bg-yellow-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
               <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">1000+</div>
-                <div className="text-sm text-white/80">Organizations</div>
+                <div className="text-3xl font-bold text-white mb-1">120+</div>
+                <div className="text-sm text-white/80">Active Clients:</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-4/5 h-1 bg-blue-400 rounded-full animate-pulse"></div>
                 </div>
@@ -250,7 +250,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute top-4 right-4 z-10">
                   <div className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: '#f25022' }}>
-                    🔥 Most Popular
+                    🔥 Top Choice Among Healthcare Leaders
                   </div>
                 </div>
                 <div className="p-8" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
@@ -259,8 +259,8 @@ const Index = () => {
                       <Monitor className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-white">TITANIS GRC</h4>
-                      <p className="text-white/80">AI-Powered Platform</p>
+                      <h4 className="text-2xl font-bold text-white">TITANIS™</h4>
+                      <p className="text-white/80">Next-Gen, All-in-One Governance Risk & Compliance Platform</p>
                     </div>
                   </div>
                   
@@ -279,7 +279,7 @@ const Index = () => {
                     </div>
                     <div className="flex items-center text-white/90">
                       <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>Fortune 500 trusted technology</span>
+                      <span>From FQHCs to Fortune 500s, our solutions drive results for organizations of every size.</span>
                     </div>
                   </div>
                   
@@ -306,7 +306,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute top-4 right-4 z-10">
                   <div className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: '#00A3AD' }}>
-                    ⚡ AI Innovation
+                    ⚡Your GPT-Powered Compliance Consultant
                   </div>
                 </div>
                 <div className="p-8" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
@@ -315,8 +315,8 @@ const Index = () => {
                       <Brain className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-white">KJ Advisor</h4>
-                      <p className="text-white/80">AI Executive Partner</p>
+                      <h4 className="text-2xl font-bold text-white">KJ Advisor™</h4>
+                      <p className="text-white/80">Your Executive Companion</p>
                     </div>
                   </div>
                   
@@ -360,13 +360,13 @@ const Index = () => {
           
           {/* Technology Integrations */}
           <div className="text-center">
-            <p className="text-white/80 mb-4">Seamlessly integrates with your existing technology stack</p>
+            <p className="text-white/80 mb-4">TITANIS™ delivers everything compliance leaders need—centralized control, powerful automation, actionable insights, and the flexibility to support any healthcare organization. Rapid Deployment with Minimal Setup, Scalable for Any Organization</p>
             <div className="flex flex-wrap justify-center gap-4 items-center">
-              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Microsoft 365</div>
-              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Salesforce</div>
-              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">ServiceNow</div>
-              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Slack</div>
-              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">+50 more</div>
+              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Audit & Incident Management</div>
+              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Unified Dashboard</div>
+              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Risk Management & Compliance Automation</div>
+              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Policy Management</div>
+              <div className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm text-white text-sm">Advanced Analytics & Reporting and much more!</div>
             </div>
           </div>
         </div>
@@ -925,12 +925,12 @@ const Index = () => {
           <div className="flex items-center justify-center mb-6">
             <Sparkles className="h-8 w-8 text-white mr-3 animate-pulse" />
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
-              🚀 Ready to Transform Your Compliance?
+              Unlock the Future of Compliance—Are You Ready?
             </h2>
           </div>
           
           <p className="text-lg sm:text-xl mb-8 sm:mb-12 max-w-3xl mx-auto text-white">
-            Join 1000+ organizations leveraging our AI-powered solutions for competitive advantage
+            Join leading organizations worldwide leveraging our AI-powered platforms, expert consulting, and end-to-end compliance solutions for a competitive advantage.
           </p>
           
           {/* Enhanced contact grid with urgency */}
@@ -939,9 +939,9 @@ const Index = () => {
               <div className="flex items-center justify-center mb-3">
                 <Phone className="h-6 w-6" style={{ color: '#00A3AD' }} />
               </div>
-              <h3 className="font-bold text-white mb-2">Call Now</h3>
-              <p className="text-white text-lg">832-735-8880</p>
-              <p className="text-white/80 text-sm">Speak with an expert today</p>
+              <h3 className="font-bold text-white mb-2">Connect with Us</h3>
+              <p className="text-white text-lg">1+ 832-613-0619</p>
+              <p className="text-white/80 text-sm">Speak with an Expert Today</p>
             </div>
             
             <div className="p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
@@ -971,11 +971,11 @@ const Index = () => {
             </div>
             <div className="p-3 rounded-lg bg-white/5">
               <div className="text-xl font-bold text-white">🎯 Guaranteed</div>
-              <div className="text-sm text-white/80">90-day ROI or money back</div>
+              <div className="text-sm text-white/80">90-day ROI*</div>
             </div>
             <div className="p-3 rounded-lg bg-white/5">
-              <div className="text-xl font-bold text-white">🚀 Fast Setup</div>
-              <div className="text-sm text-white/80">AI platforms live in 48 hours</div>
+              <div className="text-xl font-bold text-white">Fast Setup</div>
+              <div className="text-sm text-white/80">AI platforms live in 72 hours</div>
             </div>
           </div>
 
@@ -1033,7 +1033,7 @@ const Index = () => {
           {/* Social proof footer */}
           <div className="mt-8 pt-6 border-t border-white/20">
             <p className="text-white/80 text-sm">
-              Join Fortune 500 companies trusting Titanide for compliance excellence
+              Discover why compliance leaders trust Titanide for unrivaled expertise and results.
             </p>
           </div>
         </div>
@@ -1051,14 +1051,14 @@ const Index = () => {
             className="text-white hover:opacity-90 shadow-lg text-sm sm:text-base px-3 py-2 sm:px-4 sm:py-3"
             style={{ backgroundColor: '#002B45' }}
           >
-            Launch KJ Advisor
+            Launch KJ Advisor™
           </Button>
           <div className="absolute bottom-full right-0 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
             <div 
               className="text-white text-xs sm:text-sm p-2 sm:p-3 rounded-lg shadow-lg max-w-48 sm:max-w-60"
               style={{ backgroundColor: '#002B45' }}
             >
-              KJ Advisor is your AI-powered executive partner—offering strategic compliance guidance and real-time solutions.
+              KJ Advisor™ serves as your AI-driven executive ally, providing actionable compliance strategies and instant support.
             </div>
           </div>
         </a>
