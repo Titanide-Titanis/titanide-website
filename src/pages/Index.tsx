@@ -249,11 +249,6 @@ const Index = () => {
             {/* TITANIS GRC Platform */}
             <Card className="hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border-0 overflow-hidden group">
               <div className="relative">
-                <div className="absolute top-4 right-4 z-10">
-                  <div className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: '#f25022' }}>
-                    🚀 Now in Beta: Early Results from TITANIS™ Pilot Users
-                  </div>
-                </div>
                 <div className="p-10 pt-4" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
                   <div className="mt-4">
                     <div className="flex items-center mb-8">
@@ -285,19 +280,16 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    <div className="flex space-x-3 mt-8">
+                    <div className="mt-8">
                       <a 
                         href="/solutions/digital-products/titanis"
-                        className="flex-1"
+                        className="block"
                       >
                         <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
                           <Target className="mr-2 h-4 w-4" />
                           Join Beta Program
                         </Button>
                       </a>
-                      <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-4">
-                        <BarChart3 className="h-4 w-4" />
-                      </Button>
                     </div>
                   </div>
                 </div>
@@ -307,11 +299,6 @@ const Index = () => {
             {/* KJ Advisor */}
             <Card className="hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border-0 overflow-hidden group">
               <div className="relative">
-                <div className="absolute top-4 right-4 z-10">
-                  <div className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: '#00A3AD' }}>
-                    ⚡Your GPT-Powered Compliance Consultant
-                  </div>
-                </div>
                 <div className="p-10 pt-4" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
                   <div className="mt-4">
                     <div className="flex items-center mb-8">
@@ -343,19 +330,16 @@ const Index = () => {
                       </div>
                     </div>
                     
-                    <div className="flex space-x-3 mt-8">
+                    <div className="mt-8">
                       <a 
                         href="/solutions/digital-products/kj-advisor"
-                        className="flex-1"
+                        className="block"
                       >
                         <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
                           <Cpu className="mr-2 h-4 w-4" />
                           Try AI Chat
                         </Button>
                       </a>
-                      <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-4">
-                        <Zap className="h-4 w-4" />
-                      </Button>
                     </div>
                   </div>
                 </div>
