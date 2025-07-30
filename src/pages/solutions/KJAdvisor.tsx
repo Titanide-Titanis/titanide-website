@@ -83,26 +83,25 @@ const KJAdvisor = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: '1.6' }}>
+    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif", lineHeight: '1.6' }}>
       {/* Hero Section */}
-      <section className="relative py-20 px-6 text-center" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
+      <section className="relative py-20 px-6 text-center bg-gradient-to-br from-primary to-secondary">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-center mb-6">
-            <Brain className="w-12 h-12 text-white mr-4" />
-            <h1 className="text-5xl font-bold text-white">
+            <Brain className="w-12 h-12 text-primary-foreground mr-4" />
+            <h1 className="text-5xl font-bold text-primary-foreground">
               KJ Advisor™
             </h1>
           </div>
-          <h2 className="text-2xl text-white/90 mb-6">Executive Companion</h2>
-          <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+          <h2 className="text-2xl text-primary-foreground/90 mb-6">Executive Companion</h2>
+          <p className="text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto">
             Your AI-powered executive partner providing 24/7 strategic compliance guidance, 
             risk intelligence, and executive decision support across global regulatory frameworks.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white hover:bg-white/90"
-              style={{ color: '#002B45' }}
+              className="bg-primary-foreground text-primary hover:bg-primary-foreground/90"
               onClick={() => window.open('https://chatgpt.com/g/g-676e4c9d83f08191b067b13fc53b3e64-kj-advisor-executive-companion', '_blank')}
             >
               Launch KJ Advisor™ <ExternalLink className="ml-2 w-4 h-4" />
@@ -110,19 +109,7 @@ const KJAdvisor = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              style={{ 
-                border: '2px solid white', 
-                color: 'white',
-                backgroundColor: 'transparent'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = 'white';
-                e.currentTarget.style.color = '#002B45';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = 'white';
-              }}
+              className="border-2 border-primary-foreground text-primary-foreground bg-transparent hover:bg-primary-foreground hover:text-primary"
             >
               Schedule Demo
             </Button>
@@ -134,10 +121,10 @@ const KJAdvisor = () => {
       <section className="py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h2 className="text-3xl font-bold mb-4 text-primary">
               Executive-Level AI Guidance When You Need It Most
             </h2>
-            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#1a1a1a' }}>
+            <p className="text-xl max-w-3xl mx-auto text-foreground">
               KJ Advisor™ combines deep regulatory expertise with AI capabilities to provide 
               instant executive guidance for critical compliance and risk decisions.
             </p>
@@ -145,13 +132,13 @@ const KJAdvisor = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow bg-white">
+              <Card key={index} className="hover:shadow-lg transition-shadow bg-card">
                 <CardHeader>
-                  <feature.icon className="w-8 h-8 mb-2" style={{ color: '#00A3AD' }} />
-                  <CardTitle className="text-lg" style={{ color: '#002B45' }}>{feature.title}</CardTitle>
+                  <feature.icon className="w-8 h-8 mb-2 text-accent" />
+                  <CardTitle className="text-lg text-primary">{feature.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription style={{ color: '#1a1a1a' }}>{feature.description}</CardDescription>
+                  <CardDescription className="text-foreground">{feature.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -160,38 +147,37 @@ const KJAdvisor = () => {
       </section>
 
       {/* Market-Specific Variants */}
-      <section className="py-16 px-6" style={{ backgroundColor: '#f4f4f4' }}>
+      <section className="py-16 px-6 bg-muted">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h2 className="text-3xl font-bold mb-4 text-primary">
               Choose Your Regulatory Framework Coverage
             </h2>
-            <p className="text-xl" style={{ color: '#1a1a1a' }}>
+            <p className="text-xl text-foreground">
               One Executive Companion - Different Regulatory Framework Scope
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* US Edition */}
-            <Card className="relative overflow-hidden hover:shadow-xl transition-shadow bg-white">
-              <div className="absolute top-0 right-0 w-20 h-20 transform rotate-45 translate-x-8 -translate-y-8" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}></div>
+            <Card className="relative overflow-hidden hover:shadow-xl transition-shadow bg-card">
+              <div className="absolute top-0 right-0 w-20 h-20 transform rotate-45 translate-x-8 -translate-y-8 bg-gradient-to-br from-primary to-secondary"></div>
               <CardHeader>
-                <Badge variant="secondary" className="w-fit mb-2" style={{ backgroundColor: '#002B45', color: 'white' }}>US Edition</Badge>
-                <CardTitle className="text-xl" style={{ color: '#002B45' }}>KJ Advisor™ Executive Companion</CardTitle>
-                <CardDescription style={{ color: '#1a1a1a' }}>
+                <Badge className="w-fit mb-2 bg-primary text-primary-foreground">US Edition</Badge>
+                <CardTitle className="text-xl text-primary">KJ Advisor™ Executive Companion</CardTitle>
+                <CardDescription className="text-foreground">
                   US Regulatory Framework Coverage: HIPAA, SOX, CCPA, and federal compliance requirements
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />HIPAA Privacy & Security Rules</li>
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />Sarbanes-Oxley Act</li>
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />CCPA & State Privacy Laws</li>
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />Federal Healthcare Regulations</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />HIPAA Privacy & Security Rules</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />Sarbanes-Oxley Act</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />CCPA & State Privacy Laws</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />Federal Healthcare Regulations</li>
                 </ul>
                 <Button 
-                  className="w-full text-white hover:opacity-90" 
-                  style={{ backgroundColor: '#002B45' }}
+                  className="w-full" 
                   onClick={() => window.open('https://chatgpt.com/g/g-6760c3ed76c88191b4d2c4c8f8ef85e1-kj-advisor-us', '_blank')}
                 >
                   Launch US Edition <ExternalLink className="ml-2 w-4 h-4" />
@@ -200,25 +186,25 @@ const KJAdvisor = () => {
             </Card>
 
             {/* UK/EU Edition */}
-            <Card className="relative overflow-hidden hover:shadow-xl transition-shadow bg-white">
-              <div className="absolute top-0 right-0 w-20 h-20 transform rotate-45 translate-x-8 -translate-y-8" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #005870 100%)' }}></div>
+            <Card className="relative overflow-hidden hover:shadow-xl transition-shadow bg-card">
+              <div className="absolute top-0 right-0 w-20 h-20 transform rotate-45 translate-x-8 -translate-y-8 bg-gradient-to-br from-accent to-secondary"></div>
               <CardHeader>
-                <Badge variant="secondary" className="w-fit mb-2" style={{ backgroundColor: '#00A3AD', color: 'white' }}>UK/EU Edition</Badge>
-                <CardTitle className="text-xl" style={{ color: '#002B45' }}>KJ Advisor™ Executive Companion</CardTitle>
-                <CardDescription style={{ color: '#1a1a1a' }}>
+                <Badge className="w-fit mb-2 bg-accent text-accent-foreground">UK/EU Edition</Badge>
+                <CardTitle className="text-xl text-primary">KJ Advisor™ Executive Companion</CardTitle>
+                <CardDescription className="text-foreground">
                   UK/EU Regulatory Framework Coverage: GDPR, EU AI Act, UK Data Protection Act, and European compliance
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2 mb-6">
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />EU/UK GDPR Compliance</li>
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />EU AI Act Requirements</li>
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />Data Protection Act 2018</li>
-                  <li className="flex items-center" style={{ color: '#1a1a1a' }}><CheckCircle className="w-4 h-4 mr-2" style={{ color: '#00A3AD' }} />ePrivacy Directive</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />EU/UK GDPR Compliance</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />Data Protection Act 2018</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />EU AI Act Requirements</li>
+                  <li className="flex items-center text-foreground"><CheckCircle className="w-4 h-4 mr-2 text-accent" />ePrivacy Directive</li>
                 </ul>
                 <Button 
-                  className="w-full text-white hover:opacity-90"
-                  style={{ backgroundColor: '#00A3AD' }}
+                  className="w-full"
+                  variant="accent"
                   onClick={() => window.open('https://chatgpt.com/g/g-6760c46576c88191b4d2c4c8f8ef85e2-kj-advisor-uk-eu', '_blank')}
                 >
                   Launch UK/EU Edition <ExternalLink className="ml-2 w-4 h-4" />

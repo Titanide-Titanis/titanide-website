@@ -170,36 +170,32 @@ const TitanisGRC = () => {
   ];
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a' }}>
+    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: "'Inter', sans-serif" }}>
       {/* Navigation */}
       <header 
-        className="py-4 sm:py-6 px-4 sm:px-8 sticky top-0 z-50"
-        style={{ 
-          backgroundColor: '#002B45',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-        }}
+        className="py-4 sm:py-6 px-4 sm:px-8 sticky top-0 z-50 bg-primary shadow-md"
       >
         <div className="container mx-auto max-w-6xl flex justify-center items-center">
           <div className="text-center">
-            <h1 
-              className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-1 sm:mb-2"
-              style={{ 
-                animation: 'slideInLeft 1.2s ease-out, fadeIn 1.5s ease-out',
-                letterSpacing: '0.05em'
-              }}
-            >
-              TITANIS™
-            </h1>
-            <p 
-              className="text-xs sm:text-sm lg:text-base text-white/90"
-              style={{ 
-                animation: 'slideInRight 1.2s ease-out 0.3s both',
-                fontWeight: '300',
-                letterSpacing: '0.02em'
-              }}
-            >
-              Titanide's Intelligent Governance, Risk & Compliance Platform
-            </p>
+              <h1 
+                className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground mb-1 sm:mb-2"
+                style={{ 
+                  animation: 'slideInLeft 1.2s ease-out, fadeIn 1.5s ease-out',
+                  letterSpacing: '0.05em'
+                }}
+              >
+                TITANIS™
+              </h1>
+              <p 
+                className="text-xs sm:text-sm lg:text-base text-primary-foreground/90"
+                style={{ 
+                  animation: 'slideInRight 1.2s ease-out 0.3s both',
+                  fontWeight: '300',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                Titanide's Intelligent Governance, Risk & Compliance Platform
+              </p>
           </div>
         </div>
       </header>
@@ -208,7 +204,7 @@ const TitanisGRC = () => {
       <section 
         className="py-8 sm:py-12 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
         style={{ 
-          background: 'linear-gradient(135deg, #e2ded9 0%, #f4f4f4 100%)',
+          background: 'linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%)',
           animation: 'fadeIn 1.5s ease-out'
         }}
       >
@@ -217,24 +213,22 @@ const TitanisGRC = () => {
             <div className="space-y-4 sm:space-y-6 text-center lg:text-left order-2 lg:order-1" style={{ animation: 'slideInLeft 1.2s ease-out' }}>
               <div className="mb-4 sm:mb-6">
                 <span 
-                  className="inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold"
-                  style={{ backgroundColor: '#00A3AD', color: 'white' }}
+                  className="inline-flex items-center rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold bg-accent text-accent-foreground"
                 >
                   <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2" />
                   TITANIS GRC Platform
                 </span>
               </div>
               <h1 
-                className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                className="font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary"
                 style={{ 
-                  color: '#002B45',
                   lineHeight: '1.1'
                 }}
               >
                 The Future of Healthcare
-                <span className="block sm:inline" style={{ color: '#00A3AD' }}> Compliance</span>
+                <span className="block sm:inline text-accent"> Compliance</span>
               </h1>
-              <p className="text-base sm:text-lg lg:text-xl" style={{ color: '#005870' }}>
+              <p className="text-base sm:text-lg lg:text-xl text-secondary">
                 AI-powered GRC platform serving healthcare organizations worldwide. Covers HIPAA, SOX, HITECH, 
                 ISO 27001, GDPR, and custom frameworks with intelligent automation for audit management, 
                 risk assessment, and continuous compliance monitoring.
@@ -243,10 +237,10 @@ const TitanisGRC = () => {
                 <div className="grid grid-cols-2 gap-2 sm:gap-4 text-center">
                   {stats.slice(0,2).map((stat, index) => (
                     <div key={index} className="space-y-1">
-                      <div className="text-xl sm:text-2xl lg:text-3xl font-bold" style={{ color: '#002B45' }}>
+                      <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-primary">
                         {stat.number}
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground">{stat.label}</div>
                     </div>
                   ))}
                 </div>
@@ -254,8 +248,8 @@ const TitanisGRC = () => {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                 <Button 
                   size="lg" 
-                  className="text-white hover:opacity-90 text-sm sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
-                  style={{ backgroundColor: '#f25022' }}
+                  variant="cta"
+                  className="text-sm sm:text-lg px-6 sm:px-8 w-full sm:w-auto"
                 >
                   <PlayCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
                   Watch Demo
@@ -263,8 +257,7 @@ const TitanisGRC = () => {
                 <a href="https://titanis.titanideconsulting.com/auth" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button 
                     size="lg" 
-                    className="text-white hover:opacity-90 text-sm sm:text-lg px-6 sm:px-8 w-full"
-                    style={{ backgroundColor: '#002B45' }}
+                    className="text-sm sm:text-lg px-6 sm:px-8 w-full"
                   >
                     Access Platform
                     <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
@@ -274,10 +267,10 @@ const TitanisGRC = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-2 sm:space-y-0 sm:space-x-1 mt-4">
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-current" style={{ color: '#f25022' }} />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 fill-current text-cta" />
                   ))}
                 </div>
-                <span className="text-xs sm:text-sm text-gray-600 text-center">4.9/5 from 500+ healthcare organizations</span>
+                <span className="text-xs sm:text-sm text-muted-foreground text-center">4.9/5 from 500+ healthcare organizations</span>
               </div>
             </div>
             

@@ -7,7 +7,7 @@ const MedicalStaffing = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: 'Inter, sans-serif', backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: 1.6 }}>
+    <div className="min-h-screen bg-background text-foreground" style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.6 }}>
       {/* Coming 2026 Banner */}
       <div className="py-3 px-4 text-center text-white overflow-hidden" style={{ 
         background: 'linear-gradient(45deg, #FFD700, #FFA500, #FF6B6B, #4ECDC4, #45B7D1)',
@@ -27,18 +27,18 @@ const MedicalStaffing = () => {
       </div>
 
       {/* Hero Section */}
-      <header className="py-12 sm:py-20 px-4 sm:px-8 text-center text-white" style={{ background: 'linear-gradient(135deg, #002B45, #005870)', animation: 'fadeIn 1.5s ease-out' }}>
+      <header className="py-12 sm:py-20 px-4 sm:px-8 text-center text-primary-foreground bg-gradient-to-br from-primary to-secondary" style={{ animation: 'fadeIn 1.5s ease-out' }}>
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" style={{ color: 'white', animation: 'slideInDown 1s ease-out' }}>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary-foreground" style={{ animation: 'slideInDown 1s ease-out' }}>
             Michadrian Healthcare Services
           </h1>
-          <p className="text-lg sm:text-xl max-w-4xl mx-auto text-white" style={{ animation: 'slideInUp 1.2s ease-out' }}>
+          <p className="text-lg sm:text-xl max-w-4xl mx-auto text-primary-foreground" style={{ animation: 'slideInUp 1.2s ease-out' }}>
             A division of Titanide Consulting Group
           </p>
           <button 
             onClick={scrollToContact}
-            className="mt-8 text-white hover:opacity-90 px-8 py-3 rounded-md text-lg font-semibold transition-opacity"
-            style={{ backgroundColor: '#00A3AD', animation: 'fadeIn 2s ease-out' }}
+            className="mt-8 bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-3 rounded-md text-lg font-semibold transition-colors"
+            style={{ animation: 'fadeIn 2s ease-out' }}
           >
             Contact Us
             <span className="ml-2">→</span>
@@ -58,18 +58,18 @@ const MedicalStaffing = () => {
       </section>
 
       {/* KJ Advisor Section */}
-      <section className="py-12 sm:py-16 px-4 sm:px-8" style={{ backgroundColor: '#f4f4f4' }}>
+      <section className="py-12 sm:py-16 px-4 sm:px-8 bg-muted">
         <div className="container mx-auto max-w-4xl">
-          <div className="bg-white p-6 sm:p-8 text-center rounded-lg shadow-lg" style={{ border: '2px dashed #00A3AD', animation: 'fadeInUp 1.5s ease-out' }}>
-            <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto" style={{ backgroundColor: '#002B45', animation: 'bounce 2s infinite' }}>
-              <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-card p-6 sm:p-8 text-center rounded-lg shadow-lg border-2 border-dashed border-accent" style={{ animation: 'fadeInUp 1.5s ease-out' }}>
+            <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto bg-primary" style={{ animation: 'bounce 2s infinite' }}>
+              <svg className="h-8 w-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
               </svg>
             </div>
-            <h3 className="text-xl sm:text-2xl font-bold mb-4" style={{ color: '#002B45' }}>
+            <h3 className="text-xl sm:text-2xl font-bold mb-4 text-primary">
               KJ Advisor: AI-Powered Compliance Assistant
             </h3>
-            <p className="text-sm sm:text-base mb-6 max-w-2xl mx-auto" style={{ color: '#1a1a1a' }}>
+            <p className="text-sm sm:text-base mb-6 max-w-2xl mx-auto text-foreground">
               AI-powered compliance advisor providing instant guidance on UK healthcare regulations and best practices, available 24/7 for your team.
             </p>
             <a href="https://chatgpt.com/g/g-6877d0b9d1c88191a7b6a85d0b706f53-kj-advisor-uk-eu-edition" target="_blank" rel="noopener noreferrer">
