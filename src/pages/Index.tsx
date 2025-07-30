@@ -146,7 +146,7 @@ const Index = () => {
                 <Shield className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Executive-Level Expertise</h3>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-white text-sm sm:text-base">
                 Proven C-suite compliance leadership serving Fortune 500 companies.
               </p>
             </div>
@@ -155,7 +155,7 @@ const Index = () => {
                 <Globe className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Global Footprint</h3>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-white text-sm sm:text-base">
                 Delivering localized expertise and 24/7 support to clients throughout the US and UK.
               </p>
             </div>
@@ -164,7 +164,7 @@ const Index = () => {
                 <Monitor className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Smarter Compliance Starts with AI-Powered Solutions</h3>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-white text-sm sm:text-base">
                 Leverage the power of TITANIS™ GRC and KJ Advisor—innovative tools for intelligent compliance management.
               </p>
             </div>
@@ -173,7 +173,7 @@ const Index = () => {
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">90-Day ROI Guarantee*</h3>
-              <p className="text-gray-200 text-sm sm:text-base">
+              <p className="text-white text-sm sm:text-base">
                 Guaranteed ROI within 90 days—or receive additional consulting at no extra cost.
               </p>
             </div>
@@ -654,7 +654,7 @@ const Index = () => {
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
               Proven Results & ROI Guarantee
             </h2>
-            <p className="text-gray-200 text-base sm:text-lg max-w-3xl mx-auto">
+            <p className="text-white text-base sm:text-lg max-w-3xl mx-auto">
               Our clients see measurable improvements within 90 days, backed by our industry-first ROI guarantee.
             </p>
           </div>
