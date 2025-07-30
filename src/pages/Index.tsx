@@ -95,16 +95,22 @@ const Index = () => {
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
-                  <Button 
-                  size="lg" 
-                  variant="outline"
-                  className="w-full sm:w-auto text-base sm:text-lg px-8 py-4 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900 bg-white"
-                  style={{ borderColor: '#00A3AD' }}
-                  onClick={() => document.getElementById('digital-showcase')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  <Cpu className="mr-2 h-5 w-5" />
-                  Join TITANIS™ Beta—Shape the Future of Compliance
-                </Button>
+                  <a 
+                    href="https://titanis.titanideconsulting.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto"
+                  >
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      className="w-full sm:w-auto text-base sm:text-lg px-8 py-4 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900 bg-white"
+                      style={{ borderColor: '#00A3AD' }}
+                    >
+                      <Cpu className="mr-2 h-5 w-5" />
+                      Join TITANIS™ Beta—Shape the Future of Compliance
+                    </Button>
+                  </a>
               </div>
             </div>
             
@@ -282,7 +288,9 @@ const Index = () => {
                     
                     <div className="mt-8">
                       <a 
-                        href="/solutions/digital-products/titanis"
+                        href="https://titanis.titanideconsulting.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="block"
                       >
                         <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
@@ -933,23 +941,30 @@ const Index = () => {
               <p className="text-white/80 text-sm">Speak with an Expert Today</p>
             </div>
             
-            <div className="p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+            <a 
+              href="mailto:info@titanideconsulting.com"
+              className="block p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 cursor-pointer group"
+            >
               <div className="flex items-center justify-center mb-4">
-                <Mail className="h-6 w-6" style={{ color: '#00A3AD' }} />
+                <Mail className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" style={{ color: '#00A3AD' }} />
               </div>
               <h3 className="font-bold text-white mb-3">Email Us</h3>
-              <p className="text-white text-lg">info@titanideconsulting.com</p>
-              <p className="text-white/80 text-sm">Get detailed information</p>
-            </div>
+              <p className="text-white/80 text-sm">Click to send us an email</p>
+            </a>
             
-            <div className="p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+            <a 
+              href="https://titanis.titanideconsulting.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 cursor-pointer group"
+            >
               <div className="flex items-center justify-center mb-4">
-                <Brain className="h-6 w-6" style={{ color: '#00A3AD' }} />
+                <Brain className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" style={{ color: '#00A3AD' }} />
               </div>
               <h3 className="font-bold text-white mb-3">Try AI Demo</h3>
               <p className="text-white text-lg">Free Platform Tour</p>
               <p className="text-white/80 text-sm">See results in real-time</p>
-            </div>
+            </a>
           </div>
 
           {/* Urgency indicators */}
@@ -988,7 +1003,9 @@ const Index = () => {
             </a>
             
             <a 
-              href="/solutions/digital-products/titanis"
+              href="https://titanis.titanideconsulting.com/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto group"
             >
               <Button 
