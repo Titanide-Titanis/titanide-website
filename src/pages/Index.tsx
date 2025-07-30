@@ -254,14 +254,14 @@ const Index = () => {
                     🚀 Now in Beta: Early Results from TITANIS™ Pilot Users
                   </div>
                 </div>
-                <div className="p-8" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
+                <div className="p-8 pt-1" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#00A3AD' }}>
                       <Cpu className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-white">TITANIS™</h4>
-                      <p className="text-white/80">Beta Release: Next-Gen GRC Platform</p>
+                      <h4 className="text-2xl font-bold text-gray-900">TITANIS™</h4>
+                      <p className="text-gray-700">Beta Release: Next-Gen GRC Platform</p>
                     </div>
                   </div>
                   
@@ -310,14 +310,14 @@ const Index = () => {
                     ⚡Your GPT-Powered Compliance Consultant
                   </div>
                 </div>
-                <div className="p-8" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
+                <div className="p-8 pt-1" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
                   <div className="flex items-center mb-6">
                     <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#005870' }}>
                       <Brain className="h-8 w-8 text-white" />
                     </div>
                     <div>
-                      <h4 className="text-2xl font-bold text-white">KJ Advisor™</h4>
-                      <p className="text-white/80">Your Executive Companion</p>
+                      <h4 className="text-2xl font-bold text-gray-900">KJ Advisor™</h4>
+                      <p className="text-gray-700">Your Executive Companion</p>
                     </div>
                   </div>
                   
