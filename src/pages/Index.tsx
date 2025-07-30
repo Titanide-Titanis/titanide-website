@@ -26,30 +26,20 @@ const Index = () => {
 
       {/* Hero Section */}
       <div 
-        className="py-12 sm:py-20 px-4 sm:px-8 relative overflow-hidden animate-fadeIn"
-        style={{ 
-          background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)'
-        }}
+        className="py-12 sm:py-20 px-4 sm:px-8 relative overflow-hidden animate-fadeIn bg-gradient-to-br from-gray-100 to-gray-200"
       >
-        {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-10 animate-float" style={{ backgroundColor: '#00A3AD' }}></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10 animate-float" style={{ backgroundColor: '#ffffff', animationDelay: '2s' }}></div>
-        </div>
-        
         <div className="container mx-auto max-w-6xl relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div className="space-y-6 text-center lg:text-left animate-slideInLeft">
               
               <h1 
-                className="font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl animate-fadeIn animate-delay-200"
+                className="font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl animate-fadeIn animate-delay-200 text-primary"
                 style={{ 
                   lineHeight: '1.1'
                 }}
               >
-                <span className="text-white drop-shadow-lg">
-                  Your Partner for Global Healthcare Compliance & Next-Gen Digital Solutions
-                </span>
+                Full-Service Healthcare 
+                <span className="text-accent"> Compliance</span> at a Fraction of the Cost
               </h1>
               
               {/* Live metrics counter */}
@@ -69,17 +59,12 @@ const Index = () => {
               </div>
               
               <div className="space-y-4 animate-fadeIn animate-delay-400">
-                <p className="text-lg sm:text-xl text-white/90">
-                  From fractional C-suite compliance support to intelligent GRC platforms <strong className="text-white">we deliver</strong> global, end-to-end risk management solutions.
+                <p className="text-lg sm:text-xl text-primary/80">
+                  "Get fractional compliance support without the extensive search or long-term commitment."
                 </p>
-                <div className="p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
-                  <p className="font-semibold text-base sm:text-lg text-white">
-                    "Designed for Compliance Leaders, by Compliance Leaders.​"
-                  </p>
-                  <p className="text-sm sm:text-base font-medium mt-2 text-white/80">
-                    - Kelly Menefee Okpala, Founder & Fractional CCO
-                  </p>
-                </div>
+                <p className="text-sm sm:text-base font-medium mt-2 text-primary/70 italic">
+                  - Kelly Menefee Okpala, Fractional CCO
+                </p>
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mt-8">
@@ -91,11 +76,10 @@ const Index = () => {
                 >
                   <Button 
                     size="lg" 
-                    className="text-white hover:opacity-90 w-full sm:w-auto text-base sm:text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
-                    style={{ backgroundColor: '#f25022' }}
+                    className="titanide-orange text-white hover:opacity-90 w-full sm:w-auto text-base sm:text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
                   >
                     <Clock className="mr-2 h-5 w-5" />
-                    Schedule Consultation
+                    Schedule Your Discovery Call →
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </a>
@@ -123,16 +107,12 @@ const Index = () => {
                 <img 
                   src="https://previewengine-accl.zoho.com/image/WD/9rk2kec3040c46c2e476f8905ede61724aef5?version=1.0&width=2046&height=1536"
                   alt="Kelly Menefee Okpala – Titanide Founder"
-                  className="mx-auto lg:mx-0 rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 hover:scale-105 transition-transform duration-300"
+                  className="mx-auto lg:mx-0 rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 hover:scale-105 transition-transform duration-300 titanide-teal border-4 border-accent/20"
                   style={{ 
                     objectFit: 'cover',
-                    objectPosition: 'center top',
-                    border: '4px solid #ffffff'
+                    objectPosition: 'center top'
                   }}
                 />
-                <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full flex items-center justify-center shadow-lg animate-bounce-subtle" style={{ backgroundColor: '#f25022' }}>
-                  <Award className="h-8 w-8 text-white" />
-                </div>
               </div>
             </div>
           </div>
@@ -141,50 +121,38 @@ const Index = () => {
 
       {/* Value Proposition Section */}
       <div 
-        className="py-12 sm:py-16 px-4 sm:px-8 text-white"
-        style={{ 
-          backgroundColor: '#002B45'
-        }}
+        className="py-12 sm:py-16 px-4 sm:px-8 text-white titanide-navy"
       >
         <div className="container mx-auto max-w-6xl text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-white">
-            Why Choose Titanide Consulting Group?
+            Why Choose Fractional Compliance Leadership?
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-            <div className="space-y-6 text-center">
-              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
-                <Shield className="h-8 w-8 text-white" />
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="space-y-6 text-center animate-fadeIn animate-delay-100">
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center titanide-teal animate-pulse-glow">
+                <Shield className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">Executive-Level Expertise</h3>
-              <p className="text-white text-sm sm:text-base">
-                Proven C-suite compliance leadership serving Fortune 500 companies.
+              <p className="text-white/80 text-sm sm:text-base">
+                Access C-suite compliance leadership without the full-time commitment or executive salary.
               </p>
             </div>
-            <div className="space-y-6 text-center">
-              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
-                <Globe className="h-8 w-8 text-white" />
+            <div className="space-y-6 text-center animate-fadeIn animate-delay-200">
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center titanide-teal animate-pulse-glow">
+                <Zap className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">Global Footprint</h3>
-              <p className="text-white text-sm sm:text-base">
-                Delivering localized expertise and 24/7 support to clients throughout the US and UK.
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Immediate Impact</h3>
+              <p className="text-white/80 text-sm sm:text-base">
+                Hit the ground running with proven strategies and immediate implementation.
               </p>
             </div>
-            <div className="space-y-6 text-center">
-              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
-                <Monitor className="h-8 w-8 text-white" />
+            <div className="space-y-6 text-center animate-fadeIn animate-delay-300">
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center titanide-teal animate-pulse-glow">
+                <TrendingUp className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">Smarter Compliance Starts with AI-Powered Solutions</h3>
-              <p className="text-white text-sm sm:text-base">
-                Leverage the power of TITANIS™ GRC and KJ Advisor—innovative tools for intelligent compliance management.
-              </p>
-            </div>
-            <div className="space-y-6 text-center">
-              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
-                <TrendingUp className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-white">90-Day ROI Guarantee*</h3>
-              <p className="text-white text-sm sm:text-base">
-                Guaranteed ROI within 90 days—or receive additional consulting at no extra cost.
+              <h3 className="text-lg sm:text-xl font-semibold text-white">Scalable Solutions</h3>
+              <p className="text-white/80 text-sm sm:text-base">
+                Flexible engagement models that grow with your organization's needs.
               </p>
             </div>
           </div>
