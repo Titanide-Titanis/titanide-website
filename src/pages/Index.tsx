@@ -245,7 +245,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
             {/* TITANIS GRC Platform */}
             <Card className="hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border-0 overflow-hidden group">
               <div className="relative">
@@ -254,49 +254,51 @@ const Index = () => {
                     🚀 Now in Beta: Early Results from TITANIS™ Pilot Users
                   </div>
                 </div>
-                <div className="p-8 pt-1" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#00A3AD' }}>
-                      <Cpu className="h-8 w-8 text-white" />
+                <div className="p-10 pt-4" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
+                  <div className="mt-4">
+                    <div className="flex items-center mb-8">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#00A3AD' }}>
+                        <Cpu className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-bold text-white">TITANIS™</h4>
+                        <p className="text-white/90">Beta Release: Next-Gen GRC Platform</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-2xl font-bold text-gray-900">TITANIS™</h4>
-                      <p className="text-gray-700">Beta Release: Next-Gen GRC Platform</p>
+                    
+                    <div className="space-y-6 mb-8">
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>90-day ROI guarantee</span>
+                      </div>
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>Real-time compliance monitoring</span>
+                      </div>
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>Automated workflow management</span>
+                      </div>
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>From FQHCs to Fortune 500s, our solutions drive results for organizations of every size.</span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-6 mb-8">
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>90-day ROI guarantee</span>
-                    </div>
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>Real-time compliance monitoring</span>
-                    </div>
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>Automated workflow management</span>
-                    </div>
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>From FQHCs to Fortune 500s, our solutions drive results for organizations of every size.</span>
-                    </div>
-                  </div>
-                  
-                  <div className="flex space-x-3">
-                    <a 
-                      href="/solutions/digital-products/titanis"
-                      className="flex-1"
-                    >
-                      <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
-                        <Target className="mr-2 h-4 w-4" />
-                        Join Beta Program
+                    
+                    <div className="flex space-x-3 mt-8">
+                      <a 
+                        href="/solutions/digital-products/titanis"
+                        className="flex-1"
+                      >
+                        <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
+                          <Target className="mr-2 h-4 w-4" />
+                          Join Beta Program
+                        </Button>
+                      </a>
+                      <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-4">
+                        <BarChart3 className="h-4 w-4" />
                       </Button>
-                    </a>
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-4">
-                      <BarChart3 className="h-4 w-4" />
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -310,49 +312,51 @@ const Index = () => {
                     ⚡Your GPT-Powered Compliance Consultant
                   </div>
                 </div>
-                <div className="p-8 pt-1" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#005870' }}>
-                      <Brain className="h-8 w-8 text-white" />
+                <div className="p-10 pt-4" style={{ background: 'linear-gradient(135deg, #00A3AD 0%, #002B45 100%)' }}>
+                  <div className="mt-4">
+                    <div className="flex items-center mb-8">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300" style={{ backgroundColor: '#005870' }}>
+                        <Brain className="h-8 w-8 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-2xl font-bold text-white">KJ Advisor™</h4>
+                        <p className="text-white/90">Your Executive Companion</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-2xl font-bold text-gray-900">KJ Advisor™</h4>
-                      <p className="text-gray-700">Your Executive Companion</p>
+                    
+                    <div className="space-y-6 mb-8">
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>24/7 AI compliance expertise</span>
+                      </div>
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>Instant regulatory guidance</span>
+                      </div>
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>Strategic insights & recommendations</span>
+                      </div>
+                      <div className="flex items-center text-white/90">
+                        <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
+                        <span>Executive-level decision support</span>
+                      </div>
                     </div>
-                  </div>
-                  
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>24/7 AI compliance expertise</span>
-                    </div>
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>Instant regulatory guidance</span>
-                    </div>
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>Strategic insights & recommendations</span>
-                    </div>
-                    <div className="flex items-center text-white/90">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
-                      <span>Executive-level decision support</span>
-                    </div>
-                  </div>
-                  
-                  <div className="flex space-x-3">
-                    <a 
-                      href="/solutions/digital-products/kj-advisor"
-                      className="flex-1"
-                    >
-                      <Button className="w-full text-white hover:opacity-90 font-medium" style={{ backgroundColor: '#f25022' }}>
-                        <Cpu className="mr-2 h-4 w-4" />
-                        Try AI Chat
+                    
+                    <div className="flex space-x-3 mt-8">
+                      <a 
+                        href="/solutions/digital-products/kj-advisor"
+                        className="flex-1"
+                      >
+                        <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
+                          <Cpu className="mr-2 h-4 w-4" />
+                          Try AI Chat
+                        </Button>
+                      </a>
+                      <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-4">
+                        <Zap className="h-4 w-4" />
                       </Button>
-                    </a>
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
-                      <Zap className="h-4 w-4" />
-                    </Button>
+                    </div>
                   </div>
                 </div>
               </div>
