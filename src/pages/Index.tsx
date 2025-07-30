@@ -49,18 +49,18 @@ const Index = () => {
               </h1>
               
               {/* Live metrics counter */}
-              <div className="grid grid-cols-3 gap-4 my-6">
-                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 43, 69, 0.05)' }}>
-                  <div className="text-2xl font-bold" style={{ color: '#002B45' }}>100+</div>
-                  <div className="text-xs" style={{ color: '#005870' }}>Organizations Served</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-8">
+                <div className="text-center p-4 sm:p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 43, 69, 0.05)' }}>
+                  <div className="text-xl sm:text-2xl font-bold" style={{ color: '#002B45' }}>100+</div>
+                  <div className="text-xs sm:text-xs" style={{ color: '#005870' }}>Organizations Served</div>
                 </div>
-                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 163, 173, 0.05)' }}>
-                  <div className="text-2xl font-bold" style={{ color: '#00A3AD' }}>95%+</div>
-                  <div className="text-xs" style={{ color: '#005870' }}>Improve Regulatory Reporting Accuracy</div>
+                <div className="text-center p-4 sm:p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 163, 173, 0.05)' }}>
+                  <div className="text-xl sm:text-2xl font-bold" style={{ color: '#00A3AD' }}>95%+</div>
+                  <div className="text-xs sm:text-xs" style={{ color: '#005870' }}>Improve Regulatory Reporting Accuracy</div>
                 </div>
-                <div className="text-center p-3 rounded-lg" style={{ backgroundColor: 'rgba(242, 80, 34, 0.05)' }}>
-                  <div className="text-2xl font-bold" style={{ color: '#f25022' }}>80%+</div>
-                  <div className="text-xs" style={{ color: '#005870' }}>Policy Adoption and Alignment</div>
+                <div className="text-center p-4 sm:p-3 rounded-lg" style={{ backgroundColor: 'rgba(242, 80, 34, 0.05)' }}>
+                  <div className="text-xl sm:text-2xl font-bold" style={{ color: '#f25022' }}>80%+</div>
+                  <div className="text-xs sm:text-xs" style={{ color: '#005870' }}>Policy Adoption and Alignment</div>
                 </div>
               </div>
               
@@ -78,7 +78,7 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start mt-8">
                 <a 
                   href="https://titanide.zohobookings.com/#/3973691000005149002" 
                   target="_blank" 
@@ -87,7 +87,7 @@ const Index = () => {
                 >
                   <Button 
                     size="lg" 
-                    className="text-white hover:opacity-90 w-full sm:w-auto text-base sm:text-lg px-6 py-3 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+                    className="text-white hover:opacity-90 w-full sm:w-auto text-base sm:text-lg px-8 py-4 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
                     style={{ backgroundColor: '#f25022' }}
                   >
                     <Clock className="mr-2 h-5 w-5" />
@@ -98,7 +98,7 @@ const Index = () => {
                   <Button 
                   size="lg" 
                   variant="outline"
-                  className="w-full sm:w-auto text-base sm:text-lg px-6 py-3 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900 bg-white"
+                  className="w-full sm:w-auto text-base sm:text-lg px-8 py-4 border-2 hover:shadow-lg transition-all duration-300 text-gray-900 hover:text-gray-900 bg-white"
                   style={{ borderColor: '#00A3AD' }}
                   onClick={() => document.getElementById('digital-showcase')?.scrollIntoView({ behavior: 'smooth' })}
                 >
@@ -140,8 +140,8 @@ const Index = () => {
           <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-white">
             Why Choose Titanide Consulting Group?
           </h2>
-          <div className="grid md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="space-y-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+            <div className="space-y-6 text-center">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <Shield className="h-8 w-8 text-white" />
               </div>
@@ -150,7 +150,7 @@ const Index = () => {
                 Proven C-suite compliance leadership serving Fortune 500 companies.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-6 text-center">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <Globe className="h-8 w-8 text-white" />
               </div>
@@ -159,7 +159,7 @@ const Index = () => {
                 Delivering localized expertise and 24/7 support to clients throughout the US and UK.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-6 text-center">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <Monitor className="h-8 w-8 text-white" />
               </div>
@@ -168,7 +168,7 @@ const Index = () => {
                 Leverage the power of TITANIS™ GRC and KJ Advisor—innovative tools for intelligent compliance management.
               </p>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-6 text-center">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center" style={{ backgroundColor: '#00A3AD' }}>
                 <TrendingUp className="h-8 w-8 text-white" />
               </div>
@@ -206,30 +206,30 @@ const Index = () => {
             </p>
             
             {/* Live platform metrics */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8 mb-8">
-              <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">99.95%</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-8 mb-8">
+              <div className="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">99.95%</div>
                 <div className="text-sm text-white/80">Platform Uptime</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-4/5 h-1 bg-white rounded-full animate-pulse"></div>
                 </div>
               </div>
-              <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">3,200+</div>
+              <div className="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">3,200+</div>
                 <div className="text-sm text-white/80">Audits Completed:</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-full h-1 bg-green-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
-              <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">7,500+</div>
+              <div className="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">7,500+</div>
                 <div className="text-sm text-white/80">Compliance Issues Resolved:</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-full h-1 bg-yellow-400 rounded-full animate-pulse"></div>
                 </div>
               </div>
-              <div className="text-center p-4 rounded-lg bg-white/10 backdrop-blur-sm">
-                <div className="text-3xl font-bold text-white mb-1">120+</div>
+              <div className="text-center p-6 rounded-lg bg-white/10 backdrop-blur-sm">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">120+</div>
                 <div className="text-sm text-white/80">Active Clients:</div>
                 <div className="w-full h-1 bg-white/20 rounded-full mt-2">
                   <div className="w-4/5 h-1 bg-blue-400 rounded-full animate-pulse"></div>
@@ -245,7 +245,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
             {/* TITANIS GRC Platform */}
             <Card className="hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 bg-white border-0 overflow-hidden group">
               <div className="relative">
@@ -265,7 +265,7 @@ const Index = () => {
                     </div>
                   </div>
                   
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-6 mb-8">
                     <div className="flex items-center text-white/90">
                       <CheckCircle className="h-5 w-5 mr-3 text-green-400" />
                       <span>90-day ROI guarantee</span>
@@ -289,12 +289,12 @@ const Index = () => {
                       href="/solutions/digital-products/titanis"
                       className="flex-1"
                     >
-                      <Button className="w-full text-white hover:opacity-90 font-medium" style={{ backgroundColor: '#f25022' }}>
+                      <Button className="w-full text-white hover:opacity-90 font-medium py-3 px-6" style={{ backgroundColor: '#f25022' }}>
                         <Target className="mr-2 h-4 w-4" />
                         Join Beta Program
                       </Button>
                     </a>
-                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
+                    <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900 px-4">
                       <BarChart3 className="h-4 w-4" />
                     </Button>
                   </div>
@@ -935,46 +935,46 @@ const Index = () => {
           </p>
           
           {/* Enhanced contact grid with urgency */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8 sm:mb-12">
-            <div className="p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-              <div className="flex items-center justify-center mb-3">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
+            <div className="p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+              <div className="flex items-center justify-center mb-4">
                 <Phone className="h-6 w-6" style={{ color: '#00A3AD' }} />
               </div>
-              <h3 className="font-bold text-white mb-2">Connect with Us</h3>
+              <h3 className="font-bold text-white mb-3">Connect with Us</h3>
               <p className="text-white text-lg">1+ 832-613-0619</p>
               <p className="text-white/80 text-sm">Speak with an Expert Today</p>
             </div>
             
-            <div className="p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-              <div className="flex items-center justify-center mb-3">
+            <div className="p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+              <div className="flex items-center justify-center mb-4">
                 <Mail className="h-6 w-6" style={{ color: '#00A3AD' }} />
               </div>
-              <h3 className="font-bold text-white mb-2">Email Us</h3>
+              <h3 className="font-bold text-white mb-3">Email Us</h3>
               <p className="text-white text-lg">info@titanideconsulting.com</p>
               <p className="text-white/80 text-sm">Get detailed information</p>
             </div>
             
-            <div className="p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
-              <div className="flex items-center justify-center mb-3">
+            <div className="p-8 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300">
+              <div className="flex items-center justify-center mb-4">
                 <Brain className="h-6 w-6" style={{ color: '#00A3AD' }} />
               </div>
-              <h3 className="font-bold text-white mb-2">Try AI Demo</h3>
+              <h3 className="font-bold text-white mb-3">Try AI Demo</h3>
               <p className="text-white text-lg">Free Platform Tour</p>
               <p className="text-white/80 text-sm">See results in real-time</p>
             </div>
           </div>
 
           {/* Urgency indicators */}
-          <div className="grid md:grid-cols-3 gap-4 mb-8 text-center">
-            <div className="p-3 rounded-lg bg-white/5">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 text-center">
+            <div className="p-6 rounded-lg bg-white/5">
               <div className="text-xl font-bold text-white">⏱️ Limited Time</div>
               <div className="text-sm text-white/80">Free assessment worth $5,000</div>
             </div>
-            <div className="p-3 rounded-lg bg-white/5">
+            <div className="p-6 rounded-lg bg-white/5">
               <div className="text-xl font-bold text-white">🎯 Guaranteed</div>
               <div className="text-sm text-white/80">90-day ROI*</div>
             </div>
-            <div className="p-3 rounded-lg bg-white/5">
+            <div className="p-6 rounded-lg bg-white/5">
               <div className="text-xl font-bold text-white">Beta Access</div>
               <div className="text-sm text-white/80">Limited beta access available - limited slots</div>
             </div>
