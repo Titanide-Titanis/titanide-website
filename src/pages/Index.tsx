@@ -103,7 +103,7 @@ const Index = () => {
                   onClick={() => document.getElementById('digital-showcase')?.scrollIntoView({ behavior: 'smooth' })}
                 >
                   <Cpu className="mr-2 h-5 w-5" />
-                  Discover TITANIS™—Our Flagship GRC Solution
+                  Join TITANIS™ Beta—Shape the Future of Compliance
                 </Button>
               </div>
             </div>
@@ -236,6 +236,13 @@ const Index = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Beta Context */}
+            <div className="text-center mt-6 mb-8">
+              <p className="text-white/70 text-sm max-w-3xl mx-auto">
+                Note: TITANIS™ is currently in beta. The metrics shown are based on early access organizations and may evolve as we expand platform availability.
+              </p>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -244,7 +251,7 @@ const Index = () => {
               <div className="relative">
                 <div className="absolute top-4 right-4 z-10">
                   <div className="px-3 py-1 rounded-full text-xs font-bold text-white" style={{ backgroundColor: '#f25022' }}>
-                    🔥 Top Choice Among Healthcare Leaders
+                    🚀 Now in Beta: Early Results from TITANIS™ Pilot Users
                   </div>
                 </div>
                 <div className="p-8" style={{ background: 'linear-gradient(135deg, #002B45 0%, #005870 100%)' }}>
@@ -254,7 +261,7 @@ const Index = () => {
                     </div>
                     <div>
                       <h4 className="text-2xl font-bold text-white">TITANIS™</h4>
-                      <p className="text-white/80">Next-Gen, All-in-One Governance Risk & Compliance Platform</p>
+                      <p className="text-white/80">Beta Release: Next-Gen GRC Platform</p>
                     </div>
                   </div>
                   
@@ -284,7 +291,7 @@ const Index = () => {
                     >
                       <Button className="w-full text-white hover:opacity-90 font-medium" style={{ backgroundColor: '#f25022' }}>
                         <Target className="mr-2 h-4 w-4" />
-                        View Demo
+                        Join Beta Program
                       </Button>
                     </a>
                     <Button variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
@@ -520,10 +527,10 @@ const Index = () => {
           <div className="mb-12 p-8 rounded-2xl" style={{ background: 'linear-gradient(135deg, rgba(0, 43, 69, 0.05) 0%, rgba(0, 163, 173, 0.05) 100%)', border: '2px solid rgba(0, 163, 173, 0.1)' }}>
             <div className="text-center mb-8">
               <h3 className="text-2xl sm:text-3xl font-bold mb-4" style={{ color: '#002B45' }}>
-                🚀 Why Fortune 500 Companies Choose Our Digital Solutions
+                🚀 Join our growing community of early adopters and help shape the future of compliance innovation!
               </h3>
               <p className="text-lg" style={{ color: '#005870' }}>
-                Industry-first innovations that deliver measurable results
+                Experience the latest in AI-powered compliance management—now available in beta
               </p>
             </div>
             
@@ -968,8 +975,8 @@ const Index = () => {
               <div className="text-sm text-white/80">90-day ROI*</div>
             </div>
             <div className="p-3 rounded-lg bg-white/5">
-              <div className="text-xl font-bold text-white">Fast Setup</div>
-              <div className="text-sm text-white/80">AI platforms live in 72 hours</div>
+              <div className="text-xl font-bold text-white">Beta Access</div>
+              <div className="text-sm text-white/80">Limited beta access available - limited slots</div>
             </div>
           </div>
 
