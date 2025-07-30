@@ -5,74 +5,78 @@ import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star,
 
 const Index = () => {
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: '#fdfdfd', color: '#1a1a1a', lineHeight: '1.6' }}>
+    <div className="min-h-screen hero-gradient" style={{ fontFamily: "'Inter', sans-serif", color: '#1a1a1a', lineHeight: '1.6' }}>
       {/* Header/Navigation */}
       <header 
-        className="py-4 px-4 sm:px-8 sticky top-0 z-50"
-        style={{ 
-          backgroundColor: '#002B45',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
-        }}
+        className="py-4 px-4 sm:px-8 sticky top-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20"
       >
         <div className="container mx-auto max-w-6xl flex justify-between items-center">
+          <div className="flex items-center space-x-2 animate-slideInLeft">
+            <Building2 className="h-8 w-8 text-white" />
+            <span className="text-white text-xl font-bold">TITANIDE™ CONSULTING</span>
+          </div>
+          <nav className="hidden md:flex space-x-8 animate-slideInRight">
+            <a href="#services" className="text-white hover:text-cyan-200 transition-colors duration-300">Services</a>
+            <a href="#solutions" className="text-white hover:text-cyan-200 transition-colors duration-300">Solutions</a>
+            <a href="#about" className="text-white hover:text-cyan-200 transition-colors duration-300">About</a>
+            <a href="#contact" className="text-white hover:text-cyan-200 transition-colors duration-300">Contact</a>
+          </nav>
         </div>
       </header>
 
       {/* Hero Section */}
       <div 
-        className="py-12 sm:py-20 px-4 sm:px-8 relative overflow-hidden"
+        className="py-12 sm:py-20 px-4 sm:px-8 relative overflow-hidden animate-fadeIn"
         style={{ 
-          background: 'linear-gradient(135deg, #e2ded9 0%, #f4f4f4 100%)',
-          animation: 'fadeIn 1.5s ease-out'
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)'
         }}
       >
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-10" style={{ backgroundColor: '#00A3AD', animation: 'float 6s ease-in-out infinite' }}></div>
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10" style={{ backgroundColor: '#002B45', animation: 'float 8s ease-in-out infinite reverse' }}></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full opacity-10 animate-float" style={{ backgroundColor: '#00A3AD' }}></div>
+          <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full opacity-10 animate-float" style={{ backgroundColor: '#ffffff', animationDelay: '2s' }}></div>
         </div>
         
         <div className="container mx-auto max-w-6xl relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-            <div className="space-y-6 text-center lg:text-left" style={{ animation: 'slideInLeft 1.2s ease-out' }}>
+            <div className="space-y-6 text-center lg:text-left animate-slideInLeft">
               
               <h1 
-                className="font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl"
+                className="font-bold leading-tight text-3xl sm:text-4xl lg:text-5xl animate-fadeIn animate-delay-200"
                 style={{ 
-                  color: '#002B45',
                   lineHeight: '1.1'
                 }}
               >
-                <span className="bg-gradient-to-r from-blue-900 to-teal-600 bg-clip-text text-transparent">
+                <span className="text-white drop-shadow-lg">
                   Your Partner for Global Healthcare Compliance & Next-Gen Digital Solutions
                 </span>
               </h1>
               
               {/* Live metrics counter */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-8">
-                <div className="text-center p-4 sm:p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 43, 69, 0.05)' }}>
-                  <div className="text-xl sm:text-2xl font-bold" style={{ color: '#002B45' }}>100+</div>
-                  <div className="text-xs sm:text-xs" style={{ color: '#005870' }}>Organizations Served</div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 my-8 animate-fadeIn animate-delay-300">
+                <div className="text-center p-4 sm:p-3 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 animate-pulse-glow">
+                  <div className="text-xl sm:text-2xl font-bold text-white">100+</div>
+                  <div className="text-xs sm:text-xs text-white/80">Organizations Served</div>
                 </div>
-                <div className="text-center p-4 sm:p-3 rounded-lg" style={{ backgroundColor: 'rgba(0, 163, 173, 0.05)' }}>
-                  <div className="text-xl sm:text-2xl font-bold" style={{ color: '#00A3AD' }}>95%+</div>
-                  <div className="text-xs sm:text-xs" style={{ color: '#005870' }}>Improve Regulatory Reporting Accuracy</div>
+                <div className="text-center p-4 sm:p-3 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 animate-pulse-glow">
+                  <div className="text-xl sm:text-2xl font-bold text-white">95%+</div>
+                  <div className="text-xs sm:text-xs text-white/80">Improve Regulatory Reporting Accuracy</div>
                 </div>
-                <div className="text-center p-4 sm:p-3 rounded-lg" style={{ backgroundColor: 'rgba(242, 80, 34, 0.05)' }}>
-                  <div className="text-xl sm:text-2xl font-bold" style={{ color: '#f25022' }}>80%+</div>
-                  <div className="text-xs sm:text-xs" style={{ color: '#005870' }}>Policy Adoption and Alignment</div>
+                <div className="text-center p-4 sm:p-3 rounded-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 animate-pulse-glow">
+                  <div className="text-xl sm:text-2xl font-bold text-white">80%+</div>
+                  <div className="text-xs sm:text-xs text-white/80">Policy Adoption and Alignment</div>
                 </div>
               </div>
               
-              <div className="space-y-4">
-                <p className="text-lg sm:text-xl" style={{ color: '#005870' }}>
-                  From fractional C-suite compliance support to intelligent GRC platforms <strong style={{ color: '#002B45' }}>we deliver</strong> global, end-to-end risk management solutions.
+              <div className="space-y-4 animate-fadeIn animate-delay-400">
+                <p className="text-lg sm:text-xl text-white/90">
+                  From fractional C-suite compliance support to intelligent GRC platforms <strong className="text-white">we deliver</strong> global, end-to-end risk management solutions.
                 </p>
-                <div className="p-4 rounded-lg" style={{ backgroundColor: 'rgba(0, 43, 69, 0.05)', border: '1px solid rgba(0, 163, 173, 0.2)' }}>
-                  <p className="font-semibold text-base sm:text-lg" style={{ color: '#002B45' }}>
+                <div className="p-4 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20">
+                  <p className="font-semibold text-base sm:text-lg text-white">
                     "Designed for Compliance Leaders, by Compliance Leaders.​"
                   </p>
-                  <p className="text-sm sm:text-base font-medium mt-2" style={{ color: '#005870' }}>
+                  <p className="text-sm sm:text-base font-medium mt-2 text-white/80">
                     - Kelly Menefee Okpala, Founder & Fractional CCO
                   </p>
                 </div>
@@ -114,8 +118,8 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="text-center order-first lg:order-last lg:text-right" style={{ animation: 'slideInRight 1.2s ease-out' }}>
-              <div className="relative">
+            <div className="text-center order-first lg:order-last lg:text-right animate-slideInRight">
+              <div className="relative animate-float">
                 <img 
                   src="https://previewengine-accl.zoho.com/image/WD/9rk2kec3040c46c2e476f8905ede61724aef5?version=1.0&width=2046&height=1536"
                   alt="Kelly Menefee Okpala – Titanide Founder"
@@ -123,10 +127,10 @@ const Index = () => {
                   style={{ 
                     objectFit: 'cover',
                     objectPosition: 'center top',
-                    border: '4px solid #00A3AD'
+                    border: '4px solid #ffffff'
                   }}
                 />
-                <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{ backgroundColor: '#f25022' }}>
+                <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full flex items-center justify-center shadow-lg animate-bounce-subtle" style={{ backgroundColor: '#f25022' }}>
                   <Award className="h-8 w-8 text-white" />
                 </div>
               </div>
