@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Download, FileText, CheckSquare, BarChart, Shield, Users } from 'lucide-react';
@@ -15,7 +14,7 @@ const FreeTools = () => {
       downloadUrl: "/assessment",
       features: [
         "Multi-domain compliance checklist",
-        "Risk scoring methodology",
+        "Risk scoring methodology", 
         "Gap analysis framework",
         "Action plan template"
       ]
@@ -53,16 +52,16 @@ const FreeTools = () => {
     {
       id: 4,
       title: "Vendor Risk Assessment Matrix",
-      description: "Streamlined framework for evaluating and managing third-party vendor risks across your organization's supply chain.",
+      description: "Interactive tool for evaluating and managing third-party vendor risks across financial, operational, cybersecurity, and compliance domains.",
       icon: BarChart,
-      type: "Assessment",
-      format: "Excel",
-      downloadUrl: "https://drive.google.com/file/d/1VENDOR_RISK_MATRIX_SAMPLE/view?usp=sharing",
+      type: "Interactive",
+      format: "Web App",
+      downloadUrl: "/vendor-risk-assessment",
       features: [
-        "Vendor evaluation criteria",
-        "Risk scoring algorithms",
-        "Contract requirement templates",
-        "Monitoring dashboards"
+        "6 comprehensive risk domains",
+        "Smart risk scoring algorithm",
+        "Professional vendor risk reports",
+        "Actionable remediation recommendations"
       ]
     },
     {
@@ -157,14 +156,14 @@ const FreeTools = () => {
                   <span className="text-xs text-gray-500">
                     Format: {tool.format}
                   </span>
-                  {tool.id === 1 ? (
+                  {(tool.id === 1 || tool.id === 4) ? (
                     <Link 
                       to={tool.downloadUrl}
                       className="inline-flex items-center px-4 py-2 rounded-md text-white text-sm font-medium hover:opacity-90 transition-opacity"
                       style={{ backgroundColor: '#00A3AD' }}
                     >
                       <CheckSquare className="h-4 w-4 mr-2" />
-                      Start Assessment
+                      {tool.id === 1 ? 'Start Assessment' : 'Start Tool'}
                     </Link>
                   ) : (
                     <a 

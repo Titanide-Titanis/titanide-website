@@ -15,6 +15,9 @@ import FreeTools from "./pages/FreeTools";
 import Assessment from "./pages/Assessment";
 import AssessmentStart from "./pages/AssessmentStart";
 import AssessmentResults from "./pages/AssessmentResults";
+import VendorRiskAssessment from "./pages/VendorRiskAssessment";
+import VendorRiskAssessmentStart from "./pages/VendorRiskAssessmentStart";
+import VendorRiskAssessmentResults from "./pages/VendorRiskAssessmentResults";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
 import Contact from "./pages/Contact";
@@ -67,6 +70,9 @@ const App = () => (
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/assessment-start" element={<AssessmentStart />} />
           <Route path="/assessment-results" element={<AssessmentResults />} />
+          <Route path="/vendor-risk-assessment" element={<VendorRiskAssessment />} />
+          <Route path="/vendor-risk-assessment-start" element={<VendorRiskAssessmentStart />} />
+          <Route path="/vendor-risk-assessment-results" element={<VendorRiskAssessmentResults />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
