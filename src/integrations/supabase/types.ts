@@ -14,7 +14,122 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      vendor_assessment_responses: {
+        Row: {
+          assessment_id: string
+          created_at: string
+          id: string
+          question_id: string
+          response_score: number | null
+          response_value: string | null
+          step_number: number
+        }
+        Insert: {
+          assessment_id: string
+          created_at?: string
+          id?: string
+          question_id: string
+          response_score?: number | null
+          response_value?: string | null
+          step_number: number
+        }
+        Update: {
+          assessment_id?: string
+          created_at?: string
+          id?: string
+          question_id?: string
+          response_score?: number | null
+          response_value?: string | null
+          step_number?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "vendor_assessment_responses_assessment_id_fkey"
+            columns: ["assessment_id"]
+            isOneToOne: false
+            referencedRelation: "vendor_assessments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      vendor_assessments: {
+        Row: {
+          completed_at: string | null
+          contract_duration: string | null
+          created_at: string
+          criticality_level: string | null
+          data_access_level: string | null
+          id: string
+          overall_score: number | null
+          risk_level: string | null
+          services_provided: string | null
+          status: string | null
+          updated_at: string
+          user_id: string | null
+          vendor_name: string
+          vendor_type: string | null
+        }
+        Insert: {
+          completed_at?: string | null
+          contract_duration?: string | null
+          created_at?: string
+          criticality_level?: string | null
+          data_access_level?: string | null
+          id?: string
+          overall_score?: number | null
+          risk_level?: string | null
+          services_provided?: string | null
+          status?: string | null
+          updated_at?: string
+          user_id?: string | null
+          vendor_name: string
+          vendor_type?: string | null
+        }
+        Update: {
+          completed_at?: string | null
+          contract_duration?: string | null
+          created_at?: string
+          criticality_level?: string | null
+          data_access_level?: string | null
+          id?: string
+          overall_score?: number | null
+          risk_level?: string | null
+          services_provided?: string | null
+          status?: string | null
+          updated_at?: string
+          user_id?: string | null
+          vendor_name?: string
+          vendor_type?: string | null
+        }
+        Relationships: []
+      }
+      vendor_risk_categories: {
+        Row: {
+          created_at: string
+          description: string | null
+          id: string
+          max_score: number | null
+          name: string
+          weight: number | null
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          max_score?: number | null
+          name: string
+          weight?: number | null
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          id?: string
+          max_score?: number | null
+          name?: string
+          weight?: number | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
