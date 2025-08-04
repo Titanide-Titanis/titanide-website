@@ -3,9 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Share2, Building, AlertTriangle, CheckCircle, TrendingUp, Shield, FileCheck, Eye, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
 
 const VendorRiskAssessmentResults = () => {
   const [assessmentData, setAssessmentData] = useState<any>(null);
@@ -26,18 +23,16 @@ const VendorRiskAssessmentResults = () => {
   if (!assessmentData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Card className="max-w-md">
-          <CardContent className="p-8 text-center">
-            <AlertTriangle className="h-12 w-12 text-amber-500 mx-auto mb-4" />
-            <h3 className="text-lg font-semibold mb-2">No Assessment Data Found</h3>
-            <p className="text-muted-foreground mb-4">
-              Please complete the vendor risk assessment first.
-            </p>
-            <Link to="/vendor-risk-assessment-start">
-              <Button>Start Assessment</Button>
-            </Link>
-          </CardContent>
-        </Card>
+        <div style={{ maxWidth: '400px', background: 'white', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', textAlign: 'center' }}>
+          <AlertTriangle style={{ height: '48px', width: '48px', color: '#f59e0b', margin: '0 auto 1rem' }} />
+          <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>No Assessment Data Found</h3>
+          <p style={{ color: '#6b7280', marginBottom: '1rem' }}>
+            Please complete the vendor risk assessment first.
+          </p>
+          <Link to="/vendor-risk-assessment-start">
+            <Button>Start Assessment</Button>
+          </Link>
+        </div>
       </div>
     );
   }
@@ -48,10 +43,10 @@ const VendorRiskAssessmentResults = () => {
   const criticalityLevel = responses.criticality_level || 'Unknown';
   
   const getRiskLevel = (score: number) => {
-    if (score >= 81) return { level: 'Low Risk', color: 'bg-green-500', textColor: 'text-green-700' };
-    if (score >= 61) return { level: 'Medium Risk', color: 'bg-yellow-500', textColor: 'text-yellow-700' };
-    if (score >= 41) return { level: 'High Risk', color: 'bg-orange-500', textColor: 'text-orange-700' };
-    return { level: 'Critical Risk', color: 'bg-red-500', textColor: 'text-red-700' };
+    if (score >= 81) return { level: 'Low Risk', color: '#10b981', bgColor: '#d1fae5' };
+    if (score >= 61) return { level: 'Medium Risk', color: '#f59e0b', bgColor: '#fef3c7' };
+    if (score >= 41) return { level: 'High Risk', color: '#f97316', bgColor: '#fed7aa' };
+    return { level: 'Critical Risk', color: '#ef4444', bgColor: '#fecaca' };
   };
 
   const riskLevel = getRiskLevel(score);
@@ -59,37 +54,37 @@ const VendorRiskAssessmentResults = () => {
   const domainScores = [
     {
       domain: 'Financial & Operational',
-      icon: TrendingUp,
+      icon: '📊',
       score: calculateDomainScore('financial-operational'),
       description: 'Financial stability, business continuity, and operational resilience'
     },
     {
       domain: 'Cybersecurity & Data Protection',
-      icon: Shield,
+      icon: '🛡️',
       score: calculateDomainScore('cybersecurity-data'),
       description: 'Security certifications, data protection, and incident management'
     },
     {
       domain: 'Compliance & Regulatory',
-      icon: FileCheck,
+      icon: '📋',
       score: calculateDomainScore('compliance-regulatory'),
       description: 'Regulatory alignment, audit results, and privacy programs'
     },
     {
       domain: 'Operational Dependencies',
-      icon: Building,
+      icon: '🏢',
       score: calculateDomainScore('operational-dependencies'),
       description: 'SLA performance, support capabilities, and exit strategies'
     },
     {
       domain: 'Due Diligence Documentation',
-      icon: Eye,
+      icon: '👁️',
       score: calculateDomainScore('due-diligence'),
       description: 'Contract completeness, insurance verification, and documentation'
     },
     {
       domain: 'Vendor Information & Criticality',
-      icon: Users,
+      icon: '👥',
       score: calculateDomainScore('vendor-information'),
       description: 'Vendor classification, service criticality, and data access levels'
     }
@@ -143,201 +138,210 @@ const VendorRiskAssessmentResults = () => {
   function generateRecommendations(overallScore: number, domains: any[]) {
     const recs = [];
     
-    // Overall risk-based recommendations
     if (overallScore < 41) {
-      recs.push({
-        priority: 'Critical',
-        title: 'Immediate Risk Mitigation Required',
-        description: 'This vendor presents critical risks that require immediate attention and potential service limitations.',
-        icon: AlertTriangle
-      });
+      recs.push('Immediate risk mitigation required - consider service limitations');
     } else if (overallScore < 61) {
-      recs.push({
-        priority: 'High',
-        title: 'Enhanced Monitoring and Controls',
-        description: 'Implement additional oversight and control measures for this high-risk vendor relationship.',
-        icon: Shield
-      });
+      recs.push('Enhanced monitoring and controls needed');
     }
     
-    // Domain-specific recommendations
     domains.forEach(domain => {
       if (domain.score < 60) {
-        recs.push({
-          priority: domain.score < 40 ? 'Critical' : 'High',
-          title: `Address ${domain.domain} Deficiencies`,
-          description: `${domain.description} shows significant gaps requiring remediation.`,
-          icon: domain.icon
-        });
+        recs.push(`Address ${domain.domain} deficiencies`);
       }
     });
     
-    return recs.slice(0, 5); // Limit to top 5 recommendations
+    return recs.slice(0, 5);
   }
 
+  const containerStyle = {
+    fontFamily: "'Inter', sans-serif",
+    margin: 0,
+    padding: 0,
+    backgroundColor: '#fdfdfd',
+    color: '#1a1a1a',
+    lineHeight: '1.6',
+    minHeight: '100vh'
+  };
+
+  const contentStyle = {
+    maxWidth: '1000px',
+    margin: '0 auto',
+    padding: '2rem'
+  };
+
+  const headerStyle = {
+    textAlign: 'center' as const,
+    marginBottom: '2rem'
+  };
+
+  const logoStyle = {
+    fontSize: '2rem',
+    fontWeight: 'bold',
+    color: '#002B45',
+    marginBottom: '1rem'
+  };
+
+  const cardStyle = {
+    background: 'white',
+    padding: '2rem',
+    borderRadius: '8px',
+    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+    marginBottom: '2rem'
+  };
+
+  const btnStyle = {
+    backgroundColor: '#00A3AD',
+    color: 'white',
+    padding: '12px 24px',
+    border: 'none',
+    borderRadius: '6px',
+    fontSize: '1rem',
+    cursor: 'pointer',
+    textDecoration: 'none',
+    display: 'inline-block',
+    margin: '0.5rem 0.5rem 0.5rem 0'
+  };
+
+  const btnSecondaryStyle = {
+    ...btnStyle,
+    backgroundColor: '#6c757d'
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+    <div style={containerStyle}>
+      <div style={contentStyle}>
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <Link to="/vendor-risk-assessment-start" className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Assessment
-          </Link>
-          <div className="flex gap-2">
-            <Button variant="outline" size="sm">
-              <Share2 className="h-4 w-4 mr-2" />
-              Share Results
-            </Button>
-            <Button size="sm">
-              <Download className="h-4 w-4 mr-2" />
-              Download Report
-            </Button>
+        <div style={headerStyle}>
+          <div style={logoStyle}>TITANIDE</div>
+          <h1>Vendor Risk Assessment Results</h1>
+          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
+            <Link to="/vendor-risk-assessment-start" style={{ color: '#6c757d', textDecoration: 'none', fontSize: '14px' }}>
+              ← Back to Assessment
+            </Link>
+          </div>
+        </div>
+        
+        {/* Results Summary */}
+        <div style={cardStyle}>
+          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+              <Building style={{ marginRight: '0.5rem', color: '#002B45' }} />
+              <h2 style={{ margin: 0, fontSize: '2rem', color: '#002B45' }}>{vendorName}</h2>
+            </div>
+            <p style={{ color: '#6c757d', fontSize: '1.1rem' }}>{vendorType}</p>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            <div>
+              <div style={{ fontSize: '3rem', fontWeight: 'bold', color: '#002B45' }}>{score}</div>
+              <div style={{ color: '#6c757d' }}>Overall Score</div>
+            </div>
+            <div>
+              <div style={{ 
+                backgroundColor: riskLevel.bgColor, 
+                color: riskLevel.color, 
+                padding: '8px 16px', 
+                borderRadius: '20px', 
+                fontSize: '1.1rem', 
+                fontWeight: '600',
+                display: 'inline-block'
+              }}>
+                {riskLevel.level}
+              </div>
+              <div style={{ color: '#6c757d', marginTop: '0.5rem' }}>Risk Classification</div>
+            </div>
+            <div>
+              <div style={{ fontSize: '1.2rem', fontWeight: '600', color: '#002B45' }}>
+                {criticalityLevel.split(' - ')[0]}
+              </div>
+              <div style={{ color: '#6c757d' }}>Business Criticality</div>
+            </div>
           </div>
         </div>
 
-        {/* Results Header */}
-        <Card className="mb-8 border-2 border-primary/20">
-          <CardHeader className="text-center">
-            <div className="flex items-center justify-center space-x-4 mb-4">
-              <Building className="h-8 w-8 text-primary" />
-              <div>
-                <CardTitle className="text-3xl">{vendorName}</CardTitle>
-                <CardDescription className="text-lg">{vendorType}</CardDescription>
-              </div>
-            </div>
-            
-            <div className="flex items-center justify-center space-x-8 mt-6">
-              <div className="text-center">
-                <div className="text-4xl font-bold mb-2">{score}</div>
-                <div className="text-sm text-muted-foreground">Overall Score</div>
-              </div>
-              
-              <div className="text-center">
-                <Badge className={`${riskLevel.color} text-white px-4 py-2 text-base`}>
-                  {riskLevel.level}
-                </Badge>
-                <div className="text-sm text-muted-foreground mt-2">Risk Classification</div>
-              </div>
-              
-              <div className="text-center">
-                <div className="text-lg font-semibold">{criticalityLevel.split(' - ')[0]}</div>
-                <div className="text-sm text-muted-foreground">Business Criticality</div>
-              </div>
-            </div>
-          </CardHeader>
-        </Card>
-
         {/* Domain Scores */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {domainScores.map((domain, index) => (
-            <Card key={index} className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                    <domain.icon className="h-5 w-5 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">{domain.domain}</CardTitle>
-                  </div>
-                  <div className="text-2xl font-bold">{domain.score}</div>
+        <div style={cardStyle}>
+          <h2 style={{ marginBottom: '2rem', color: '#002B45' }}>Risk Assessment Breakdown</h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+            {domainScores.map((domain, index) => (
+              <div key={index} style={{ 
+                border: '1px solid #e5e7eb', 
+                borderRadius: '8px', 
+                padding: '1.5rem',
+                backgroundColor: '#f9fafb'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+                  <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>{domain.icon}</span>
+                  <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#002B45' }}>{domain.domain}</h3>
+                  <span style={{ marginLeft: 'auto', fontSize: '1.5rem', fontWeight: 'bold', color: '#00A3AD' }}>
+                    {domain.score}
+                  </span>
                 </div>
-              </CardHeader>
-              <CardContent>
-                <Progress value={domain.score} className="mb-3" />
-                <CardDescription className="text-sm">
+                <div style={{ 
+                  backgroundColor: '#e5e7eb', 
+                  height: '8px', 
+                  borderRadius: '4px', 
+                  marginBottom: '0.5rem',
+                  overflow: 'hidden'
+                }}>
+                  <div style={{ 
+                    backgroundColor: '#00A3AD', 
+                    height: '100%', 
+                    width: `${domain.score}%`,
+                    borderRadius: '4px'
+                  }}></div>
+                </div>
+                <p style={{ fontSize: '0.9rem', color: '#6c757d', margin: 0 }}>
                   {domain.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Risk Summary and Recommendations */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <AlertTriangle className="h-5 w-5 mr-2 text-amber-500" />
-                Risk Summary
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-3 bg-muted/50 rounded-lg">
-                  <span className="font-medium">Overall Risk Level</span>
-                  <Badge className={`${riskLevel.color} text-white`}>{riskLevel.level}</Badge>
-                </div>
-                
-                <div className="space-y-2">
-                  <div className="text-sm font-medium text-muted-foreground">Key Risk Factors:</div>
-                  {domainScores
-                    .filter(d => d.score < 70)
-                    .map((domain, index) => (
-                      <div key={index} className="flex items-center space-x-2 text-sm">
-                        <div className="w-2 h-2 rounded-full bg-orange-400"></div>
-                        <span>{domain.domain}: {domain.score}/100</span>
-                      </div>
-                    ))}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center">
-                <CheckCircle className="h-5 w-5 mr-2 text-green-500" />
-                Recommended Actions
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                {recommendations.map((rec, index) => (
-                  <div key={index} className="flex items-start space-x-3 p-3 rounded-lg bg-muted/30">
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
-                      rec.priority === 'Critical' ? 'bg-red-100' : 'bg-amber-100'
-                    }`}>
-                      <rec.icon className={`h-4 w-4 ${
-                        rec.priority === 'Critical' ? 'text-red-600' : 'text-amber-600'
-                      }`} />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2 mb-1">
-                        <span className="text-sm font-medium">{rec.title}</span>
-                        <Badge variant="outline" className="text-xs">
-                          {rec.priority}
-                        </Badge>
-                      </div>
-                      <p className="text-xs text-muted-foreground">{rec.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Next Steps */}
-        <Card className="bg-gradient-to-r from-primary/5 to-primary/10 border-primary/20">
-          <CardContent className="p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4">Next Steps</h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Based on your vendor risk assessment results, consider implementing the recommended 
-              risk mitigation measures and establishing ongoing monitoring procedures.
+        {/* Recommendations */}
+        <div style={cardStyle}>
+          <h2 style={{ marginBottom: '1.5rem', color: '#002B45' }}>📋 Recommended Actions</h2>
+          {recommendations.length > 0 ? (
+            <ul style={{ paddingLeft: '1.5rem' }}>
+              {recommendations.map((rec, index) => (
+                <li key={index} style={{ marginBottom: '0.5rem', color: '#374151' }}>{rec}</li>
+              ))}
+            </ul>
+          ) : (
+            <p style={{ color: '#10b981', fontWeight: '600' }}>
+              ✓ No critical issues identified. Continue monitoring vendor performance.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/vendor-risk-assessment-start">
-                <Button variant="outline" size="lg">
-                  Assess Another Vendor
-                </Button>
-              </Link>
-              <Button size="lg">
-                Schedule Consultation
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+          )}
+        </div>
+
+        {/* Action Buttons */}
+        <div style={cardStyle}>
+          <h2 style={{ marginBottom: '1.5rem', color: '#002B45' }}>Next Steps</h2>
+          <p style={{ color: '#6c757d', marginBottom: '2rem' }}>
+            Based on your vendor risk assessment results, consider implementing the recommended 
+            risk mitigation measures and establishing ongoing monitoring procedures.
+          </p>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <button style={btnStyle}>
+              <Share2 style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+              Share Results
+            </button>
+            <button style={btnStyle}>
+              <Download style={{ width: '16px', height: '16px', marginRight: '8px' }} />
+              Download Report
+            </button>
+            <Link to="/vendor-risk-assessment-start" style={btnSecondaryStyle}>
+              Assess Another Vendor
+            </Link>
+            <a href="https://titanide.zohobookings.com/#/3973691000005149002" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               style={btnStyle}>
+              Schedule Consultation
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );
