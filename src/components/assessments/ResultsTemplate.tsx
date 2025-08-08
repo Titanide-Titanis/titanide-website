@@ -140,30 +140,38 @@ const ResultsTemplate = ({
         )}
       </Section>
 
-      <CTA
-        title="Next Steps"
-        subtitle={`Based on your ${assessmentType} assessment results, consider implementing the recommended measures and establishing ongoing monitoring procedures.`}
-        primary={{
-          label: "Schedule Consultation",
-          href: "https://titanide.zohobookings.com/#/3973691000005149002"
-        }}
-        secondary={{
-          label: `New ${assessmentType === 'vendor' ? 'Vendor' : ''} Assessment`,
-          href: assessmentType === 'vendor' ? '/vendor-risk-assessment-start' : '/assessment-start'
-        }}
-        variant="dark"
-      >
-        <div className="flex justify-center gap-4 mb-8">
-          <Button variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-            <Share2 className="h-4 w-4 mr-2" />
-            Share Results
-          </Button>
-          <Button variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
-            <Download className="h-4 w-4 mr-2" />
-            Download Report
-          </Button>
+      <Section variant="dark" centered>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4">Next Steps</h2>
+          <p className="text-lg max-w-3xl mx-auto mb-8">
+            Based on your {assessmentType} assessment results, consider implementing the recommended measures and establishing ongoing monitoring procedures.
+          </p>
+          
+          <div className="flex justify-center gap-4 mb-8">
+            <Button variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Share2 className="h-4 w-4 mr-2" />
+              Share Results
+            </Button>
+            <Button variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Download className="h-4 w-4 mr-2" />
+              Download Report
+            </Button>
+          </div>
         </div>
-      </CTA>
+        
+        <CTA
+          title=""
+          primary={{
+            label: "Schedule Consultation",
+            href: "https://titanide.zohobookings.com/#/3973691000005149002"
+          }}
+          secondary={{
+            label: `New ${assessmentType === 'vendor' ? 'Vendor' : ''} Assessment`,
+            href: assessmentType === 'vendor' ? '/vendor-risk-assessment-start' : '/assessment-start'
+          }}
+          variant="dark"
+        />
+      </Section>
     </div>
   );
 };
