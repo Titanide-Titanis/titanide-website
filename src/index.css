@@ -3,98 +3,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Google Fonts - matching titanideconsulting.com */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Definition of the design system matching the target site */
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 0 0% 10%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 0 0% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
+    --popover-foreground: 0 0% 3.9%;
 
-    /* Titanide Branding Colors */
-    --brand-deep: 197 100% 13%; /* #002B45 */
-    --brand-mid: 194 92% 21%; /* #005870 */
-    --brand-teal: 183 100% 33%; /* #00A3AD */
-    --brand-accent: 14 95% 54%; /* #f25022 */
+    /* Titanide Brand Colors - matching target site */
+    --brand-navy: 210 100% 20%; /* #003366 - Primary navy */
+    --brand-blue: 210 100% 35%; /* #0066CC - Secondary blue */
+    --brand-teal: 180 100% 25%; /* #008080 - Accent teal */
+    --brand-orange: 15 100% 50%; /* #FF4500 - CTA orange */
+    --brand-gray-50: 210 20% 98%;
+    --brand-gray-100: 210 20% 95%;
+    --brand-gray-200: 210 16% 90%;
+    --brand-gray-500: 210 8% 50%;
+    --brand-gray-900: 210 20% 10%;
 
-    --primary: 197 100% 13%; /* --brand-deep */
+    --primary: 210 100% 20%; /* --brand-navy */
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 194 92% 21%; /* --brand-mid */
+    --secondary: 210 100% 35%; /* --brand-blue */
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 20% 98%;
+    --muted-foreground: 210 8% 45%;
 
-    --accent: 183 100% 33%; /* --brand-teal */
+    --accent: 180 100% 25%; /* --brand-teal */
     --accent-foreground: 0 0% 98%;
 
-    --cta: 14 95% 54%; /* --brand-accent */
+    --cta: 15 100% 50%; /* --brand-orange */
     --cta-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 197 100% 13%;
+    --border: 210 16% 90%;
+    --input: 210 16% 90%;
+    --ring: 210 100% 20%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 210 20% 10%;
+    --sidebar-primary: 210 100% 20%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 20% 95%;
+    --sidebar-accent-foreground: 210 20% 10%;
+    --sidebar-border: 210 16% 90%;
+    --sidebar-ring: 210 100% 35%;
   }
 
   .dark {
-    --background: 197 100% 13%;
+    --background: 210 100% 20%;
     --foreground: 0 0% 98%;
 
-    --card: 197 100% 13%;
+    --card: 210 100% 20%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 197 100% 13%;
+    --popover: 210 100% 20%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 197 100% 13%;
+    --primary-foreground: 210 100% 20%;
 
-    --secondary: 194 92% 21%;
+    --secondary: 210 100% 35%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 210 40% 15%;
+    --muted-foreground: 210 20% 65%;
 
-    --accent: 183 100% 33%;
+    --accent: 180 100% 25%;
     --accent-foreground: 0 0% 98%;
 
-    --cta: 14 95% 54%;
+    --cta: 15 100% 50%;
     --cta-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 183 100% 33%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --border: 210 40% 15%;
+    --input: 210 40% 15%;
+    --ring: 180 100% 25%;
+    --sidebar-background: 210 100% 15%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 210 100% 35%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 40% 20%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 210 40% 20%;
+    --sidebar-ring: 210 100% 35%;
   }
 }
 
@@ -105,18 +113,23 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
 }
 
 @layer components {
+  /* Hero gradient matching target site */
   .brand-hero {
-    @apply bg-gradient-to-br from-primary via-secondary to-accent text-primary-foreground py-16 px-4;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--accent)) 100%);
+    @apply text-primary-foreground py-20 px-4;
   }
 
-  .brand-hero-teal {
-    @apply bg-gradient-to-br from-accent via-secondary to-primary text-accent-foreground py-16 px-4;
+  .brand-hero-alternate {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary)) 100%);
+    @apply text-accent-foreground py-20 px-4;
   }
 
+  /* Section utilities */
   .brand-section-light {
     @apply bg-muted/30 py-16 px-4;
   }
@@ -129,6 +142,11 @@
     @apply bg-accent/5 py-16 px-4;
   }
 
+  .brand-section-white {
+    @apply bg-white py-16 px-4;
+  }
+
+  /* Typography */
   .brand-heading {
     @apply relative text-3xl font-bold text-primary mb-6;
   }
@@ -137,8 +155,17 @@
     @apply content-[''] absolute -left-4 top-0 bottom-0 w-1 bg-accent rounded-full;
   }
 
+  .brand-subheading {
+    @apply text-xl font-semibold text-muted-foreground mb-4;
+  }
+
+  /* Cards and components */
   .brand-card {
-    @apply bg-card rounded-lg shadow-sm border border-border p-6 hover:shadow-md transition-shadow;
+    @apply bg-card rounded-lg shadow-sm border border-border p-6 hover:shadow-lg transition-all duration-300;
+  }
+
+  .brand-card-feature {
+    @apply bg-white rounded-lg p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100;
   }
 
   .brand-stat {
@@ -153,8 +180,57 @@
     @apply text-muted-foreground text-sm uppercase tracking-wider;
   }
 
-  .feather-mask {
-    mask: radial-gradient(ellipse 80% 70% at center, black 60%, transparent 90%);
-    -webkit-mask: radial-gradient(ellipse 80% 70% at center, black 60%, transparent 90%);
+  /* Interactive elements */
+  .brand-link {
+    @apply text-accent hover:text-accent/80 transition-colors font-medium;
+  }
+
+  .brand-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200;
+  }
+
+  .brand-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 px-6 py-3 rounded-md font-semibold transition-all duration-200;
+  }
+
+  .brand-button-cta {
+    @apply bg-cta text-cta-foreground hover:bg-cta/90 px-8 py-4 rounded-md font-bold text-lg transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+
+  /* Animations */
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Utility patterns */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Responsive grid utilities */
+  .responsive-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
+  }
+
+  .responsive-grid-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
   }
 }
