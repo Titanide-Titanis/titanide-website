@@ -152,4 +152,9 @@
   .brand-stat-label {
     @apply text-muted-foreground text-sm uppercase tracking-wider;
   }
+
+  .feather-mask {
+    mask: radial-gradient(ellipse 80% 70% at center, black 60%, transparent 90%);
+    -webkit-mask: radial-gradient(ellipse 80% 70% at center, black 60%, transparent 90%);
+  }
 }
