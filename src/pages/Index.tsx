@@ -133,7 +133,7 @@ export default function Index() {
       <Hero 
         title="Healthcare Compliance & Risk Management Excellence"
         subtitle="Transform your healthcare organization with expert compliance leadership, comprehensive risk management, and cutting-edge GRC technology solutions."
-        variant="teal"
+        gradientVariant="teal-first"
       />
 
       {/* About Section */}
