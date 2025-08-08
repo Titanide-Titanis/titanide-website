@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,19 +47,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -111,5 +105,51 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .brand-hero {
+    @apply bg-gradient-to-br from-primary via-secondary to-accent text-primary-foreground py-16 px-4;
+  }
+
+  .brand-hero-teal {
+    @apply bg-gradient-to-br from-accent via-secondary to-primary text-accent-foreground py-16 px-4;
+  }
+
+  .brand-section-light {
+    @apply bg-muted/30 py-16 px-4;
+  }
+
+  .brand-section-dark {
+    @apply bg-primary text-primary-foreground py-16 px-4;
+  }
+
+  .brand-section-accent {
+    @apply bg-accent/5 py-16 px-4;
+  }
+
+  .brand-heading {
+    @apply relative text-3xl font-bold text-primary mb-6;
+  }
+
+  .brand-heading::before {
+    @apply content-[''] absolute -left-4 top-0 bottom-0 w-1 bg-accent rounded-full;
+  }
+
+  .brand-card {
+    @apply bg-card rounded-lg shadow-sm border border-border p-6 hover:shadow-md transition-shadow;
+  }
+
+  .brand-stat {
+    @apply text-center p-6;
+  }
+
+  .brand-stat-number {
+    @apply text-4xl font-bold text-accent mb-2;
+  }
+
+  .brand-stat-label {
+    @apply text-muted-foreground text-sm uppercase tracking-wider;
   }
 }

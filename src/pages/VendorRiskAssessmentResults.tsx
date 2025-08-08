@@ -1,8 +1,9 @@
 
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Download, Share2, Building, AlertTriangle, CheckCircle, TrendingUp, Shield, FileCheck, Eye, Users } from "lucide-react";
+import { AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import ResultsTemplate from "@/components/assessments/ResultsTemplate";
 
 const VendorRiskAssessmentResults = () => {
   const [assessmentData, setAssessmentData] = useState<any>(null);
@@ -23,10 +24,10 @@ const VendorRiskAssessmentResults = () => {
   if (!assessmentData) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div style={{ maxWidth: '400px', background: 'white', padding: '2rem', borderRadius: '8px', boxShadow: '0 2px 10px rgba(0,0,0,0.1)', textAlign: 'center' }}>
-          <AlertTriangle style={{ height: '48px', width: '48px', color: '#f59e0b', margin: '0 auto 1rem' }} />
-          <h3 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '0.5rem' }}>No Assessment Data Found</h3>
-          <p style={{ color: '#6b7280', marginBottom: '1rem' }}>
+        <div className="max-w-md bg-card p-8 rounded-lg shadow-lg text-center">
+          <AlertTriangle className="h-12 w-12 text-amber-500 mx-auto mb-4" />
+          <h3 className="text-xl font-semibold mb-2">No Assessment Data Found</h3>
+          <p className="text-muted-foreground mb-6">
             Please complete the vendor risk assessment first.
           </p>
           <Link to="/vendor-risk-assessment-start">
@@ -153,197 +154,21 @@ const VendorRiskAssessmentResults = () => {
     return recs.slice(0, 5);
   }
 
-  const containerStyle = {
-    fontFamily: "'Inter', sans-serif",
-    margin: 0,
-    padding: 0,
-    backgroundColor: '#fdfdfd',
-    color: '#1a1a1a',
-    lineHeight: '1.6',
-    minHeight: '100vh'
-  };
-
-  const contentStyle = {
-    maxWidth: '1000px',
-    margin: '0 auto',
-    padding: '2rem'
-  };
-
-  const headerStyle = {
-    textAlign: 'center' as const,
-    marginBottom: '2rem'
-  };
-
-  const logoStyle = {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    color: '#002B45',
-    marginBottom: '1rem'
-  };
-
-  const cardStyle = {
-    background: 'white',
-    padding: '2rem',
-    borderRadius: '8px',
-    boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
-    marginBottom: '2rem'
-  };
-
-  const btnStyle = {
-    backgroundColor: '#00A3AD',
-    color: 'white',
-    padding: '12px 24px',
-    border: 'none',
-    borderRadius: '6px',
-    fontSize: '1rem',
-    cursor: 'pointer',
-    textDecoration: 'none',
-    display: 'inline-block',
-    margin: '0.5rem 0.5rem 0.5rem 0'
-  };
-
-  const btnSecondaryStyle = {
-    ...btnStyle,
-    backgroundColor: '#6c757d'
-  };
-
   return (
-    <div style={containerStyle}>
-      <div style={contentStyle}>
-        {/* Header */}
-        <div style={headerStyle}>
-          <div style={logoStyle}>TITANIDE</div>
-          <h1>Vendor Risk Assessment Results</h1>
-          <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '1rem', marginTop: '1rem' }}>
-            <Link to="/vendor-risk-assessment-start" style={{ color: '#6c757d', textDecoration: 'none', fontSize: '14px' }}>
-              ← Back to Assessment
-            </Link>
-          </div>
-        </div>
-        
-        {/* Results Summary */}
-        <div style={cardStyle}>
-          <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-              <Building style={{ marginRight: '0.5rem', color: '#002B45' }} />
-              <h2 style={{ margin: 0, fontSize: '2rem', color: '#002B45' }}>{vendorName}</h2>
-            </div>
-            <p style={{ color: '#6c757d', fontSize: '1.1rem' }}>{vendorType}</p>
-          </div>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-            <div>
-              <div style={{ fontSize: '3rem', fontWeight: 'bold', color: '#002B45' }}>{score}</div>
-              <div style={{ color: '#6c757d' }}>Overall Score</div>
-            </div>
-            <div>
-              <div style={{ 
-                backgroundColor: riskLevel.bgColor, 
-                color: riskLevel.color, 
-                padding: '8px 16px', 
-                borderRadius: '20px', 
-                fontSize: '1.1rem', 
-                fontWeight: '600',
-                display: 'inline-block'
-              }}>
-                {riskLevel.level}
-              </div>
-              <div style={{ color: '#6c757d', marginTop: '0.5rem' }}>Risk Classification</div>
-            </div>
-            <div>
-              <div style={{ fontSize: '1.2rem', fontWeight: '600', color: '#002B45' }}>
-                {criticalityLevel.split(' - ')[0]}
-              </div>
-              <div style={{ color: '#6c757d' }}>Business Criticality</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Domain Scores */}
-        <div style={cardStyle}>
-          <h2 style={{ marginBottom: '2rem', color: '#002B45' }}>Risk Assessment Breakdown</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
-            {domainScores.map((domain, index) => (
-              <div key={index} style={{ 
-                border: '1px solid #e5e7eb', 
-                borderRadius: '8px', 
-                padding: '1.5rem',
-                backgroundColor: '#f9fafb'
-              }}>
-                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-                  <span style={{ fontSize: '1.5rem', marginRight: '0.5rem' }}>{domain.icon}</span>
-                  <h3 style={{ margin: 0, fontSize: '1.1rem', color: '#002B45' }}>{domain.domain}</h3>
-                  <span style={{ marginLeft: 'auto', fontSize: '1.5rem', fontWeight: 'bold', color: '#00A3AD' }}>
-                    {domain.score}
-                  </span>
-                </div>
-                <div style={{ 
-                  backgroundColor: '#e5e7eb', 
-                  height: '8px', 
-                  borderRadius: '4px', 
-                  marginBottom: '0.5rem',
-                  overflow: 'hidden'
-                }}>
-                  <div style={{ 
-                    backgroundColor: '#00A3AD', 
-                    height: '100%', 
-                    width: `${domain.score}%`,
-                    borderRadius: '4px'
-                  }}></div>
-                </div>
-                <p style={{ fontSize: '0.9rem', color: '#6c757d', margin: 0 }}>
-                  {domain.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Recommendations */}
-        <div style={cardStyle}>
-          <h2 style={{ marginBottom: '1.5rem', color: '#002B45' }}>📋 Recommended Actions</h2>
-          {recommendations.length > 0 ? (
-            <ul style={{ paddingLeft: '1.5rem' }}>
-              {recommendations.map((rec, index) => (
-                <li key={index} style={{ marginBottom: '0.5rem', color: '#374151' }}>{rec}</li>
-              ))}
-            </ul>
-          ) : (
-            <p style={{ color: '#10b981', fontWeight: '600' }}>
-              ✓ No critical issues identified. Continue monitoring vendor performance.
-            </p>
-          )}
-        </div>
-
-        {/* Action Buttons */}
-        <div style={cardStyle}>
-          <h2 style={{ marginBottom: '1.5rem', color: '#002B45' }}>Next Steps</h2>
-          <p style={{ color: '#6c757d', marginBottom: '2rem' }}>
-            Based on your vendor risk assessment results, consider implementing the recommended 
-            risk mitigation measures and establishing ongoing monitoring procedures.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
-            <button style={btnStyle}>
-              <Share2 style={{ width: '16px', height: '16px', marginRight: '8px' }} />
-              Share Results
-            </button>
-            <button style={btnStyle}>
-              <Download style={{ width: '16px', height: '16px', marginRight: '8px' }} />
-              Download Report
-            </button>
-            <Link to="/vendor-risk-assessment-start" style={btnSecondaryStyle}>
-              Assess Another Vendor
-            </Link>
-            <a href="https://titanide.zohobookings.com/#/3973691000005149002" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               style={btnStyle}>
-              Schedule Consultation
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ResultsTemplate
+      title="Vendor Risk Assessment Results"
+      subtitle="Comprehensive third-party risk evaluation and recommendations"
+      backLink="/vendor-risk-assessment-start"
+      backLabel="Back to Assessment"
+      vendorName={vendorName}
+      vendorType={vendorType}
+      overallScore={score}
+      riskLevel={riskLevel}
+      criticalityLevel={criticalityLevel}
+      domainScores={domainScores}
+      recommendations={recommendations}
+      assessmentType="vendor"
+    />
   );
 };
 
