@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Database, Lock, ArrowRight, Download, CheckCircle, Users, Star, Phone, Mail, FileText, Globe, Award, TrendingUp, Zap, Monitor, Building2, Briefcase, Sparkles, BarChart3, Brain, Clock, Target, Cpu } from "lucide-react";
@@ -113,11 +112,10 @@ const Index = () => {
                 <img 
                   src="https://previewengine-accl.zoho.com/image/WD/9rk2kec3040c46c2e476f8905ede61724aef5?version=1.0&width=2046&height=1536"
                   alt="Kelly Menefee Okpala – Titanide Founder"
-                  className="mx-auto lg:mx-0 rounded-full shadow-2xl w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 hover:scale-105 transition-transform duration-300"
+                  className="mx-auto lg:mx-0 shadow-2xl w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80 hover:scale-105 transition-transform duration-300"
                   style={{ 
                     objectFit: 'cover',
-                    objectPosition: 'center top',
-                    border: '4px solid #00A3AD'
+                    objectPosition: 'center top'
                   }}
                 />
                 <div className="absolute -bottom-2 -right-2 w-16 h-16 rounded-full flex items-center justify-center shadow-lg animate-bounce" style={{ backgroundColor: '#f25022' }}>
